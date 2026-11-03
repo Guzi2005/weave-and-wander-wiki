@@ -1,0 +1,70 @@
+{
+	"description": "乌克兰套装当前使用的条纹布料和毛线团流苏。下载 .tres 配方，在 Godot 中调整参数并重新生成几何；本页数值来自同一份配方。",
+	"entries": [
+		{
+			"evidence_status": "用户参考适配",
+			"id": "stripe-overskirt",
+			"image": "/assets/motifs/stripe-overskirt.png",
+			"label": "黄紫绿经向条纹布料",
+			"note": "28 个重复单元；彩条按裙身周向 u 坐标生成。配方驱动罩裙彩条，不代替原物的纤维或织法鉴定。",
+			"parameters": {
+				"base_color": "0e2732ff",
+				"motif": "warp_stripe",
+				"repeat_count": 28,
+				"sequence": [
+					{
+						"color": "a28444ff",
+						"role": "yellow",
+						"u0": 0.005,
+						"u1": 0.011
+					},
+					{
+						"color": "163834ff",
+						"role": "green",
+						"u0": 0.013,
+						"u1": 0.015
+					},
+					{
+						"color": "442838ff",
+						"role": "purple",
+						"u0": 0.023,
+						"u1": 0.0255
+					},
+					{
+						"color": "a28444ff",
+						"role": "yellow",
+						"u0": 0.015,
+						"u1": 0.017
+					}
+				]
+			},
+			"recipe": "/assets/motifs/stripe-overskirt.tres",
+			"record_id": "WW-UKR-001-M01"
+		},
+		{
+			"evidence_status": "用户参考适配",
+			"id": "tassel-sash",
+			"image": "/assets/motifs/tassel-sash.png",
+			"label": "黄紫混色毛线团流苏",
+			"note": "毛线段、末端绒球、长度、散开程度、半径、双色和随机种子均可调。当前应用于高位黄色腰带两端。",
+			"parameters": {
+				"colors": [
+					"d9b13bff",
+					"7e4a8cff"
+				],
+				"length": 0.12,
+				"motif": "yarn_pompon_tassel",
+				"puff_count": 38,
+				"puff_radius": 0.023,
+				"seed": 7,
+				"spread": 0.066,
+				"strand_count": 60,
+				"strand_radius": 0.004
+			},
+			"recipe": "/assets/motifs/tassel-sash.tres",
+			"record_id": "WW-UKR-001-M02"
+		}
+	],
+	"schema": "ww-motifs-v1",
+	"title": "织物与流苏 · 可调参 motif"
+}

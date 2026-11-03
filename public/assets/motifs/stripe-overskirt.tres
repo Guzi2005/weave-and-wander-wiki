@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="StripeMotif" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://components/motifs/stripe_motif.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+base_color = Color(0.0549, 0.1529, 0.1961, 1)
+repeat_count = 28
+sequence = Array[Dictionary]([{
+"role": "yellow", "color": Color(0.6353, 0.5176, 0.2667, 1), "u0": 0.005, "u1": 0.011
+}, {
+"role": "green", "color": Color(0.0863, 0.2196, 0.2039, 1), "u0": 0.013, "u1": 0.015
+}, {
+"role": "purple", "color": Color(0.265, 0.157, 0.220, 1), "u0": 0.023, "u1": 0.0255
+}, {
+"role": "yellow", "color": Color(0.6353, 0.5176, 0.2667, 1), "u0": 0.015, "u1": 0.017
+}])

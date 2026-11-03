@@ -1,0 +1,14 @@
+{
+  "name": "ww-wiki",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "W&W Wiki：本地编辑与只读公开站点",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "build:public": "node build-public.mjs",
+    "check": "node --check server.mjs && node --check lib/store.mjs && node --check public/app.js && node --check public/viewer.js && node --check public/motifs.js && node --check public/motif-recipe.js && node --check public/motif-preview.js && node --check import-ukrainian-research.mjs && node --check tests/store.test.mjs && node --check tests/server.test.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}

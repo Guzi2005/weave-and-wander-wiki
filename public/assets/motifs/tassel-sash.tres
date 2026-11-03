@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TasselMotif" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://components/motifs/tassel_motif.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+colors = Array[Color]([Color(0.85098, 0.694118, 0.231373, 1), Color(0.494118, 0.290196, 0.54902, 1)])
+strand_count = 60
+puff_count = 38
+length = 0.12
+spread = 0.066
+strand_radius = 0.004
+puff_radius = 0.023
+seed = 7

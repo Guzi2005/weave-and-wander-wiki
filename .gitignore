@@ -1,0 +1,8 @@
+# 用户数据：运行期生成与上传的媒体，不入库
+data/
+public/media/*
+!public/media/.gitkeep
+.env*
+.wrangler/
+dist-public/
+.kimi-support-brief.txt

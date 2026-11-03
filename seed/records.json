@@ -1,0 +1,1273 @@
+{
+  "version": 2,
+  "seeded_at": "2026-10-28T00:00:00.000Z",
+  "questions": [
+    {
+      "id": "WW-Q-MOS-001",
+      "record_id": "WW-MOS-001-C02",
+      "record_revision": 1,
+      "prompt": "在档案 WW-MOS-001 的这张参考照片中，中央人物上衣的主要底色是什么？",
+      "options": [
+        "红色",
+        "白色",
+        "深蓝色"
+      ],
+      "correct_index": 0,
+      "explanation": "照片中中央人物的上衣呈红底多彩花纹。此题仅考查这张照片，不将颜色概括为所有摩梭服饰的特征。",
+      "evidence_note": "用户上传原图 IMG-001，中央人物躯干与袖子区域；WW-MOS-001-C02 的图像观察。",
+      "evidence_kind": "image_observation",
+      "status": "draft",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "created_at": "2026-10-28T00:00:00.000Z",
+      "updated_at": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "id": "WW-Q-MOS-002",
+      "record_id": "WW-MOS-001-C01",
+      "record_revision": 1,
+      "prompt": "按照本案例提供者的补充说明，从头部垂下的紫色米珠串在本套装中归属哪个部件？",
+      "options": [
+        "头饰的延续",
+        "独立腰饰",
+        "手持物"
+      ],
+      "correct_index": 0,
+      "explanation": "案例提供者明确说明，垂下的紫色部分是头饰上大量米珠串的延续。本题检验该案例的部件关系，不把用户说明当作独立历史文献。",
+      "evidence_note": "用户于 2026-10-28 补充：垂饰是头上垂下来的大把紫色米珠串的延续；见 WW-MOS-001-C01 记录。",
+      "evidence_kind": "user_clarification",
+      "status": "draft",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "created_at": "2026-10-28T00:00:00.000Z",
+      "updated_at": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "id": "WW-Q-MOS-VIDEO-001",
+      "prompt": "按《什么是真正的摩梭？》02:10 的字幕讲述，画面中假发使用什么材料？",
+      "options": [
+        "牦牛尾",
+        "竹篾",
+        "金属丝"
+      ],
+      "correct_index": 0,
+      "explanation": "答案限于该视频在 02:10 的材料说明。此题考查对来源的阅读，不证明照片001的头饰也使用同样材料。",
+      "evidence_note": "V-MOS-002｜02:10｜字幕“羊皮披肩 牦牛尾做的假发”；/assets/mosuo-video-130s.jpg。",
+      "record_id": "WW-MOS-REF-002",
+      "record_revision": 2,
+      "evidence_kind": "source",
+      "status": "draft",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "created_at": "2026-10-29T04:54:58.202Z",
+      "updated_at": "2026-10-29T04:54:58.202Z"
+    },
+    {
+      "id": "WW-Q-MOS-VIDEO-002",
+      "prompt": "按《什么是真正的摩梭？》06:28 的字幕，视频将母亲的称呼转写为什么？",
+      "options": [
+        "阿咪",
+        "阿爸",
+        "阿哥"
+      ],
+      "correct_index": 0,
+      "explanation": "视频字幕转写为“阿咪”。本题只要求辨读这一来源；语言／方言覆盖范围、发音与学术转写尚待独立核对。",
+      "evidence_note": "V-MOS-002｜06:28｜字幕“摩梭人把母亲叫做阿咪”；/assets/mosuo-video-388s.jpg。",
+      "record_id": "WW-MOS-REF-002",
+      "record_revision": 2,
+      "evidence_kind": "source",
+      "status": "draft",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "revision": 1,
+      "created_at": "2026-10-29T04:54:58.202Z",
+      "updated_at": "2026-10-29T04:54:58.202Z"
+    }
+  ],
+  "records": [
+    {
+      "id": "WW-MOS-001",
+      "title": "摩梭人服饰套装",
+      "record_type": "ensemble",
+      "category": "服装",
+      "status": "待考证",
+      "parent_id": null,
+      "collection_id": "mosuo_photo_001",
+      "culture": {
+        "text": "摩梭（用户提供）",
+        "attribution": "user"
+      },
+      "place": null,
+      "date_text": null,
+      "notes": "名称与文化归属来自用户描述，不据此判断照片人物的族群身份，待补文献或可核验来源。记录范围仅限此图中呈现的一套穿着，不推导为所有摩梭人服饰的统一样式。制作年代、穿用场景、地域分支、制作者与材料均未知。摄影作者、拍摄时间、地点、原始网址待补；图像授权待确认，公开状态为内部研究。分析范围为画面中央人物的穿着；右侧另一位人物的红衣、黄袖口和蓝裙不并入本套装。\n套装核心部件保持 C01 头饰（含紫色米珠串）、C02 上衣（含宽腰带）、C03 长裙。P01 鞋垫为同图关联手工对象；通用基底鞋履 WW-GEN-001 无文化属性。\n用户更正与参考（2026-10-29）｜发型参考图 P1 登记于 C01；P1 与照片001为不同穿戴者。游戏内穿戴资产采用共享的平面赛璐璐着色；织物材质研究单独保留，不并入穿戴模型。",
+      "observations": [
+        "画面中央人物穿着头饰、红底花纹上衣与浅蓝长褶裙，裙摆下方可见深色鞋履局部。",
+        "用户澄清｜原照片中央人物手持的是灰面、玫红色镶边的鞋垫，单列关联手工对象 WW-MOS-001-P01；不增加为头饰／上衣／长裙之外的第四件服装。",
+        "用户澄清与画面观察｜腰部有宽腰带，部分被手、鞋垫和衣身遮挡。模型按可见的暗玫红／灰紫色宽带补齐，纳入上衣资产；背面系结、尺寸与实际织法仍待查。",
+        "补充结构参考 WW-MOS-REF-002 / V-MOS-002；不同穿戴实例不并入照片001套装。",
+        "制作决定｜游戏支持的渲染方式：穿戴资产统一使用共享平面赛璐璐着色；织物材质研究作为独立课题保留，游戏渲染效果不构成原物材质证据。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null,
+        "note": "用户上传照片，原样保存。515 × 1034，SHA-256：E64DF3D2DB963E9DE8E7868502BAFF1A42C4EFB3574E438ED2B67BBA5B6EAA1B。作者、时间、地点、原始网址、授权均待补。"
+      },
+      "media": [
+        {
+          "path": "/assets/source.png",
+          "role": "source",
+          "label": "原始上传照片（IMG-001）",
+          "focus": {
+            "x": 47,
+            "y": 45
+          }
+        },
+        {
+          "path": "/assets/concept05.png",
+          "role": "generated_concept",
+          "label": "生成概念预览 05（非原始证据，不作考证依据）",
+          "focus": {
+            "x": 50,
+            "y": 50
+          }
+        }
+      ],
+      "created_at": "2026-10-28T00:00:00.000Z",
+      "updated_at": "2026-10-29T13:19:59.826Z",
+      "revision": 3
+    },
+    {
+      "id": "WW-MOS-001-C01",
+      "title": "黑色基底彩饰头饰与紫色米珠串",
+      "record_type": "component",
+      "category": "饰品",
+      "status": "待考证",
+      "parent_id": "WW-MOS-001",
+      "collection_id": "mosuo_photo_001",
+      "culture": {
+        "text": "摩梭（用户提供）",
+        "attribution": "user"
+      },
+      "place": null,
+      "date_text": null,
+      "notes": "用户更正（2026-10-28）：从头饰一侧持续向下延伸的紫色长串是大量米珠串，与头饰为同一部件，不单设“紫色垂饰”条目。待查：当地名称、组成材料、佩戴与固定方式；不能仅凭照片把彩色部分认定为特定纤维、珠饰材质或某种传统工艺。\n用户更正与参考（2026-10-29）｜新增发型参考图 P1（/assets/mosuo-braid-reference-003.png）：用户识别其中为超粗牦牛毛辫、盘绕两圈的发型；P1 与照片001为不同穿戴者。可见几何用于 double-yak 程序化发型节点适配；照片001头饰的纤维未独立鉴定，不把 P1 的材料断言移植到照片001。",
+      "observations": [
+        "黑色基底主体，环绕多色（可见红、黄、蓝等）装饰带。",
+        "顶部有红色簇状装饰。",
+        "大量紫色米珠串自头饰一侧持续垂落，延伸至裙面高度；与头饰为同一部件（用户更正）。",
+        "补充结构参考 WW-MOS-REF-002 / V-MOS-002；不同穿戴实例不并入照片001套装。",
+        "用户澄清｜头花向上开放；长紫色米珠束从后脑收束，经过肩侧自然垂落。结构借鉴视频 V-MOS-002 的不同穿戴实例，原图不可见的连接仍属推演。",
+        "制作决定｜头花与紫色米珠束分别通过头骨挂点连接；花瓣层数、花径、杯深、花色和朝向可调。米珠的尺寸、材质、重复单元、串数、紧密度与路径独立控制。",
+        "用户澄清｜参考图 P1 中的发型为超粗牦牛毛辫盘绕两圈；P1 与照片001不是同一穿戴者，仅取可见几何作建模参考，原照片001的纤维未独立识别。",
+        "制作决定｜旧版单圈盘旋（legacy-single）保留为游戏支持的通用程序化发型节点，是对旧资产的保留，并非真实传统发式的断言。",
+        "制作决定｜double-yak 为参考 P1 摩梭人案例的照片参考适配，不作民族志分类；其余变体均为无文化归属的通用程序化发型节点。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/source.png",
+          "role": "source",
+          "label": "原始照片局部（CSS 聚焦，未裁切原图）",
+          "focus": {
+            "x": 47,
+            "y": 12
+          }
+        },
+        {
+          "path": "/assets/mosuo-braid-reference-003.png",
+          "role": "source",
+          "label": "参考图 P1：超粗牦牛毛辫盘绕两圈（用户识别，与照片001为不同穿戴者）",
+          "focus": {
+            "x": 50,
+            "y": 50
+          }
+        }
+      ],
+      "created_at": "2026-10-28T00:00:00.000Z",
+      "updated_at": "2026-10-29T13:19:59.826Z",
+      "revision": 3
+    },
+    {
+      "id": "WW-MOS-001-C02",
+      "title": "红底多彩花纹上衣",
+      "record_type": "component",
+      "category": "服装",
+      "status": "待考证",
+      "parent_id": "WW-MOS-001",
+      "collection_id": "mosuo_photo_001",
+      "culture": {
+        "text": "摩梭（用户提供）",
+        "attribution": "user"
+      },
+      "place": null,
+      "date_text": null,
+      "notes": "待查：当地名称、襟式结构、开合方式、纤维材料，以及图案属于织、绣、印还是其他工艺；可见的花纹不直接等于刺绣。",
+      "observations": [
+        "红底、多彩花纹，长袖，衣身较短。",
+        "领口及前襟有浅色缘饰。",
+        "用户澄清与画面观察｜腰部有宽腰带，部分被手、鞋垫和衣身遮挡。模型按可见的暗玫红／灰紫色宽带补齐，纳入上衣资产；背面系结、尺寸与实际织法仍待查。",
+        "制作决定｜依据原图打磨立领、浅色滚边与偏襟结构；蒙古袍和旗袍只作为领型建模的比较参考，不作为这件衣物的名称、来源或文化归属证据。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/source.png",
+          "role": "source",
+          "label": "原始照片局部（CSS 聚焦，未裁切原图）",
+          "focus": {
+            "x": 45,
+            "y": 33
+          }
+        }
+      ],
+      "created_at": "2026-10-28T00:00:00.000Z",
+      "updated_at": "2026-10-29T04:54:58.202Z",
+      "revision": 2
+    },
+    {
+      "id": "WW-MOS-001-C03",
+      "title": "浅蓝色长褶裙",
+      "record_type": "component",
+      "category": "服装",
+      "status": "待考证",
+      "parent_id": "WW-MOS-001",
+      "collection_id": "mosuo_photo_001",
+      "culture": {
+        "text": "摩梭（用户提供）",
+        "attribution": "user"
+      },
+      "place": null,
+      "date_text": null,
+      "notes": "待查：当地名称、裙腰与接缝结构、纤维和织造、褶裥制作与固定方式、实际尺寸。单张照片不足以推导精确褶数、整圈裙摆尺寸、背面和可缝制纸样。",
+      "observations": [
+        "浅蓝底、浅色花纹，密集竖向褶裥。",
+        "下部可见一条紫红色横向细线。",
+        "裙长接近脚踝区域。",
+        "补充结构参考 WW-MOS-REF-002 / V-MOS-002；不同穿戴实例不并入照片001套装。",
+        "用户要求与制作决定｜银线织纹单独控制金属反射，底布保留丝绸光泽；褶脊改为柔软圆弧。银线与底布的具体纤维／工艺尚未鉴定，游戏生成纹理不充当原物证据。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/source.png",
+          "role": "source",
+          "label": "原始照片局部（CSS 聚焦，未裁切原图）",
+          "focus": {
+            "x": 46,
+            "y": 70
+          }
+        }
+      ],
+      "created_at": "2026-10-28T00:00:00.000Z",
+      "updated_at": "2026-10-29T04:54:58.202Z",
+      "revision": 2
+    },
+    {
+      "id": "WW-GEN-001",
+      "title": "深色鞋履（通用基底）",
+      "record_type": "object",
+      "category": "服装",
+      "status": "待整理",
+      "parent_id": null,
+      "collection_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "WW-MOS-001 照片中裙摆下方局部可见的深色鞋履，有遮挡。作为通用基底鞋履单独记录，不作任何文化归属。待查：完整鞋型、材料、装饰和制作方式；需要鞋履特写，不能把生成补全部分当成证据。",
+      "observations": [
+        "裙摆下方露出深色鞋面局部，大部分被裙裾遮挡。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/source.png",
+          "role": "source",
+          "label": "原始照片局部（CSS 聚焦，未裁切原图）",
+          "focus": {
+            "x": 45,
+            "y": 96
+          }
+        }
+      ],
+      "created_at": "2026-10-28T00:00:00.000Z",
+      "updated_at": "2026-10-28T00:00:00.000Z"
+    },
+    {
+      "id": "WW-MOS-REF-002",
+      "title": "摩梭人服饰补充影像｜什么是真正的摩梭？",
+      "category": "服装",
+      "record_type": "object",
+      "status": "考证中",
+      "collection_id": "mosuo_video_002",
+      "parent_id": null,
+      "culture": {
+        "text": "摩梭（视频及用户提供）",
+        "attribution": "source"
+      },
+      "notes": "补充来源 V-MOS-002。与照片001不是同一人、同一套衣物。本地视频长707.76秒，1280×720，25fps；已抽取全片30秒间隔索引，并逐帧检查02:06–02:14、04:51及若干头饰镜头。视频里的历史和社会解释仅作为讲述者观点，尚未独立核验，不直接生成事实题。公开使用视频及截图的授权待确认，当前仅本地研究。\n本次补记抽帧时间：02:10、02:14、06:28、07:16、07:20。短句指代不足的片段仅保留研究线索；不将视频中的社会制度概括或价值判断自动写为民族志事实。",
+      "observations": [
+        "画面观察｜02:06–02:10：白衣穿戴者转身时，黑色假发束形成宽厚的一圈，后脑有收束与盘结；不是多圈细绳叠成的帽檐。",
+        "视频讲述｜约02:10的字幕说明牦牛尾用于假发。此说法有视频出处；不能据此确定照片001那件头饰的真实材料。",
+        "画面观察｜02:10：红色花饰为多层卷叠的宽花瓣，帽缘有多排红色珠串；与蓝衣讲述者的多色珠饰不是同一件头饰。",
+        "画面观察｜02:06–02:14：裙褶转动时形成柔软圆弧，褶脊有宽度，下摆与红线随裙片连续起伏。",
+        "画面观察｜04:51：蓝衣穿戴者背面可见头后收束的多色垂饰经过颈侧；原照片紫色米珠束的精确系结位置仍属参考推演。",
+        "用户补充｜照片001的紫色长米珠串从后脑自然汇集，经肩侧垂落。模型保留原照片紫色、红衣、浅蓝裙组合，参考新视频改善结构。",
+        "制作决定｜银线织纹与丝绸光泽是本次游戏材质目标；底布和银线分别控制粗糙度、金属度与浅浮纹法线。生成纹样不能替代原物工艺鉴定。",
+        "视频讲述｜02:10：字幕将羊皮披肩、牦牛尾制作的假发列为画面中服饰的组成。这是本视频的材料说明，尚不能证明原照片001头饰的实际纤维。",
+        "视频讲述｜02:12–02:14：镜头展示裙身红线，字幕随后将其解释为祖先迁徙的路线。作为讲述者的文化解释收录，尚未独立核验，也不推定所有摩梭裙装的红线都具有相同含义。",
+        "视频讲述｜06:28：字幕称摩梭人将母亲称为“阿咪”。此处保留字幕转写与视频出处；发音、语言／方言范围和学术转写有待语言学材料核对。",
+        "画面观察｜07:16：视频以“四合院”示意图介绍建筑布局，图中可读到“经堂”标签；这能支持该视频采用的空间示意，不能代替村落建筑实测。",
+        "视频讲述｜07:20：字幕出现“其他人住花楼”。因前后指代尚需完整核对，只作为居住空间研究线索；不据此概括所有家庭的居住制度。"
+      ],
+      "source": {
+        "author": "时差岛",
+        "url": "https://www.xiaohongshu.com/explore/682bc550000000002002a98d",
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/mosuo-video-user-1.png",
+          "role": "source",
+          "label": "用户补充截图 1（视频中的不同穿戴实例）"
+        },
+        {
+          "path": "/assets/mosuo-video-user-2.png",
+          "role": "source",
+          "label": "用户补充截图 2（视频中的不同穿戴实例）"
+        },
+        {
+          "path": "/assets/mosuo-video-user-3.png",
+          "role": "source",
+          "label": "用户补充截图 3（视频中的不同穿戴实例）"
+        },
+        {
+          "path": "/assets/mosuo-video-user-4.png",
+          "role": "source",
+          "label": "用户补充截图 4（视频中的不同穿戴实例）"
+        },
+        {
+          "path": "/assets/mosuo-video-126s.jpg",
+          "role": "source",
+          "label": "本地视频帧 2:06，时差岛"
+        },
+        {
+          "path": "/assets/mosuo-video-130s.jpg",
+          "role": "source",
+          "label": "本地视频帧 2:10，时差岛"
+        },
+        {
+          "path": "/assets/mosuo-video-132s.jpg",
+          "role": "source",
+          "label": "本地视频帧 2:12，时差岛"
+        },
+        {
+          "path": "/assets/mosuo-video-291s.jpg",
+          "role": "source",
+          "label": "本地视频帧 4:51，时差岛"
+        },
+        {
+          "path": "/assets/mosuo-video-134s.jpg",
+          "role": "source",
+          "label": "本地视频帧 2:14，时差岛",
+          "focus": {
+            "x": 50,
+            "y": 50
+          }
+        },
+        {
+          "path": "/assets/mosuo-video-388s.jpg",
+          "role": "source",
+          "label": "本地视频帧 6:28，时差岛",
+          "focus": {
+            "x": 50,
+            "y": 50
+          }
+        },
+        {
+          "path": "/assets/mosuo-video-436s.jpg",
+          "role": "source",
+          "label": "本地视频帧 7:16，时差岛",
+          "focus": {
+            "x": 50,
+            "y": 50
+          }
+        },
+        {
+          "path": "/assets/mosuo-video-440s.jpg",
+          "role": "source",
+          "label": "本地视频帧 7:20，时差岛",
+          "focus": {
+            "x": 50,
+            "y": 50
+          }
+        }
+      ],
+      "revision": 3,
+      "created_at": "2026-10-29T02:15:05.008Z",
+      "updated_at": "2026-10-29T13:19:59.826Z"
+    },
+    {
+      "id": "WW-MOS-001-P01",
+      "title": "玫红镶边灰面鞋垫（关联手工对象）",
+      "record_type": "object",
+      "category": "布艺",
+      "status": "待考证",
+      "parent_id": "WW-MOS-001",
+      "collection_id": "mosuo_photo_001",
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "名称由用户在本次建模校正中明确：原图人物手持一只玫红色镶边的鞋垫。作为同图关联手工对象收录，不列入头饰／上衣／长裙三件套装，不附加未经证实的文化专属性。实际尺寸、纤维、背面、层数、针法和制作者待查。游戏资产为基于可见轮廓的适配品，不能代替工艺鉴定。",
+      "observations": [
+        "画面观察｜灰色主体有玫红色缘边，局部被双手遮挡。",
+        "用户澄清｜物件名称为鞋垫。",
+        "制作决定｜手持鞋垫通过手部挂点连接，独立模型 mosuo_insole_001.glb；区别于穿在脚上的通用基底鞋履。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/source.png",
+          "role": "source",
+          "label": "原始照片中的手持鞋垫（未改动原图）",
+          "focus": {
+            "x": 51,
+            "y": 41
+          }
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-10-29T04:54:58.202Z",
+      "updated_at": "2026-10-29T04:54:58.202Z"
+    },
+    {
+      "id": "WW-UKR-001",
+      "title": "乌克兰套装（参考照片适配）",
+      "record_type": "ensemble",
+      "category": "服装",
+      "status": "待考证",
+      "parent_id": null,
+      "collection_id": "ukrainian_photo_001",
+      "culture": {
+        "text": "乌克兰（用户提供）",
+        "attribution": "user"
+      },
+      "place": null,
+      "date_text": null,
+      "notes": "归属仅来自用户提供的“乌克兰套装”描述和本张参考照片；不推导地区、年代、工艺或所有乌克兰服饰的统一样式。照片作者、拍摄时间、地点、原始网址和授权待补。游戏模型按既有小人身体适配，身体未修改；背面、不可见连接及材质细节属于制作推演。\n分件：C01 长衬衫衬裙，C02 条纹罩裙，C03 紫色围裙，C04 黄色腰带与流苏，C05 黑白珠串。M01/M02 为可复用 motif 参数资产。",
+      "observations": [
+        "用户说明｜套装包含长衬衫衬裙、黄色布腰带、紫色围裙和黄紫绿条纹罩裙。",
+        "画面观察｜颈部有多圈黑白珠串，胸前以红丝带系合；袖子蓬松，袖口收窄。",
+        "制作决定｜腰带中心保持 y=1.42、罩裙腰口 y=1.44（模型米）；三圈布带贴合穿着后的截面，黄紫毛线流苏独立建模。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/ukrainian-source.jpg",
+          "role": "source",
+          "label": "用户提供的乌克兰套装参考照片（原样保存）",
+          "focus": {
+            "x": 50,
+            "y": 48
+          }
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T08:22:26.044Z",
+      "updated_at": "2026-11-02T08:22:26.044Z"
+    },
+    {
+      "id": "WW-UKR-001-C01",
+      "title": "白色长衬衫衬裙与红丝带",
+      "record_type": "component",
+      "category": "服装",
+      "status": "待考证",
+      "parent_id": "WW-UKR-001",
+      "collection_id": "ukrainian_photo_001",
+      "culture": {
+        "text": "乌克兰（用户提供）",
+        "attribution": "user"
+      },
+      "place": null,
+      "date_text": null,
+      "notes": "归属仅来自用户提供的“乌克兰套装”描述和本张参考照片；不推导地区、年代、工艺或所有乌克兰服饰的统一样式。照片作者、拍摄时间、地点、原始网址和授权待补。游戏模型按既有小人身体适配，身体未修改；背面、不可见连接及材质细节属于制作推演。\n对应模型 ukrainian_undershirt_001.glb；衬衫、袖口、领口蝴蝶结和白色下摆同属此部件。",
+      "observations": [
+        "用户说明｜衬裙是长至脚踝的长衬衫，胸口中央开领，由红丝带打结固定。",
+        "制作决定｜建立蓬松灯笼袖与收窄袖口；下摆增加细织带，身体、手臂与手腕位置不变。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/ukrainian-source.jpg",
+          "role": "source",
+          "label": "用户提供的乌克兰套装参考照片（原样保存）",
+          "focus": {
+            "x": 50,
+            "y": 48
+          }
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T08:22:26.044Z",
+      "updated_at": "2026-11-02T08:22:26.044Z"
+    },
+    {
+      "id": "WW-UKR-001-C02",
+      "title": "黄紫绿条纹罩裙",
+      "record_type": "component",
+      "category": "服装",
+      "status": "待考证",
+      "parent_id": "WW-UKR-001",
+      "collection_id": "ukrainian_photo_001",
+      "culture": {
+        "text": "乌克兰（用户提供）",
+        "attribution": "user"
+      },
+      "place": null,
+      "date_text": null,
+      "notes": "归属仅来自用户提供的“乌克兰套装”描述和本张参考照片；不推导地区、年代、工艺或所有乌克兰服饰的统一样式。照片作者、拍摄时间、地点、原始网址和授权待补。游戏模型按既有小人身体适配，身体未修改；背面、不可见连接及材质细节属于制作推演。\n对应模型 ukrainian_overskirt_001.glb；条纹使用 M01 stripe-overskirt 配方。",
+      "observations": [
+        "用户说明｜罩裙具有黄、紫、绿条纹。",
+        "制作决定｜遵循项目百褶裙参数合约，增加褶谷暗色、底布织纹点与黄色下摆织带；高位腰口未下调。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/ukrainian-source.jpg",
+          "role": "source",
+          "label": "用户提供的乌克兰套装参考照片（原样保存）",
+          "focus": {
+            "x": 50,
+            "y": 48
+          }
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T08:22:26.044Z",
+      "updated_at": "2026-11-02T08:22:26.044Z"
+    },
+    {
+      "id": "WW-UKR-001-C03",
+      "title": "紫色围裙",
+      "record_type": "component",
+      "category": "服装",
+      "status": "待考证",
+      "parent_id": "WW-UKR-001",
+      "collection_id": "ukrainian_photo_001",
+      "culture": {
+        "text": "乌克兰（用户提供）",
+        "attribution": "user"
+      },
+      "place": null,
+      "date_text": null,
+      "notes": "归属仅来自用户提供的“乌克兰套装”描述和本张参考照片；不推导地区、年代、工艺或所有乌克兰服饰的统一样式。照片作者、拍摄时间、地点、原始网址和授权待补。游戏模型按既有小人身体适配，身体未修改；背面、不可见连接及材质细节属于制作推演。\n对应模型 ukrainian_apron_001.glb。",
+      "observations": [
+        "用户说明｜套装前方有紫色围裙。",
+        "制作决定｜以局部弧形褶裙覆盖罩裙前片，保留下摆织带。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/ukrainian-source.jpg",
+          "role": "source",
+          "label": "用户提供的乌克兰套装参考照片（原样保存）",
+          "focus": {
+            "x": 50,
+            "y": 48
+          }
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T08:22:26.044Z",
+      "updated_at": "2026-11-02T08:22:26.044Z"
+    },
+    {
+      "id": "WW-UKR-001-C04",
+      "title": "黄色缠绕腰带与黄紫毛线流苏",
+      "record_type": "component",
+      "category": "服装",
+      "status": "待考证",
+      "parent_id": "WW-UKR-001",
+      "collection_id": "ukrainian_photo_001",
+      "culture": {
+        "text": "乌克兰（用户提供）",
+        "attribution": "user"
+      },
+      "place": null,
+      "date_text": null,
+      "notes": "归属仅来自用户提供的“乌克兰套装”描述和本张参考照片；不推导地区、年代、工艺或所有乌克兰服饰的统一样式。照片作者、拍摄时间、地点、原始网址和授权待补。游戏模型按既有小人身体适配，身体未修改；背面、不可见连接及材质细节属于制作推演。\n对应模型 ukrainian_sash_001.glb；流苏使用 M02 tassel-sash 配方。",
+      "observations": [
+        "用户说明｜腰上有黄色布腰带，流苏有黄有紫。",
+        "制作决定｜三圈布带随身体与裙层截面缠绕，带轻微倾斜和皱褶；毛线段和绒球簇按双色分组。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/ukrainian-source.jpg",
+          "role": "source",
+          "label": "用户提供的乌克兰套装参考照片（原样保存）",
+          "focus": {
+            "x": 50,
+            "y": 48
+          }
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T08:22:26.044Z",
+      "updated_at": "2026-11-02T08:22:26.044Z"
+    },
+    {
+      "id": "WW-UKR-001-C05",
+      "title": "黑白多圈珠串",
+      "record_type": "component",
+      "category": "饰品",
+      "status": "待考证",
+      "parent_id": "WW-UKR-001",
+      "collection_id": "ukrainian_photo_001",
+      "culture": {
+        "text": "乌克兰（用户提供）",
+        "attribution": "user"
+      },
+      "place": null,
+      "date_text": null,
+      "notes": "归属仅来自用户提供的“乌克兰套装”描述和本张参考照片；不推导地区、年代、工艺或所有乌克兰服饰的统一样式。照片作者、拍摄时间、地点、原始网址和授权待补。游戏模型按既有小人身体适配，身体未修改；背面、不可见连接及材质细节属于制作推演。\n对应模型 ukrainian_beads_001.glb；珠材未鉴定。",
+      "observations": [
+        "用户说明与画面观察｜颈上挂有多圈黑、白珠串。",
+        "制作决定｜四圈黑白交替珠串沿领口至胸前排列，每圈前侧下垂量分别控制。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/ukrainian-source.jpg",
+          "role": "source",
+          "label": "用户提供的乌克兰套装参考照片（原样保存）",
+          "focus": {
+            "x": 50,
+            "y": 48
+          }
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T08:22:26.044Z",
+      "updated_at": "2026-11-02T08:22:26.044Z"
+    },
+    {
+      "id": "WW-UKR-001-M01",
+      "title": "motif｜黄紫绿经向条纹布料",
+      "record_type": "object",
+      "category": "布艺",
+      "status": "待考证",
+      "parent_id": "WW-UKR-001",
+      "collection_id": "ukrainian_photo_001",
+      "culture": {
+        "text": "乌克兰（用户提供）",
+        "attribution": "user"
+      },
+      "place": null,
+      "date_text": null,
+      "notes": "归属仅来自用户提供的“乌克兰套装”描述和本张参考照片；不推导地区、年代、工艺或所有乌克兰服饰的统一样式。照片作者、拍摄时间、地点、原始网址和授权待补。游戏模型按既有小人身体适配，身体未修改；背面、不可见连接及材质细节属于制作推演。\n当前配方 /assets/motifs/stripe-overskirt.tres；在“motif 参数资产”页查看并下载。",
+      "observations": [
+        "制作决定｜条纹以周向重复单元、单元内绝对 u 偏移、底色、条色和带宽参数化。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/ukrainian-source.jpg",
+          "role": "source",
+          "label": "用户提供的乌克兰套装参考照片（原样保存）",
+          "focus": {
+            "x": 50,
+            "y": 48
+          }
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T08:22:26.044Z",
+      "updated_at": "2026-11-02T08:22:26.044Z"
+    },
+    {
+      "id": "WW-UKR-001-M02",
+      "title": "motif｜黄紫混色毛线团流苏",
+      "record_type": "object",
+      "category": "布艺",
+      "status": "待考证",
+      "parent_id": "WW-UKR-001",
+      "collection_id": "ukrainian_photo_001",
+      "culture": {
+        "text": "乌克兰（用户提供）",
+        "attribution": "user"
+      },
+      "place": null,
+      "date_text": null,
+      "notes": "归属仅来自用户提供的“乌克兰套装”描述和本张参考照片；不推导地区、年代、工艺或所有乌克兰服饰的统一样式。照片作者、拍摄时间、地点、原始网址和授权待补。游戏模型按既有小人身体适配，身体未修改；背面、不可见连接及材质细节属于制作推演。\n当前配方 /assets/motifs/tassel-sash.tres；在“motif 参数资产”页查看并下载。",
+      "observations": [
+        "制作决定｜毛线段数、绒球数、长度、散开半径、线半径、球半径、双色和随机种子参数化。"
+      ],
+      "source": {
+        "author": null,
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/ukrainian-source.jpg",
+          "role": "source",
+          "label": "用户提供的乌克兰套装参考照片（原样保存）",
+          "focus": {
+            "x": 50,
+            "y": 48
+          }
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T08:22:26.044Z",
+      "updated_at": "2026-11-02T08:22:26.044Z"
+    },
+    {
+      "id": "WW-BASIC-000",
+      "title": "连衣裙",
+      "record_type": "component",
+      "category": "服装",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 0，模型 long_dress。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/long_dress-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-001",
+      "title": "围裙",
+      "record_type": "component",
+      "category": "服装",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 1，模型 apron。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/apron-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-002",
+      "title": "马甲",
+      "record_type": "component",
+      "category": "服装",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 2，模型 waistcoat。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/waistcoat-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-003",
+      "title": "衬衣",
+      "record_type": "component",
+      "category": "服装",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 3，模型 shirt。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/shirt-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-004",
+      "title": "长裤",
+      "record_type": "component",
+      "category": "服装",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 4，模型 trousers。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/trousers-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-005",
+      "title": "半裙",
+      "record_type": "component",
+      "category": "服装",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 5，模型 skirt。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/skirt-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-006",
+      "title": "贝雷帽",
+      "record_type": "component",
+      "category": "饰品",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 6，模型 beret。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/beret-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-007",
+      "title": "渔夫帽",
+      "record_type": "component",
+      "category": "饰品",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 7，模型 bucket_hat。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/bucket_hat-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-008",
+      "title": "宽檐帽",
+      "record_type": "component",
+      "category": "饰品",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 8，模型 sun_hat。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/sun_hat-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-009",
+      "title": "胸花",
+      "record_type": "component",
+      "category": "饰品",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 9，模型 flower。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/flower-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-010",
+      "title": "古巴领衬衫",
+      "record_type": "component",
+      "category": "服装",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 10，模型 cuban_shirt。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/cuban_shirt-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-011",
+      "title": "娃娃衫",
+      "record_type": "component",
+      "category": "服装",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 11，模型 babydoll_blouse。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/babydoll_blouse-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-012",
+      "title": "日常半裙",
+      "record_type": "component",
+      "category": "服装",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 12，模型 everyday_skirt。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/everyday_skirt-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-013",
+      "title": "V领背心",
+      "record_type": "component",
+      "category": "服装",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 13，模型 v_neck_tank。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/v_neck_tank-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    },
+    {
+      "id": "WW-BASIC-017",
+      "title": "布艺发箍",
+      "record_type": "component",
+      "category": "饰品",
+      "status": "已整理",
+      "collection_id": "ww_game_basics",
+      "parent_id": null,
+      "culture": null,
+      "place": null,
+      "date_text": null,
+      "notes": "W&W 游戏基础版型。对应游戏款式 17，模型 fabric_headband。外观可随所选布料改变。此条记录游戏模型与可调设计，不作为传统服饰考证结论。",
+      "observations": [
+        "发箍最窄与最宽尺寸可参数化调整。"
+      ],
+      "source": {
+        "author": "W&W 项目",
+        "captured_at": null,
+        "place": null,
+        "url": null,
+        "license": null
+      },
+      "media": [
+        {
+          "path": "/assets/fabric_headband-cover.png",
+          "role": "generated_concept",
+          "label": "游戏现有模型预览"
+        }
+      ],
+      "revision": 1,
+      "created_at": "2026-11-02T12:23:37.665Z",
+      "updated_at": "2026-11-02T12:23:37.665Z"
+    }
+  ]
+}

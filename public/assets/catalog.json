@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "assets": {
+    "WW-MOS-001": {
+      "model": "mosuo_ensemble",
+      "label": "摩梭人套装整体",
+      "cover": "/assets/mosuo_ensemble-cover.png",
+      "drawing": "/assets/mosuo_ensemble-uv.svg",
+      "drawing_label": "长裙 UV 展开"
+    },
+    "WW-MOS-001-C01": {
+      "model": "mosuo_headwear_001",
+      "label": "头饰（紫色米珠串为同一部件）",
+      "cover": "/assets/mosuo_headwear_001-cover.png"
+    },
+    "WW-MOS-001-C02": {
+      "model": "mosuo_top_001",
+      "label": "上衣",
+      "cover": "/assets/mosuo_top_001-cover.png",
+      "drawing": "/assets/mosuo_top_001-uv.svg",
+      "drawing_label": "上衣 UV 展开"
+    },
+    "WW-MOS-001-C03": {
+      "model": "mosuo_skirt_001",
+      "label": "长褶裙",
+      "cover": "/assets/mosuo_skirt_001-cover.png",
+      "drawing": "/assets/mosuo_skirt_001-uv.svg",
+      "drawing_label": "长裙 UV 展开"
+    },
+    "WW-MOS-001-P01": {
+      "model": "mosuo_insole_001",
+      "label": "玫红镶边鞋垫（手工对象）",
+      "cover": "/assets/mosuo_insole_001-cover.png"
+    },
+    "WW-GEN-001": {
+      "model": "basic_shoes",
+      "label": "通用基底鞋履（无文化归属）",
+      "cover": "/assets/basic_shoes-cover.png"
+    },
+    "WW-UKR-001": {
+      "model": "ukrainian_ensemble",
+      "label": "乌克兰套装整体",
+      "cover": "/assets/ukrainian_ensemble-cover.png"
+    },
+    "WW-UKR-001-C01": {
+      "model": "ukrainian_undershirt_001",
+      "label": "白色长衬衫衬裙与红丝带",
+      "cover": "/assets/ukrainian_undershirt_001-cover.png"
+    },
+    "WW-UKR-001-C02": {
+      "model": "ukrainian_overskirt_001",
+      "label": "黄紫绿条纹罩裙",
+      "cover": "/assets/ukrainian_overskirt_001-cover.png"
+    },
+    "WW-UKR-001-C03": {
+      "model": "ukrainian_apron_001",
+      "label": "紫色围裙",
+      "cover": "/assets/ukrainian_apron_001-cover.png"
+    },
+    "WW-UKR-001-C04": {
+      "model": "ukrainian_sash_001",
+      "label": "黄色缠绕腰带与黄紫毛线流苏",
+      "cover": "/assets/ukrainian_sash_001-cover.png"
+    },
+    "WW-UKR-001-C05": {
+      "model": "ukrainian_beads_001",
+      "label": "黑白多圈珠串",
+      "cover": "/assets/ukrainian_beads_001-cover.png"
+    },
+    "WW-BASIC-000": {
+      "model": "long_dress",
+      "label": "连衣裙",
+      "cover": "/assets/long_dress-cover.png"
+    },
+    "WW-BASIC-001": {
+      "model": "apron",
+      "label": "围裙",
+      "cover": "/assets/apron-cover.png"
+    },
+    "WW-BASIC-002": {
+      "model": "waistcoat",
+      "label": "马甲",
+      "cover": "/assets/waistcoat-cover.png"
+    },
+    "WW-BASIC-003": {
+      "model": "shirt",
+      "label": "衬衣",
+      "cover": "/assets/shirt-cover.png"
+    },
+    "WW-BASIC-004": {
+      "model": "trousers",
+      "label": "长裤",
+      "cover": "/assets/trousers-cover.png"
+    },
+    "WW-BASIC-005": {
+      "model": "skirt",
+      "label": "半裙",
+      "cover": "/assets/skirt-cover.png"
+    },
+    "WW-BASIC-006": {
+      "model": "beret",
+      "label": "贝雷帽",
+      "cover": "/assets/beret-cover.png"
+    },
+    "WW-BASIC-007": {
+      "model": "bucket_hat",
+      "label": "渔夫帽",
+      "cover": "/assets/bucket_hat-cover.png"
+    },
+    "WW-BASIC-008": {
+      "model": "sun_hat",
+      "label": "宽檐帽",
+      "cover": "/assets/sun_hat-cover.png"
+    },
+    "WW-BASIC-009": {
+      "model": "flower",
+      "label": "胸花",
+      "cover": "/assets/flower-cover.png"
+    },
+    "WW-BASIC-010": {
+      "model": "cuban_shirt",
+      "label": "古巴领衬衫",
+      "cover": "/assets/cuban_shirt-cover.png"
+    },
+    "WW-BASIC-011": {
+      "model": "babydoll_blouse",
+      "label": "娃娃衫",
+      "cover": "/assets/babydoll_blouse-cover.png"
+    },
+    "WW-BASIC-012": {
+      "model": "everyday_skirt",
+      "label": "日常半裙",
+      "cover": "/assets/everyday_skirt-cover.png"
+    },
+    "WW-BASIC-013": {
+      "model": "v_neck_tank",
+      "label": "V领背心",
+      "cover": "/assets/v_neck_tank-cover.png"
+    },
+    "WW-BASIC-017": {
+      "model": "fabric_headband",
+      "label": "布艺发箍",
+      "cover": "/assets/fabric_headband-cover.png"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "description": "真实游戏几何渲染，固定视角与比例；保留旧版并列参数组合。配方依赖项目中的 PathBraid 组件。",
+  "entries": [
+    {
+      "evidence_status": "通用节点生成样式",
+      "id": "legacy-single",
+      "image": "/assets/node-styles/legacy-single.png",
+      "label": "01  单圈盘旋 · 保留旧版",
+      "note": "通用节点样式；历史实现保留，不标为民族志发式。",
+      "parameters": {
+        "交叉节距 / m": 0.16,
+        "发色": "#171319",
+        "圈数": 1,
+        "径向厚度 / m": 0.055,
+        "纤维纹理强度": 0.5,
+        "编织股数": 3,
+        "辫半宽 / m": 0.075
+      },
+      "recipe": "/assets/node-styles/legacy-single.tres"
+    },
+    {
+      "evidence_status": "用户参考适配",
+      "id": "double-yak",
+      "image": "/assets/node-styles/double-yak.png",
+      "label": "02  双圈粗辫 · 当前适配",
+      "note": "依据 P1 与用户指认调整；不同穿戴者，材料未实物鉴定。",
+      "parameters": {
+        "交叉节距 / m": 0.35,
+        "发色": "#29252b",
+        "圈数": 2,
+        "径向厚度 / m": 0.062,
+        "纤维纹理强度": 0.5,
+        "编织股数": 3,
+        "辫半宽 / m": 0.128
+      },
+      "recipe": "/assets/node-styles/double-yak.tres"
+    },
+    {
+      "evidence_status": "通用节点生成样式",
+      "id": "double-loose",
+      "image": "/assets/node-styles/double-loose.png",
+      "label": "03  双圈 · 疏编",
+      "note": "仅改变交叉节距，展示较松的编排。",
+      "parameters": {
+        "交叉节距 / m": 0.48,
+        "发色": "#29252b",
+        "圈数": 2,
+        "径向厚度 / m": 0.065,
+        "纤维纹理强度": 0.5,
+        "编织股数": 3,
+        "辫半宽 / m": 0.12
+      },
+      "recipe": "/assets/node-styles/double-loose.tres"
+    },
+    {
+      "evidence_status": "通用节点生成样式",
+      "id": "double-dense",
+      "image": "/assets/node-styles/double-dense.png",
+      "label": "04  双圈 · 密编",
+      "note": "缩短交叉节距、减薄径向厚度。",
+      "parameters": {
+        "交叉节距 / m": 0.23,
+        "发色": "#29252b",
+        "圈数": 2,
+        "径向厚度 / m": 0.052,
+        "纤维纹理强度": 0.5,
+        "编织股数": 3,
+        "辫半宽 / m": 0.128
+      },
+      "recipe": "/assets/node-styles/double-dense.tres"
+    },
+    {
+      "evidence_status": "通用节点生成样式",
+      "id": "single-copper",
+      "image": "/assets/node-styles/single-copper.png",
+      "label": "05  单圈 · 棕色变体",
+      "note": "旧版单圈的颜色、宽度和节距变体；无文化归属。",
+      "parameters": {
+        "交叉节距 / m": 0.23,
+        "发色": "#82513c",
+        "圈数": 1,
+        "径向厚度 / m": 0.055,
+        "纤维纹理强度": 0.5,
+        "编织股数": 3,
+        "辫半宽 / m": 0.1
+      },
+      "recipe": "/assets/node-styles/single-copper.tres"
+    },
+    {
+      "evidence_status": "通用节点生成样式",
+      "id": "double-soft",
+      "image": "/assets/node-styles/double-soft.png",
+      "label": "06  双圈 · 宽厚变体",
+      "note": "增加辫宽与厚度；通用参数探索，不作历史断言。",
+      "parameters": {
+        "交叉节距 / m": 0.4,
+        "发色": "#383136",
+        "圈数": 2,
+        "径向厚度 / m": 0.078,
+        "纤维纹理强度": 0.5,
+        "编织股数": 3,
+        "辫半宽 / m": 0.15
+      },
+      "recipe": "/assets/node-styles/double-soft.tres"
+    }
+  ],
+  "schema": "ww-node-styles-v1",
+  "title": "路径发辫 · 节点生成样式"
+}
