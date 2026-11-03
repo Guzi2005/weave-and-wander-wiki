@@ -178,7 +178,11 @@ export function renderGuide({view, el, setNavCurrent, params}) {
 }
 export function renderContribute({view,el,setNavCurrent}) {
   setNavCurrent('contribute');
+  const publicSite = Boolean(document.querySelector('meta[name="ww-public"]'));
+  const links = publicSite
+    ? [['#/guide','游戏指南'],['#/archive','资料库'],['#/practice','答题练习'],['#/workshop','资产预览'],['#/node-styles','节点样式']]
+    : [['#/intake','收录资料'],['#/questions','编辑题库'],['#/workshop','资产预览'],['#/node-styles','节点样式'],['/api/export','备份资料'],['/api/game-export','导出审定题目']];
   view.replaceChildren(el('h1',{class:'page-title',text:'参与共创'}),el('div',{class:'card-grid'},[
-    ['#/intake','收录资料'],['#/questions','编辑题库'],['#/workshop','资产预览'],['#/node-styles','节点样式'],['/api/export','备份资料'],['/api/game-export','导出审定题目']
+    ...links
   ].map(([href,title])=>el('a',{class:'panel',href},[el('h2',{text:title})]))));
 }

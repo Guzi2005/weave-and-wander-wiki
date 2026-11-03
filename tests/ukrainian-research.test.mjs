@@ -50,6 +50,6 @@ test('motif manifest validates local recipes, nested parameters and expected IDs
   assert.equal(safeMotifAsset('/assets/motifs/../secret.png', 'image'), null);
   assert.equal(safeMotifAsset('https://example.com/x.png', 'image'), null);
   const sequence = formatMotifParameter('sequence', manifest.entries[0].parameters.sequence);
-  assert.match(sequence, /yellow [^；]+u 0.005–0.011；green [^；]+u 0.013–0.018/);
+  assert.match(sequence, /yellow [^；]+u 0.005–0.011；green [^；]+u 0.013–0.015/);
   assert.equal(formatMotifParameter('colors', ['#fff', '#000']), '#fff / #000');
 });

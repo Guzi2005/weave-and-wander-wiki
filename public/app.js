@@ -277,7 +277,7 @@ async function renderArchive(token, params) {
         el('nav', { class: 'archive-tools', 'aria-label': '资料工具' }, [
           el('a', { href: '#/node-styles', text: '节点样式 ↗' }),
           el('a', { href: '#/motifs', text: '纹样与材质 ↗' }),
-          el('a', { href: '#/intake', text: '收录资料 ＋' }),
+          ...(!PUBLIC_SITE ? [el('a', { href: '#/intake', text: '收录资料 ＋' })] : []),
         ]),
       ]),
       el('section', { class: 'archive-content', 'aria-labelledby': 'archive-title' }, [

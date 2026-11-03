@@ -122,7 +122,7 @@ function nodeStyleCard(entry, el, tag) {
       el('div', { class: 'form-actions' }, [
         el('a', { class: 'btn btn-quiet', href: entry.recipe, download: '', text: '下载 recipe (.tres)' }),
       ]),
-      ...(entry.id === 'double-yak' ? [sourceP1Block(el)] : []),
+      ...(entry.id === 'double-yak' && !document.querySelector('meta[name="ww-public"]') ? [sourceP1Block(el)] : []),
     ]),
   ]);
 }

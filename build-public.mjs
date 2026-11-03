@@ -9,7 +9,9 @@ const db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'u
 const catalog = JSON.parse(await readFile(path.join(source, 'assets', 'catalog.json'), 'utf8'));
 const PART_SIZE = 20 * 1024 * 1024;
 
-await rm(output, { recursive: true, force: true });
+try {
+  await rm(output, { recursive: true, force: true });
+} catch {}
 await mkdir(path.join(output, 'assets', 'models'), { recursive: true });
 for (const name of ['app.js', 'archive-layout.js', 'bead-physics.js', 'index.html', 'motif-preview.js', 'motif-recipe.js', 'motifs.js', 'node-styles.js', 'player-pages.js', 'questions.js', 'styles.css', 'viewer.js']) {
   await copyFile(path.join(source, name), path.join(output, name));
@@ -17,7 +19,7 @@ for (const name of ['app.js', 'archive-layout.js', 'bead-physics.js', 'index.htm
 let html = await readFile(path.join(output, 'index.html'), 'utf8');
 html = html.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta name="ww-public" content="true">');
 await writeFile(path.join(output, 'index.html'), html);
-for (const folder of ['vendor', 'assets/guide', 'assets/bench']) {
+for (const folder of ['vendor', 'assets/guide', 'assets/bench', 'assets/node-styles', 'assets/motifs']) {
   const from = path.join(source, folder);
   const to = path.join(output, folder);
   await mkdir(to, { recursive: true });
