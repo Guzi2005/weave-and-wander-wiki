@@ -67,24 +67,25 @@
     },
     {
       "id": "WW-Q-MOS-VIDEO-002",
-      "prompt": "按《什么是真正的摩梭？》06:28 的字幕，视频将母亲的称呼转写为什么？",
+      "prompt": "在时差岛《什么是真正的摩梭？》中，摩梭人对母亲的称呼写作什么？",
       "options": [
         "阿咪",
         "阿爸",
         "阿哥"
       ],
       "correct_index": 0,
-      "explanation": "视频字幕转写为“阿咪”。本题只要求辨读这一来源；语言／方言覆盖范围、发音与学术转写尚待独立核对。",
-      "evidence_note": "V-MOS-002｜06:28｜字幕“摩梭人把母亲叫做阿咪”；/assets/mosuo-video-388s.jpg。",
+      "explanation": "字幕写作“阿咪”。",
+      "evidence_note": "时差岛《什么是真正的摩梭？》，06:28。",
       "record_id": "WW-MOS-REF-002",
-      "record_revision": 2,
+      "record_revision": 3,
       "evidence_kind": "source",
-      "status": "draft",
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "revision": 1,
+      "status": "approved",
+      "reviewed_by": "Codex（核对视频字幕）",
+      "reviewed_at": "2026-11-04T09:25:55.507Z",
+      "revision": 2,
       "created_at": "2026-10-29T04:54:58.202Z",
-      "updated_at": "2026-10-29T04:54:58.202Z"
+      "updated_at": "2026-11-04T09:25:55.507Z",
+      "game_versions": []
     }
   ],
   "records": [
@@ -320,7 +321,8 @@
         }
       ],
       "created_at": "2026-10-28T00:00:00.000Z",
-      "updated_at": "2026-10-28T00:00:00.000Z"
+      "updated_at": "2026-10-28T00:00:00.000Z",
+      "revision": 1
     },
     {
       "id": "WW-MOS-REF-002",
