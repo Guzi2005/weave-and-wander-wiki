@@ -80,8 +80,8 @@ export function renderGuide({view, el, setNavCurrent, params}) {
   const entry = (text, id) => link(text, '#/guide?section=' + id);
   const paragraph = (...children) => el('p', {}, children);
   const keycap = key => el('kbd', {class:'input-keycap', text:key});
-  const mouse = text => el('span', {class:'input-command'}, [
-    el('span', {class:'input-mouse input-mouse-left', 'aria-hidden':'true'}, [
+  const mouse = (text, button = 'left') => el('span', {class:'input-command'}, [
+    el('span', {class:'input-mouse input-mouse-' + button, 'aria-hidden':'true'}, [
       el('span', {class:'input-mouse-wheel'}),
     ]),
     el('span', {text}),
@@ -115,6 +115,11 @@ export function renderGuide({view, el, setNavCurrent, params}) {
         [keycap('Esc'), '依次退出跟随、关闭衣橱或退出全屏'],
       ]),
       table('鼠标操作', ['输入', '操作'], [
+        [mouse('右键拖动', 'right'), '旋转观察角度'],
+        [mouse('中键拖动', 'middle'), '平移视图'],
+        [mouse('空白处左键拖动'), '平移视图'],
+        [mouse('滚轮', 'middle'), '推进 / 拉远视图，同时调整缩放'],
+        [el('span', {}, [keycap('Ctrl'), ' + ', mouse('滚轮', 'middle')]), '缩放视图'],
         [mouse('左键单击小人'), '跟随所点击的小人'],
         [mouse('按住左键拖动员工'), '在店内拖放员工，安排工作'],
         [mouse('左键单击设施'), '已选中员工时，在店内分配对应工作'],
@@ -132,8 +137,8 @@ export function renderGuide({view, el, setNavCurrent, params}) {
     {id:'mint', title:'前台薄荷糖', image:'mint', content:[
       paragraph('顾客离店前有机会去茶桌取糖，无需购物。员工也能取糖；需要持续恢复时，会使用', entry('长椅', 'rest'), '。'),
       table('取糖与体力', ['项目或条件', '规则'], [
-        ['员工每次取糖', '体力增加 5 个百分点，上限 100%'],
-        ['同一员工两次取糖间隔', '至少 45 秒模拟时间'],
+        ['员工每次取糖', '体力 +5%，≤ 100%'],
+        ['同一员工两次取糖间隔', '≥ 45 秒模拟时间'],
         ['员工体力 > 95%', '不能取糖'],
         ['糖碟余量较低', '员工停止主动取糖，优先留给顾客'],
       ]),
@@ -141,15 +146,15 @@ export function renderGuide({view, el, setNavCurrent, params}) {
         ['开局糖碟', '8 颗'],
         ['糖碟容量', '12 颗'],
         ['余量 ≤ 3 颗，且后备糖还有剩余', '安排一名空闲员工补货'],
-        ['每趟补货', '最多 6 颗'],
+        ['每趟补货', '≤ 6 颗'],
         ['每日后备糖', '12 颗；用完后当日停止补货'],
       ]),
     ]},
     {id:'staff', title:'员工个性', image:'staff', content:[
       paragraph('选中员工可查看个性。量力而行的员工较早休息，有始有终的员工倾向于做完当前工作。恢复倍率作用于', entry('坐休与小睡', 'rest'), '。'),
       table('个性影响', ['属性', '范围', '作用'], [
-        ['恢复倍率', '0.7–1.3 倍', '调整坐休、小睡的恢复速度'],
-        ['工速修正', '−5% 至 +15%', '调整按时间完成的岗位工作'],
+        ['恢复倍率', '×0.7 ~ ×1.3', '调整坐休、小睡的恢复速度'],
+        ['工速修正', '−5% ~ +15%', '调整按时间完成的岗位工作'],
         ['低体力', '15%', '停止硬撑，优先休息'],
       ]),
     ]},
@@ -204,7 +209,7 @@ export function renderGuide({view, el, setNavCurrent, params}) {
       ['quiz','答题','read','把观察到的服饰细节变成知识，在问答中回到资料寻找依据。','Wiki 已提供练习入口；游戏内答题流程与奖励正在筹备，公开练习内容随审定题目更新。','#/practice','进入练习'],
       ['market','赶集','mint','走进集市，与小贩和各色人物相遇，发现手作与物件。','集市活动、交易内容与开放安排正在筹备。','#/archive','先逛资料库'],
       ['fieldwork','采风','read','带着问题观察不同地方的衣饰、工艺与日常生活。','采风地点、记录方式与游戏内收集流程正在筹备。','#/archive','查看来源资料'],
-      ['exhibition','布展','staff','把收集与制作的成果组织成展示，让服饰与背后的故事一起被看见。','布展空间、展品摆放与观展互动正在筹备。','#/','浏览套装图鉴'],
+      ['exhibition','布展','exhibition','把收集与制作的成果组织成展示，让服饰与背后的故事一起被看见。先看整套穿着，再对照头饰、上衣、裙装等部件，沿来源链接阅读背后的故事。','布展空间、展品摆放与观展互动正在筹备。','#/','浏览套装图鉴'],
       ['residence','换个驻地','view','把旅途带到新的驻地，在新的环境中继续手作与探索。','驻地选择、迁移条件与物品携带规则正在筹备。','#/guide?section=start','回到起步指南'],
     ].map(([id,title,image,intro,note,href,label])=>({id,title,image,planned:true,content:[paragraph(intro),paragraph(note),paragraph(link(label,href))]})),
   );

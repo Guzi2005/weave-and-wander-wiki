@@ -2016,6 +2016,11 @@ body {
   content:"";position:absolute;left:0;top:0;width:50%;height:13px;
   background:var(--indigo);border-bottom:1px solid var(--ink-soft);
 }
+.input-mouse-right::before {
+  content:"";position:absolute;right:0;top:0;width:50%;height:13px;
+  background:var(--indigo);border-bottom:1px solid var(--ink-soft);
+}
+.input-mouse-middle .input-mouse-wheel { background:var(--indigo); }
 .input-mouse::after {
   content:"";position:absolute;top:0;left:50%;height:13px;border-left:1px solid var(--ink-soft);
 }
