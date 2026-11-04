@@ -17,6 +17,16 @@ test('actual exported bead mesh: chains move, stay finite and release cleanly',(
  const mesh=new T.SkinnedMesh(g,new T.MeshBasicMaterial());mesh.name='MosuoBeadStrands';nodes[index].name='BeadContainer';nodes[index].add(mesh);
  const skin=doc.skins[n.skin],inv=attribute(skin.inverseBindMatrices).array;
  const skeleton=new T.Skeleton(skin.joints.map(i=>nodes[i]),skin.joints.map((_,i)=>new T.Matrix4().fromArray(inv,i*16)));mesh.bind(skeleton,new T.Matrix4());scene.updateMatrixWorld(true);skeleton.update();
+ for (const name of ['MosuoBlouse','MosuoPleatedSkirt','MosuoBroadWaistSash']) {
+   const nodeIndex=doc.nodes.findIndex(node=>node.name===name);
+   const primitive=doc.meshes[doc.nodes[nodeIndex].mesh].primitives[0];
+   const geo=new T.BufferGeometry();
+   for(const [key,attr] of [['POSITION','position'],['JOINTS_0','skinIndex'],['WEIGHTS_0','skinWeight']])
+     geo.setAttribute(attr,attribute(primitive.attributes[key]));
+   const cloth=new T.SkinnedMesh(geo,new T.MeshBasicMaterial());
+   nodes[nodeIndex].add(cloth);
+   cloth.bind(skeleton,new T.Matrix4());
+ }
  const physics=createBeadPhysics(model,scene);assert.equal(physics.active,true);assert.equal(physics.strandCount,28);
  const initial=physics.solver.getChain(0).position.slice();
  for(let i=0;i<120;i++){model.rotation.y=Math.sin(i/30)*.4;physics.update(1/60);}

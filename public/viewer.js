@@ -60,6 +60,39 @@ export function mountViewer(container, options={}) {
   container.append(styleControls);
   const orbit=new OrbitControls(camera,renderer.domElement);orbit.enableDamping=true;orbit.minDistance=.4;orbit.maxDistance=12;
   const pivot=new T.Group();scene.add(pivot);
+  // OrbitControls owns elevation, pan and pinch. Horizontal dragging turns
+  // the physical frame, so a stationary camera still sees cloth lag behind.
+  orbit.minAzimuthAngle = orbit.maxAzimuthAngle = 0;
+  const pointers = new Map();
+  const canvas = renderer.domElement;
+  on(canvas,'pointerdown', e => { if (e.button === 0) pointers.set(e.pointerId,e.clientX); });
+  on(canvas,'pointermove', e => {
+    if (!pointers.has(e.pointerId)) return;
+    const dx = e.clientX - pointers.get(e.pointerId);
+    pointers.set(e.pointerId,e.clientX);
+    if (pointers.size === 1 && !e.ctrlKey && !e.shiftKey && !e.metaKey)
+      pivot.rotation.y += dx * Math.PI * 2 / Math.max(240,canvas.clientWidth);
+  });
+  for (const event of ['pointerup','pointercancel','lostpointercapture'])
+    on(canvas,event,e => pointers.delete(e.pointerId));
+  let lastYaw=0, clothLag=0, lagSpeed=0, hems=[];
+  function resetCloth() { lastYaw=pivot.rotation.y; clothLag=0; lagSpeed=0; }
+  function simulateCloth(dt) {
+    const turn = Math.atan2(Math.sin(pivot.rotation.y-lastYaw),Math.cos(pivot.rotation.y-lastYaw));
+    lastYaw=pivot.rotation.y;
+    clothLag=T.MathUtils.clamp(clothLag-turn,-.65,.65);
+    for(let remaining=dt; remaining>0.00001;) {
+      const h=Math.min(remaining,1/120);
+      lagSpeed+=(-55*clothLag-8*lagSpeed)*h;
+      clothLag+=lagSpeed*h; remaining-=h;
+    }
+    for(const hem of hems) {
+      const x=hem.rest.x, z=hem.rest.z;
+      hem.delta.set(x*(Math.cos(clothLag)-1)+z*Math.sin(clothLag),0,
+        z*(Math.cos(clothLag)-1)-x*Math.sin(clothLag));
+      hem.bone.position.add(hem.delta);
+    }
+  }
   const benchRoot=new T.Group();pivot.add(benchRoot);benchRoot.position.z=-.30;benchRoot.visible=false;
   let benchRequest;
   function ensureBench(){return benchRequest??=Promise.all([fetch('/assets/bench/bench.json').then(r=>{if(!r.ok)throw Error('bench');return r.json();}),fetch('/assets/bench/bench.bin').then(r=>{if(!r.ok)throw Error('bench');return r.arrayBuffer();})]).then(([info,bytes])=>{
@@ -158,7 +191,7 @@ export function mountViewer(container, options={}) {
   function fitHome(){const fov=T.MathUtils.degToRad(33/2),height=Math.max(modelSize.y,.5),width=Math.max(modelSize.x,modelSize.z,.5);homeCamera=homeTarget.clone().add(new T.Vector3(0,.15,1.15*Math.max(height/(2*Math.tan(fov)),width/(2*Math.tan(fov)*perspective.aspect))));orthoBounds(2*homeCamera.distanceTo(homeTarget)*Math.tan(fov),perspective.aspect);}
   let homeTarget=new T.Vector3(0,1.4,0),homeCamera=new T.Vector3(0,1.7,6);
   function setAngle(degrees){pivot.rotation.y=degrees*Math.PI/180;container.dataset.angle=pivot.rotation.y.toFixed(4);beadPhysics?.reset();}
-  function resetView(){setAngle(0);elapsed=0;orthographic.zoom=1;orthographic.updateProjectionMatrix();camera.position.copy(homeCamera);orbit.target.copy(homeTarget);orbit.update();}
+  function resetView(){setAngle(0);resetCloth();elapsed=0;orthographic.zoom=1;orthographic.updateProjectionMatrix();camera.position.copy(homeCamera);orbit.target.copy(homeTarget);orbit.update();}
   async function load(url){
     const serial=++request;state.modelReady=false;container.dataset.modelReady='false';container.dataset.animationTime='0.000';sync();
     try{
@@ -166,6 +199,8 @@ export function mountViewer(container, options={}) {
       if(disposed||serial!==request){release(gltf.scene);return;}
       if(model){clearStyle();beadPhysics?.dispose();beadPhysics=null;mixer?.stopAllAction();mixer?.uncacheRoot(model);pivot.remove(model);release(model);}
       model=gltf.scene;pivot.add(model);mixer=new T.AnimationMixer(model);currentAction=null;
+      hems=['HemL','HemR','HemFront','HemBack'].map(name=>model.getObjectByName(name))
+        .filter(Boolean).map(bone=>({bone,rest:bone.position.clone(),delta:new T.Vector3()}));
       beadPhysics=createBeadPhysics(model,scene);
       beadPhysics.setFurnitureRoot?.(benchRoot);
       updatePhysicsParameters();
@@ -209,12 +244,15 @@ export function mountViewer(container, options={}) {
     const speed=state.spinSpeed*(1+state.spinVariation*Math.sin(elapsed*Math.PI/2));
     if(state.mode==='spin')pivot.rotation.y+=T.MathUtils.degToRad(speed)*delta;
     container.dataset.angle=pivot.rotation.y.toFixed(4);container.dataset.animationTime=mixer.time.toFixed(3);
-    beadPhysics?.update(delta);
+
   }
   let previous=performance.now();
   function animate(now){
     if(disposed)return;frame=requestAnimationFrame(animate);const delta=Math.min((now-previous)/1000,.08);previous=now;
+    for(const hem of hems) { hem.bone.position.sub(hem.delta); hem.delta.set(0,0,0); }
     if(!state.paused)advanceMotion(delta);
+    simulateCloth(delta);
+    beadPhysics?.update(delta);
     if(currentAction&&c('motion-progress'))c('motion-progress').value=String(currentAction.time/currentAction.getClip().duration);
     orbit.update();renderer.render(scene,camera);
     container.dataset.triangles=String(renderer.info.render.triangles);

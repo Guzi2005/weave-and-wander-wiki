@@ -20,6 +20,7 @@ export function createBeadSolver(options = {}) {
   const maxSpeed = options.maxSpeed ?? 8; // 单位/秒，防爆保护
   const chains = [];
   const colliders = [];
+  let garmentContact = null;
   let accumulator = 0;
   let enabled = true;
 
@@ -151,9 +152,11 @@ export function createBeadSolver(options = {}) {
       if (chain.pins.has(i)) continue;
       const b = i * 3;
       for (const c of colliders) {
+        if (c.enabled === false) continue;
         if (c.kind === 'capsule') pushOutCapsule(p, b, c);
         else if (c.kind === 'ellipsoid') pushOutEllipsoid(p, b, c);
       }
+      if (garmentContact) garmentContact(p,b,i);
     }
   }
 
@@ -213,6 +216,7 @@ export function createBeadSolver(options = {}) {
 
   return {
     addChain, setAnchor, clearAnchor, addCollider, step, reset,
+    setGarmentContact(fn) { garmentContact = fn; },
     getCollider: i => colliders[i],
     getChain: i => chains[i],
     get chainCount() { return chains.length; },
@@ -379,11 +383,12 @@ function buildStrandCurve(run, segments) {
   return { curve, length };
 }
 
-function bakeColliders(model, solver) {
+function bakeColliders(model, solver, hasGarments) {
   const baked = [];
   const tmp = new THREE.Vector3();
   const tmpQ = new THREE.Quaternion();
   for (const def of COLLIDER_DEFS) {
+    if (hasGarments && def.kind === 'capsule' && def.bone === 'Hips') continue;
     const bone = model.getObjectByName(def.bone);
     if (!bone) continue;
     const bonePos = bone.getWorldPosition(new THREE.Vector3());
@@ -431,6 +436,50 @@ export function createBeadPhysics(model, scene, options = {}) {
   model.updateWorldMatrix(true, true);
   mesh.skeleton?.update?.();
 
+  // Sample the visible animated cloth into a front-depth map in torso space.
+  // Folding, hem-bone lag and waist trim are included by getVertexPosition.
+  const clothSamples=[];
+  const blouseSamples=[];
+  const clothPoint=new THREE.Vector3(), inverseTorso=new THREE.Matrix4();
+  const torso=model.getObjectByName('Spine') || headBone;
+  for(const name of ['MosuoBlouse','MosuoPleatedSkirt','MosuoBroadWaistSash','MosuoRaisedRedHemStripe']) {
+    model.getObjectByName(name)?.traverse(part=>{
+      if(!part.isMesh) return;
+      const count=part.geometry.attributes.position.count;
+      for(let i=0;i<count;i+=Math.max(1,Math.floor(count/2200))) {
+        const sample={part,i};
+        clothSamples.push(sample);
+        if(name==='MosuoBlouse') blouseSamples.push(sample);
+      }
+    });
+  }
+  function worldSample(sample,target) {
+    return sample.part.getVertexPosition(sample.i,target).applyMatrix4(sample.part.matrixWorld);
+  }
+  const cell=.045, cols=40, rows=88, depth=new Float32Array(cols*rows);
+  let clearance=.009;
+  function sampleClothes() {
+    inverseTorso.copy(torso.matrixWorld).invert();
+    depth.fill(-Infinity);
+    for(const sample of clothSamples) {
+      worldSample(sample,clothPoint).applyMatrix4(inverseTorso);
+      const x=Math.floor(clothPoint.x/cell)+20, y=Math.floor(clothPoint.y/cell)+54;
+      if(x<0||x>=cols||y<0||y>=rows) continue;
+      const k=y*cols+x;
+      depth[k]=Math.max(depth[k],clothPoint.z);
+    }
+  }
+  if(clothSamples.length) solver.setGarmentContact((p,b,i)=>{
+    clothPoint.fromArray(p,b).applyMatrix4(inverseTorso);
+    const x=Math.floor(clothPoint.x/cell)+20,y=Math.floor(clothPoint.y/cell)+54;
+    if(x<0||x>=cols||y<0||y>=rows||clothPoint.z<-.015) return;
+    const surface=depth[y*cols+x]+clearance;
+    if(clothPoint.z<surface) {
+      clothPoint.z=surface;
+      clothPoint.applyMatrix4(torso.matrixWorld).toArray(p,b);
+    }
+  });
+
   const runs = splitStrandRuns(
     sampleSkinnedVertices(mesh, options.sampleCount ?? 16000),
     options.strands ?? 28,
@@ -464,7 +513,15 @@ export function createBeadPhysics(model, scene, options = {}) {
     if (contact > 0) {
       const j = contact;
       const point=new THREE.Vector3(...built.curve[j]);
-      supports.push({index:j,local:spine.worldToLocal(point),bone:spine});
+      let nearest=null, distance=Infinity;
+      for(const sample of blouseSamples) {
+        worldSample(sample,clothPoint);
+        if(clothPoint.z<0 || clothPoint.x*point.x<0) continue;
+        const d=clothPoint.distanceToSquared(point);
+        if(d<distance) { nearest=sample; distance=d; }
+      }
+      supports.push({index:j,local:spine.worldToLocal(point),bone:spine,sample:nearest});
+
     }
     dressingSupports.push(supports);
     resetCurves.push(built.curve.map(p=>({bone:spine,local:spine.worldToLocal(new THREE.Vector3(...p))})));
@@ -472,7 +529,7 @@ export function createBeadPhysics(model, scene, options = {}) {
   }
   if (!chainIds.length) return handle;
 
-  const colliders = bakeColliders(model, solver);
+  const colliders = bakeColliders(model, solver, clothSamples.length > 0);
 
   // 动态珠子：单个 InstancedMesh，世界空间矩阵，共享几何体无需重算法线。
   const totalBeads = beadCounts.reduce((s, n) => s + n, 0);
@@ -520,7 +577,12 @@ export function createBeadPhysics(model, scene, options = {}) {
       headBone.localToWorld(tmpVec.copy(anchorLocals[k]));
       solver.setAnchor(chainIds[k], 0, tmpVec.x, tmpVec.y, tmpVec.z);
       for(const support of dressingSupports[k]){
-        support.bone.localToWorld(tmpVec.copy(support.local));
+        if(support.sample) {
+          worldSample(support.sample,tmpVec);
+          tmpVec.applyMatrix4(inverseTorso);
+          tmpVec.y+=clearance*.7; tmpVec.z+=clearance;
+          tmpVec.applyMatrix4(torso.matrixWorld);
+        } else support.bone.localToWorld(tmpVec.copy(support.local));
         solver.setAnchor(chainIds[k],support.index,tmpVec.x,tmpVec.y,tmpVec.z);
       }
     }
@@ -557,6 +619,7 @@ export function createBeadPhysics(model, scene, options = {}) {
     // 世界空间求解：锚点/碰撞体直接读骨骼 matrixWorld（含展台 pivot 旋转），
     // InstancedMesh 挂在场景根下写入世界矩阵，避免二次变换。
     model.updateWorldMatrix(true, true);
+    sampleClothes();
     syncAnchors();
     syncColliders();
     handle._syncFurniture?.();
@@ -580,7 +643,7 @@ export function createBeadPhysics(model, scene, options = {}) {
         });
         chain.previous.set(chain.position);
       }
-      syncAnchors();syncColliders();writeBeads();
+      sampleClothes();syncAnchors();syncColliders();writeBeads();
     }
   };
 
@@ -594,7 +657,7 @@ export function createBeadPhysics(model, scene, options = {}) {
     if (next) handle.reset();
   };
   handle.isEnabled = () => enabled;
-  handle.setParameters = parameters => {solver.setParameters(parameters);if(Number.isFinite(parameters.beadDiameter)){beadScale.setScalar(Math.max(.002,Math.min(.008,parameters.beadDiameter/2)));writeBeads();}};
+  handle.setParameters = parameters => {solver.setParameters(parameters);if(Number.isFinite(parameters.beadDiameter)){clearance=.005+parameters.beadDiameter/2;beadScale.setScalar(Math.max(.002,Math.min(.008,parameters.beadDiameter/2)));writeBeads();}};
   handle.setFurnitureRoot = function setFurnitureRoot(root) {
     if (!root) return;
     // The bench is a support surface, not a visual-only prop. Keep colliders
@@ -608,6 +671,7 @@ export function createBeadPhysics(model, scene, options = {}) {
     handle._syncFurniture = () => {
       for (const entry of local) {
         const collider = solver.getCollider(entry.index);
+        collider.enabled = root.visible;
         root.localToWorld(tmpVec.copy(entry.center));
         collider.center[0]=tmpVec.x; collider.center[1]=tmpVec.y; collider.center[2]=tmpVec.z;
         root.getWorldQuaternion(tmpQuat);
