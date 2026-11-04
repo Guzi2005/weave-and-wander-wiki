@@ -107,7 +107,7 @@ export function renderGuide({view, el, setNavCurrent, params}) {
         [entry('认识服饰', 'research'), '从套装进入部件档案，对照来源图像与三维模型。'],
       ]),
     ]},
-    {id:'view', title:'视图与窗口', image:null, content:[
+    {id:'view', title:'视图与窗口', image:'camera', content:[
       paragraph('先调整视角观察店铺，再查看', entry('员工个性', 'staff'), '与', entry('长椅休息', 'rest'), '。'),
       table('视图快捷键', ['按键', '操作'], [
         [keycap('F11'), '切换全屏'],
@@ -173,7 +173,7 @@ export function renderGuide({view, el, setNavCurrent, params}) {
     ]},
   ];
   chapters.push(
-    {id:'mobile', title:'手机与平板', image:null, content:[
+    {id:'mobile', title:'手机与平板', image:'mobile', content:[
       paragraph('手机和平板可以直接浏览 Wiki。游戏本体的触屏操作说明将在移动端适配完成后补充；本页的键盘快捷键对应桌面版。'),
       table('在触屏上查阅', ['想做什么', '操作'], [
         ['打开资料', '轻点条目名称；轻点带 3D 标记的图像进入模型预览。'],
@@ -182,7 +182,7 @@ export function renderGuide({view, el, setNavCurrent, params}) {
         ['切换来源与模型', '通过条目和模型入口切换，触屏无需依赖鼠标悬停。'],
       ]),
     ]},
-    {id:'wiki', title:'怎样使用 Wiki', image:null, content:[
+    {id:'wiki', title:'怎样使用 Wiki', image:'wiki', content:[
       paragraph('把 Wiki 当作随手翻阅的服饰图鉴与游戏说明书。从', link('资料库', '#/archive'), '寻找感兴趣的图像，再沿条目链接阅读套装、部件与相关资料。'),
       table('从问题找到入口', ['你的问题', '去哪里'], [
         ['这件衣服有哪些部件？', link('套装图鉴', '#/')],
@@ -193,7 +193,7 @@ export function renderGuide({view, el, setNavCurrent, params}) {
       ]),
       paragraph('正文中有下划线的条目名称可以继续点开。指南目录也可以直接跳到对应章节，分享当前地址即可定位到这一节。'),
     ]},
-    {id:'co-create', title:'一起共创', image:null, content:[
+    {id:'co-create', title:'一起共创', image:'co-create', content:[
       paragraph('你可以从一张照片、一条来源或一个制作方法开始参与。打开', link('参与共创', '#/contribute'), '查看入口；公开站目前以查阅为主，资料编辑与题目整理在本地研究模式中进行。'),
       table('可以贡献什么', ['内容', '一起提供的信息'], [
         ['图像与资料', '原始链接、作者或收藏机构，以及你想指出的部位。'],
@@ -204,14 +204,14 @@ export function renderGuide({view, el, setNavCurrent, params}) {
       paragraph('数字化编辑器系列成熟后，Wiki 将提供直达编辑器的入口。现在可以先从', link('节点样式', '#/node-styles'), '与', link('纹样和材质', '#/motifs'), '了解可生成的变化。'),
     ]},
     ...[
-      ['workshop-design','工坊设计','staff','规划自己的制作空间，围绕手作安排工坊。', '先通过资产预览熟悉服饰与部件；空间编辑和制作流程正在筹备。', '#/workshop','浏览资产'],
-      ['supply','供应目录','mint','查阅制作所需的材料与供应内容，为工坊准备物料。','供应目录、采购方式与材料消耗规则正在筹备。','#/motifs','认识纹样与材质'],
-      ['quiz','答题','read','把观察到的服饰细节变成知识，在问答中回到资料寻找依据。','Wiki 已提供练习入口；游戏内答题流程与奖励正在筹备，公开练习内容随审定题目更新。','#/practice','进入练习'],
-      ['market','赶集','mint','走进集市，与小贩和各色人物相遇，发现手作与物件。','集市活动、交易内容与开放安排正在筹备。','#/archive','先逛资料库'],
-      ['fieldwork','采风','read','带着问题观察不同地方的衣饰、工艺与日常生活。','采风地点、记录方式与游戏内收集流程正在筹备。','#/archive','查看来源资料'],
-      ['exhibition','布展','exhibition','把收集与制作的成果组织成展示，让服饰与背后的故事一起被看见。先看整套穿着，再对照头饰、上衣、裙装等部件，沿来源链接阅读背后的故事。','布展空间、展品摆放与观展互动正在筹备。','#/','浏览套装图鉴'],
-      ['residence','换个驻地','view','把旅途带到新的驻地，在新的环境中继续手作与探索。','驻地选择、迁移条件与物品携带规则正在筹备。','#/guide?section=start','回到起步指南'],
-    ].map(([id,title,_image,intro,note,href,label])=>({id,title,image:({market:'market',exhibition:'exhibition'})[id] ?? null,planned:true,content:[paragraph(intro),paragraph(note),paragraph(link(label,href))]})),
+      ['workshop-design','工坊设计','规划自己的制作空间，围绕手作安排工坊。', '先通过资产预览熟悉服饰与部件；空间编辑和制作流程正在筹备。', '#/workshop','浏览资产'],
+      ['supply','供应目录','查阅制作所需的材料与供应内容，为工坊准备物料。','供应目录、采购方式与材料消耗规则正在筹备。','#/motifs','认识纹样与材质'],
+      ['quiz','答题','把观察到的服饰细节变成知识，在问答中回到资料寻找依据。','Wiki 已提供练习入口；游戏内答题流程与奖励正在筹备，公开练习内容随审定题目更新。','#/practice','进入练习'],
+      ['market','赶集','走进集市，与小贩和各色人物相遇，发现手作与物件。','集市活动、交易内容与开放安排正在筹备。','#/archive','先逛资料库'],
+      ['fieldwork','采风','带着问题观察不同地方的衣饰、工艺与日常生活。','采风地点、记录方式与游戏内收集流程正在筹备。','#/archive','查看来源资料'],
+      ['exhibition','布展','把收集与制作的成果组织成展示，让服饰与背后的故事一起被看见。先看整套穿着，再对照头饰、上衣、裙装等部件，沿来源链接阅读背后的故事。','布展空间、展品摆放与观展互动正在筹备。','#/','浏览套装图鉴'],
+      ['residence','换个驻地','把旅途带到新的驻地，在新的环境中继续手作与探索。','驻地选择、迁移条件与物品携带规则正在筹备。','#/guide?section=start','回到起步指南'],
+    ].map(([id,title,intro,note,href,label])=>({id,title,image:id,planned:true,content:[paragraph(intro),paragraph(note),paragraph(link(label,href))]})),
   );
   const sections = chapters.map(chapter => el('section', {
     class:'guide-row', id:'guide-' + chapter.id, tabindex:'-1', 'aria-labelledby':'heading-' + chapter.id,
