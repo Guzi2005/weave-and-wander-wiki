@@ -162,7 +162,7 @@ function ensembleCard({record, components}) {
     el('div', {class:'ensemble-side'}, [
       articleLink(record, 'ensemble-title card-title'),
       el('div', {class:'ensemble-components'}, components.map(component =>
-        el('div', {class:'ensemble-component'}, [
+        el('div', {class:'ensemble-component', 'data-record-id':component.id}, [
           atlasImage(component, 'component-thumb'),
           articleLink(component, 'component-title'),
         ])
@@ -341,7 +341,14 @@ async function renderDetail(token, id) {
     const src = safeImgSrc(media.path);
     if (src) {
       // 详情主图默认显示完整原图，不做 CSS 裁切。
-      const photo = el('img', {src, alt:media.label || record.title});
+      const photo = el('img', {
+        src, alt:media.label || record.title, loading:'eager', decoding:'sync',
+        ...(record.record_type === 'component' || record.id.endsWith('-P01') ? {class:'detail-source-crop'} : {}),
+      });
+      if (photo.classList.contains('detail-source-crop')) {
+        const focus = media.focus || {x:50,y:50};
+        photo.style.objectPosition = `${focus.x}% ${focus.y}%`;
+      }
       const model = GAME_ASSETS[record.id]?.model;
       mainBox.append(model ? el('a', {class:'source-to-model', href:'#/workshop?model=' + encodeURIComponent(model), 'aria-label':'预览模型 · ' + record.title}, [photo, el('span', {class:'atlas-action', text:'3D ↗'})]) : photo);
       fullLink.href = src;
@@ -609,7 +616,17 @@ async function renderDetail(token, id) {
   mediaPanel.classList.add('source-column');
   mediaPanel.querySelector('h2').textContent='来源图像';
   compare.append(mediaPanel);
-  if(asset?.drawing){compare.append(el('section',{class:'drawing-column'},[el('h2',{text:'图纸'}),el('img',{src:asset.drawing,alt:asset.drawing_label}),el('p',{class:'hint',text:asset.drawing_label+' · 模型展开，非裁剪纸样'})]));}
+  if(asset?.drawing){
+    const drawingStatus=el('p',{class:'hint drawing-status',text:asset.drawing_label+' · 模型展开，非裁剪纸样'});
+    const drawing=el('img',{src:asset.drawing,alt:asset.drawing_label,loading:'lazy'});
+    drawing.addEventListener('load',()=>drawing.closest('.drawing-column')?.classList.add('is-ready'),{once:true});
+    drawing.addEventListener('error',()=>{
+      drawing.hidden=true;
+      drawingStatus.textContent='图纸资源暂不可用';
+      drawing.closest('.drawing-column')?.classList.add('is-missing');
+    },{once:true});
+    compare.append(el('section',{class:'drawing-column'},[el('h2',{text:'图纸'}),drawing,drawingStatus]));
+  }
   let detailViewer;
   if(asset){
     detailViewer=el('div',{class:'model-viewer detail-model'});
@@ -629,7 +646,7 @@ async function renderDetail(token, id) {
       tag(record.category), ' ', tag(record.status, `status-${record.status}`), ' ',
       tag(record.record_type || 'object'),
     ]),
-    flash,compare,
+    ...(flash ? [flash] : []),compare,
     el('div', { class: 'detail-layout' }, [
       el('div', {}, [provenancePanel, assetPanel]),
       el('div', {}, [
@@ -640,7 +657,7 @@ async function renderDetail(token, id) {
   if(detailViewer){
     const label = el('span',{class:'atlas-action',text:'打开三维模型'});
     const open=el('button',{class:'detail-poster',type:'button','aria-label':'打开三维模型 · '+asset.label},[
-      el('img',{src:asset.cover,alt:'',decoding:'async'}),label
+      el('img',{src:asset.cover,alt:'',decoding:'sync',loading:'eager'}),label
     ]);
     detailViewer.append(open);
     open.onclick=async()=>{

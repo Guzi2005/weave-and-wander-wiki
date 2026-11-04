@@ -25,7 +25,7 @@ for (const folder of ['vendor', 'assets/guide', 'assets/bench', 'assets/node-sty
   await mkdir(to, { recursive: true });
   await cp(from, to, { recursive: true, force: true });
 }
-const safeAsset = /^(?:[a-z0-9_-]+-cover\.png|[a-z0-9_-]+-uv\.svg|ww-logo\.jpg)$/i;
+const safeAsset = /^(?:[a-z0-9_-]+-cover\.png|[a-z0-9_-]+-uv\.svg|ww-logo\.jpg|source\.png|ukrainian-source\.jpg)$/i;
 for (const name of await readdir(path.join(source, 'assets'))) {
   if (safeAsset.test(name)) await copyFile(path.join(source, 'assets', name), path.join(output, 'assets', name));
 }
@@ -45,6 +45,7 @@ for (const name of ['bench', ...modelNames]) {
   }
 }
 
+const PUBLIC_SOURCE_MEDIA = new Set(['/assets/source.png', '/assets/ukrainian-source.jpg']);
 const publicRecords = db.records.map(r => ({
   id:r.id, title:r.title, record_type:r.record_type, category:r.category,
   status:r.status, parent_id:r.parent_id, collection_id:r.collection_id,
@@ -52,7 +53,9 @@ const publicRecords = db.records.map(r => ({
   observations:(r.observations || []).filter(x => !/\/(?:assets|media)\//.test(x)),
   source:{author:r.source?.author || null,captured_at:r.source?.captured_at || null,
     place:r.source?.place || null,url:r.source?.url || null,license:r.source?.license || null},
-  media:[], revision:r.revision, created_at:r.created_at, updated_at:r.updated_at,
+  media:(r.media || []).filter(m => m.role === 'source' && PUBLIC_SOURCE_MEDIA.has(m.path))
+    .map(m => ({path:m.path, role:'source', label:m.label, focus:m.focus || {x:50,y:50}})),
+  revision:r.revision, created_at:r.created_at, updated_at:r.updated_at,
 }));
 const publicQuestions = db.questions.filter(q => q.status === 'approved' &&
   q.record_revision === db.records.find(r => r.id === q.record_id)?.revision)
@@ -107,4 +110,4 @@ export default {async fetch(request,env){
 `;
 await writeFile(path.join(output, '_worker.js'), worker);
 await writeFile(path.join(output, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Content-Security-Policy: default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; connect-src 'self' blob:\n`);
-console.log(`Public build: ${publicRecords.length} records, ${publicQuestions.length} approved questions, ${modelNames.size} models; original photos and local data excluded.`);
+console.log(`Public build: ${publicRecords.length} records, ${publicQuestions.length} approved questions, ${modelNames.size} models; curated source images included.`);

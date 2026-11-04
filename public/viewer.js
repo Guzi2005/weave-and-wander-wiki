@@ -74,8 +74,8 @@ export function mountViewer(container, options={}) {
   scene.add(new T.HemisphereLight(0xfff8ec,0x7a756d,0.35));
   const light=new T.DirectionalLight(0xfff6e7,0.65);light.position.set(-3,5,4);scene.add(light);
   const floor=new T.Mesh(new T.CircleGeometry(1.3,64),new T.MeshBasicMaterial({color:0xdad2c1}));
-  floor.rotation.x=-Math.PI/2;floor.position.y=-.015;scene.add(floor);
-  const grid=new T.GridHelper(3.2,16,0xbeb6a3,0xd8d1c2);grid.position.y=-.01;scene.add(grid);
+  floor.rotation.x=-Math.PI/2;floor.position.y=-.015;floor.visible=false;scene.add(floor);
+  const grid=new T.GridHelper(3.2,16,0xbeb6a3,0xd8d1c2);grid.position.y=-.01;grid.visible=false;scene.add(grid);
   const actions={},outputs=options.outputs||{};
   function on(target,event,fn){if(target){target.addEventListener(event,fn);listeners.push([target,event,fn]);}}
   function applyStyle(){

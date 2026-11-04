@@ -6,7 +6,7 @@
       "label": "摩梭人套装整体",
       "cover": "/assets/mosuo_ensemble-cover.png",
       "drawing": "/assets/mosuo_ensemble-uv.svg",
-      "drawing_label": "长裙 UV 展开"
+      "drawing_label": "套装 UV 展开"
     },
     "WW-MOS-001-C01": {
       "model": "mosuo_headwear_001",
@@ -40,27 +40,37 @@
     "WW-UKR-001": {
       "model": "ukrainian_ensemble",
       "label": "乌克兰套装整体",
-      "cover": "/assets/ukrainian_ensemble-cover.png"
+      "cover": "/assets/ukrainian_ensemble-cover.png",
+      "drawing": "/assets/ukrainian_ensemble-uv.svg",
+      "drawing_label": "套装 UV 展开"
     },
     "WW-UKR-001-C01": {
       "model": "ukrainian_undershirt_001",
       "label": "白色长衬衫衬裙与红丝带",
-      "cover": "/assets/ukrainian_undershirt_001-cover.png"
+      "cover": "/assets/ukrainian_undershirt_001-cover.png",
+      "drawing": "/assets/ukrainian_undershirt_001-uv.svg",
+      "drawing_label": "衬衫与衬裙 UV 展开"
     },
     "WW-UKR-001-C02": {
       "model": "ukrainian_overskirt_001",
       "label": "黄紫绿条纹罩裙",
-      "cover": "/assets/ukrainian_overskirt_001-cover.png"
+      "cover": "/assets/ukrainian_overskirt_001-cover.png",
+      "drawing": "/assets/ukrainian_overskirt_001-uv.svg",
+      "drawing_label": "罩裙 UV 展开"
     },
     "WW-UKR-001-C03": {
       "model": "ukrainian_apron_001",
       "label": "紫色围裙",
-      "cover": "/assets/ukrainian_apron_001-cover.png"
+      "cover": "/assets/ukrainian_apron_001-cover.png",
+      "drawing": "/assets/ukrainian_apron_001-uv.svg",
+      "drawing_label": "围裙 UV 展开"
     },
     "WW-UKR-001-C04": {
       "model": "ukrainian_sash_001",
       "label": "黄色缠绕腰带与黄紫毛线流苏",
-      "cover": "/assets/ukrainian_sash_001-cover.png"
+      "cover": "/assets/ukrainian_sash_001-cover.png",
+      "drawing": "/assets/ukrainian_sash_001-uv.svg",
+      "drawing_label": "腰带 UV 展开"
     },
     "WW-UKR-001-C05": {
       "model": "ukrainian_beads_001",

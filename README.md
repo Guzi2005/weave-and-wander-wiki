@@ -1,12 +1,16 @@
-# W&W Wiki · 本地图像档案
+# W&W Wiki · 服饰研究档案
 
-以图像为入口的本地研究档案。当前仅本机运行，尚未发布到域名。
+以图像为入口，连接来源档案、数字化模型、参数工坊与游戏题库。
+
+公开只读站点：<https://ww-wiki.fluorescentmice.fun/>；源码仓库：<https://github.com/Guzi2005/weave-and-wander-wiki>。本地研究模式保留编辑、导入与审核功能，公开构建仅发布经过筛选的档案字段与媒体。
 
 ## 启动与检查
 
 在本目录运行 `D:\NodeJS\node.exe server.mjs`，打开 <http://127.0.0.1:4318/>。服务只绑定 `127.0.0.1`，不向局域网或公网开放。
 
 检查命令：`npm run check`；测试命令：`D:\NodeJS\node.exe --test tests/*.test.mjs`。测试使用临时数据，不覆盖个人档案。
+
+公开构建运行 `npm run build:public`，产物位于 `dist-public/`，部署到 Cloudflare Pages 项目 `ww-wiki`。自定义域名与 Pages 默认域名指向同一构建。
 
 ## 已有功能
 
