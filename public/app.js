@@ -1,4 +1,5 @@
 import {renderPractice,renderHome,renderGuide,renderContribute} from '/player-pages.js';
+import {REGION_TAGS, ETHNIC_TAGS} from '/tag-presets.js';
 // W&W Wiki 前端：hash 路由 + 原生 DOM。所有记录字段经 textContent 渲染，不注入 HTML。
 const cleanupViewer = handle => handle?.cleanup();
 import { renderQuestions } from '/questions.js';
@@ -270,6 +271,14 @@ async function renderArchive(token, params) {
   view.replaceChildren(
     el('div', { class: 'archive-layout' }, [
       el('aside', { class: 'archive-sidebar', 'aria-label': '资料库目录' }, [
+        ...[['省级行政区', REGION_TAGS], ['民族', ETHNIC_TAGS]].map(([label, tags]) => el('details', {class:'preset-directory'}, [
+          el('summary', {text:label}),
+          ...tags.map(text => {
+            const button = el('button', {type:'button', class:'filter-token', text});
+            button.onclick = () => { qInput.value = text; load(); };
+            return button;
+          }),
+        ])),
         el('details', { class: 'category-directory', ...(matchMedia('(min-width:641px)').matches ? {open:''} : {}) }, [
           el('summary', { text: '资料类别' }),
           el('nav', { class: 'category-list', 'aria-label': '按类别筛选' }, categoryButtons.map(item => item.button)),

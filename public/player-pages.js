@@ -211,7 +211,7 @@ export function renderGuide({view, el, setNavCurrent, params}) {
   const sections = chapters.map(chapter => el('section', {
     class:'guide-row', id:'guide-' + chapter.id, tabindex:'-1', 'aria-labelledby':'heading-' + chapter.id,
   }, [
-    chapter.image ? el('img', {class:'guide-illustration', src:'/assets/guide/' + chapter.image + '-game-blocks.png', alt:chapter.title, loading:'lazy'}) : null,
+    chapter.image ? el('img', {class:'guide-illustration', src:'/assets/guide/' + (chapter.id === 'market' ? 'market' : chapter.image) + '-game-blocks.png', alt:chapter.title, loading:'lazy'}) : null,
     el('div', {class:'guide-text'}, [
       el('h2', {id:'heading-' + chapter.id}, [entry(chapter.title, chapter.id)]),
       ...(chapter.planned ? [el('span',{class:'guide-planned',text:'筹备中'})] : []),

@@ -13,6 +13,7 @@ try {
   await rm(output, { recursive: true, force: true });
 } catch {}
 await mkdir(path.join(output, 'assets', 'models'), { recursive: true });
+await copyFile(path.join(source, 'tag-presets.js'), path.join(output, 'tag-presets.js'));
 for (const name of ['app.js', 'archive-layout.js', 'bead-physics.js', 'index.html', 'motif-preview.js', 'motif-recipe.js', 'motifs.js', 'node-styles.js', 'player-pages.js', 'questions.js', 'styles.css', 'viewer.js']) {
   await copyFile(path.join(source, name), path.join(output, name));
 }
