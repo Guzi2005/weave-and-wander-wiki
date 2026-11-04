@@ -98,6 +98,15 @@ export function renderGuide({view, el, setNavCurrent, params}) {
     ]);
   }
   const chapters = [
+    {id:'start', title:'第一次开店', image:'view', content:[
+      paragraph('从观察店铺开始：选中一名员工，安排一次工作，再留意体力与休息。熟悉这一轮之后，再逐步安排其他员工。'),
+      table('上手顺序', ['先做什么', '接下来留意'], [
+        [entry('观察与选择', 'view'), '单击小人跟随观察；需要回到全店视角时按 Home。'],
+        [entry('安排工作', 'staff'), '拖放员工，或选中员工后单击设施。查看个性，了解工作与恢复节奏。'],
+        [entry('照顾体力', 'rest'), '留出长椅空位，体力很低时需要两个相邻空位才能躺下。'],
+        [entry('认识服饰', 'research'), '从套装进入部件档案，对照来源图像与三维模型。'],
+      ]),
+    ]},
     {id:'view', title:'视图与窗口', image:'view', content:[
       paragraph('先调整视角观察店铺，再查看', entry('员工个性', 'staff'), '与', entry('长椅休息', 'rest'), '。'),
       table('视图快捷键', ['按键', '操作'], [
@@ -136,7 +145,7 @@ export function renderGuide({view, el, setNavCurrent, params}) {
         ['每日后备糖', '12 颗；用完后当日停止补货'],
       ]),
     ]},
-    {id:'staff', title:'员工个性', content:[
+    {id:'staff', title:'员工个性', image:'staff', content:[
       paragraph('选中员工可查看个性。量力而行的员工较早休息，有始有终的员工倾向于做完当前工作。恢复倍率作用于', entry('坐休与小睡', 'rest'), '。'),
       table('个性影响', ['属性', '范围', '作用'], [
         ['恢复倍率', '0.7–1.3 倍', '调整坐休、小睡的恢复速度'],
@@ -150,6 +159,12 @@ export function renderGuide({view, el, setNavCurrent, params}) {
         link('乌克兰套装', '#/record/WW-UKR-001'), '查看整套与部件的关系。'),
       paragraph('阅读原图与出处后，进入', link('答题练习', '#/practice'), '；答案解析会链接回相关资料。制作时可查阅',
         link('节点样式', '#/node-styles'), '与', link('纹样和材质', '#/motifs'), '。'),
+      table('看图时可以做什么', ['入口', '用途'], [
+        ['套装与部件', '先看穿着整体，再查看头饰、上衣、裙装等局部。'],
+        ['来源图像', '观察照片里的纹样、配色与佩戴位置；打开原图查看细节。'],
+        ['三维模型', '转动模型观察不同角度，对照游戏中的数字化呈现。'],
+        ['图纸', '查看模型 UV 展开；它用于贴图定位，并不是可直接裁布的纸样。'],
+      ]),
     ]},
   ];
   const sections = chapters.map(chapter => el('section', {
