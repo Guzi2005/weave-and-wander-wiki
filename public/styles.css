@@ -2095,6 +2095,7 @@ body {
 .preview-style { background:rgba(250,249,242,.82); }
 
 /* Compact research layout: dense alignment, consistent baselines, restrained whitespace. */
+.guide-planned { display:inline-block;margin:0 0 6px;color:var(--ink-soft);font:11px/1.4 var(--sans); }
 .wrap { max-width:1480px;padding-inline:clamp(18px,2.4vw,34px); }
 #main { padding-top:0; }
 .archive-layout { grid-template-columns:152px minmax(0,1fr);gap:26px;margin-top:18px; }
