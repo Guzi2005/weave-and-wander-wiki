@@ -2172,6 +2172,8 @@ body {
 .guide-heading .page-title { font-size:30px; }
 .guide-chapters { margin:20px 0 36px; }
 .guide-row { grid-template-columns:138px minmax(0,1fr);gap:22px;margin-bottom:28px; }
+.guide-row > .guide-illustration { grid-column:1;grid-row:1; }
+.guide-row > .guide-text { grid-column:2;grid-row:1;min-width:0; }
 .guide-illustration { width:138px;height:138px; }
 .rule-table-scroll { margin:10px 0 16px; }
 .rule-table th,.rule-table td { padding:7px 10px; }
