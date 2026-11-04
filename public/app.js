@@ -922,7 +922,7 @@ async function renderWorkshop(params, token) {
           el('label', { for: 'bead-size', text: '珠径（模型单位）' }),
           el('div', { class: 'control-row' }, [beadInput, beadOut]),
           el('div', { class: 'form-actions' }, [resetPhysicsBtn]),
-          el('p', { class: 'hint', text: '头饰珠串自肩头搭至胸前的披挂段为固定布置，随身体姿态烘焙；物理求解只驱动自由下垂的末端珠串。重播动作会同时把珠串重置回当前姿态。' }),
+          el('p', { class: 'hint', text: '珠串从头饰绕过肩头，垂在身前。播放动作可观察肩头两侧的珠串如何随重力落下。' }),
           el('p', { class: 'hint', text: '紫色米珠串属于头饰。几何参数在 Godot 原生研究台调节：珠径、重复单元、紧密度、辫冠、朝上头花及挂点；本页查看导出的模型。' }),
         ], false),
         el('div', { class: 'form-actions' }, [

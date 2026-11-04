@@ -2200,3 +2200,16 @@ body {
   .guide-row { grid-template-columns:76px minmax(0,1fr);gap:10px;margin-bottom:20px; }
   .guide-illustration { width:76px;height:76px; }
 }
+
+.guide-event-art {display:block;max-width:100%;width:auto;max-height:170px;margin:12px 0;}
+.practice-stage {max-width:640px;margin:18px auto;padding:clamp(16px,4vw,32px);border-radius:22px;background:#fff9eb;border:1px solid #d6dfce;color:#283e37;}
+.practice-stage fieldset {border:0;margin:0;padding:0;min-width:0;}
+.practice-stage legend {font-weight:700;font-size:1.15rem;margin-bottom:12px;}
+.practice-stage progress {width:100%;height:12px;accent-color:#27816e;}
+.practice-option {display:flex;align-items:center;gap:12px;min-height:44px;margin:8px 0;padding:5px 16px;border:2px solid #cddacb;border-radius:15px;background:#fff;cursor:pointer;}
+.practice-option:has(:checked) {background:#dff3e7;border-color:#388370;}
+.practice-option:focus-within {outline:2px solid #484381;outline-offset:2px;}
+.practice-stage .btn {border-radius:16px;background:#286e60;color:white;padding:10px 20px;margin-top:10px;}
+.practice-stage .btn:disabled {background:#d7dfd7;color:#4c5d52;}
+.practice-feedback {margin-top:14px;padding:12px 16px;border-radius:16px;background:#e1f1e5;}
+.practice-feedback.retry {background:#f8e6cf;}

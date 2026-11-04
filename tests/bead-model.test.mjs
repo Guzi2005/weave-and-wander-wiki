@@ -25,7 +25,7 @@ test('actual exported bead mesh: chains move, stay finite and release cleanly',(
  model.rotation.y=0;physics.reset();
  for(let i=0;i<600;i++)physics.update(1/60);
  const chain=physics.solver.getChain(0),last=chain.position.length-3;
- assert.ok(chain.pins.size>1 && chain.pins.size<chain.count/2,'preserve shoulder support, leave lower majority free');
+ assert.ok(chain.pins.size===2,'preserve shoulder support, leave lower majority free');
  assert.ok(chain.position[last+2]>0,'settled free end must stay in front of body');
  assert.ok(chain.position[last+1]<1,'free end hangs below waist');
  // A horizontal pose must not reclassify strands by world-space height.

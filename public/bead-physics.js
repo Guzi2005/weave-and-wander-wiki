@@ -455,17 +455,16 @@ export function createBeadPhysics(model, scene, options = {}) {
     chainIds.push(id);
     // 头端随头骨移动，绕肩承托段在下方单独保存。
     anchorLocals.push(headBone.worldToLocal(new THREE.Vector3(...built.curve[0])));
-    // The fitted nape-to-shoulder route is part of how this adornment is worn.
-    // Preserve its supported section; only the chain beyond the front shoulder
-    // is free. A head-only pendulum incorrectly drops the whole bundle behind.
+    // Only the head attachment and the shoulder guide constrain the drape.
     const spine=model.getObjectByName('Spine')||headBone;
     const shoulderY=spine.getWorldPosition(new THREE.Vector3()).y+.30;
     let contact=0;
     for(let j=0;j<built.curve.length-1;j++)if(built.curve[j][1]>=shoulderY)contact=j;
     const supports=[];
-    for(let j=0;j<=contact;j++){
+    if (contact > 0) {
+      const j = contact;
       const point=new THREE.Vector3(...built.curve[j]);
-      supports.push({index:j,head:headBone.worldToLocal(point.clone()),spine:spine.worldToLocal(point.clone()),bone:spine,blend:contact?j/contact:0});
+      supports.push({index:j,local:spine.worldToLocal(point),bone:spine});
     }
     dressingSupports.push(supports);
     resetCurves.push(built.curve.map(p=>({bone:spine,local:spine.worldToLocal(new THREE.Vector3(...p))})));
@@ -521,9 +520,7 @@ export function createBeadPhysics(model, scene, options = {}) {
       headBone.localToWorld(tmpVec.copy(anchorLocals[k]));
       solver.setAnchor(chainIds[k], 0, tmpVec.x, tmpVec.y, tmpVec.z);
       for(const support of dressingSupports[k]){
-        headBone.localToWorld(tmpVec.copy(support.head));
-        support.bone.localToWorld(tmpVecB.copy(support.spine));
-        tmpVec.lerp(tmpVecB,support.blend);
+        support.bone.localToWorld(tmpVec.copy(support.local));
         solver.setAnchor(chainIds[k],support.index,tmpVec.x,tmpVec.y,tmpVec.z);
       }
     }

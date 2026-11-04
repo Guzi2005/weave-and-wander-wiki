@@ -8,7 +8,7 @@ export async function renderPractice({view,el,api,setNavCurrent,isStale,token}) 
   if(isStale(token))return;
   const questions=eligibleQuestions(data.questions);
   const adopted=el('input',{type:'checkbox',id:'adopted-only'});
-  const stage=el('div',{class:'panel'});
+  const stage=el('div',{class:'practice-stage'});
   let active=[],index=0,score=0;
   function restart(){active=questions.filter(q=>!adopted.checked||q.game_versions?.length);index=0;score=0;draw();}
   function draw(){
@@ -17,15 +17,16 @@ export async function renderPractice({view,el,api,setNavCurrent,isStale,token}) 
     if(index===active.length){const again=el('button',{class:'btn',text:'再练一次'});again.onclick=restart;stage.append(el('h2',{text:`完成 · ${score} / ${active.length}`}),again);return;}
     const q=active[index];let selected=null;
     const choices=el('fieldset',{},[el('legend',{text:q.prompt})]);
-    q.options.forEach((text,i)=>{const input=el('input',{type:'radio',name:'answer',value:i});input.onchange=()=>{selected=i;submit.disabled=false;};choices.append(el('label',{style:'display:block;padding:10px 0'},[input,' ',text]));});
+    q.options.forEach((text,i)=>{const input=el('input',{type:'radio',name:'answer',value:i});input.onchange=()=>{selected=i;submit.disabled=false;};choices.append(el('label',{class:'practice-option'},[input,' ',text]));});
     const submit=el('button',{class:'btn',text:'提交答案'});submit.disabled=true;
     const feedback=el('div',{role:'status'});
-    submit.onclick=()=>{submit.disabled=true;choices.disabled=true;if(selected===q.correct_index)score++;
+    submit.onclick=()=>{submit.disabled=true;choices.disabled=true;stage.querySelector('progress').value=index+1;if(selected===q.correct_index)score++;
       const next=el('button',{class:'btn',text:index+1===active.length?'查看结果':'下一题'});
       next.onclick=()=>{index++;draw();};
+      feedback.className = selected === q.correct_index ? 'practice-feedback correct' : 'practice-feedback retry';
       feedback.replaceChildren(el('h3',{text:selected===q.correct_index?'回答正确':`正确答案：${q.options[q.correct_index]}`}),el('p',{text:q.explanation}),el('p',{text:q.evidence_note}),el('a',{href:`#/record/${encodeURIComponent(q.record_id)}`,text:'查看来源'}),el('div',{class:'form-actions'},[next]));
     };
-    stage.append(el('p',{text:`${index+1} / ${active.length}`}),choices,submit,feedback);
+    stage.append(el('progress',{max:active.length,value:index,'aria-label':'已完成题数'}),el('p',{text:`第 ${index+1} 题 / 共 ${active.length} 题`}),choices,submit,feedback);
   }
   adopted.onchange=restart;
   view.replaceChildren(el('h1',{class:'page-title',text:'答题练习'}),el('label',{},[adopted,' 只看游戏采用的题目']),stage);
@@ -213,6 +214,18 @@ export function renderGuide({view, el, setNavCurrent, params}) {
       ['residence','换个驻地','把旅途带到新的驻地，在新的环境中继续手作与探索。','驻地选择、迁移条件与物品携带规则正在筹备。','#/guide?section=start','回到起步指南'],
     ].map(([id,title,intro,note,href,label])=>({id,title,image:id,planned:true,content:[paragraph(intro),paragraph(note),paragraph(link(label,href))]})),
   );
+  const illustratedNotes = {
+    rest: ['rest', '工坊小憩'],
+    supply: ['banner', '供应目录中的布料与缝线'],
+    'workshop-design': ['finished', '制作完成的绣花上衣'],
+  };
+  for (const chapter of chapters) {
+    const illustration = illustratedNotes[chapter.id];
+    if (illustration) chapter.content.push(el('img', {
+      class:'guide-event-art', src:'/assets/guide/ui-' + illustration[0] + '.jpg',
+      alt:illustration[1], loading:'lazy',
+    }));
+  }
   const sections = chapters.map(chapter => el('section', {
     class:'guide-row', id:'guide-' + chapter.id, tabindex:'-1', 'aria-labelledby':'heading-' + chapter.id,
   }, [
