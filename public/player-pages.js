@@ -2,35 +2,15 @@ export function eligibleQuestions(questions) {
   return questions.filter(q => q.status === 'approved' && !q.needs_review);
 }
 
-export async function renderPractice({view,el,api,setNavCurrent,isStale,token}) {
+export async function renderPractice({view,el,setNavCurrent,isStale,token}) {
   setNavCurrent('practice');
-  const data=await api('/api/questions');
-  if(isStale(token))return;
-  const questions=eligibleQuestions(data.questions);
-  const adopted=el('input',{type:'checkbox',id:'adopted-only'});
-  const stage=el('div',{class:'practice-stage'});
-  let active=[],index=0,score=0;
-  function restart(){active=questions.filter(q=>!adopted.checked||q.game_versions?.length);index=0;score=0;draw();}
-  function draw(){
-    stage.replaceChildren();
-    if(!active.length){stage.append(el('p',{text:'暂无可练习的已审定题目。'}));return;}
-    if(index===active.length){const again=el('button',{class:'btn',text:'再练一次'});again.onclick=restart;stage.append(el('h2',{text:`完成 · ${score} / ${active.length}`}),again);return;}
-    const q=active[index];let selected=null;
-    const choices=el('fieldset',{},[el('legend',{text:q.prompt})]);
-    q.options.forEach((text,i)=>{const input=el('input',{type:'radio',name:'answer',value:i});input.onchange=()=>{selected=i;submit.disabled=false;};choices.append(el('label',{class:'practice-option'},[input,' ',text]));});
-    const submit=el('button',{class:'btn',text:'提交答案'});submit.disabled=true;
-    const feedback=el('div',{role:'status'});
-    submit.onclick=()=>{submit.disabled=true;choices.disabled=true;stage.querySelector('progress').value=index+1;if(selected===q.correct_index)score++;
-      const next=el('button',{class:'btn',text:index+1===active.length?'查看结果':'下一题'});
-      next.onclick=()=>{index++;draw();};
-      feedback.className = selected === q.correct_index ? 'practice-feedback correct' : 'practice-feedback retry';
-      feedback.replaceChildren(el('h3',{text:selected===q.correct_index?'回答正确':`正确答案：${q.options[q.correct_index]}`}),el('p',{text:q.explanation}),el('p',{text:q.evidence_note}),el('a',{href:`#/record/${encodeURIComponent(q.record_id)}`,text:'查看来源'}),el('div',{class:'form-actions'},[next]));
-    };
-    stage.append(el('progress',{max:active.length,value:index,'aria-label':'已完成题数'}),el('p',{text:`第 ${index+1} 题 / 共 ${active.length} 题`}),choices,submit,feedback);
-  }
-  adopted.onchange=restart;
-  view.replaceChildren(el('h1',{class:'page-title',text:'答题练习'}),el('label',{},[adopted,' 只看游戏采用的题目']),stage);
-  restart();
+  const {createQuizChallenge}=await import('./quiz-challenge.js');
+  if(isStale(token))return null;
+  const container=el('div');
+  view.replaceChildren(el('h1',{class:'page-title',text:'答题练习'}),container);
+  return createQuizChallenge({container,onOpenRecord(recordId){
+    location.hash=`/record/${encodeURIComponent(recordId)}`;
+  }});
 }
 
 export async function renderHome({view, el, setNavCurrent, api, loadAssets, ensembleCard, recordCard, isStale, token}) {

@@ -11,6 +11,7 @@ const view = document.getElementById('view');
 const PUBLIC_SITE = document.querySelector('meta[name="ww-public"]')?.content === 'true';
 if (PUBLIC_SITE) document.documentElement.classList.add('public-site');
 let activeViewer = null;
+let activePractice = null;
 // 路由令牌：异步渲染完成前若已切换路由，丢弃过期结果，避免旧视图覆盖新视图。
 let routeToken = 0;
 let flashMsg = null;
@@ -973,6 +974,8 @@ async function renderWorkshop(params, token) {
 // ---------- 路由 ----------
 function route() {
   const token = ++routeToken;
+  activePractice?.destroy();
+  activePractice = null;
   if (activeViewer) {
     cleanupViewer(activeViewer);
     activeViewer = null;
@@ -987,7 +990,9 @@ function route() {
     } else if(pathPart === '/archive'){
       await renderArchive(token,params);
     } else if(pathPart === '/practice'){
-      await renderPractice({view,el,api,setNavCurrent,isStale,token});
+      const instance = await renderPractice({view,el,api,setNavCurrent,isStale,token});
+      if (isStale(token)) instance?.destroy();
+      else activePractice = instance;
     } else if(pathPart === '/guide'){
       renderGuide({view,el,setNavCurrent,params});
     } else if(pathPart === '/contribute'){
