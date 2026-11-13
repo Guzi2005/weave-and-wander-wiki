@@ -25,7 +25,7 @@ test('封面图、图纸和配方都解析到项目真实文件',()=>{
   }
 });
 
-test('三维可用状态匹配文件魔数，LFS指针保持模型图展示',()=>{
+test('三维可用状态匹配文件魔数，兼容LFS指针和真实GLB',()=>{
   let available=0;
   for(const row of Object.values(data.assets)){
     const file=new URL('../public/assets/models/'+row.model+'.glb',import.meta.url);
@@ -35,6 +35,5 @@ test('三维可用状态匹配文件魔数，LFS指针保持模型图展示',()=
     if(row.modelAvailable)available++;
   }
   assert.ok(available>0);
-  assert.equal(data.assets['WW-MOS-001'].modelAvailable,false);
   assert.equal(data.assets['WW-BASIC-006'].modelAvailable,true);
 });
