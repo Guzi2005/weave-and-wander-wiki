@@ -1,3 +1,5 @@
+import {createProjectLibrary} from '/library/app-controller.js';
+import {mountPageHistory} from '/library/page-history.js';
 import {renderPractice,renderHome,renderGuide,renderContribute} from '/player-pages.js';
 import {REGION_TAGS, ETHNIC_TAGS} from '/tag-presets.js';
 // W&W Wiki 前端：hash 路由 + 原生 DOM。所有记录字段经 textContent 渲染，不注入 HTML。
@@ -10,6 +12,8 @@ import { buildArchiveEntries, pickThumbMedia } from '/archive-layout.js';
 const view = document.getElementById('view');
 const PUBLIC_SITE = document.querySelector('meta[name="ww-public"]')?.content === 'true';
 if (PUBLIC_SITE) document.documentElement.classList.add('public-site');
+const projectLibrary=createProjectLibrary(view,{readOnly:PUBLIC_SITE});
+mountPageHistory(view);
 let activeViewer = null;
 // 路由令牌：异步渲染完成前若已切换路由，丢弃过期结果，避免旧视图覆盖新视图。
 let routeToken = 0;
@@ -981,7 +985,10 @@ function route() {
   const [pathPart, queryPart] = hash.slice(1).split('?');
   const params = new URLSearchParams(queryPart || '');
 
+  const libraryPath=['/archive','/assets','/regions','/region','/ethnic','/culture','/asset','/record'].some(prefix=>pathPart===prefix||pathPart.startsWith(prefix+'/'))||(pathPart==='/contribute/library'&&!PUBLIC_SITE);
+  if(!libraryPath)projectLibrary.leave();
   const dispatch = async () => {
+    if(libraryPath){await projectLibrary.render(hash);return;}
     if (pathPart === '/' || pathPart === '') {
       await renderHome({view, el, setNavCurrent, api, loadAssets, ensembleCard, recordCard, isStale, token});
     } else if(pathPart === '/archive'){
@@ -990,6 +997,10 @@ function route() {
       await renderPractice({view,el,api,setNavCurrent,isStale,token});
     } else if(pathPart === '/guide'){
       renderGuide({view,el,setNavCurrent,params});
+    } else if(pathPart === '/contribute/library' && PUBLIC_SITE){
+      setNavCurrent('contribute');view.replaceChildren(el('h1',{class:'page-title',text:'资料库管理'}),el('p',{text:'资料库管理请在本地工程中打开。'}),el('a',{href:'#/contribute',text:'返回参与共创'}));
+    } else if(pathPart === '/questions' && PUBLIC_SITE){
+      setNavCurrent('contribute');view.replaceChildren(el('h1',{class:'page-title',text:'题库编辑'}),el('p',{text:'题库编辑请在本地工程中打开。'}),el('a',{href:'#/contribute',text:'返回参与共创'}));
     } else if(pathPart === '/contribute'){
       renderContribute({view,el,setNavCurrent});
     } else if (pathPart.startsWith('/record/')) {

@@ -6,6 +6,8 @@
 
 ## 启动与检查
 
+macOS 可在 Finder 中双击 `启动 Wiki.command`，脚本会启动本地服务并自动打开浏览器。保持终端窗口打开，按 Control+C 或关闭窗口停止本次启动的服务；重复双击会打开已经运行的 Wiki。需要本机已安装并配置 Node.js。
+
 在本目录运行 `D:\NodeJS\node.exe server.mjs`，打开 <http://127.0.0.1:4318/>。服务只绑定 `127.0.0.1`，不向局域网或公网开放。
 
 检查命令：`npm run check`；测试命令：`D:\NodeJS\node.exe --test tests/*.test.mjs`。测试使用临时数据，不覆盖个人档案。
@@ -63,3 +65,9 @@ Blender 文件为 `assets/collections/mosuo_photo_001/mosuo_photo_001.blend`：`
 常用接口：`GET/POST /api/records`、`GET/PATCH /api/records/:id`、`POST /api/media`、`GET/POST /api/questions`、`GET/PATCH /api/questions/:id`、`GET /api/game-export`、`GET /api/export`。创建记录可选稳定 `id`，限 `WW-` 开头的大写字母／数字连字符编码；重复 ID 会被拒绝，省略则自动生成本地 ID。
 
 写入要求回环 Host 和同源 Origin。静态路径、文本长度、枚举值、图像魔数、上传体积和关系循环均校验；前端记录文本以 `textContent` 显示。模型的 `/assets/models/*.glb` 下载地址通过受控资产映射提供，不混入来源图片列表。
+
+### 新版资料库与专题共创
+
+预览方案已接入正式应用：运行 `npm start`，访问 [正式资料库](http://127.0.0.1:4318/#/archive) 或 [参与共创](http://127.0.0.1:4318/#/contribute)。编辑与上传保存到项目档案和媒体目录，重启后保留。原首页、指南、答题和制作工具继续可用。
+
+模块、交互及持久化说明见 [开发说明](docs/tag-hierarchy-navigation-library-management.md)。公开只读构建仍使用 `npm run build:public`；本次未部署线上站点。

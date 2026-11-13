@@ -253,11 +253,15 @@ export function renderGuide({view, el, setNavCurrent, params}) {
 }
 export function renderContribute({view,el,setNavCurrent}) {
   setNavCurrent('contribute');
-  const publicSite = Boolean(document.querySelector('meta[name="ww-public"]'));
-  const links = publicSite
-    ? [['#/guide','游戏指南'],['#/archive','资料库'],['#/practice','答题练习'],['#/workshop','资产预览'],['#/node-styles','节点样式']]
-    : [['#/intake','收录资料'],['#/questions','编辑题库'],['#/workshop','资产预览'],['#/node-styles','节点样式'],['/api/export','备份资料'],['/api/game-export','导出审定题目']];
-  view.replaceChildren(el('h1',{class:'page-title',text:'参与共创'}),el('div',{class:'card-grid'},[
-    ...links
-  ].map(([href,title])=>el('a',{class:'panel',href},[el('h2',{text:title})]))));
+  const entries=[
+    {title:'资料库管理',description:'整理专题、标签树与资料，上传和维护文件。',href:'#/contribute/library',action:'进入管理 →'},
+    {title:'题库编辑',description:'进入题目编辑与维护功能。',href:'#/questions',action:'进入题库 →'},
+    {title:'GitHub 项目',description:'查看项目代码、提交问题与参与协作。',href:'https://github.com/Guzi2005/weave-and-wander-wiki',action:'打开 GitHub ↗',external:true},
+  ];
+  view.replaceChildren(el('section',{class:'contribute-home'},[
+    el('header',{class:'contribute-home-heading'},[el('div',{class:'rm-eyebrow',text:'Contribute'}),el('h1',{class:'page-title',text:'参与共创'}),el('p',{text:'选择一个入口，一起完善资料与内容。'})]),
+    el('nav',{class:'contribute-entry-grid','aria-label':'共创入口'},entries.map(entry=>el('a',{class:'contribute-entry',href:entry.href,...(entry.external?{target:'_blank',rel:'noopener noreferrer'}:{})},[
+      el('h2',{text:entry.title}),el('p',{text:entry.description}),el('span',{class:'contribute-entry-action',text:entry.action}),
+    ]))),
+  ]));
 }

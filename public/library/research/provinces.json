@@ -1,0 +1,1260 @@
+[
+  {
+    "id": "110000",
+    "name": "北京市",
+    "geography": "北京处在华北平原北缘，背靠燕山，与河北、天津相邻。长期的都城历史和京津冀之间的往来，构成理解当地宫廷及民间工艺的重要背景。",
+    "clothing": "京绣是北京可考的服饰装饰传统之一，历史上服务于宫廷，也用于日用品。它综合金银线与绒线绣法，以吉祥题材、细密针工和鲜明配色表现装饰效果。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "北京市",
+        "url": "https://zh.wikipedia.org/wiki/%E5%8C%97%E4%BA%AC%E5%B8%82",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "京绣",
+        "url": "https://www.ihchina.cn/project_details/14244/",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "北京处在华北平原北缘，背靠燕山，与河北、天津相邻。",
+      "clothing": "京绣是北京可考的服饰装饰传统之一，历史上服务于宫廷，也用于日用品。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "120000",
+    "name": "天津市",
+    "geography": "天津位于华北平原，海河多条支流在此汇合，东面临渤海。河流、运河与港口相接的区位，使这座城市长期承担南北物资转运和沿海商贸功能。",
+    "clothing": "天津老美华所传承的津派旗袍、连袖男装、盘扣与手工布鞋，是当地城市服饰工艺的具体例子。盘扣兼具闭合和装饰作用，鞋履与衣装体现不同用途。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "天津市",
+        "url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E5%B8%82",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "老美华",
+        "url": "https://lzhbwg.mofcom.gov.cn/edi_ecms_web_front/thb/detail/5796d50277484956a5f92503bdbdf083",
+        "publisher": "商务部老字号数字博物馆",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "天津位于华北平原，海河多条支流在此汇合，东面临渤海。",
+      "clothing": "天津老美华所传承的津派旗袍、连袖男装、盘扣与手工布鞋，是当地城市服饰工艺的具体例子。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "130000",
+    "name": "河北省",
+    "geography": "河北东临渤海，在地理上环绕北京、天津，并与山西、内蒙古等省区相接。境内兼有高原、山地、平原与海滨，燕赵历史和京畿联系并存。",
+    "clothing": "河北定兴南大牛村及周边传承京绣，显示宫廷刺绣进入乡村后的延续。定兴绣作使用蚕丝绣线，也以金银线表现龙凤等题材；衣装绣片和家居绣品并存。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "河北省",
+        "url": "https://zh.wikipedia.org/wiki/%E6%B2%B3%E5%8C%97%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "京绣（河北定兴）",
+        "url": "https://www.ihchina.cn/project_details/14245.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "河北东临渤海，在地理上环绕北京、天津，并与山西、内蒙古等省区相接。",
+      "clothing": "河北定兴南大牛村及周边传承京绣，显示宫廷刺绣进入乡村后的延续。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "140000",
+    "name": "山西省",
+    "geography": "山西位于太行山以西的黄土高原，黄河流域贯穿其地域背景，东侧太行山与西侧吕梁山形成明显的山地格局。历史上的城镇、乡村及商贸传统各有差异。",
+    "clothing": "高平绣活是山西高平一带的地方刺绣实例，包含丝线绣和利用裁衣布头制作的布贴绣。平针、打籽及盘金等针法产生不同质感，夸张图案与强烈配色用于民俗装饰。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "山西省",
+        "url": "https://zh.wikipedia.org/wiki/%E5%B1%B1%E8%A5%BF%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "民间绣活（高平绣活）",
+        "url": "https://www.ihchina.cn/project_details/14182/",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "山西位于太行山以西的黄土高原，黄河流域贯穿其地域背景，东侧太行山与西侧吕梁山形成明显的山地格局。",
+      "clothing": "高平绣活是山西高平一带的地方刺绣实例，包含丝线绣和利用裁衣布头制作的布贴绣。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "150000",
+    "name": "内蒙古自治区",
+    "geography": "内蒙古地处中国北部，北邻蒙古国、俄罗斯，南侧连接华北和西北多个省区，首府为呼和浩特，地域东西跨度较大。",
+    "clothing": "蒙古族传统服饰与草原生活、御寒及骑乘相联系，长袍、坎肩、靴和头饰构成多种组合，款式随地方传统、季节和礼仪场合变化。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "内蒙古自治区",
+        "url": "https://zh.wikipedia.org/wiki/%E5%86%85%E8%92%99%E5%8F%A4%E8%87%AA%E6%B2%BB%E5%8C%BA",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "蒙古族服饰",
+        "url": "https://www.ihchina.cn/project_details/15249/",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "内蒙古地处中国北部，北邻蒙古国、俄罗斯，南侧连接华北和西北多个省区，首府为呼和浩特。",
+      "clothing": "蒙古族传统服饰与草原生活、御寒及骑乘需要相联系，长袍、坎肩、靴和头饰构成多种组合。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "210000",
+    "name": "辽宁省",
+    "geography": "辽宁处在中国东北与华北之间，南面临黄海、渤海，东南隔鸭绿江与朝鲜相望。陆地通道、沿海港口与东北腹地在此相接，形成多种历史生活环境。",
+    "clothing": "国家非遗资料将东北三省列为满族旗袍制作技艺的主要流传区域。其传统形制包括较平直宽大的袍身、右衽和盘扣，镶滚及刺绣可作装饰；这些是跨省传统线索。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "辽宁省",
+        "url": "https://zh.wikipedia.org/wiki/%E8%BE%BD%E5%AE%81%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "中式服装制作技艺（满族旗袍制作技艺）",
+        "url": "https://www.ihchina.cn/project_details/23801.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "辽宁处在中国东北与华北之间，南面临黄海、渤海，东南隔鸭绿江与朝鲜相望。",
+      "clothing": "国家非遗资料将东北三省列为满族旗袍制作技艺的主要流传区域。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "220000",
+    "name": "吉林省",
+    "geography": "吉林位于东北地区，东南邻接朝鲜与俄罗斯，西部接内蒙古。境内有东部长白山区、中部丘陵和西部平原。",
+    "clothing": "吉林延边的朝鲜族传统服饰，女装常以短袄与长裙组合，男裤较宽并系裤脚，布带用于系结。衣料、色彩与穿着场合随时代变化。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "吉林省",
+        "url": "https://zh.wikipedia.org/wiki/%E5%90%89%E6%9E%97%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "朝鲜族服饰",
+        "url": "https://www.ihchina.cn/project_details/15253",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "吉林位于东北地区，东南邻接朝鲜与俄罗斯，西部接内蒙古。",
+      "clothing": "吉林延边的朝鲜族服饰是明确列入非遗的地方传统。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "230000",
+    "name": "黑龙江省",
+    "geography": "黑龙江位于中国东北北部，地形由山地、台地、平原和水面共同构成。季风气候下冬季漫长寒冷、夏季较短，不同河流与聚居地的生活条件也有差异。",
+    "clothing": "黑龙江、松花江和乌苏里江流域的赫哲族鱼皮衣，是取材渔猎生活环境的服饰实例。鱼皮需加工软化后拼缝为衣物或配饰；中国丝绸博物馆同时指出。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "黑龙江省",
+        "url": "https://zh.wikipedia.org/wiki/%E9%BB%91%E9%BE%99%E6%B1%9F%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "一物Vol.48｜赫哲族鱼皮服饰",
+        "url": "https://www.chinasilkmuseum.com/cs/info_164.aspx?itemid=28462&parent=",
+        "publisher": "中国丝绸博物馆",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "黑龙江位于中国东北北部，地形由山地、台地、平原和水面共同构成。",
+      "clothing": "黑龙江、松花江和乌苏里江流域的赫哲族鱼皮衣，是取材渔猎生活环境的服饰实例。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "310000",
+    "name": "上海市",
+    "geography": "上海处在长江三角洲最东端，东临东海、南濒杭州湾，崇明岛位于长江入海口。港口城市的历史与人口流动，使这里成为中外服饰和裁缝技艺相遇的场所。",
+    "clothing": "龙凤旗袍手工制作是海派旗袍的一项具体传承。其将中式镶、嵌、滚、盘、绣等装饰工艺，与吸收西式方法的剪裁相结合，重视个体身形和细节；它体现近现代城市服装变迁。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "上海市",
+        "url": "https://zh.wikipedia.org/wiki/%E4%B8%8A%E6%B5%B7%E5%B8%82",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "中式服装制作技艺（龙凤旗袍手工制作技艺）",
+        "url": "https://www.ihchina.cn/project_details/14710.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "上海处在长江三角洲最东端，东临东海、南濒杭州湾，崇明岛位于长江入海口。",
+      "clothing": "龙凤旗袍手工制作是海派旗袍的一项具体传承。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "320000",
+    "name": "江苏省",
+    "geography": "江苏地处长江与淮河下游，东面濒临黄海，南部与上海、浙江相邻，西面连接安徽。大运河以及沿江城镇的历史，使省内南北之间具有持续交流的地域背景。",
+    "clothing": "南京云锦以花楼木织机和两名织工配合操作为重要特点，妆花品种尤其依靠手工配色和织造。织金、库锦、库缎等品类反映不同结构与用途；这是南京的丝织传统。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "江苏省",
+        "url": "https://zh.wikipedia.org/wiki/%E6%B1%9F%E8%8B%8F%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "南京云锦木机妆花手工织造技艺",
+        "url": "https://www.ihchina.cn/project_details/14277.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "江苏地处长江与淮河下游，东面濒临黄海，南部与上海、浙江相邻，西面连接安徽。",
+      "clothing": "南京云锦以花楼木织机和两名织工配合操作为重要特点，妆花品种尤其依靠手工配色和织造。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "330000",
+    "name": "浙江省",
+    "geography": "浙江位于长江三角洲南翼和中国东部沿海，北接江苏、上海，南邻福建。钱塘江流域、宁绍平原及众多海岛，是理解不同地方历史生活的重要地理线索。",
+    "clothing": "杭州的杭罗由桑蚕丝织成，平纹与纱罗组织形成较清晰的孔眼，可用于夏季衬衫、便服及帐幔。其材料和织物结构提供了透气衣料的具体例子。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "浙江省",
+        "url": "https://zh.wikipedia.org/wiki/%E6%B5%99%E6%B1%9F%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "蚕丝织造技艺（杭罗织造技艺）",
+        "url": "https://www.ihchina.cn/project_details/19984.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "浙江位于长江三角洲南翼和中国东部沿海，北接江苏、上海，南邻福建。",
+      "clothing": "杭州的杭罗由桑蚕丝织成，平纹与纱罗组织形成较清晰的孔眼，可用于夏季衬衫、便服及帐幔。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "340000",
+    "name": "安徽省",
+    "geography": "安徽地跨长江、淮河，位于中国东部。江淮、皖江、徽州等地区各具历史与文化传统。",
+    "clothing": "皖西南的望江挑花，早期用于女性头巾、衣裤、围裙及儿童鞋帽等装饰，后来也进入家居用品，图案与正反效果富有地方特色。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "安徽省",
+        "url": "https://zh.wikipedia.org/wiki/%E5%AE%89%E5%BE%BD%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "挑花（望江挑花）",
+        "url": "https://www.ihchina.cn/art/detail/id/13996.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "安徽地跨长江、淮河，属于中国东部内陆与长江三角洲相联系的地区。",
+      "clothing": "皖西南的望江挑花，早期用于女性头巾、衣裤、围裙及儿童鞋帽等装饰，后来也进入家居用品。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "350000",
+    "name": "福建省",
+    "geography": "福建位于中国东南沿海，西部邻江西，东面隔台湾海峡与台湾相望。境内山地丘陵多，海岸曲折而岛屿众多，沿海和内陆地区的历史生活背景存在差别。",
+    "clothing": "惠安女服饰主要流传于惠安沿海若干乡镇，斗笠、花头巾、较短上衣与宽裤构成醒目的组合。非遗介绍将其变化与生活劳动及地方审美相联系；惠安女是地域文化群体称谓。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "福建省",
+        "url": "https://zh.wikipedia.org/wiki/%E7%A6%8F%E5%BB%BA%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "惠安女服饰",
+        "url": "https://www.ihchina.cn/Article/Index/detail?id=15043",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "福建位于中国东南沿海，西部邻江西，东面隔台湾海峡与台湾相望。",
+      "clothing": "惠安女服饰主要流传于惠安沿海若干乡镇，斗笠、花头巾、较短上衣与宽裤构成醒目的组合。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "360000",
+    "name": "江西省",
+    "geography": "江西位于长江中下游南岸，赣江由南向北贯穿省境并汇入鄱阳湖。江西与浙闽、湘鄂及广东等地相邻，赣鄱水系是观察其地域联系的重要线索。",
+    "clothing": "江西新余一带的夏布绣以苎麻织物为底，在麻布肌理上组织刺绣线条和图案。来源将它与赣北、赣西苎麻产区及婚嫁、服饰装饰相联系；这是材料生产与地方手艺相结合的实例。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "江西省",
+        "url": "https://zh.wikipedia.org/wiki/%E6%B1%9F%E8%A5%BF%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "民间绣活（夏布绣）",
+        "url": "https://www.ihchina.cn/project_details/14188.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "江西位于长江中下游南岸，赣江由南向北贯穿省境并汇入鄱阳湖。",
+      "clothing": "江西新余一带的夏布绣以苎麻织物为底，在麻布肌理上组织刺绣线条和图案。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "370000",
+    "name": "山东省",
+    "geography": "山东位于中国东部沿海和黄河下游，西部为冲积平原，中部多山地丘陵，东部为胶东半岛。渤海与黄海沿岸、内陆农业区之间具有不同的生活背景。",
+    "clothing": "鲁绣包含文登鲁绣、烟台绒绣等品类。各地的材料、针法和图案各有特色，绣品兼有服饰、实用与陈设用途。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "山东省",
+        "url": "https://zh.wikipedia.org/wiki/%E5%B1%B1%E4%B8%9C%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "鲁绣",
+        "url": "https://www.ihchina.cn/project_details/23544.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "山东位于中国东部沿海和黄河下游，西部为冲积平原，中部多山地丘陵，东部为胶东半岛。",
+      "clothing": "鲁绣不是单一地点的一种针法，而是包含文登鲁绣、烟台绒绣等品类的地方刺绣传统。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "410000",
+    "name": "河南省",
+    "geography": "河南地势总体西高东低，中东部有广阔冲积平原，西南有南阳盆地，外围分布太行、伏牛等山地。黄河及淮河、海河等水系共同构成其地理背景。",
+    "clothing": "开封一带的汴绣与当地城市历史相联系，在传统花鸟、禽兽题材之外，也擅长摹绣绘画。其针法与配色在近现代持续整理、吸收和发展；它是河南地方绣艺的一条线索。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "河南省",
+        "url": "https://zh.wikipedia.org/wiki/%E6%B2%B3%E5%8D%97%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "汴绣",
+        "url": "https://www.ihchina.cn/project_details/14179.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "河南地势总体西高东低，中东部有广阔冲积平原，西南有南阳盆地，外围分布太行、伏牛等山地。",
+      "clothing": "开封一带的汴绣与当地城市历史相联系，在传统花鸟、禽兽题材之外，也擅长摹绣绘画。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "420000",
+    "name": "湖北省",
+    "geography": "湖北位于长江中游、洞庭湖以北，向东连接安徽，南接湖南和江西，西邻重庆，北部与陕西、河南相接。省名与湖泊方位相关，荆楚历史是理解其地域文化的另一背景。",
+    "clothing": "荆沙、武汉、洪湖一带的汉绣，在楚绣基础上吸收多地绣法，注重较浓的色彩、丰满构图和分层效果。铺、压、织、锁等针法与平金夹绣构成其工艺特点；这是一种地方刺绣传统。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "湖北省",
+        "url": "https://zh.wikipedia.org/wiki/%E6%B9%96%E5%8C%97%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "汉绣",
+        "url": "https://www.ihchina.cn/project_details/14180/",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "湖北位于长江中游、洞庭湖以北，向东连接安徽，南接湖南和江西，西邻重庆，北部与陕西、河南相接。",
+      "clothing": "荆沙、武汉、洪湖一带的汉绣，在楚绣基础上吸收多地绣法，注重较浓的色彩、丰满构图和分层效果。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "430000",
+    "name": "湖南省",
+    "geography": "湖南东、南、西三面多山，中北部相对低平，湘江、资水、沅江、澧水汇向洞庭湖。山地、丘陵、河谷和湖区并存，提供了多样的地方生活背景。",
+    "clothing": "长沙及周边是湘绣的重要传统产区，掺针和精细劈丝有助于表现色阶变化，毛针则用于动物形象等题材。湘绣同时包含装饰与观赏用途；研究湖南服饰时，还应区分湘西等地的不同民族及地方传统。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "湖南省",
+        "url": "https://zh.wikipedia.org/wiki/%E6%B9%96%E5%8D%97%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "湘绣",
+        "url": "https://www.ihchina.cn/art/detail/id/13982.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "湖南东、南、西三面多山，中北部相对低平，湘江、资水、沅江、澧水汇向洞庭湖。",
+      "clothing": "长沙及周边是湘绣的重要传统产区，掺针和精细劈丝有助于表现色阶变化，毛针则用于动物形象等题材。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "440000",
+    "name": "广东省",
+    "geography": "广东位于华南沿海，南邻南海，珠江口两侧连接香港、澳门，并隔琼州海峡与海南相望。海岸、港口和内陆地域相接，具有多种地方文化与交通联系。",
+    "clothing": "广州及周边的广绣是粤绣的重要组成，使用丝线、金银线等材料，重视针法与织物肌理的配合。广东还流传潮绣等地方工艺，形成丰富的服饰装饰传统。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "广东省",
+        "url": "https://zh.wikipedia.org/wiki/%E5%B9%BF%E4%B8%9C%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "粤绣（广绣）",
+        "url": "https://www.ihchina.cn/project_details/13983/",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "广东位于华南沿海，南邻南海，珠江口两侧连接香港、澳门，并隔琼州海峡与海南相望。",
+      "clothing": "广州及周边的广绣是粤绣的重要组成，使用丝线、金银线等材料，重视针法与织物肌理的配合。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "450000",
+    "name": "广西壮族自治区",
+    "geography": "广西位于云贵高原东南缘和两广丘陵西部，南向北部湾，地势总体由西北向东南倾斜。周边山地高原与中南部平原共同形成盆地性地貌背景。",
+    "clothing": "靖西等地传承的壮族织锦技艺，是广西纺织文化的一项具体线索。壮锦形成多种品类与纹样体系，兼具装饰和实用价值；省区之内还有不同民族和地方传统。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "广西壮族自治区",
+        "url": "https://zh.wikipedia.org/wiki/%E5%B9%BF%E8%A5%BF%E5%A3%AE%E6%97%8F%E8%87%AA%E6%B2%BB%E5%8C%BA",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "壮族织锦技艺",
+        "url": "https://www.ihchina.cn/project_details/14288/",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "广西位于云贵高原东南缘和两广丘陵西部，南向北部湾，地势总体由西北向东南倾斜。",
+      "clothing": "靖西等地传承的壮族织锦技艺，是广西纺织文化的一项具体线索。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "460000",
+    "name": "海南省",
+    "geography": "海南是位于中国南部的热带岛屿省份，海洋与海南岛共同构成其主要地理背景。",
+    "clothing": "黎族传统纺染织绣技艺综合纺纱、天然材料染色、织造与刺绣，可制作贯首衣、筒裙、头巾及生活织物。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "海南省",
+        "url": "https://zh.wikipedia.org/wiki/%E6%B5%B7%E5%8D%97%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "黎族传统纺染织绣技艺",
+        "url": "https://www.ihchina.cn/Article/Index/detail?id=11768",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "海南是位于中国南部的热带岛屿省份，海洋与海南岛共同构成其主要地理背景。",
+      "clothing": "黎族传统纺染织绣技艺综合纺纱、天然材料染色、织造与刺绣，制成贯首衣、筒裙、头巾等多种用品。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "500000",
+    "name": "重庆市",
+    "geography": "重庆位于中国内陆西南部和长江上游，介于青藏高原与长江中下游平原的过渡地带，地域包含城市、乡村与广大山区。",
+    "clothing": "荣昌夏布以苎麻为材料，先绩线再手工织成布，成品可用于衣装、围巾和日用品。它提供了重庆地方纤维加工与服用材料的明确例子。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "重庆市",
+        "url": "https://zh.wikipedia.org/wiki/%E9%87%8D%E5%BA%86%E5%B8%82",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "荣昌夏布",
+        "url": "https://www.rongchang.gov.cn/zjrc/tsrc/202305/t20230526_12002282.html",
+        "publisher": "重庆市荣昌区人民政府",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "重庆位于中国内陆西南部和长江上游，介于青藏高原与长江中下游平原的过渡地带。",
+      "clothing": "荣昌夏布以苎麻为材料，先绩线再手工织成布，成品可用于衣装、围巾和日用品。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "510000",
+    "name": "四川省",
+    "geography": "四川位于长江上游，由四川盆地与川西高原山地两大部分组成，人口较集中于盆地。不同海拔与地域的自然环境差异明显。",
+    "clothing": "成都蜀锦以花楼织机、纹样设计和织工协作为重要传统，色彩和图案通过织造形成。历代贸易与交流使蜀锦流传到多地。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "四川省",
+        "url": "https://zh.wikipedia.org/wiki/%E5%9B%9B%E5%B7%9D%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "蜀锦：锦绣丝织，巧夺天工",
+        "url": "https://www.ihchina.cn/project_details/21921.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "四川位于长江上游，由四川盆地与川西高原山地两大部分组成，人口较集中于盆地。",
+      "clothing": "成都蜀锦以花楼织机、纹样设计和织工协作为重要传统，历代贸易与交流使其使用范围不限于四川。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "520000",
+    "name": "贵州省",
+    "geography": "贵州地处云贵高原东部，东接湖南，南邻广西，西连云南，北接四川和重庆。山川河流与多民族共同生活是其地域背景，具体村寨之间仍有明显差异。",
+    "clothing": "松桃苗绣主要流传于贵州松桃及周边苗族村寨，使用手工布料和多种针法表现生活、历史故事与自然题材。其用品包含妇女衣装、儿童饰品等。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "贵州省",
+        "url": "https://zh.wikipedia.org/wiki/%E8%B4%B5%E5%B7%9E%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "苗绣（松桃苗绣）",
+        "url": "https://www.ihchina.cn/project_details/23719",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "贵州地处云贵高原东部，东接湖南，南邻广西，西连云南，北接四川和重庆。",
+      "clothing": "松桃苗绣主要流传于贵州松桃及周边苗族村寨，使用手工布料和多种针法表现生活、历史故事与自然题材。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "530000",
+    "name": "云南省",
+    "geography": "云南地处中国西南边疆，以山地和高原为主，西北高、东南低，海拔落差带来明显的垂直气候差异。与缅甸、老挝、越南相邻，也构成跨地域往来的背景。",
+    "clothing": "大理周城等地的白族扎染，以棉或棉麻布为底，通过绞扎及染色形成纹样，传统使用植物蓝靛。它体现洱海地区的织染经验，但云南各民族、支系和村寨服饰差异很大。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "云南省",
+        "url": "https://zh.wikipedia.org/wiki/%E4%BA%91%E5%8D%97%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "白族扎染技艺",
+        "url": "https://www.ihchina.cn/project_details/14304.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "云南地处中国西南边疆，以山地和高原为主，西北高、东南低，海拔落差带来明显的垂直气候差异。",
+      "clothing": "大理周城等地的白族扎染，以棉或棉麻布为底，通过绞扎及染色形成纹样，传统使用植物蓝靛。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "540000",
+    "name": "西藏自治区",
+    "geography": "西藏位于中国西南的青藏高原，首府为拉萨。地域内分布着河谷、牧区与城镇，各地生活文化多样。",
+    "clothing": "昌都贡觉的氆氇是传统手工毛织物，经过纺纱、染色、织造及整理，可用于藏袍、帽和靴等用品。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "西藏自治区",
+        "url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E8%97%8F%E8%87%AA%E6%B2%BB%E5%8C%BA",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "氆氇织造技艺",
+        "url": "https://gongjue.changdu.gov.cn/gjx/c105860/202007/78f5a14642da4450b54bb45ea1fdd966.shtml",
+        "publisher": "贡觉县人民政府",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "西藏位于中国西南的青藏高原，首府为拉萨，省域范围广。",
+      "clothing": "昌都贡觉的氆氇织造，是西藏手工毛织物的一项具体传统，经过纺纱、染色、织造及整理，可用于藏袍、帽和靴等用品。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "610000",
+    "name": "陕西省",
+    "geography": "陕西由陕北、关中、陕南三部分构成：北部以黄土高原为背景，中部以平原为主，南部包括秦岭等山地。",
+    "clothing": "宝鸡一带的西秦刺绣在乡村社会关系中传承，题材包含当地生活与民俗观念，采用平绣、悬绣、拼缝等做法。其概括和夸张的造型、鲜明配色属于地方手艺特征。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "陕西省",
+        "url": "https://zh.wikipedia.org/wiki/%E9%99%95%E8%A5%BF%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "民间绣活（西秦刺绣）",
+        "url": "https://www.ihchina.cn/project_details/14186.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "陕西由陕北、关中、陕南三部分构成：北部以黄土高原为背景，中部以平原为主，南部包括秦岭等山地。",
+      "clothing": "宝鸡一带的西秦刺绣在乡村社会关系中传承，题材包含当地生活与民俗观念，采用平绣、悬绣、拼缝等做法。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "620000",
+    "name": "甘肃省",
+    "geography": "甘肃位于青藏、内蒙古和黄土高原交汇处，地域形状狭长。山地、高原、河谷、平川、沙漠和戈壁交错分布，内部环境差异很大。",
+    "clothing": "肃南裕固族传统服饰可见长袍、毡帽和彩色腰带，女性头饰还区分婚姻状态，以珠饰、银牌等组合呈现。这里保留肃南及传统场合的范围。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "甘肃省",
+        "url": "https://zh.wikipedia.org/wiki/%E7%94%98%E8%82%83%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "裕固族服饰",
+        "url": "https://www.ihchina.cn/art/detail/id/15267.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "甘肃位于青藏、内蒙古和黄土高原交汇处，地域形状狭长。",
+      "clothing": "肃南裕固族传统服饰可见长袍、毡帽和彩色腰带，女性头饰还区分婚姻状态，以珠饰、银牌等组合呈现。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "630000",
+    "name": "青海省",
+    "geography": "青海位于青藏高原东北部，以青海湖得名，是长江、黄河和澜沧江的源头地区。河湟地区与其他高原地区各具自然与生活背景。",
+    "clothing": "互助土族自治县的土族盘绣以黑色棉布作底，用两根同色线分别盘绕和缝固，形成较厚实的纹饰。其配色与图案反映当地手工经验。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "青海省",
+        "url": "https://zh.wikipedia.org/wiki/%E9%9D%92%E6%B5%B7%E7%9C%81",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "土族盘绣",
+        "url": "https://www.ihchina.cn/project_details/13993/",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "青海位于青藏高原东北部，以青海湖得名，是长江、黄河和澜沧江的源头地区。",
+      "clothing": "互助土族自治县的土族盘绣以黑色棉布作底，用两根同色线分别盘绕和缝固，形成较厚实的纹饰。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "640000",
+    "name": "宁夏回族自治区",
+    "geography": "宁夏位于中国西北、黄河上游地区，可区分北部引黄灌区、中部干旱地带与南部山区。地势由西南向东北倾斜，南北不同环境为观察地方生活提供背景。",
+    "clothing": "宁夏回族服饰非遗资料介绍坎肩、礼拜帽、盖头及袍服等传统用品，形制和使用与宗教活动、生活习惯相联系。具体款式存在地区和群体差别。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "宁夏回族自治区",
+        "url": "https://zh.wikipedia.org/wiki/%E5%AE%81%E5%A4%8F%E5%9B%9E%E6%97%8F%E8%87%AA%E6%B2%BB%E5%8C%BA",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "回族服饰",
+        "url": "https://www.ihchina.cn/project_details/15055.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "宁夏位于中国西北、黄河上游地区，可区分北部引黄灌区、中部干旱地带与南部山区。",
+      "clothing": "宁夏回族服饰非遗资料介绍坎肩、礼拜帽、盖头及袍服等传统用品，形制和使用与宗教活动、生活习惯相联系。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "650000",
+    "name": "新疆维吾尔自治区",
+    "geography": "新疆的地貌以山脉和盆地相间为显著特点，天山将北部准噶尔盆地与南部塔里木盆地分开，南北另有昆仑和阿尔泰山脉。",
+    "clothing": "洛浦吉亚、布亚等地是艾德莱斯绸的重要发源地，非遗资料按主色及地方风格区分多类，图案可取材植物、器物和生活形象。它是维吾尔族织染的一项实例。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "新疆维吾尔自治区",
+        "url": "https://zh.wikipedia.org/wiki/%E6%96%B0%E7%96%86%E7%BB%B4%E5%90%BE%E5%B0%94%E8%87%AA%E6%B2%BB%E5%8C%BA",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "新疆维吾尔族艾德莱斯绸织染技艺",
+        "url": "https://www.ihchina.cn/project_details/20362.html",
+        "publisher": "中国非物质文化遗产网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "新疆的地貌以山脉和盆地相间为显著特点，天山将北部准噶尔盆地与南部塔里木盆地分开，南北另有昆仑和阿尔泰山脉。",
+      "clothing": "洛浦吉亚、布亚等地是艾德莱斯绸的重要发源地，非遗资料按主色及地方风格区分多类，图案可取材植物、器物和生活形象。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "710000",
+    "name": "台湾省",
+    "geography": "台湾本岛地形以山地为主，中央山脉纵贯南北，东部多山、中部多丘陵、西部多平原。",
+    "clothing": "泰雅织布是台湾原住民族纺织传统中的具体例子，使用水平背带织机，以腰背和足部维持经线张力，并以平织、挑花等方式组织图案。来源也说明地区间技法不同。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "地文（国情简介—土地）",
+        "url": "https://www.ey.gov.tw/state/4447F4A951A1EC45/52515c49-bcc0-45f5-bd5f-78c22c9d3f45",
+        "publisher": "行政院全球资讯网",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "文物解读工作坊—泰雅族织布工艺技法",
+        "url": "https://tcmb.culture.tw/zh-tw/detail?id=2224310&indexCode=Culture_Object",
+        "publisher": "国家文化记忆库／原住民族文化发展中心",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "台湾本岛地形以山地为主，山脉多呈东北至西南走向；中央山脉纵贯南北，东部多山、中部多丘陵、西部多平原。",
+      "clothing": "泰雅织布是台湾原住民族纺织传统中的具体例子，使用水平背带织机，以腰背和足部维持经线张力，并以平织、挑花等方式组织图案。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "810000",
+    "name": "香港特别行政区",
+    "geography": "香港位于珠江口东侧，由香港岛、九龙和新界等地域组成，地处中国南部沿海的航运位置。港口城市的往来和人口迁移，是认识其近现代生活文化的重要背景。",
+    "clothing": "香港中式长衫制作吸收本地经验，也因战后上海裁缝迁入而丰富，并融入西式剪裁方法。长衫与社会活动、礼仪和节庆等不同场合相联系；这里描述的是一项制作传统。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "香港特别行政区",
+        "url": "https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E7%89%B9%E5%88%AB%E8%A1%8C%E6%94%BF%E5%8C%BA",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "香港中式长衫非遗雅聚",
+        "url": "https://www.icho.hk/tc/web/icho/hk_ich_month_2026_talk.html",
+        "publisher": "香港非物质文化遗产办事处",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "香港位于珠江口东侧，由香港岛、九龙和新界等地域组成，地处中国南部沿海的航运位置。",
+      "clothing": "香港中式长衫制作吸收本地经验，也因战后上海裁缝迁入而丰富，并融入西式剪裁方法。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  },
+  {
+    "id": "820000",
+    "name": "澳门特别行政区",
+    "geography": "澳门位于珠江口西侧，北接珠海，地域包括澳门半岛、氹仔、路环和填海形成的路氹。沿海港口与城区的历史变化，是理解当地生活文化的重要空间背景。",
+    "clothing": "澳门中式裙褂是传统婚嫁服饰的地方传承，上身为褂、下身为裙，常见龙凤等寓意纹样，制作重视手工刺绣和图案对称。其用途应限定在婚俗与相关工艺。",
+    "sources": [
+      {
+        "id": "geography",
+        "title": "澳门特别行政区",
+        "url": "https://zh.wikipedia.org/wiki/%E6%BE%B3%E9%97%A8%E7%89%B9%E5%88%AB%E8%A1%8C%E6%94%BF%E5%8C%BA",
+        "publisher": "维基百科（开放百科）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "clothing",
+        "title": "中式裙褂制作技艺",
+        "url": "https://www.culturalheritage.mo/detail/102287",
+        "publisher": "澳门文化遗产网（澳门特别行政区政府）",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "geography": [
+        "geography"
+      ],
+      "clothing": [
+        "clothing"
+      ]
+    },
+    "evidence": {
+      "geography": "澳门位于珠江口西侧，北接珠海，地域包括澳门半岛、氹仔、路环和填海形成的路氹。",
+      "clothing": "澳门中式裙褂是传统婚嫁服饰的地方传承，上身为褂、下身为裙，常见龙凤等寓意纹样，制作重视手工刺绣和图案对称。"
+    },
+    "caveat": "服饰段落是地方传统或具体技艺的例证，不覆盖全省全部人群；地理环境、社会交往与历史共同作用，不能由地形直接推定服饰。"
+  }
+]

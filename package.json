@@ -9,7 +9,7 @@
     "dev": "node server.mjs",
     "build:public": "node build-public.mjs",
     "build:uv": "node build-uv-atlas.mjs mosuo_ensemble mosuo_top_001 mosuo_skirt_001 ukrainian_ensemble ukrainian_undershirt_001 ukrainian_overskirt_001 ukrainian_apron_001 ukrainian_sash_001",
-    "check": "node --check server.mjs && node --check lib/store.mjs && node --check public/app.js && node --check public/viewer.js && node --check public/motifs.js && node --check public/motif-recipe.js && node --check public/motif-preview.js && node --check import-ukrainian-research.mjs && node --check tests/store.test.mjs && node --check tests/server.test.mjs",
+    "check": "node --check server.mjs && node --check lib/store.mjs && node --check public/app.js && node --check public/viewer.js && node --check public/motifs.js && node --check public/motif-recipe.js && node --check public/motif-preview.js && node --check import-ukrainian-research.mjs && node --check tests/store.test.mjs && node --check tests/server.test.mjs && node --check public/library/app-controller.js && node --check public/library/contribution.js && node --check public/library/project-persistence.js && node --check lib/library-schema.mjs",
     "test": "node --test tests/*.test.mjs"
   }
 }
