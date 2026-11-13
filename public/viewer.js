@@ -211,17 +211,17 @@ export function mountViewer(container, options={}) {
       if(select){
         select.replaceChildren();
         for(const [id,label] of Object.entries({idle:'待机',walk:'行走',spin:'转圈',sewing:'缝制',handwork:'手持鞋垫',sit:'坐下',lie:'躺卧'})){
-          if(id==='spin'||actions[id])select.add(new Option(label,id));
+          if(id==='spin'||actions[id]||(id==='idle'&&options.allowStatic))select.add(new Option(id==='idle'&&!actions.idle?'静止':label,id));
         }
         if(state.mode!=='spin'&&!actions[state.mode])state.mode='idle';
         select.value=state.mode;
       }
-      if(!actions.idle||!actions.walk)throw Error('模型缺少 idle / walk 动画');
+      if(!options.allowStatic&&(!actions.idle||!actions.walk))throw Error('模型缺少 idle / walk 动画');
       const bounds=new T.Box3().setFromObject(model),size=bounds.getSize(new T.Vector3());
       modelSize.copy(size);homeTarget=bounds.getCenter(new T.Vector3());fitHome();
       state.modelReady=true;container.dataset.modelReady='true';container.dataset.modelUrl=url;container.dataset.clips=gltf.animations.map(c=>c.name).join(',');
       resetView();sync();applyStyle();
-    }catch(e){if(disposed||serial!==request)return;container.dataset.modelReady='false';if(c('motion-status'))c('motion-status').textContent='模型加载失败：'+e.message;}
+    }catch(e){if(disposed||serial!==request)return;container.dataset.modelReady='false';if(c('motion-status'))c('motion-status').textContent='模型加载失败：'+e.message;options.onError?.(e);}
   }
   on(c('motion-mode'),'change',e=>{state.mode=e.target.value;beadPhysics?.reset();sync();});
   function updatePhysicsParameters(){beadPhysics?.setParameters?.({damping:Number(c('physics-damping')?.value??.08),gravityScale:Number(c('physics-gravity')?.value??1),beadDiameter:Number(c('bead-size')?.value??.008)});}

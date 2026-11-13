@@ -1,0 +1,1905 @@
+[
+  {
+    "id": "ethnic-01",
+    "name": "汉族",
+    "summary": "汉族分布广泛，汉语、汉字及丰富的地方文化是其重要文化资源。",
+    "culture": "汉语和汉字是重要的文化载体；诗歌、礼仪和岁时节庆在历史生活中占有重要位置。春节、清明、端午、中秋等节庆也在长期交流中成为多个民族共同参与的文化实践。",
+    "clothing": "汉族服饰随朝代、地域和社会生活而变化。近代常见对襟或斜襟上衣配长裤，衣料与色彩随季节变化。",
+    "distribution": [
+      {
+        "region": "110000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "120000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "130000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "140000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "150000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "210000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "220000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "230000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "310000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "320000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "330000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "340000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "350000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "360000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "370000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "410000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "420000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "430000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "440000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "450000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "460000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "500000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "510000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "520000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "530000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "540000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "610000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "620000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "630000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "640000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      },
+      {
+        "region": "650000",
+        "note": "广泛分布入口（依据概况的全国分布描述整理，非逐省人口普查，也不表示排他聚居）。",
+        "basis": "broad-distribution-navigation"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "汉族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/hz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "汉族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/hz/fswh.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "overview"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况描述在主要平原、江河流域和城市集中分布，在边疆交错杂居；大陆31省级入口为这一广泛范围的导航整理，非逐省统计。",
+      "culture": "汉语和汉字是重要的文化载体；诗歌、礼仪和岁时节庆在历史生活中占有重要位置。",
+      "clothing": "服饰随朝代、地域和社会生活而显著变化，不能用一套款式概括。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-02",
+    "name": "蒙古族",
+    "summary": "蒙古族主要聚居在内蒙古，新疆及东北、西北、华北部分省区也有分布。草原牧业是其重要历史生计，但不同地区同时发展了农业、手工业与现代产业。",
+    "culture": "传统畜牧生产与草原生活密切相连，那达慕是集体育、文艺和交往于一体的节庆活动。不同地区的生产方式与文化实践有所差异。",
+    "clothing": "资料记述的牧区传统服饰常见宽大长袍、腰带与长靴，冬季利用皮毛御寒，夏季多用布料；农区衣着另有变化。",
+    "distribution": [
+      {
+        "region": "150000",
+        "note": "概况列举的主要居住省区，内蒙古为主要聚居区。"
+      },
+      {
+        "region": "650000",
+        "note": "概况列举的主要居住省区，内蒙古为主要聚居区。"
+      },
+      {
+        "region": "210000",
+        "note": "概况列举的主要居住省区，内蒙古为主要聚居区。"
+      },
+      {
+        "region": "220000",
+        "note": "概况列举的主要居住省区，内蒙古为主要聚居区。"
+      },
+      {
+        "region": "230000",
+        "note": "概况列举的主要居住省区，内蒙古为主要聚居区。"
+      },
+      {
+        "region": "620000",
+        "note": "概况列举的主要居住省区，内蒙古为主要聚居区。"
+      },
+      {
+        "region": "630000",
+        "note": "概况列举的主要居住省区，内蒙古为主要聚居区。"
+      },
+      {
+        "region": "130000",
+        "note": "概况列举的主要居住省区，内蒙古为主要聚居区。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "蒙古族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/mgz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "蒙古族·风俗文化",
+        "url": "https://www.neac.gov.cn/seac/ztzl/mgz/fswh.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：内蒙古、新疆、辽宁、吉林、黑龙江、甘肃、青海、河北。",
+      "culture": "传统畜牧生产与草原生活密切相连，那达慕是集体育、文艺和交往于一体的节庆活动。",
+      "clothing": "资料记述的牧区传统服饰常见宽大长袍、腰带与长靴，冬季利用皮毛御寒，夏季多用布料；农区衣着另有变化。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-03",
+    "name": "回族",
+    "summary": "回族分布广泛，呈分散居住与局部聚居并存的格局，宁夏是重要聚居地区。国家民委概况同时列举了甘肃、青海、新疆及其他多个省区市的回族分布。",
+    "culture": "回族通用汉语，在长期与不同地区居民交往中形成多样的地方文化。概况还记述了部分地区兼用当地民族语言的情形，说明同一民族内部也存在明显的地域差别。",
+    "clothing": "头饰是资料重点介绍的传统服饰要素，包括不同式样的圆帽与盖头。盖头的颜色、长度和使用情形与地区、年龄及人生阶段有关。",
+    "distribution": [
+      {
+        "region": "640000",
+        "note": "宁夏为主要聚居区；其余为概况点名的分布地域，非完整当代人口排名。"
+      },
+      {
+        "region": "630000",
+        "note": "宁夏为主要聚居区；其余为概况点名的分布地域，非完整当代人口排名。"
+      },
+      {
+        "region": "620000",
+        "note": "宁夏为主要聚居区；其余为概况点名的分布地域，非完整当代人口排名。"
+      },
+      {
+        "region": "650000",
+        "note": "宁夏为主要聚居区；其余为概况点名的分布地域，非完整当代人口排名。"
+      },
+      {
+        "region": "110000",
+        "note": "宁夏为主要聚居区；其余为概况点名的分布地域，非完整当代人口排名。"
+      },
+      {
+        "region": "130000",
+        "note": "宁夏为主要聚居区；其余为概况点名的分布地域，非完整当代人口排名。"
+      },
+      {
+        "region": "150000",
+        "note": "宁夏为主要聚居区；其余为概况点名的分布地域，非完整当代人口排名。"
+      },
+      {
+        "region": "210000",
+        "note": "宁夏为主要聚居区；其余为概况点名的分布地域，非完整当代人口排名。"
+      },
+      {
+        "region": "340000",
+        "note": "宁夏为主要聚居区；其余为概况点名的分布地域，非完整当代人口排名。"
+      },
+      {
+        "region": "370000",
+        "note": "宁夏为主要聚居区；其余为概况点名的分布地域，非完整当代人口排名。"
+      },
+      {
+        "region": "410000",
+        "note": "宁夏为主要聚居区；其余为概况点名的分布地域，非完整当代人口排名。"
+      },
+      {
+        "region": "530000",
+        "note": "宁夏为主要聚居区；其余为概况点名的分布地域，非完整当代人口排名。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "回族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/huiz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "回族·风俗文化",
+        "url": "https://www.neac.gov.cn/seac/ztzl/huiz/fswh.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "overview"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：宁夏、青海、甘肃、新疆、北京、河北、内蒙古、辽宁、安徽、山东、河南、云南。",
+      "culture": "回族通用汉语，在长期与不同地区居民交往中形成多样的地方文化。",
+      "clothing": "头饰是资料重点介绍的传统服饰要素，包括不同式样的圆帽与盖头。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-04",
+    "name": "藏族",
+    "summary": "藏族主要分布于西藏及青海、甘肃、四川、云南等省区。聚居地区涉及高原、河谷和山地，农区与牧区生活方式、地方传统及衣着存在差异。",
+    "culture": "藏语具有卫藏、康、安多等方言，藏文及相关文学艺术是重要文化载体。藏戏和多种节庆活动又有地方分支，文化实践与高原农牧生活、社区历史紧密相连。",
+    "clothing": "传统长袍、腰带、长靴较有代表性，但材料和形制按地区变化：资料区分了牧区羊皮长袍与部分农区的氆氇长袍；一些农区妇女系邦单围裙。",
+    "distribution": [
+      {
+        "region": "540000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "630000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "620000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "510000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "藏族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/zz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "藏族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/zz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：西藏、青海、甘肃、四川、云南。",
+      "culture": "藏语具有卫藏、康、安多等方言，藏文及相关文学艺术是重要文化载体。",
+      "clothing": "传统长袍、腰带、长靴较有代表性，但材料和形制按地区变化：资料区分了牧区羊皮长袍与部分农区的氆氇长袍；一些农区妇女系邦单围裙，不能推及所有藏族妇女。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-05",
+    "name": "维吾尔族",
+    "summary": "维吾尔族主要聚居于新疆，天山以南盆地周缘绿洲尤其集中。国家民委概况另记述湖南桃源、河南渑池等地的少量分布，绿洲、城镇和不同地方传统并不相同。",
+    "culture": "传统生活中形成了命名、婴儿摇床等礼俗，以及馕、抓饭等多种饮食文化。文化表达和生活习惯在不同绿洲、城乡及时代中变化。",
+    "clothing": "传统男子外衣袷袢较长，穿时可系腰带；女装有连衣裙配坎肩或上衣。绣花花帽是资料介绍的常见服饰要素，现代城市衣着也很多样，应区分传统样式与日常时装。",
+    "distribution": [
+      {
+        "region": "650000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "430000",
+        "note": "概况明确记述的少量分布，不等于主要聚居地区。"
+      },
+      {
+        "region": "410000",
+        "note": "概况明确记述的少量分布，不等于主要聚居地区。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "维吾尔族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/wwez/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "维吾尔族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/wwez/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：新疆、湖南、河南。",
+      "culture": "传统生活中形成了命名、婴儿摇床等礼俗，以及馕、抓饭等多种饮食文化。",
+      "clothing": "传统男子外衣袷袢较长，穿时可系腰带；女装有连衣裙配坎肩或上衣。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-06",
+    "name": "苗族",
+    "summary": "苗族分布范围广，贵州、湖南、云南及邻近西南、华南省区有重要聚居或分布地区。山地、水田和村寨交错的生活环境，与各地不同的文化传统并存。",
+    "culture": "资料记述了山地农业、水田耕作与稻田养鱼等生产经验。部分地区的苗年有踩鼓、芦笙等活动；织、绣、蜡染与银饰制作也构成丰富的民间工艺传统。",
+    "clothing": "苗族服饰地域差异很大：湘黔渝鄂部分地区女装为大襟衣配长裤，黔东一些地区则有百褶裙。刺绣、织锦、蜡染和盛装银饰在不同地方的组合各异。",
+    "distribution": [
+      {
+        "region": "520000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "430000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "500000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "450000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "420000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "510000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "440000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "460000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "苗族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/mz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "苗族·风俗文化",
+        "url": "https://www.neac.gov.cn/seac/ztzl/mz/fswh.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：贵州、湖南、云南、重庆、广西、湖北、四川、广东、海南。",
+      "culture": "资料记述了山地农业、水田耕作与稻田养鱼等生产经验。",
+      "clothing": "苗族服饰地域差异很大：湘黔渝鄂部分地区女装为大襟衣配长裤，黔东一些地区则有百褶裙。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-07",
+    "name": "彝族",
+    "summary": "彝族主要分布于云南、四川、贵州和广西，凉山、楚雄、红河等地区各有聚居地。高寒山地、河谷及半山区的差异，与丰富的地方文化和服饰类型并存。",
+    "culture": "农业与畜牧业在不同地区的组合不同。彝族年、火把节及地方性节庆，包含祭祖、歌舞和交往活动；织麻、刺绣等手工艺也与当地生产生活密切相连。",
+    "clothing": "国家民委按凉山、乌蒙山、红河等地域介绍多种传统服饰。凉山样式可见右衽衣、擦尔瓦或披毡与百褶裙；楚雄等地另有不同衣裤及绣饰。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "510000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "520000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "450000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "彝族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/yz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "彝族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/yz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：云南、四川、贵州、广西。",
+      "culture": "农业与畜牧业在不同地区的组合不同。",
+      "clothing": "国家民委按凉山、乌蒙山、红河等地域介绍多种传统服饰。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-08",
+    "name": "壮族",
+    "summary": "壮族主要聚居于广西，并延伸至云南文山、广东连山、贵州从江等地区。居住环境涉及山地、丘陵与河谷盆地，族内语言和生活传统有地方差别。",
+    "culture": "山歌与歌圩是资料重点介绍的文化实践，三月三有定期聚会唱歌的传统。壮锦则通过棉线、丝绒等材料织出彩色图案，兼用于生活织物和衣饰。",
+    "clothing": "传统服装在桂西等地仍保有地方式样，资料列举了黑色上衣、包头帕、宽脚裤等组合。壮锦可用于头巾、腰带和衣物装饰。",
+    "distribution": [
+      {
+        "region": "450000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "440000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "520000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "430000",
+        "note": "概况记述湖南江华等地的部分分布，非主要聚居区。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "壮族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/zhz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "壮族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/zhz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：广西、云南、广东、贵州、湖南。",
+      "culture": "山歌与歌圩是资料重点介绍的文化实践，三月三有定期聚会唱歌的传统。",
+      "clothing": "传统服装在桂西等地仍保有地方式样，资料列举了黑色上衣、包头帕、宽脚裤等组合。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-09",
+    "name": "布依族",
+    "summary": "布依族主要分布于贵州，黔南、黔西南等地较为集中，云南、四川等省也有分布。聚居地区的水田、岩溶山地及村寨生活，形成多样的地方文化。",
+    "culture": "传统民居有干栏式楼房及石板房等地方形式。糯米食品、节庆馈赠和自织自染技术与日常生活相联系；织锦和蜡染同时承担实用与装饰功能。",
+    "clothing": "传统衣着多见青、蓝、白等色。镇宁、关岭一带部分女装有大襟短衣与蜡染百褶长裙，其他地区也有衣裤组合；织锦、蜡染、头饰与银饰随地方及人生阶段变化。",
+    "distribution": [
+      {
+        "region": "520000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "510000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "布依族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/byz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "布依族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/byz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：贵州、云南、四川。",
+      "culture": "传统民居有干栏式楼房及石板房等地方形式。",
+      "clothing": "传统衣着多见青、蓝、白等色。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-10",
+    "name": "朝鲜族",
+    "summary": "朝鲜族主要分布在吉林、黑龙江、辽宁，延边是重要聚居地区。其他城市和沿海地区也有迁居、散居人口。",
+    "culture": "传统居住中火炕与席地起居方式较重要，稻作生产也与饮食习惯相关。礼俗及生活方式随社会变化而发展。",
+    "clothing": "资料介绍的传统女装为短衫配高腰长裙，前襟以长带系结，强调宽松的结构；传统色彩既有素白，也有鲜明的彩色组合。今天这类衣着常在节庆和盛会中使用。",
+    "distribution": [
+      {
+        "region": "220000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "230000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "210000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "朝鲜族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/cxz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "朝鲜族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/cxz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：吉林、黑龙江、辽宁。",
+      "culture": "传统居住中火炕与席地起居方式较重要，稻作生产也与饮食习惯相关。",
+      "clothing": "资料介绍的传统女装为短衫配高腰长裙，前襟以长带系结，强调宽松的结构；传统色彩既有素白，也有鲜明的彩色组合。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-11",
+    "name": "满族",
+    "summary": "满族分布于全国多地，以辽宁、河北、黑龙江、吉林、内蒙古和北京等地较多。历史上的迁徙、驻防和多民族交往，影响了文化与服饰的传播和变化。",
+    "culture": "满文及历史文献是重要文化遗产，传统姓氏与家族组织亦有丰富记录。长期跨地域居住和与其他民族的交流，使语言、生活习俗与衣着不断发生变化。",
+    "clothing": "资料记述传统袍褂、束带和马蹄袖与骑射及御寒有关，女装有旗袍等形式。清代服饰还受等级制度与满汉交流影响。",
+    "distribution": [
+      {
+        "region": "210000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "130000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "230000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "220000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "150000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "110000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "满族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/manz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "满族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/manz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：辽宁、河北、黑龙江、吉林、内蒙古、北京。",
+      "culture": "满文及历史文献是重要文化遗产，传统姓氏与家族组织亦有丰富记录。",
+      "clothing": "资料记述传统袍褂、束带和马蹄袖与骑射及御寒有关，女装有旗袍等形式。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-12",
+    "name": "侗族",
+    "summary": "侗族主要分布于贵州、湖南、广西，湖北恩施等地也有分布。黔东南是重要聚居地，地区间自然环境、村寨文化和衣着形式均有差别。",
+    "culture": "侗寨常依山傍水，鼓楼既是建筑艺术也是议事、休憩和节庆交往的场所。资料还介绍了对唱大歌，以及刺绣、挑花、织锦等与日用器物相联系的工艺。",
+    "clothing": "传统衣料有自纺自织自染的侗布，衣襟、裤裙、头饰及银饰组合多样。年龄、季节和地方都会影响装饰。",
+    "distribution": [
+      {
+        "region": "520000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "430000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "450000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "420000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "侗族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/dz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "侗族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/dz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：贵州、湖南、广西、湖北。",
+      "culture": "侗寨常依山傍水，鼓楼既是建筑艺术也是议事、休憩和节庆交往的场所。",
+      "clothing": "传统衣料有自纺自织自染的侗布，衣襟、裤裙、头饰及银饰组合多样。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-13",
+    "name": "瑶族",
+    "summary": "瑶族主要分布于广西、湖南、广东、云南、贵州、江西等省区。不同支系、语言及地方生活经验，形成多样的头饰、衣裙和手工艺传统。",
+    "culture": "资料按不同时期介绍狩猎、采集与农业等生计，也强调不同自称群体的习俗差别。编织、绣饰及人生礼俗呈地方特色。",
+    "clothing": "南丹白裤瑶、龙胜红瑶和连南等地的传统衣裤、裙装及包头各具特色，衣领、袖口常见绣饰、花边与银饰。",
+    "distribution": [
+      {
+        "region": "450000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "430000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "440000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "520000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "360000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "瑶族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/yaoz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "瑶族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/yaoz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：广西、湖南、广东、云南、贵州、江西。",
+      "culture": "资料按不同时期介绍狩猎、采集与农业等生计，也强调不同自称群体的习俗差别。",
+      "clothing": "瑶族衣着不能用单一样式概括：南丹白裤瑶、龙胜红瑶和连南等地各有不同衣裤、裙装及包头。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-14",
+    "name": "白族",
+    "summary": "白族主要分布于云南，贵州、湖南、四川、重庆等地也有分布。大理及洱海周边具有鲜明地方传统。",
+    "culture": "白语及跨民族交流共同参与了地方文化的发展。大理周城等地的扎染以扎缝和浸染形成图案，应用于头巾、手帕和挂包，也进入服装与现代生活用品。",
+    "clothing": "大理部分传统男装为白色对襟衣配深色领褂；女装可见白上衣、坎肩、绣花围腰与宽裤。头帕、扎染及银玉饰物具有地域和年龄差异，城市日常穿着又有变化。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "520000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "430000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "510000",
+        "note": "概况明确记述亦有分布，非主要聚居区。"
+      },
+      {
+        "region": "500000",
+        "note": "概况明确记述亦有分布，非主要聚居区。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "白族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/bz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "白族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/bz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "overview",
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：云南、贵州、湖南、四川、重庆。",
+      "culture": "白语及跨民族交流共同参与了地方文化的发展。",
+      "clothing": "大理部分传统男装为白色对襟衣配深色领褂；女装可见白上衣、坎肩、绣花围腰与宽裤。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-15",
+    "name": "土家族",
+    "summary": "土家族主要分布在湖南、湖北、重庆、贵州交界的武陵山区。湘西、恩施、渝东南及黔东北等地方，是理解其文化和服饰差异的重要具体范围。",
+    "culture": "山地农业中有换工互助和薅草锣鼓等集体劳动文化。土家织锦西兰卡普以不同色线挑织自然、几何及文字图案，传统染织、编织和刺绣与日常生活相连。",
+    "clothing": "传统衣料有青蓝色土布和麻布，部分女装在领、襟和袖口镶花边，裙装与宽裤均见记述。资料同时指出现代日常衣着变化较大，应把节日盛装与普通穿着区分。",
+    "distribution": [
+      {
+        "region": "430000",
+        "note": "湘西永顺、龙山等地及张家界、常德的部分县"
+      },
+      {
+        "region": "420000",
+        "note": "恩施州及宜昌长阳、五峰等地"
+      },
+      {
+        "region": "500000",
+        "note": "渝东南黔江、酉阳、石柱、秀山、彭水等地"
+      },
+      {
+        "region": "520000",
+        "note": "黔东北沿河、印江、思南、江口、德江等地"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "土家族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/tjz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "土家族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/tjz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：湖南、湖北、重庆、贵州。",
+      "culture": "山地农业中有换工互助和薅草锣鼓等集体劳动文化。",
+      "clothing": "传统衣料有青蓝色土布和麻布，部分女装在领、襟和袖口镶花边，裙装与宽裤均见记述。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-16",
+    "name": "哈尼族",
+    "summary": "哈尼族主要集中在云南南部红河与澜沧江之间的山区，红河、元阳、绿春等地较集中。各地方和支系的语言、生产及衣着传统存在差别。",
+    "culture": "梯田耕作是资料介绍的重要文化实践：顺应地形修田，通过山间沟渠引水灌溉，形成与森林、水源和村落相联系的生活系统。",
+    "clothing": "传统衣料常见自织染成藏青、蓝黑色的土布，但裁染先后及款式随地区而异。妇女衣裙、包头与银饰尤其多样，年龄、婚育和节庆场景都会影响装饰组合。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "哈尼族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/hnz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "哈尼族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/hnz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：云南。",
+      "culture": "梯田耕作是资料介绍的重要文化实践：顺应地形修田，通过山间沟渠引水灌溉，形成与森林、水源和村落相联系的生活系统。",
+      "clothing": "传统衣料常见自织染成藏青、蓝黑色的土布，但裁染先后及款式随地区而异。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-17",
+    "name": "哈萨克族",
+    "summary": "哈萨克族主要分布于新疆伊犁、木垒、巴里坤等地，甘肃阿克塞也是聚居地区。相关传统与草原畜牧生活、迁徙和跨民族交往密切相连。",
+    "culture": "民歌中的阿肯对唱是一种即兴创作和交流形式，既用于聚会礼仪，也见于放牧、迁居途中和待客场景。资料所记文化与草原生活相联系，也在现代社会不断变化。",
+    "clothing": "冬季传统男装使用皮袄、皮裤及带护耳的吐马克帽等御寒。女性头饰因年龄和婚嫁阶段不同，出嫁尖顶帽及绣饰裙装是部分传统样式。",
+    "distribution": [
+      {
+        "region": "650000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "620000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "哈萨克族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/hskz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "哈萨克族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/201806/1067493.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：新疆、甘肃。",
+      "culture": "民歌中的阿肯对唱是一种即兴创作和交流形式，既用于聚会礼仪，也见于放牧、迁居途中和待客场景。",
+      "clothing": "冬季传统男装使用皮袄、皮裤及带护耳的吐马克帽等御寒。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-18",
+    "name": "傣族",
+    "summary": "傣族主要聚居于云南西双版纳、德宏及耿马、孟连等地，其他县市也有散居。不同地方的语言文字、礼俗和服饰类型各具特点。",
+    "culture": "泼水节、开门节和关门节是资料列举的主要节日，婚礼中也有拴线祝福等礼仪。地方文字和社区传统存在差别。",
+    "clothing": "传统女装常见窄袖短衣与筒裙，但德宏、版纳和内地傣族各有变化；新平花腰傣以多层装饰腰带和特定头饰见长。男装可见短衫、长裤与包头。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "傣族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/daiz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "傣族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/daiz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：云南。",
+      "culture": "泼水节、开门节和关门节是资料列举的主要节日，婚礼中也有拴线祝福等礼仪。",
+      "clothing": "传统女装常见窄袖短衣与筒裙，但德宏、版纳和内地傣族各有变化；新平花腰傣以多层装饰腰带和特定头饰见长。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-19",
+    "name": "黎族",
+    "summary": "黎族主要聚居在海南的五指山及周边市县，另有散居人口。族内按语言、习俗和地域有不同群体，织物纹样和服饰也呈现相应的地方差异。",
+    "culture": "黎族传统纺染织绣由纺、染、织、绣等环节组成，使用棉、麻和植物染料，依靠口传身授延续。织物纹样与地方习俗相联系，是社区文化的重要载体。",
+    "clothing": "黎锦技艺可制作贯首衣、筒裙、头巾等衣饰，也用于龙被等生活织物。絣染、提花和刺绣共同构成丰富的装饰语言。",
+    "distribution": [
+      {
+        "region": "460000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "黎族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/lz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "textile",
+        "title": "黎族传统纺染织绣技艺",
+        "url": "https://www.ihchina.cn/Article/Index/detail?id=11768",
+        "publisher": "中国非物质文化遗产网·中国非物质文化遗产数字博物馆",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "textile"
+      ],
+      "clothing": [
+        "textile"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：海南。",
+      "culture": "黎族传统纺染织绣由纺、染、织、绣等环节组成，使用棉、麻和植物染料，依靠口传身授延续。",
+      "clothing": "黎锦技艺可制作贯首衣、筒裙、头巾等衣饰，也用于龙被等生活织物。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-20",
+    "name": "傈僳族",
+    "summary": "傈僳族主要分布于云南怒江、维西及其他州县，四川凉山、攀枝花等地也有分布。高山峡谷中的村落与周边多民族社区长期交往。",
+    "culture": "怒江地区的阔时年节有聚会、对歌和射弩等活动。资料记述了传统织麻和多种居住形式，反映不同山地社区利用自然条件发展各自的生活文化。",
+    "clothing": "资料介绍的传统女装既有短衫长裙，也有衣裤配围裙，怒江与永胜、德宏等地各异；头巾、珠贝饰物和绣边各具特色。传统麻布材料与当代布料的使用也不相同。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "510000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "傈僳族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/ssz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "傈僳族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/ssz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：云南、四川。",
+      "culture": "怒江地区的阔时年节有聚会、对歌和射弩等活动。",
+      "clothing": "资料介绍的传统女装既有短衫长裙，也有衣裤配围裙，怒江与永胜、德宏等地各异；头巾、珠贝饰物和绣边各具特色。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-21",
+    "name": "佤族",
+    "summary": "佤族主要居住在云南西南部，沧源、西盟是重要聚居地区，孟连、耿马等地也有分布。阿佤山区的村寨生活与周边文化长期相互影响。",
+    "culture": "佤语有不同方言，社区在山地农作和长期交往中形成多样生活习惯。现代西盟木鼓节和沧源司岗里狂欢节带有文化传承与社区交往意义。",
+    "clothing": "西盟传统女装有短上衣、直筒裙及银箍、珠串等配饰；沧源衣襟、袖形和裙纹又有不同。藤圈、银饰等应连同地区和历史场景记录。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "佤族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/wz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "search-excerpt",
+        "verificationNote": "国家民委同一URL的官方检索收录正文用于核对；直接打开曾超时。"
+      },
+      {
+        "id": "customs",
+        "title": "佤族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/wz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：云南。",
+      "culture": "佤语有不同方言，社区在山地农作和长期交往中形成多样生活习惯。",
+      "clothing": "西盟传统女装有短上衣、直筒裙及银箍、珠串等配饰；沧源衣襟、袖形和裙纹又有不同。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-22",
+    "name": "畲族",
+    "summary": "畲族分布于福建、浙江、江西、广东、贵州、安徽、湖南等省的部分山区，福建与浙江是主要分布地区。不同地方的服装及语言使用情形有差别。",
+    "culture": "刺绣、花带编织和竹编是资料介绍的重要民间工艺。花鸟与几何图案用于衣物和日常用品，花带兼具系束与装饰作用，技艺在社区家庭和生活往来中传承。",
+    "clothing": "传统女装有青蓝色衣料、衣襟袖口花边与多样头饰。国家民委分别介绍福鼎、霞浦、福安、罗连和丽水等地方样式；色彩、衣片结构及绣饰并不一致。",
+    "distribution": [
+      {
+        "region": "350000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "330000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "360000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "440000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "520000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "340000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "430000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "畲族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/sz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "畲族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/sz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：福建、浙江、江西、广东、贵州、安徽、湖南。",
+      "culture": "刺绣、花带编织和竹编是资料介绍的重要民间工艺。",
+      "clothing": "传统女装有青蓝色衣料、衣襟袖口花边与多样头饰。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-23",
+    "name": "高山族",
+    "summary": "高山族是中国大陆五十六民族分类中的名称，主要分布于台湾，涵盖泰雅、排湾、布农、阿美等多个原住民族。",
+    "culture": "泰雅、排湾、布农、阿美等群体各有语言、社会组织和手工传统，形成多样的地方文化。",
+    "clothing": "传统衣料有麻布、棉布，织绣、贝珠及其他装饰的使用随群体和场景而异。资料举例泰雅贝珠衣、不同群体的披肩和围裙。",
+    "distribution": [
+      {
+        "region": "710000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "高山族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/gsz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "高山族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/201806/1069284.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "overview"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：台湾。",
+      "culture": "资料分别记述泰雅、排湾、布农、阿美等群体的语言、社会组织和手工传统。",
+      "clothing": "传统衣料有麻布、棉布，织绣、贝珠及其他装饰的使用随群体和场景而异。"
+    },
+    "caveat": "高山族为本词表沿用的中国大陆民族分类名称，涵盖台湾多个原住民族；应保留各族自称，不将其视为单一服饰传统。大陆亦有散居人口，当前仅连接主要分布地域台湾。"
+  },
+  {
+    "id": "ethnic-24",
+    "name": "拉祜族",
+    "summary": "拉祜族主要分布于云南澜沧江流域，澜沧、孟连及临沧等地有重要聚居社区。国家民委也介绍了境外分布，但此页只建立国内省级标签入口。",
+    "culture": "历史生计由游猎向定居耕作发展，社区中形成互助与礼俗传统。族内有不同自称和方言，与邻近汉、傣、彝等群体长期交往，衣着也吸收彼此影响。",
+    "clothing": "资料记述的传统服装多以黑布为底，配彩色花边与银泡；女装既有开衩长衫配裤，也有短衫配筒裙。支系和杂居环境影响款式。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "拉祜族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/lhz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "拉祜族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/lhz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：云南。",
+      "culture": "历史生计由游猎向定居耕作发展，社区中形成互助与礼俗传统。",
+      "clothing": "资料记述的传统服装多以黑布为底，配彩色花边与银泡；女装既有开衩长衫配裤，也有短衫配筒裙。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-25",
+    "name": "水族",
+    "summary": "水族主要生活在贵州、广西交界的都柳江、龙江上游地区，三都等地是重要居住区，云南富源也有村落分布。具体村寨的生活与礼俗存在差异。",
+    "culture": "稻作与水族历法、端节和卯节等礼俗关系密切。资料还记述水书择吉、稻田养鱼及邻里换工等传统，文化实践随时代与社区环境发生变化。",
+    "clothing": "三都水族马尾绣以马尾作芯、缠丝成线，再盘绣并结合其他针法形成图案，常用于背带、绣花鞋、围腰和童帽等。它是一项具体地方工艺。",
+    "distribution": [
+      {
+        "region": "520000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "450000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "530000",
+        "note": "概况明确记述云南富源县有水族村落，非主要聚居区。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "水族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/shuiz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "search-excerpt",
+        "verificationNote": "国家民委同一URL的官方检索收录正文用于核对；直接打开曾超时。"
+      },
+      {
+        "id": "customs",
+        "title": "水族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/shuiz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "horsetail",
+        "title": "水族马尾绣",
+        "url": "https://www.ihchina.cn/project_details/13992/",
+        "publisher": "中国非物质文化遗产网·中国非物质文化遗产数字博物馆",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "horsetail"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：贵州、广西、云南。",
+      "culture": "稻作与水族历法、端节和卯节等礼俗关系密切。",
+      "clothing": "三都水族马尾绣以马尾作芯、缠丝成线，再盘绣并结合其他针法形成图案，常用于背带、绣花鞋、围腰和童帽等。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-26",
+    "name": "东乡族",
+    "summary": "东乡族主要聚居于甘肃临夏的东乡、和政、积石山等地，新疆也有迁居社区。聚居地位于高原与河谷过渡区域，生活中有农业及跨民族交往传统。",
+    "culture": "花儿在东乡族民间文化中占有重要位置，东乡语中有相应称谓。即兴歌唱与生活情感、交往及社会变化相联系，文化艺术也不断从本地传统中汲取内容。",
+    "clothing": "资料记述的传统男装有束带长袍和平顶软帽，女装的绣花袖边、裤边及头巾、盖头随历史而变化。不同年龄和时期的形制并存。",
+    "distribution": [
+      {
+        "region": "620000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "650000",
+        "note": "概况记述迁徙形成的居住分布，主要聚居地仍在甘肃临夏。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "东乡族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/dxz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "东乡族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/201806/1067836.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：甘肃、新疆。",
+      "culture": "花儿在东乡族民间文化中占有重要位置，东乡语中有相应称谓。",
+      "clothing": "资料记述的传统男装有束带长袍和平顶软帽，女装的绣花袖边、裤边及头巾、盖头随历史而变化。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  },
+  {
+    "id": "ethnic-27",
+    "name": "纳西族",
+    "summary": "纳西族主要分布在云南丽江及周边地区，四川盐源、木里等地和西藏芒康也有分布。地方语言、文化和衣着各有差别。",
+    "culture": "东巴经及其文字是重要文化资源，记述神话、仪式和社会生活。丽江民居又吸收周边多民族的建筑经验，体现长期交流。",
+    "clothing": "丽江部分纳西妇女的传统服装以宽袖衣、坎肩、围腰和七星羊皮披肩著称，形制随历史与地方生活发生变化。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "510000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      },
+      {
+        "region": "540000",
+        "note": "概况记述少数分布于芒康县，非主要聚居区。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "纳西族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/nxz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "纳西族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/nxz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "dress-study",
+        "title": "和钟华：镌刻着民族历史和审美情趣的纳西族服饰",
+        "url": "https://wsc.snnu.edu.cn/info/1018/1143.htm",
+        "publisher": "陕西师范大学女性研究中心",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "dress-study"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：云南、四川、西藏。",
+      "culture": "东巴经及其文字是重要文化资源，记述神话、仪式和社会生活。",
+      "clothing": "丽江部分纳西妇女传统服装以宽袖衣、坎肩、围腰和七星羊皮披肩著称，服饰也经历历史改革。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。 本页不把项目中的摩梭人资料自动归为纳西族服饰，也不把丽江衣着套用于泸沽湖社区。"
+  },
+  {
+    "id": "ethnic-28",
+    "name": "景颇族",
+    "summary": "景颇族主要聚居于云南德宏陇川、盈江、瑞丽等地，其他州县也有散居。内部不同支系语言和服饰有差别，并与周边多民族社区长期交往。",
+    "culture": "景颇族地区的水田与旱地生产并存，家庭劳作与换工互助相结合。不同支系使用各自语言，景颇文和载瓦文也在地方生活中使用，文化交流不消除内部差异。",
+    "clothing": "传统女装区分便装与婚嫁节庆盛装，短衣配筒裙，盛装可用银泡、银牌和珠饰。德宏与怒江地区、不同支系的配饰和包头又有变化。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "国家民委概况点名的分布省级地域；不表示仅在此地居住。"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "景颇族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/jpz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "景颇族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/jpz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "overview",
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "概况直接点名：云南。",
+      "culture": "景颇族地区的水田与旱地生产并存，家庭劳作与换工互助相结合。",
+      "clothing": "传统女装区分便装与婚嫁节庆盛装，短衣配筒裙，盛装可用银泡、银牌和珠饰。"
+    },
+    "caveat": "此处概述来源记述的传统及地方样式，不代表所有成员或当代日常穿着；款式还随支系、地区、年代、年龄和使用场景变化。"
+  }
+]

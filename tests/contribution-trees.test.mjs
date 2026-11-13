@@ -1,0 +1,12 @@
+import data from './fixtures/library-data.mjs';
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {LIBRARY_TAGS as PILOT_TAGS} from '../public/library/tag-vocabulary.js';
+import {seedUploadTrees,descendants,expandSelection,nodeUsage,removeEmptyNode} from '../public/library/contribution-trees.js';
+const nodes=seedUploadTrees(PILOT_TAGS,data);
+test('whole tree selection includes descendants and child selection records ancestors',()=>{assert.deepEqual(descendants(nodes,'object-kind-1'),['object-kind-1','object-type-1-1','object-type-1-2','object-type-1-3']);assert.deepEqual(expandSelection(nodes,['object-type-1-1']),['object-type-1-1','object-kind-1']);});
+test('existing material locks a node and its parent',()=>{assert.equal(nodeUsage(nodes,'object-type-2-1'),1);assert.throws(()=>removeEmptyNode(nodes,'object-type-2-1'));assert.throws(()=>removeEmptyNode(nodes,'object-kind-2'));});
+test('empty subtrees may be deleted while saved draft associations lock them',()=>{const custom=[...nodes,{id:'tree-a',parentId:null,recordIds:[]},{id:'child-a',parentId:'tree-a',recordIds:[]}];assert.equal(removeEmptyNode(custom,'tree-a').length,nodes.length);const drafts=[{id:'draft-1',assignments:{tagIds:['child-a']}}];assert.equal(nodeUsage(custom,'tree-a',drafts),1);assert.throws(()=>removeEmptyNode(custom,'tree-a',drafts));assert.throws(()=>removeEmptyNode(custom,'child-a',drafts));});
+test('subtree usage deduplicates a record linked at several levels',()=>{const custom=[{id:'a',parentId:null,recordIds:['r']},{id:'b',parentId:'a',recordIds:['r']}];assert.equal(nodeUsage(custom,'a'),1);});
+test('autosaving an existing record does not inflate its usage count',()=>{const custom=[{id:'a',parentId:null,recordIds:['record-a']}];const autosaves=[{id:'autosave:record-a',recordId:'record-a',status:'autosaved',assignments:{tagIds:['a']}}];assert.equal(nodeUsage(custom,'a',autosaves),1);assert.throws(()=>removeEmptyNode(custom,'a',autosaves));});

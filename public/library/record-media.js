@@ -1,0 +1,4 @@
+export const fileMediaId=file=>'file:'+file.name+':'+file.size+':'+file.lastModified;
+export function orderMedia(items,order=[]){const rank=new Map(order.map((id,i)=>[id,i]));return items.map((item,i)=>({item,i})).sort((a,b)=>(rank.get(a.item.id)??order.length+a.i)-(rank.get(b.item.id)??order.length+b.i)).map(row=>row.item);}
+export function moveMedia(items,id,direction){const result=items.map(item=>item.id),index=result.indexOf(id),next=index+direction;if(index<0||next<0||next>=result.length)return result;[result[index],result[next]]=[result[next],result[index]];return result;}
+export function baseMedia(record,asset){const result=[];if(asset?.cover)result.push({id:'cover',path:asset.cover,label:'模型图',type:'image'});if(asset?.cover)return result;for(const media of record?.media||[])if(!media.path.startsWith('blob:'))result.push({id:'media:'+media.path,path:media.path,label:media.label||'参考图',type:'image'});return result;}

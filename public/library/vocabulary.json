@@ -1,0 +1,243 @@
+[
+  {
+    "id": "object-kind-1",
+    "dimension": "object-kind",
+    "label": "服装",
+    "parentId": null,
+    "recordIds": [
+      "WW-MOS-001",
+      "WW-MOS-001-C02",
+      "WW-MOS-001-C03",
+      "WW-GEN-001",
+      "WW-MOS-REF-002",
+      "WW-UKR-001",
+      "WW-UKR-001-C01",
+      "WW-UKR-001-C02",
+      "WW-UKR-001-C03",
+      "WW-UKR-001-C04",
+      "WW-BASIC-000",
+      "WW-BASIC-001",
+      "WW-BASIC-002",
+      "WW-BASIC-003",
+      "WW-BASIC-004",
+      "WW-BASIC-005",
+      "WW-BASIC-010",
+      "WW-BASIC-011",
+      "WW-BASIC-012",
+      "WW-BASIC-013"
+    ]
+  },
+  {
+    "id": "object-kind-2",
+    "dimension": "object-kind",
+    "label": "饰品",
+    "parentId": null,
+    "recordIds": [
+      "WW-MOS-001-C01",
+      "WW-UKR-001-C05",
+      "WW-BASIC-006",
+      "WW-BASIC-007",
+      "WW-BASIC-008",
+      "WW-BASIC-009",
+      "WW-BASIC-017"
+    ]
+  },
+  {
+    "id": "object-kind-3",
+    "dimension": "object-kind",
+    "label": "布艺",
+    "parentId": null,
+    "recordIds": [
+      "WW-MOS-001-P01",
+      "WW-UKR-001-M01",
+      "WW-UKR-001-M02"
+    ]
+  },
+  {
+    "id": "object-kind-4",
+    "dimension": "object-kind",
+    "label": "工具",
+    "parentId": null,
+    "recordIds": []
+  },
+  {
+    "id": "object-kind-5",
+    "dimension": "object-kind",
+    "label": "玩具",
+    "parentId": null,
+    "recordIds": []
+  },
+  {
+    "id": "object-kind-6",
+    "dimension": "object-kind",
+    "label": "其他",
+    "parentId": null,
+    "recordIds": []
+  },
+  {
+    "id": "object-type-1-1",
+    "dimension": "object-type",
+    "label": "上衣",
+    "parentId": "object-kind-1",
+    "recordIds": [
+      "WW-MOS-001-C02"
+    ]
+  },
+  {
+    "id": "object-type-1-2",
+    "dimension": "object-type",
+    "label": "裙装",
+    "parentId": "object-kind-1",
+    "recordIds": [
+      "WW-MOS-001-C03"
+    ]
+  },
+  {
+    "id": "object-type-1-3",
+    "dimension": "object-type",
+    "label": "鞋履",
+    "parentId": "object-kind-1",
+    "recordIds": []
+  },
+  {
+    "id": "object-type-2-1",
+    "dimension": "object-type",
+    "label": "头饰",
+    "parentId": "object-kind-2",
+    "recordIds": [
+      "WW-MOS-001-C01"
+    ]
+  },
+  {
+    "id": "object-type-2-2",
+    "dimension": "object-type",
+    "label": "珠饰",
+    "parentId": "object-kind-2",
+    "recordIds": []
+  },
+  {
+    "id": "object-type-2-3",
+    "dimension": "object-type",
+    "label": "腰饰",
+    "parentId": "object-kind-2",
+    "recordIds": []
+  },
+  {
+    "id": "object-type-3-1",
+    "dimension": "object-type",
+    "label": "鞋垫",
+    "parentId": "object-kind-3",
+    "recordIds": [
+      "WW-MOS-001-P01"
+    ]
+  },
+  {
+    "id": "object-type-3-2",
+    "dimension": "object-type",
+    "label": "面料",
+    "parentId": "object-kind-3",
+    "recordIds": []
+  },
+  {
+    "id": "object-type-3-3",
+    "dimension": "object-type",
+    "label": "流苏",
+    "parentId": "object-kind-3",
+    "recordIds": []
+  },
+  {
+    "id": "object-type-4-1",
+    "dimension": "object-type",
+    "label": "制作工具",
+    "parentId": "object-kind-4",
+    "recordIds": []
+  },
+  {
+    "id": "object-type-4-2",
+    "dimension": "object-type",
+    "label": "测量工具",
+    "parentId": "object-kind-4",
+    "recordIds": []
+  },
+  {
+    "id": "object-type-4-3",
+    "dimension": "object-type",
+    "label": "生活工具",
+    "parentId": "object-kind-4",
+    "recordIds": []
+  },
+  {
+    "id": "object-type-5-1",
+    "dimension": "object-type",
+    "label": "玩偶",
+    "parentId": "object-kind-5",
+    "recordIds": []
+  },
+  {
+    "id": "object-type-5-2",
+    "dimension": "object-type",
+    "label": "游戏用具",
+    "parentId": "object-kind-5",
+    "recordIds": []
+  },
+  {
+    "id": "feature-1",
+    "dimension": "feature",
+    "label": "珠串",
+    "parentId": "tree-details",
+    "recordIds": [
+      "WW-MOS-001-C01"
+    ]
+  },
+  {
+    "id": "feature-2",
+    "dimension": "feature",
+    "label": "花纹",
+    "parentId": "tree-details",
+    "recordIds": [
+      "WW-MOS-001-C02"
+    ]
+  },
+  {
+    "id": "feature-3",
+    "dimension": "feature",
+    "label": "褶裥",
+    "parentId": "tree-details",
+    "recordIds": [
+      "WW-MOS-001-C03"
+    ]
+  },
+  {
+    "id": "structure-ensemble",
+    "label": "套装",
+    "dimension": "structure",
+    "parentId": "tree-structure",
+    "recordIds": [
+      "WW-MOS-001",
+      "WW-UKR-001"
+    ]
+  },
+  {
+    "id": "type-supplementary-media",
+    "label": "补充影像",
+    "dimension": "record-type",
+    "parentId": "tree-structure",
+    "recordIds": [
+      "WW-MOS-REF-002"
+    ]
+  },
+  {
+    "id": "tree-structure",
+    "label": "资料类型",
+    "dimension": "group",
+    "parentId": null,
+    "recordIds": []
+  },
+  {
+    "id": "tree-details",
+    "label": "外观与结构",
+    "dimension": "group",
+    "parentId": null,
+    "recordIds": []
+  }
+]

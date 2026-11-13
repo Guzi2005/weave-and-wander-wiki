@@ -39,7 +39,7 @@ export function createQuizChallenge({container,questionBank=createDefaultQuestio
   if(selected===null)return;machine.submit(selected);render();notify();
  }
  function stagePath(s){
-  return node('ol',{class:'wwq-path','aria-label':'关卡进度'},bank.stages.map((stage,i)=>node('li',{},[
+  return node('ol',{class:'wwq-path','aria-label':'关卡进度'},bank.stages.map((stage,i)=>node('li',{'data-complete':String(!!s.completed[stage.id]),'data-current':String(s.attempt?.stageId===stage.id || (!s.attempt && stage.id===s.unlocked.find(id=>!s.completed[id])))},[
    button(String(i+1),()=>start(stage.id),{kind:`wwq-dot ${s.completed[stage.id]?'is-complete':''} ${s.attempt?.stageId===stage.id?'is-current':''}`,disabled:!s.unlocked.includes(stage.id),'aria-label':`${stage.title}，${s.completed[stage.id]?'已完成':s.unlocked.includes(stage.id)?'已解锁':'未解锁'}`}),
    node('span',{text:stage.title})
   ])));
@@ -49,7 +49,7 @@ export function createQuizChallenge({container,questionBank=createDefaultQuestio
   if(destroyed)return;
   const s=machine.getState(),stage=currentStage();
   const top=node('div',{class:'wwq-top'},[node('span',{class:'wwq-wordmark',text:'W&W / 知识漫游'}),button('题库工坊',openEditor,{kind:'wwq-quiet','aria-haspopup':'dialog'})]);
-  const body=node('div',{class:`wwq-screen wwq-${s.view}`});content.replaceChildren(top,body);
+  const body=node('div',{class:`wwq-screen wwq-${s.view}`,'data-outcome':s.attempt?.finished?(s.attempt.passed?'passed':'failed'):'pending'});content.replaceChildren(top,body);
   if(s.view==='home'){
    const upcoming=bank.stages.find(st=>s.unlocked.includes(st.id)&&!s.completed[st.id])||bank.stages[0];
    body.append(node('div',{class:'wwq-hero'},[
@@ -61,7 +61,7 @@ export function createQuizChallenge({container,questionBank=createDefaultQuestio
    body.append(node('div',{class:'wwq-section-title'},[node('h3',{text:'选择一段旅程'}),node('span',{text:'循序解锁 · 随时重温'})]));
    body.append(node('div',{class:'wwq-stage-grid'},bank.stages.map((st,i)=>{
     const unlocked=s.unlocked.includes(st.id),done=!!s.completed[st.id],count=bank.questions.filter(q=>q.stageId===st.id&&isPlayableQuestion(q));
-    return node('article',{class:`wwq-stage-card ${unlocked?'':'is-locked'}`},[
+    return node('article',{class:`wwq-stage-card ${unlocked?'':'is-locked'}`,'data-complete':String(done)},[
      node('div',{class:'wwq-card-top'},[node('span',{class:'wwq-stage-number',text:String(i+1).padStart(2,'0')}),node('span',{class:`wwq-badge ${done?'is-complete':''}`,text:done?'✓ 已完成':unlocked?'已解锁':'未解锁'})]),
      node('h3',{text:st.title}),node('p',{text:st.description}),node('p',{class:'wwq-meta',text:`${count.length} 题 · ${percent(st.passRate)} 通过${s.best[st.id]?` · 最佳 ${s.best[st.id].score} 分`:''}`}),
      button(done?'重新挑战 ↗':unlocked?'进入关卡 ↗':'完成前一关后解锁',()=>start(st.id),{disabled:!unlocked,kind:'wwq-card-button'})
@@ -74,7 +74,7 @@ export function createQuizChallenge({container,questionBank=createDefaultQuestio
    const q=machine.getQuestion(),answered=s.attempt.answers.length>s.attempt.index,result=answered?s.attempt.answers.at(-1):null,knowledge=q.type==='knowledge';
    body.append(node('div',{class:'wwq-question-header'},[button('← 退出挑战',home,{kind:'wwq-quiet'}),node('span',{text:`${stage.title} / 第 ${s.attempt.index+1} 题，共 ${machine.getQuestions().length} 题`}),node('strong',{text:`本次 ${s.summary.score} 分`})]),
     node('progress',{class:'wwq-progress',max:machine.getQuestions().length,value:s.attempt.answers.length,'aria-label':'本关答题进度'}));
-   const card=node('article',{class:'wwq-question-card'},[eyebrow(`${typeNames[q.type]}${knowledge?' · 阅读即可，不计分':''}`),heading(q.question,'h3')]);
+   const card=node('article',{class:'wwq-question-card','data-question-type':q.type},[eyebrow(`${typeNames[q.type]}${knowledge?' · 阅读即可，不计分':''}`),heading(q.question,'h3')]);
    if(!knowledge){
     const options=node('div',{class:'wwq-options',role:'group','aria-label':'答案选项'});
     q.options.forEach((o,i)=>options.append(button('',()=>select(o.id),{kind:`wwq-option ${selected===o.id?'is-selected':''} ${answered&&o.id===q.answer?'is-correct':''} ${answered&&selected===o.id&&!result.correct?'is-wrong':''}`,disabled:answered,'aria-pressed':String(selected===o.id),'data-option':o.id,'aria-label':`${q.type==='boolean'?o.id:String.fromCharCode(65+i)}. ${o.text}`})));
@@ -223,8 +223,8 @@ export function createQuizChallenge({container,questionBank=createDefaultQuestio
  function size(){const box=root.getBoundingClientRect();width=box.width;height=Math.min(box.height,1600);const dpr=Math.min(devicePixelRatio||1,2);canvas.width=width*dpr;canvas.height=height*dpr;ctx?.setTransform(dpr,0,0,dpr,0,0);}
  function draw(now){
   frame=0;if(destroyed||!ctx||motion.matches||document.hidden)return;
-  if(now-last>32){const delta=Math.min(now-last,80);last=now;ctx.clearRect(0,0,width,height);ctx.fillStyle='#567357';ctx.globalAlpha=.17;
-   particles.forEach(p=>{p.y=(p.y+p.v*delta)%1;ctx.beginPath();ctx.arc(p.x*width,p.y*height,p.r,0,Math.PI*2);ctx.fill();});}
+  if(now-last>32){const delta=Math.min(now-last,80);last=now;ctx.clearRect(0,0,width,height);ctx.globalAlpha=.56;ctx.shadowBlur=3;
+   particles.forEach((p,i)=>{p.y=(p.y+p.v*delta)%1;ctx.fillStyle=['#E58889','#A8B99B','#B2D990','#E8C78A','#B9A7D8','#F0DFA6'][i%6];ctx.shadowColor=ctx.fillStyle;ctx.beginPath();ctx.arc(p.x*width,p.y*height,p.r,0,Math.PI*2);ctx.fill();});}
   frame=requestAnimationFrame(draw);
  }
  function resume(){cancelAnimationFrame(frame);frame=0;if(!motion.matches&&!document.hidden&&!destroyed&&ctx)frame=requestAnimationFrame(draw);else ctx?.clearRect(0,0,width,height);}

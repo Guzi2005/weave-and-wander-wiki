@@ -1,3 +1,5 @@
+import {LibraryError} from './lib/library-schema.mjs';
+import {loadLibraryAssets} from './lib/library-assets.mjs';
 // W&W Wiki 本地服务器。仅监听 127.0.0.1:4318，Node 内置模块，无框架、无外部依赖。
 // 写操作（POST/PATCH）要求 Host 为本机回环地址，且 Origin（如存在）与 Host 一致。
 
@@ -37,6 +39,7 @@ const CONTENT_TYPES = {
   '.bin': 'application/octet-stream',
   '.tres': 'text/plain; charset=utf-8',
   '.md': 'text/markdown; charset=utf-8',
+  '.pdf':'application/pdf','.mp4':'video/mp4','.webm':'video/webm','.mov':'video/quicktime',
 };
 
 const IMAGE_SNIFFS = [
@@ -143,7 +146,7 @@ async function serveStatic(req, res, pathname) {
       'X-Content-Type-Options': 'nosniff',
     // Embedded GLB textures use object URLs: ImageBitmapLoader fetches them,
     // while TextureLoader's browser fallback displays them as images.
-    'Content-Security-Policy': "default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; connect-src 'self' blob:",
+    'Content-Security-Policy': "default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; connect-src 'self' blob:; media-src 'self' blob:",
     });
     if (req.method === 'HEAD') {
       res.end();
@@ -156,6 +159,47 @@ async function serveStatic(req, res, pathname) {
 }
 
 async function handleApi(req, res, pathname, url, store, mediaDir) {
+  if(pathname==='/api/library/bootstrap'&&req.method==='GET'){
+    const assets=await loadLibraryAssets(PUBLIC_DIR),state=store.libraryState(),managedPaths=new Set((state.autosaves||[]).flatMap(item=>(item.files||[]).map(file=>file.path)));sendJson(res,200,{data:{schema:'ww-library-v1',...assets,records:store.exportDump().records.map(r=>({...r,note:r.notes||'',media:(r.media||[]).filter(m=>!managedPaths.has(m.path))}))},state});return;
+  }
+  if(pathname==='/api/library/state'){
+    if(req.method==='GET'){sendJson(res,200,store.libraryState());return;}
+    if(req.method==='PATCH'){
+      if(!guardLocalWrite(req,res))return;
+      const body=await readJson(req,2*1024*1024),vocabulary=JSON.parse(await readFile(path.join(PUBLIC_DIR,'library/vocabulary.json'),'utf8'));
+      const state=store.setLibraryPart(body.part,body.value,vocabulary);sendJson(res,200,state);return;
+    }
+    sendError(res,405,'方法不允许');return;
+  }
+  if(pathname==='/api/library/files'&&req.method==='POST'){
+    if(!guardLocalWrite(req,res))return;
+    const name=url.searchParams.get('name')||'',ext=path.extname(name).toLowerCase(),bytes=await readBody(req,50*1024*1024);
+    const types={'.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.gif':'image/gif','.webp':'image/webp','.svg':'image/svg+xml','.glb':'model/gltf-binary','.json':'application/json','.tres':'text/plain','.pdf':'application/pdf','.mp4':'video/mp4','.mov':'video/quicktime','.webm':'video/webm'};
+    if(!types[ext]||!bytes.length||name.length>200){sendError(res,422,'文件类型或名称无效');return;}
+    let valid=true;
+    if(['.png','.jpg','.jpeg','.gif','.webp'].includes(ext))valid=IMAGE_SNIFFS.some(s=>s.mime===types[ext]&&s.test(bytes));
+    if(ext==='.glb')valid=bytes.toString('ascii',0,4)==='glTF';
+    if(ext==='.pdf')valid=bytes.toString('ascii',0,5)==='%PDF-';
+    if(ext==='.webm')valid=bytes.length>4&&bytes.readUInt32BE(0)===0x1a45dfa3;
+    if(['.mp4','.mov'].includes(ext))valid=bytes.length>12&&['ftyp','moov','mdat','wide'].includes(bytes.toString('ascii',4,8));
+    if(ext==='.json'){try{JSON.parse(bytes.toString('utf8'));}catch{valid=false;}}
+    if(ext==='.svg'){const svg=bytes.toString('utf8');valid=/<svg[\s>]/i.test(svg)&&!/<(?:script|foreignObject|iframe|object|embed)\b|\bon[a-z]+\s*=|(?:href|src)\s*=\s*["'](?!#)|<!ENTITY/i.test(svg);}
+    if(!valid){sendError(res,422,'文件内容与类型不匹配或包含不支持的内容');return;}
+    await mkdir(mediaDir,{recursive:true});const filename='library-'+randomBytes(16).toString('hex')+ext,target=path.join(mediaDir,filename);await writeFile(target+'.tmp',bytes);await rename(target+'.tmp',target);
+    sendJson(res,201,{path:'/media/'+filename,name,type:types[ext],size:bytes.length,lastModified:Number(url.searchParams.get('lastModified'))||0});return;
+  }
+  if(pathname==='/api/library/autosaves'){
+    if(req.method==='GET'){sendJson(res,200,{items:store.libraryState().autosaves||[]});return;}
+    if(req.method==='PUT'){
+      if(!guardLocalWrite(req,res))return;const input=await readJson(req,2*1024*1024);
+      if(!input||!/^[-A-Za-z0-9_:]{1,120}$/.test(input.recordId||'')||!Array.isArray(input.files)||input.files.length>50){sendError(res,422,'资料文件信息无效');return;}
+      const files=[];for(const file of input.files){if(!file||!/^\/media\/library-[a-f0-9]{32}\.(png|jpe?g|webp|gif|svg|glb|json|tres|pdf|mp4|mov|webm)$/.test(file.path||'')){sendError(res,422,'文件引用无效');return;}const bytes=await readFile(path.join(mediaDir,path.basename(file.path)));if(file.size!==bytes.length){sendError(res,422,'文件大小不符');return;}files.push({path:file.path,name:String(file.name||'').slice(0,200),type:String(file.type||'').slice(0,80),size:bytes.length,lastModified:Number(file.lastModified)||0});}
+      const edit=store.libraryState().records[input.recordId];if(!edit){sendError(res,422,'请先保存资料信息');return;}
+      const item=store.saveLibraryFiles({recordId:input.recordId,topicId:edit.topicId,files,fields:{title:edit.title,note:edit.note},record:{parent_id:input.record?.parent_id||null,category:input.record?.category},assignments:{tagIds:edit.tagIds},updatedAt:new Date().toISOString()});sendJson(res,200,item);return;
+    }
+    sendError(res,405,'方法不允许');return;
+  }
+
   if (pathname === '/api/questions' && req.method === 'GET') {
     const questions = store.listQuestions({ status: url.searchParams.get('status'), record_id: url.searchParams.get('record_id') });
     sendJson(res, 200, { questions, count: questions.length });
@@ -268,13 +312,15 @@ export function buildServer(store, { mediaDir = MEDIA_DIR } = {}) {
       const pathname = url.pathname;
       if (pathname.startsWith('/api/')) {
         await handleApi(req, res, pathname, url, store, mediaDir);
+      } else if(pathname.startsWith('/media/')&&mediaDir!==MEDIA_DIR&&(req.method==='GET'||req.method==='HEAD')){
+        if(!/^\/media\/[A-Za-z0-9._-]+$/.test(pathname)){sendError(res,403,'路径无效');return;}try{const bytes=await readFile(path.join(mediaDir,path.basename(pathname)));res.writeHead(200,{'Content-Type':CONTENT_TYPES[path.extname(pathname)]||'application/octet-stream','X-Content-Type-Options':'nosniff','Content-Security-Policy':"default-src 'none'; style-src 'unsafe-inline'"});res.end(req.method==='HEAD'?undefined:bytes);}catch{sendError(res,404,'文件不存在');}
       } else if (req.method === 'GET' || req.method === 'HEAD') {
         await serveStatic(req, res, pathname);
       } else {
         sendError(res, 405, '方法不允许');
       }
     } catch (err) {
-      if (err instanceof ValidationError) {
+      if (err instanceof ValidationError || err instanceof LibraryError) {
         sendError(res, 422, err.message);
       } else if (err && err.message === '请求体超过大小上限') {
         sendError(res, 413, err.message);

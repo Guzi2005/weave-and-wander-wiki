@@ -6,3 +6,8 @@ public/media/*
 .wrangler/
 dist-public/
 .kimi-support-brief.txt
+
+# 本地开发归档与桌面临时文件，不进入正式工程PR
+.local-development/
+.DS_Store
+.workbuddy/

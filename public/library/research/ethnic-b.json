@@ -1,0 +1,1554 @@
+[
+  {
+    "id": "ethnic-29",
+    "name": "柯尔克孜族",
+    "summary": "新疆克孜勒苏是中国柯尔克孜族的主要聚居地，其余分布于新疆其他县市，黑龙江富裕也有聚居社区。聚居区包含帕米尔高原的山地、河谷和牧场。",
+    "culture": "史诗《玛纳斯》、民间弹唱和库姆孜等乐器构成重要文化线索。传统制毡、刺绣和草编与牧业生活相联系，神话、民歌及叙事文学也有丰富的口头传承。",
+    "clothing": "国家民委记载的传统装束包括男子的袷袢、腰带和毡靴，以及妇女的连衣长裙、绣花坎肩和头巾。冬夏帽料不同，女性头饰、配色也因年龄及婚姻状况而有区别。",
+    "distribution": [
+      {
+        "region": "650000",
+        "note": "主要聚居于克孜勒苏，亦分布于新疆其他县市"
+      },
+      {
+        "region": "230000",
+        "note": "富裕县五家子屯有聚居社区"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "柯尔克孜族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/kekzz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "柯尔克孜族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/kekzz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "主要聚居于克孜勒苏，亦分布于新疆其他县市；富裕县五家子屯有聚居社区",
+      "culture": "史诗《玛纳斯》、民间弹唱和库姆孜等乐器构成重要文化线索。传统制毡、刺绣和草编与牧业生活相联系，神话、民歌及叙事文学也有丰富的口头传承。",
+      "clothing": "国家民委记载的传统装束包括男子的袷袢、腰带和毡靴，以及妇女的连衣长裙、绣花坎肩和头巾。冬夏帽料不同，女性头饰、配色也因年龄及婚姻状况而有区别。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-30",
+    "name": "土族",
+    "summary": "土族主要聚居于青海互助，民和、大通和甘肃天祝也较集中，另有青海、甘肃其他地方的散居社区。生活环境兼有高原山区、浅山和河川耕作地带。",
+    "culture": "花儿与家曲是土族口头文化的重要形式，民和三川地区还有庆丰收的纳顿活动。长期同汉族、藏族等交往，也使语言、饮食、建筑和礼俗呈现地方性的交流与变化。",
+    "clothing": "传统服饰可见镶边长袍、绣花腰带、坎肩和绣鞋，妇女彩布拼接的花袖较有辨识度。不同地方的扭达头饰并不一致，来源还记述了古老头饰退出日常生活的历史。",
+    "distribution": [
+      {
+        "region": "630000",
+        "note": "互助为主要聚居地，民和、大通等地亦较集中"
+      },
+      {
+        "region": "620000",
+        "note": "天祝较集中，卓尼、永登、肃南等地散居"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "土族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/tz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "土族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/tz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "互助为主要聚居地，民和、大通等地亦较集中；天祝较集中，卓尼、永登、肃南等地散居",
+      "culture": "花儿与家曲是土族口头文化的重要形式，民和三川地区还有庆丰收的纳顿活动。长期同汉族、藏族等交往，也使语言、饮食、建筑和礼俗呈现地方性的交流与变化。",
+      "clothing": "传统服饰可见镶边长袍、绣花腰带、坎肩和绣鞋，妇女彩布拼接的花袖较有辨识度。不同地方的扭达头饰并不一致，来源还记述了古老头饰退出日常生活的历史。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-31",
+    "name": "达斡尔族",
+    "summary": "达斡尔族主要分布在内蒙古、黑龙江及新疆塔城等地，历史社会组织包括哈拉、莫昆等。",
+    "culture": "达斡尔族传统生产生活包含农业、渔猎和畜牧等内容，渔网、鱼叉、桦皮器具和勒勒车体现了历史上的生活经验。国家民委同时说明，狩猎后来已退出其经济生活。",
+    "clothing": "清代及以前的记载以季节性皮袍、皮裤、皮帽为重要线索，妇女也穿长袍和节庆绣花衣。随着布匹、绸缎输入，皮质服装的主导地位逐渐改变。",
+    "distribution": [
+      {
+        "region": "150000",
+        "note": "主要分布于莫力达瓦、鄂温克旗、扎兰屯、阿荣旗等地"
+      },
+      {
+        "region": "230000",
+        "note": "主要分布于齐齐哈尔及黑河等地"
+      },
+      {
+        "region": "650000",
+        "note": "塔城地区有分布"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "达斡尔族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/dwz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "达斡尔族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/dwz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "distribution",
+        "title": "达斡尔族",
+        "url": "https://www.hlj.gov.cn/hlj/c108504/202503/c00_31820375.shtml",
+        "publisher": "黑龙江省人民政府（来源：省民宗委）",
+        "published": "2025-03-13",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview",
+        "distribution"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "distribution"
+      ]
+    },
+    "evidence": {
+      "distribution": "主要分布于莫力达瓦、鄂温克旗、扎兰屯、阿荣旗等地；主要分布于齐齐哈尔及黑河等地；塔城地区有分布",
+      "culture": "达斡尔族传统生产生活包含农业、渔猎和畜牧等内容，渔网、鱼叉、桦皮器具和勒勒车体现了历史上的生活经验。国家民委同时说明，狩猎后来已退出其经济生活。",
+      "clothing": "清代及以前的记载以季节性皮袍、皮裤、皮帽为重要线索，妇女也穿长袍和节庆绣花衣。随着布匹、绸缎输入，皮质服装的主导地位逐渐改变，不宜把旧式皮装视为当代日常统一穿着。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-32",
+    "name": "仫佬族",
+    "summary": "仫佬族主要分布在广西，以罗城的多个乡镇较为集中，贵州麻江、凯里等地也有社区。聚居环境多为喀斯特山地及其间的河谷平坝，村落与周边民族交错分布。",
+    "culture": "仫佬族有自己的语言，并因长期与汉族、壮族交往而兼用其他语言，通用汉字。其住房、饮食和礼俗具有本地特点，同时也受到邻近群体长期交流的影响。",
+    "clothing": "来源记述传统衣料多经自行纺、织、染、缝，颜色偏深青；男子可穿对襟上衣及长裤，年长者有琵琶襟上衣。近代服装与当地汉族、壮族趋近，银耳环、手镯等也是所述饰物。",
+    "distribution": [
+      {
+        "region": "450000",
+        "note": "主要分布于广西，罗城为集中聚居地"
+      },
+      {
+        "region": "520000",
+        "note": "麻江、凯里、黄平、都匀、福泉等地有分布"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "仫佬族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/mlz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "仫佬族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/mlz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "overview",
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "主要分布于广西，罗城为集中聚居地；麻江、凯里、黄平、都匀、福泉等地有分布",
+      "culture": "仫佬族有自己的语言，并因长期与汉族、壮族交往而兼用其他语言，通用汉字。其住房、饮食和礼俗具有本地特点，同时也受到邻近群体长期交流的影响。",
+      "clothing": "来源记述传统衣料多经自行纺、织、染、缝，颜色偏深青；男子可穿对襟上衣及长裤，年长者有琵琶襟上衣。近代服装与当地汉族、壮族趋近，银耳环、手镯等也是所述饰物。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-33",
+    "name": "羌族",
+    "summary": "羌族主要聚居在四川阿坝州的茂县、汶川、理县等地及北川，另有四川其他地方和贵州江口、石阡等散居社区。聚居区常见高山、半山和深切河谷环境。",
+    "culture": "羌族的石砌碉楼、碉房、莎朗歌舞和羌历年是可进一步阅读的文化线索。村寨依山势而建，房屋利用本地土石；节日日期和具体礼俗也随村寨与地方而不同。",
+    "clothing": "服饰有明显地方差异，可见包头帕、右衽长衫、羊皮褂、绣花围腰和云纹鞋。来源明确记述羊皮褂用于防寒、挡雨、垫背等，头帕形式及衣色则随地方、年龄而变化。",
+    "distribution": [
+      {
+        "region": "510000",
+        "note": "阿坝州多县及北川为主要聚居地"
+      },
+      {
+        "region": "520000",
+        "note": "江口、石阡等地有散居社区"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "羌族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/qz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "羌族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/qz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "阿坝州多县及北川为主要聚居地；江口、石阡等地有散居社区",
+      "culture": "羌族的石砌碉楼、碉房、莎朗歌舞和羌历年是可进一步阅读的文化线索。村寨依山势而建，房屋利用本地土石；节日日期和具体礼俗也随村寨与地方而不同。",
+      "clothing": "服饰有明显地方差异，可见包头帕、右衽长衫、羊皮褂、绣花围腰和云纹鞋。来源明确记述羊皮褂用于防寒、挡雨、垫背等，头帕形式及衣色则随地方、年龄而变化。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-34",
+    "name": "布朗族",
+    "summary": "布朗族主要分布在云南西部及西南沿边地区，勐海、双江等地有聚居或散居社区。其生活区域包含澜沧江、怒江流域的山地，常与哈尼、拉祜、佤、傣等族相邻。",
+    "culture": "布朗族有自己的语言，民间音乐、节庆及纺织传统富有地方差异。国家民委分别介绍了西双版纳、临沧和保山等地的节日与音乐。",
+    "clothing": "传统布料包含自种棉麻织成的土布，服色常见青、黑。西双版纳部分妇女穿短上衣和带横向彩条的筒裙，并佩银饰、珠饰；来源也记述现代服装变化及不同年龄的穿着差别。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "主要分布于云南西部及西南沿边地区"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "布朗族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/blz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "布朗族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/blz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "主要分布于云南西部及西南沿边地区",
+      "culture": "布朗族有自己的语言，民间音乐、节庆及纺织传统富有地方差异。国家民委分别介绍了西双版纳、临沧和保山等地的节日与音乐，不能将一地习俗概括为全部布朗族共有。",
+      "clothing": "传统布料包含自种棉麻织成的土布，服色常见青、黑。西双版纳部分妇女穿短上衣和带横向彩条的筒裙，并佩银饰、珠饰；来源也记述现代服装变化及不同年龄的穿着差别。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-35",
+    "name": "撒拉族",
+    "summary": "撒拉族主要聚居在青海循化、化隆甘都及甘肃积石山大河家一带，在新疆伊宁、乌鲁木齐等地也有零星分布。其主要聚居地位于青海东部黄河沿岸河谷。",
+    "culture": "撒拉曲、宴席曲与花儿是重要的歌唱传统，骆驼舞保存了叙述先民迁徙的表演内容。撒拉语用于本民族交往，民歌和曲调又体现了与周边多个民族长期交流的影响。",
+    "clothing": "传统男子装束可见白色或黑色小帽、衬衣、坎肩与腰带；女子衣装有大襟花衣、黑坎肩和盖头，并佩耳饰等。来源特别指出，化隆部分地区的衣饰与藏族相近。",
+    "distribution": [
+      {
+        "region": "630000",
+        "note": "循化及化隆甘都等为主要聚居地"
+      },
+      {
+        "region": "620000",
+        "note": "积石山大河家等为主要聚居地"
+      },
+      {
+        "region": "650000",
+        "note": "伊宁、乌鲁木齐等地零星分布"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "撒拉族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/slz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "撒拉族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/slz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "循化及化隆甘都等为主要聚居地；积石山大河家等为主要聚居地；伊宁、乌鲁木齐等地零星分布",
+      "culture": "撒拉曲、宴席曲与花儿是重要的歌唱传统，骆驼舞保存了叙述先民迁徙的表演内容。撒拉语用于本民族交往，民歌和曲调又体现了与周边多个民族长期交流的影响。",
+      "clothing": "传统男子装束可见白色或黑色小帽、衬衣、坎肩与腰带；女子衣装有大襟花衣、黑坎肩和盖头，并佩耳饰等。来源特别指出，化隆部分地区的衣饰与藏族相近，不能一概而论。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-36",
+    "name": "毛南族",
+    "summary": "毛南族主要聚居于广西环江山区及贵州平塘、独山交界的河谷地带，另有周边散居社区。聚居地包含喀斯特山地、田峒和河谷盆地，不同地段的生产条件有差异。",
+    "culture": "毛南族有自己的语言，长期与壮族、汉族、布依族交往，许多人能使用邻近群体的语言。分龙节是来源介绍的特色节日之一，与相邻民族共享的节日也有地方礼俗。",
+    "clothing": "所述传统装束多用青、蓝色布料，男子有五扣衣和缠头巾，妇女有镶边上衣、绣花围腰、银饰与绣鞋。民族服装的样式随性别、年龄和用途变化，如今日常衣着也日益多样。",
+    "distribution": [
+      {
+        "region": "450000",
+        "note": "主要聚居于环江及周边县市"
+      },
+      {
+        "region": "520000",
+        "note": "平塘、独山交界及惠水等地有分布"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "毛南族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/mnz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "毛南族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/mnz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "主要聚居于环江及周边县市；平塘、独山交界及惠水等地有分布",
+      "culture": "毛南族有自己的语言，长期与壮族、汉族、布依族交往，许多人能使用邻近群体的语言。分龙节是来源介绍的特色节日之一，与相邻民族共享的节日也有地方礼俗。",
+      "clothing": "所述传统装束多用青、蓝色布料，男子有五扣衣和缠头巾，妇女有镶边上衣、绣花围腰、银饰与绣鞋。民族服装的样式随性别、年龄和用途变化，如今日常衣着也日益多样。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-37",
+    "name": "仡佬族",
+    "summary": "仡佬族人口较集中于贵州务川、道真、石阡，另散居于贵州多个县市。国家民委还在语言使用介绍中列举云南麻栗坡和广西隆林的仡佬语社区，作为地域入口单列。",
+    "culture": "仡佬族民间文学包括传说、诗歌和谚语，盘歌以一问一答、即兴演唱表现日常生活。不同地方还有春节、吃新节、祭山节等活动，传统文化持续受到跨民族交流的影响。",
+    "clothing": "旧时服装多用家织麻布，史料记述过男子长衫和妇女短衣、分段筒裙等形式。来源同时强调，近代以后日常服饰逐渐变化，如今传统民族装束更多见于节庆。",
+    "distribution": [
+      {
+        "region": "520000",
+        "note": "主要聚居于务川、道真、石阡等地"
+      },
+      {
+        "region": "530000",
+        "note": "概况提及麻栗坡月亮湾的仡佬语社区"
+      },
+      {
+        "region": "450000",
+        "note": "概况提及隆林三冲的仡佬语社区"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "仡佬族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/glz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "仡佬族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/glz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "主要聚居于务川、道真、石阡等地；概况提及麻栗坡月亮湾的仡佬语社区；概况提及隆林三冲的仡佬语社区",
+      "culture": "仡佬族民间文学包括传说、诗歌和谚语，盘歌以一问一答、即兴演唱表现日常生活。不同地方还有春节、吃新节、祭山节等活动，传统文化持续受到跨民族交流的影响。",
+      "clothing": "旧时服装多用家织麻布，史料记述过男子长衫和妇女短衣、分段筒裙等形式。来源同时强调，近代以后日常服饰逐渐变化，如今传统民族装束更多见于节庆，不能当作全体日常制服。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-38",
+    "name": "锡伯族",
+    "summary": "锡伯族分布呈东北与西北相隔、大分散小聚居的特点。辽宁及新疆察布查尔等地是重要分布区域，黑龙江、吉林、内蒙古和北京、陕西、上海等地也有社区。",
+    "culture": "锡伯族的西迁节、抹黑节及射箭传统是可追索的文化线索。由于历史迁徙，东北与新疆锡伯族在语言使用等方面形成差别；新疆锡伯族保留了较多语言文字传统。",
+    "clothing": "来源介绍，为适应骑射，历史上的男子常穿两侧开衩、镶边的长袍并束腰带、穿长靴。其后服饰受到汉族、维吾尔族等影响，现代衣着更加多样。",
+    "distribution": [
+      {
+        "region": "210000",
+        "note": "沈阳、大连、铁岭等地为主要分布区域"
+      },
+      {
+        "region": "650000",
+        "note": "察布查尔及伊犁等县市为重要聚居地"
+      },
+      {
+        "region": "230000",
+        "note": "哈尔滨及双城等地有分布"
+      },
+      {
+        "region": "220000",
+        "note": "长春等地有分布"
+      },
+      {
+        "region": "150000",
+        "note": "呼伦贝尔等地有分布"
+      },
+      {
+        "region": "610000",
+        "note": "概况列为散居省份"
+      },
+      {
+        "region": "110000",
+        "note": "概况列为散居地区"
+      },
+      {
+        "region": "310000",
+        "note": "概况列为散居地区"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "锡伯族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/xbz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "锡伯族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/xbz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "沈阳、大连、铁岭等地为主要分布区域；察布查尔及伊犁等县市为重要聚居地；哈尔滨及双城等地有分布；长春等地有分布；呼伦贝尔等地有分布；概况列为散居省份；概况列为散居地区；概况列为散居地区",
+      "culture": "锡伯族的西迁节、抹黑节及射箭传统是可追索的文化线索。由于历史迁徙，东北与新疆锡伯族在语言使用等方面形成差别；新疆锡伯族保留了较多语言文字传统。",
+      "clothing": "来源介绍，为适应骑射，历史上的男子常穿两侧开衩、镶边的长袍并束腰带、穿长靴。其后服饰受到汉族、维吾尔族等影响，现代衣着更加多样，旧装并不代表今日所有锡伯族。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-39",
+    "name": "阿昌族",
+    "summary": "阿昌族在国内主要分布于云南德宏的户撒、囊宋、九保等地，云南其他县市亦有社区。聚居区多位于高黎贡山余脉与河流之间的坝地，同周边多个民族长期相处。",
+    "culture": "阿露窝罗节是阿昌族的重要节日，歌舞与各村寨往来构成节庆内容。户撒、梁河等地区的节日和礼俗又受到邻近汉族、傣族及佛教文化影响，具有具体地方背景。",
+    "clothing": "传统男子可穿青、白或黑色对襟衣和长裤，头巾颜色因地而异。妇女的包头、筒裙和银饰在户撒、腊撒、梁河并不相同；来源指出，青年日常着装已有较多变化，盛装常用于节庆。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "主要分布于德宏及滇西其他县市"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "阿昌族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/acz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "阿昌族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/acz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "主要分布于德宏及滇西其他县市",
+      "culture": "阿露窝罗节是阿昌族的重要节日，歌舞与各村寨往来构成节庆内容。户撒、梁河等地区的节日和礼俗又受到邻近汉族、傣族及佛教文化影响，具有具体地方背景。",
+      "clothing": "传统男子可穿青、白或黑色对襟衣和长裤，头巾颜色因地而异。妇女的包头、筒裙和银饰在户撒、腊撒、梁河并不相同；来源指出，青年日常着装已有较多变化，盛装常用于节庆。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-40",
+    "name": "普米族",
+    "summary": "普米族主要分布在云南西北部兰坪、宁蒗等地，四川盐源、木里、九龙等地也有社区。其生活区域多为横断山脉纵谷地带，高山、河流和小块盆地相间。",
+    "culture": "普米族的对歌、火塘生活及年节活动是来源记述的文化线索。宁蒗与兰坪、维西的年节时间和习俗并不完全相同；普米语及日常交往又反映了多民族共居的背景。",
+    "clothing": "宁蒗、永胜部分妇女的传统装束有大襟短衣、百褶长裙、彩色羊毛腰带和羊皮披背，兰坪服饰则有不同头饰形式。来源明确说明各地差异及近现代服装变化。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "兰坪、宁蒗及云南西北部其他县市为主要分布区"
+      },
+      {
+        "region": "510000",
+        "note": "盐源、木里、九龙等地有分布"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "普米族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/pmz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "search-excerpt",
+        "verificationNote": "直接打开曾超时或返回异常；已读取搜索工具对同一国家民委 URL 返回的官方索引正文。未据此声称已成功读取 open 完整页面。"
+      },
+      {
+        "id": "customs",
+        "title": "普米族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/pmz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "兰坪、宁蒗及云南西北部其他县市为主要分布区；盐源、木里、九龙等地有分布",
+      "culture": "普米族的对歌、火塘生活及年节活动是来源记述的文化线索。宁蒗与兰坪、维西的年节时间和习俗并不完全相同；普米语及日常交往又反映了多民族共居的背景。",
+      "clothing": "宁蒗、永胜部分妇女的传统装束有大襟短衣、百褶长裙、彩色羊毛腰带和羊皮披背，兰坪服饰则有不同头饰形式。来源明确说明各地差异及近现代服装变化，不宜归纳成单一套装。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-41",
+    "name": "塔吉克族",
+    "summary": "中国塔吉克族主要聚居于新疆塔什库尔干，另分布于泽普、莎车、阿克陶等地。主要聚居区处于帕米尔高原东部，兼有高山牧场和适宜农作的河谷。",
+    "culture": "塔吉克族的口头诗歌、故事和歌舞在社会生活中有重要位置，内容包括爱情及对生活的愿望。当地手工艺在房屋、织物和日用品上使用绘、雕、刺绣等装饰，具有具体生活背景。",
+    "clothing": "传统帽饰和靴袜具有高原生活的实用性：男子的吐马克帽可放下帽圈保护耳颊，妇女有绣花库勒塔帽和头巾。衣装还包括袷袢、连衣裙、腰带与软靴，年龄及场景不同，配色和饰物有别。",
+    "distribution": [
+      {
+        "region": "650000",
+        "note": "主要聚居于塔什库尔干，南疆其他县市亦有分布"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "塔吉克族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/tjkz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "塔吉克族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/tjkz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "主要聚居于塔什库尔干，南疆其他县市亦有分布",
+      "culture": "塔吉克族的口头诗歌、故事和歌舞在社会生活中有重要位置，内容包括爱情及对生活的愿望。当地手工艺在房屋、织物和日用品上使用绘、雕、刺绣等装饰，具有具体生活背景。",
+      "clothing": "传统帽饰和靴袜具有高原生活的实用性：男子的吐马克帽可放下帽圈保护耳颊，妇女有绣花库勒塔帽和头巾。衣装还包括袷袢、连衣裙、腰带与软靴，年龄及场景不同，配色和饰物有别。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-42",
+    "name": "怒族",
+    "summary": "怒族主要分布在云南怒江、迪庆的部分县市及西藏察隅，与傈僳族、独龙族、藏族等交错居住。其生活环境包含怒江、澜沧江流域的高山峡谷，地方差异明显。",
+    "culture": "贡山一带的仙女节，以及神话、传说、民歌等口头文学，是来源介绍的文化线索。不同地方的怒族有不同自称与语言特点；节日也逐渐成为当地多民族往来交流的场合。",
+    "clothing": "福贡、贡山、兰坪等地的怒族传统服饰可见麻布长衫、长裙、头巾、串珠与怒毯，形制与装饰随地区和人生阶段变化。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "怒江州及迪庆维西等地为主要分布区"
+      },
+      {
+        "region": "540000",
+        "note": "察隅县等地有分布"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "怒族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/nz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "怒族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/nz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "怒江州及迪庆维西等地为主要分布区；察隅县等地有分布",
+      "culture": "贡山一带的仙女节，以及神话、传说、民歌等口头文学，是来源介绍的文化线索。不同地方的怒族有不同自称与语言特点；节日也逐渐成为当地多民族往来交流的场合。",
+      "clothing": "怒族服饰不能只用一套概括。国家民委按福贡、贡山、兰坪等地分别介绍麻布长衫、长裙、头巾、串珠和怒毯等；头饰与衣裙还受年龄、婚姻状态及邻近群体交往影响。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-43",
+    "name": "乌孜别克族",
+    "summary": "乌孜别克族在国内主要散居新疆，伊犁、喀什、乌鲁木齐、塔城等地有分布，多数居于城镇，也有乡村与牧区社区。不同居住环境影响了语言使用和生活交往。",
+    "culture": "乌孜别克族的民间音乐有独唱、自奏自唱等形式，乐器包括弹拨与打击乐器，手鼓舞也是来源介绍的表演传统。与邻近民族长期共居，使文化生活呈现互相交流的特点。",
+    "clothing": "朵帕小花帽是来源介绍的重要服饰线索，帽形有圆形和可折叠的四棱形，常绣几何或花卉图案。帽料、配色及头巾搭配因性别、年龄和地方不同而变化。",
+    "distribution": [
+      {
+        "region": "650000",
+        "note": "伊犁、喀什、乌鲁木齐、塔城等地分散居住"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "乌孜别克族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/wzbkz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "乌孜别克族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/wzbkz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "伊犁、喀什、乌鲁木齐、塔城等地分散居住",
+      "culture": "乌孜别克族的民间音乐有独唱、自奏自唱等形式，乐器包括弹拨与打击乐器，手鼓舞也是来源介绍的表演传统。与邻近民族长期共居，使文化生活呈现互相交流的特点。",
+      "clothing": "朵帕小花帽是来源介绍的重要服饰线索，帽形有圆形和可折叠的四棱形，常绣几何或花卉图案。帽料、配色及头巾搭配因性别、年龄和地方不同而变化，不能套用于每一个人。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-44",
+    "name": "俄罗斯族",
+    "summary": "俄罗斯族是中国56个民族之一，国内社区主要分布在新疆、内蒙古，黑龙江和北京等地也有分布，额尔古纳恩和是其中一处聚居地。",
+    "culture": "民歌、故事、谚语与节日活动构成丰富的文化内容，列巴等食品也是生活特色。长期与周边民族交往，推动了饮食、语言和生活方式的交流。",
+    "clothing": "来源所述传统装束有男子斜领麻布衬衫、腰带和长靴，妇女可穿衬衫、无袖萨拉凡或毛织裙，冬季有毡靴。现代日常穿着已多样化。",
+    "distribution": [
+      {
+        "region": "650000",
+        "note": "塔城、乌鲁木齐、伊犁等地为主要分布区"
+      },
+      {
+        "region": "150000",
+        "note": "呼伦贝尔、额尔古纳等地为主要分布区"
+      },
+      {
+        "region": "230000",
+        "note": "概况列明有散居人口"
+      },
+      {
+        "region": "110000",
+        "note": "概况列明有散居人口"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "俄罗斯族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/elsz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "俄罗斯族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/elsz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "overview",
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "塔城、乌鲁木齐、伊犁等地为主要分布区；呼伦贝尔、额尔古纳等地为主要分布区；概况列明有散居人口；概况列明有散居人口",
+      "culture": "民歌、故事、谚语和节日活动构成来源介绍的文化内容，列巴等食品也是日常生活线索。长期同周边民族交往，饮食、语言和生活方式不断发生交流，并非对外国民俗的简单复制。",
+      "clothing": "来源所述传统装束有男子斜领麻布衬衫、腰带和长靴，妇女可穿衬衫、无袖萨拉凡或毛织裙，冬季有毡靴。现代日常穿着已多样化，这些传统形式应与历史时期和具体社区结合阅读。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-45",
+    "name": "鄂温克族",
+    "summary": "鄂温克族主要分布于内蒙古鄂温克旗、根河等地及黑龙江讷河等社区，形成牧区、农区和林区等多样的生活文化。",
+    "culture": "鄂温克族有自己的语言，多语交往与邻近民族共居密切相关。各地生产生活呈现牧业、农业与森林文化的特色。",
+    "clothing": "历史上猎区服饰多用兽皮，牧区则多用羊皮，衣料随季节选取厚薄不同的皮张，体现防寒需要。如今传统衣装更多出现在节庆或部分边远地区，现代衣裙与休闲装同样是日常生活的一部分。",
+    "distribution": [
+      {
+        "region": "150000",
+        "note": "鄂温克旗、根河及呼伦贝尔多旗市为主要分布区"
+      },
+      {
+        "region": "230000",
+        "note": "讷河等地有分布"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "鄂温克族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/ewkz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "鄂温克族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/ewkz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "overview",
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "鄂温克旗、根河及呼伦贝尔多旗市为主要分布区；讷河等地有分布",
+      "culture": "鄂温克族有自己的语言，多语交往与邻近民族共居密切相关。来源对不同地区的生产生活分别介绍，提醒研究者区分具体社区，不能把林区或牧区的习俗推广到全部鄂温克族。",
+      "clothing": "历史上猎区服饰多用兽皮，牧区则多用羊皮，衣料随季节选取厚薄不同的皮张，体现防寒需要。如今传统衣装更多出现在节庆或部分边远地区，现代衣裙与休闲装同样是日常生活的一部分。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-46",
+    "name": "德昂族",
+    "summary": "德昂族在国内主要分布于云南德宏、保山和临沧的部分县市，呈大分散、小聚居的特点。三台山等地是较集中的地方入口，常同多个邻近民族分寨或交错居住。",
+    "culture": "德昂族的泼水节、关门节、开门节等活动，保留着与取水、祝福和歌舞相关的礼俗，各地村寨也有自己的节庆传统。",
+    "clothing": "传统妇女装束可见深色短上衣、带彩色横纹的长裙、银饰及藤篾腰箍；男子有深色大襟衣、短宽裤和头巾。腰箍的材料、数量和装饰存在变化。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "德宏、保山和临沧部分县市为主要分布区"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "德昂族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/daz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "德昂族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/daz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "德宏、保山和临沧部分县市为主要分布区",
+      "culture": "来源介绍德昂族的泼水节、关门节、开门节等活动，并记述与取水、祝福和歌舞相关的礼俗。地方社区各有生活背景，文化简介应结合村寨和具体节庆，而不是静态的统一清单。",
+      "clothing": "传统妇女装束可见深色短上衣、带彩色横纹的长裙、银饰及藤篾腰箍；男子有深色大襟衣、短宽裤和头巾。腰箍的材料、数量和装饰存在变化，不能据此判断个人的族群身份。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-47",
+    "name": "保安族",
+    "summary": "保安族主要聚居于甘肃积石山大河家一带的保安三庄等地，其余分布在临夏其他县市、兰州以及青海、新疆。聚居区临近黄河与积石山，生活中兼有农牧条件。",
+    "culture": "花儿在保安族口头文学中占有重要位置，歌唱吸收了周边多个民族的艺术因素。来源还记述了历史迁徙及与邻近群体交往，说明文化与服饰都在持续变化。",
+    "clothing": "保安族服饰随迁徙和邻族交往变化。来源记述男子白衫、深色坎肩和小帽，妇女有右衽上衣、长裤、坎肩及盖头；节庆长袍又有不同形式。",
+    "distribution": [
+      {
+        "region": "620000",
+        "note": "积石山大河家等地为主要聚居区，临夏、兰州等地亦有分布"
+      },
+      {
+        "region": "630000",
+        "note": "概况列明有散居人口"
+      },
+      {
+        "region": "650000",
+        "note": "概况列明有散居人口"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "保安族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/baz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "保安族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/baz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "积石山大河家等地为主要聚居区，临夏、兰州等地亦有分布；概况列明有散居人口；概况列明有散居人口",
+      "culture": "花儿在保安族口头文学中占有重要位置，歌唱吸收了周边多个民族的艺术因素。来源还记述了历史迁徙及与邻近群体交往，说明文化与服饰都在持续变化，并非一成不变。",
+      "clothing": "保安族服饰随迁徙和邻族交往变化。来源记述男子白衫、深色坎肩和小帽，妇女有右衽上衣、长裤、坎肩及盖头；节庆长袍又有不同形式，不能将某一时代或年龄组的装束作统一标准。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-48",
+    "name": "裕固族",
+    "summary": "裕固族主要聚居于甘肃肃南及酒泉黄泥堡一带。肃南多属祁连山地，黄泥堡等地则为戈壁绿洲；不同区域的畜牧、农业生产背景和语言使用情况有所差别。",
+    "culture": "裕固族社区使用西部裕固语、东部裕固语和国家通用语言，牧业与绿洲农作共同构成多样的生活背景。",
+    "clothing": "肃南裕固族传统服饰的记录包含男子镶边长袍、白毡帽和彩色腰带，女性头饰则随年龄和婚姻状况变化，已婚妇女有红缨毡帽与长形头面。这里依据非遗项目介绍。",
+    "distribution": [
+      {
+        "region": "620000",
+        "note": "主要聚居于肃南裕固族自治县和酒泉黄泥堡地区"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "裕固族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/ygz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "search-excerpt",
+        "verificationNote": "直接打开曾超时或返回异常；已读取搜索工具对同一国家民委 URL 返回的官方索引正文。未据此声称已成功读取 open 完整页面。"
+      },
+      {
+        "id": "heritage",
+        "title": "裕固族服饰",
+        "url": "https://www.ihchina.cn/art/detail/id/15267.html",
+        "publisher": "中国非物质文化遗产网·中国非物质文化遗产数字博物馆",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "overview"
+      ],
+      "clothing": [
+        "heritage"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "主要聚居于肃南裕固族自治县和酒泉黄泥堡地区",
+      "culture": "国家民委介绍，裕固族存在西部裕固语、东部裕固语以及长期使用国家通用语言的不同社区。牧业与绿洲农作并存，文化简介应保留这些地域差别，不用一种生活方式概括所有人。",
+      "clothing": "肃南裕固族传统服饰的记录包含男子镶边长袍、白毡帽和彩色腰带，女性头饰则随年龄和婚姻状况变化，已婚妇女有红缨毡帽与长形头面。这里依据非遗项目介绍，不等于当代全体日常穿戴。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-49",
+    "name": "京族",
+    "summary": "中国京族主要分布在广西防城港，东兴江平的澫尾、山心、巫头有京族三岛之称，周边也有杂居社区。滨海环境中的渔业、盐业和农作共同构成生活背景。",
+    "culture": "哈节是来源介绍的重要传统节日，包含祭祖、文娱和聚餐等活动，各村岛时间有所不同。京族有自己的语言，长期与汉族、壮族等往来，也通用汉语及汉文。",
+    "clothing": "传统男子有较长、开衩的上衣和彩色腰带，妇女可穿短上衣、宽裤和绣饰遮胸布，外出时另加长衫。来源强调不同年龄的配色与日常、外出装束的区别。",
+    "distribution": [
+      {
+        "region": "450000",
+        "note": "主要分布于防城港东兴江平等地，钦州亦有少量分布"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "京族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/jz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "京族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/jz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "主要分布于防城港东兴江平等地，钦州亦有少量分布",
+      "culture": "哈节是来源介绍的重要传统节日，包含祭祖、文娱和聚餐等活动，各村岛时间有所不同。京族有自己的语言，长期与汉族、壮族等往来，也通用汉语及汉文。",
+      "clothing": "传统男子有较长、开衩的上衣和彩色腰带，妇女可穿短上衣、宽裤和绣饰遮胸布，外出时另加长衫。来源强调不同年龄的配色与日常、外出装束的区别，不应把节庆形象当作唯一服装。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-50",
+    "name": "塔塔尔族",
+    "summary": "中国塔塔尔族主要散居新疆天山以北，伊犁、昌吉、乌鲁木齐及塔城等地是重要分布区域。不同城镇和牧区社区在语言使用、衣着和日常生活上有所区别。",
+    "culture": "刺绣是来源介绍的手工艺线索，既装饰衣服，也用于桌布、墙围和嫁妆等物品。长期与维吾尔族、哈萨克族交错居住，使语言和生活文化保持广泛交流，城镇与乡村经验也不相同。",
+    "clothing": "传统城市男子可穿绣边白衬衫、短背心和小花帽，妇女有带皱边的连衣长裙、花帽或头巾；乡村牧区装束又有差异。来源同时说明现代服装已普及。",
+    "distribution": [
+      {
+        "region": "650000",
+        "note": "主要散居于天山以北的伊犁、昌吉、乌鲁木齐等地"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "塔塔尔族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/ttez/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "塔塔尔族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/ttez/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "主要散居于天山以北的伊犁、昌吉、乌鲁木齐等地",
+      "culture": "刺绣是来源介绍的手工艺线索，既装饰衣服，也用于桌布、墙围和嫁妆等物品。长期与维吾尔族、哈萨克族交错居住，使语言和生活文化保持广泛交流，城镇与乡村经验也不相同。",
+      "clothing": "传统城市男子可穿绣边白衬衫、短背心和小花帽，妇女有带皱边的连衣长裙、花帽或头巾；乡村牧区装束又有差异。来源同时说明现代服装已普及，旧式衣装不能代表每位当代塔塔尔族。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-51",
+    "name": "独龙族",
+    "summary": "独龙族是云南人口较少民族之一，独龙江河谷是主要地域入口。高黎贡山与担当力卡山之间的河谷降雨丰沛、垂直高差大，语言与生活传统具有鲜明的地方背景。",
+    "culture": "独龙族的歌谣、舞蹈以及卡尔江哇年节是来源介绍的文化线索。历史上有刻木、结绳记事和传递信息的方式；讨论这些传统时，需要与今日生活以及具体时代区分。",
+    "clothing": "来源记述的传统穿着包括条纹麻毯披裹身体、麻布绑腿等；男子与妇女的围披方式并不完全一样，毯子也可兼作被褥。这里介绍的是历史衣着。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "独龙江及贡山一带为主要地域入口"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "独龙族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/dlz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "search-excerpt",
+        "verificationNote": "直接打开曾超时或返回异常；已读取搜索工具对同一国家民委 URL 返回的官方索引正文。未据此声称已成功读取 open 完整页面。"
+      },
+      {
+        "id": "customs",
+        "title": "独龙族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/dlz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "独龙江及贡山一带为主要地域入口",
+      "culture": "独龙族的歌谣、舞蹈以及卡尔江哇年节是来源介绍的文化线索。历史上有刻木、结绳记事和传递信息的方式；讨论这些传统时，需要与今日生活以及具体时代区分。",
+      "clothing": "来源记述的传统穿着包括条纹麻毯披裹身体、麻布绑腿等；男子与妇女的围披方式并不完全一样，毯子也可兼作被褥。这里介绍的是历史衣着，不能据此推断今日所有独龙族的日常穿着。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-52",
+    "name": "鄂伦春族",
+    "summary": "鄂伦春族主要分布在内蒙古东北部和黑龙江北部的部分旗县，历史生活与大小兴安岭森林环境紧密相连。今天的社区分布和生产生活已发生持续变化。",
+    "culture": "摩苏昆等讲唱文学、民歌以及篝火节是来源介绍的文化线索。传统的渔猎、森林知识和手工艺有其历史环境，介绍时应区分旧日生产方式和当代文化传承活动。",
+    "clothing": "传统衣装以狍皮等兽皮制成袍、裤、帽、靴，衣边和袖口可饰云纹、刺绣，衣式与季节、骑乘需要有关。近代布料传入后装束也发生变化。",
+    "distribution": [
+      {
+        "region": "150000",
+        "note": "鄂伦春旗及呼伦贝尔部分旗市为主要分布区"
+      },
+      {
+        "region": "230000",
+        "note": "呼玛、逊克、爱辉、嘉荫等地为主要分布区"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "鄂伦春族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/elcz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "鄂伦春族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/elcz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "鄂伦春旗及呼伦贝尔部分旗市为主要分布区；呼玛、逊克、爱辉、嘉荫等地为主要分布区",
+      "culture": "摩苏昆等讲唱文学、民歌以及篝火节是来源介绍的文化线索。传统的渔猎、森林知识和手工艺有其历史环境，介绍时应区分旧日生产方式和当代文化传承活动。",
+      "clothing": "传统衣装以狍皮等兽皮制成袍、裤、帽、靴，衣边和袖口可饰云纹、刺绣，衣式与季节、骑乘需要有关。近代布料传入后装束也发生变化，皮装应作为历史服饰而非今日统一日常装理解。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-53",
+    "name": "赫哲族",
+    "summary": "赫哲族主要分布在黑龙江、松花江和乌苏里江交汇的三江平原及附近地区。街津口、八岔、四排等地是具体社区入口，河流渔业与森林资源构成历史生活背景。",
+    "culture": "来源介绍了捕鱼、制船、桦皮器具等生活技艺，以及民间节庆与歌舞。乌日贡节以文体活动庆祝丰收；具体社区的文化传承也经历与周边民族交往及近现代生活变化。",
+    "clothing": "赫哲族传统衣装使用鱼皮与兽皮，不同河段居民的选料各有特色。衣边可见云纹、几何纹、花卉纹样及贝壳等饰件。",
+    "distribution": [
+      {
+        "region": "230000",
+        "note": "三江平原及完达山附近的同江、饶河、佳木斯、抚远等地为主要分布区"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "赫哲族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/hzz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "赫哲族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/hzz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "三江平原及完达山附近的同江、饶河、佳木斯、抚远等地为主要分布区",
+      "culture": "来源介绍了捕鱼、制船、桦皮器具等生活技艺，以及民间节庆与歌舞。乌日贡节以文体活动庆祝丰收；具体社区的文化传承也经历与周边民族交往及近现代生活变化。",
+      "clothing": "鱼皮和兽皮衣装是传统研究的重要线索，但来源明确区分了不同河段居民的选料。衣边可见云纹、几何纹、花卉及贝壳等饰件；这种地域和时代差异比单一的鱼皮衣形象更准确。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-54",
+    "name": "门巴族",
+    "summary": "门巴族主要分布于西藏东南部的门隅和墨脱地区，勒布是重要聚居地。喜马拉雅山南麓及雅鲁藏布江峡谷具有多样的山地环境，地方社区在文化与服饰上有明显差异。",
+    "culture": "门巴族有自己的语言，与藏族长期交往，许多人通晓藏语文。年节、门巴戏和歌舞是来源介绍的文化线索；门隅与墨脱的新年时间和具体习俗并不完全相同。",
+    "clothing": "来源分别记述门隅、勒布和墨脱妇女的上衣、氆氇衣裙或条纹筒裙；墨脱部分衣装以白色为主，而其他地方可见红黑氆氇外衣。不同区域及性别的差异。",
+    "distribution": [
+      {
+        "region": "540000",
+        "note": "主要分布于门隅、勒布和墨脱等地区"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "门巴族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/mbz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "门巴族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/mbz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "主要分布于门隅、勒布和墨脱等地区",
+      "culture": "门巴族有自己的语言，与藏族长期交往，许多人通晓藏语文。年节、门巴戏和歌舞是来源介绍的文化线索；门隅与墨脱的新年时间和具体习俗并不完全相同。",
+      "clothing": "来源分别记述门隅、勒布和墨脱妇女的上衣、氆氇衣裙或条纹筒裙；墨脱部分衣装以白色为主，而其他地方可见红黑氆氇外衣。不同区域及性别的差异，不能简化为一套门巴族服装。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-55",
+    "name": "珞巴族",
+    "summary": "珞巴族主要分布于西藏东南部的珞瑜地区，米林、墨脱、察隅、隆子等地较集中。内部地方群体较多，高山与低海拔河谷环境的差异也体现在生活文化中。",
+    "culture": "珞巴族内部有多个地方群体，语言、歌舞、节庆与装饰各具特色，各地年节时间也有差异。",
+    "clothing": "服饰有明显地域与部落差异。来源举出博嘎尔男子皮衣、氆氇袍和帽饰，妇女麻织衣、筒裙及披肩，以及察隅等地不同衣裙；材料和厚薄与环境有关。",
+    "distribution": [
+      {
+        "region": "540000",
+        "note": "米林、墨脱、察隅、隆子等珞瑜地区为主要分布区"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "珞巴族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/lbz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "珞巴族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/lbz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "米林、墨脱、察隅、隆子等珞瑜地区为主要分布区",
+      "culture": "国家民委介绍珞巴族内部不同部落及语言差异，歌舞、节庆和装饰品须结合具体群体阅读。年节时间各地不同，不能把某一部落的礼俗推为所有珞巴族共同遵循。",
+      "clothing": "服饰有明显地域与部落差异。来源举出博嘎尔男子皮衣、氆氇袍和帽饰，妇女麻织衣、筒裙及披肩，以及察隅等地不同衣裙；材料和厚薄与环境有关，不存在可涵盖全部群体的唯一套装。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  },
+  {
+    "id": "ethnic-56",
+    "name": "基诺族",
+    "summary": "基诺族主要聚居于云南西双版纳景洪的基诺山及附近地区，勐腊也有少量散居。基诺山为热带山地环境，农作、茶叶与棉花等生产在生活中具有重要位置。",
+    "culture": "特懋克节及新米节是来源介绍的重要节日，活动中有歌舞和社区往来。纺线、腰机织布、刺绣是传统手工艺线索，织物也用于生活用品、衣被及礼物的制作。",
+    "clothing": "传统衣装可见男子对襟衣背部的太阳花纹饰，妇女镶绣短衣、镶边裙和白色披风式尖顶帽。腰机织成的砍刀布及刺绣与衣物制作相连。",
+    "distribution": [
+      {
+        "region": "530000",
+        "note": "景洪基诺山及周边为主要聚居区，勐腊亦有少量散居"
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview",
+        "title": "基诺族·概况",
+        "url": "https://www.neac.gov.cn/seac/ztzl/jnz/gk.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      },
+      {
+        "id": "customs",
+        "title": "基诺族·风俗习惯",
+        "url": "https://www.neac.gov.cn/seac/ztzl/jnz/fsxg.shtml",
+        "publisher": "国家民族事务委员会",
+        "accessed": "2026-11-12",
+        "verification": "full-page"
+      }
+    ],
+    "fieldSources": {
+      "summary": [
+        "overview"
+      ],
+      "culture": [
+        "customs"
+      ],
+      "clothing": [
+        "customs"
+      ],
+      "distribution": [
+        "overview"
+      ]
+    },
+    "evidence": {
+      "distribution": "景洪基诺山及周边为主要聚居区，勐腊亦有少量散居",
+      "culture": "特懋克节及新米节是来源介绍的重要节日，活动中有歌舞和社区往来。纺线、腰机织布、刺绣是传统手工艺线索，织物也用于生活用品、衣被及礼物的制作。",
+      "clothing": "传统衣装可见男子对襟衣背部的太阳花纹饰，妇女镶绣短衣、镶边裙和白色披风式尖顶帽。腰机织成的砍刀布及刺绣与衣物制作相连，具体款式仍应按地方、年代和实物区分。"
+    },
+    "caveat": "所述为来源记录的传统文化与服饰线索，存在地域、年龄、场景和时代差异，不代表每位成员的日常穿着；所列地域不是完整人口分布。"
+  }
+]
