@@ -1,3 +1,4 @@
+import {createQuizService} from './lib/quiz-service.mjs';
 import {loadLibraryAssets} from './lib/library-assets.mjs';
 import { readFile, writeFile, mkdir, copyFile, readdir, rm, cp } from 'node:fs/promises';
 import path from 'node:path';
@@ -15,7 +16,7 @@ try {
 } catch {}
 await mkdir(path.join(output, 'assets', 'models'), { recursive: true });
 await copyFile(path.join(source, 'tag-presets.js'), path.join(output, 'tag-presets.js'));
-for (const name of ['app.js', 'archive-layout.js', 'bead-physics.js', 'index.html', 'motif-preview.js', 'motif-recipe.js', 'motifs.js', 'node-styles.js', 'player-pages.js', 'questions.js', 'styles.css', 'viewer.js', 'quiz-challenge.js', 'quiz-challenge-state.js', 'quiz-question-bank.js', 'quiz-challenge.css']) {
+for (const name of ['app.js', 'archive-layout.js', 'bead-physics.js', 'index.html', 'motif-preview.js', 'motif-recipe.js', 'motifs.js', 'node-styles.js', 'player-pages.js', 'questions.js', 'styles.css', 'viewer.js', 'quiz-challenge.js', 'quiz-challenge-state.js', 'quiz-question-bank.js', 'quiz-challenge.css', 'quiz-topics.js', 'quiz-learning-store.js', 'quiz-learning.js', 'quiz-fixed-banks.json']) {
   await copyFile(path.join(source, name), path.join(output, name));
 }
 let html = await readFile(path.join(output, 'index.html'), 'utf8');
@@ -65,9 +66,13 @@ const publicQuestions = db.questions.filter(q => q.status === 'approved' &&
     correct_index:q.correct_index,explanation:q.explanation,evidence_note:q.evidence_note,
     game_versions:q.game_versions,status:q.status,needs_review:false}));
 
+const quizBootstrap=await createQuizService({store:{libraryState:()=>db.library||{},exportDump:()=>({records:publicRecords})},publicDir:source,dataFile:path.join(root,'data','quiz-banks.json'),env:{}}).bootstrap();
+quizBootstrap.ai={...quizBootstrap.ai,configured:false,adminConfigured:false};
+quizBootstrap.fixed=quizBootstrap.fixed.map(row=>({...row,topic:row.topic?{...row.topic,sourceSnapshots:[]}:null}));
 const libraryAssets=await loadLibraryAssets(source);
 const publishedLibrary={...(db.library||{revision:0,topics:null,trees:null,records:{}}),autosaves:[],records:Object.fromEntries(Object.entries(db.library?.records||{}).filter(([id])=>publicRecords.some(r=>r.id===id)).map(([id,row])=>[id,{...row,note:'',source:{author:row.source?.author||'',url:row.source?.url||''}}]))};
-const worker = `const RECORDS=${JSON.stringify(publicRecords)};\nconst QUESTIONS=${JSON.stringify(publicQuestions)};\nconst LIBRARY_ASSETS=${JSON.stringify(libraryAssets)};\nconst LIBRARY_STATE=${JSON.stringify(publishedLibrary)};\n` + `
+const quizPrefix='const QUIZ_BOOTSTRAP='+JSON.stringify(quizBootstrap)+';\n';
+const worker = quizPrefix + `const RECORDS=${JSON.stringify(publicRecords)};\nconst QUESTIONS=${JSON.stringify(publicQuestions)};\nconst LIBRARY_ASSETS=${JSON.stringify(libraryAssets)};\nconst LIBRARY_STATE=${JSON.stringify(publishedLibrary)};\n` + `
 const summary=r=>({id:r.id,title:r.title,record_type:r.record_type,category:r.category,
  status:r.status,parent_id:r.parent_id,collection_id:r.collection_id,culture:r.culture,
  media:r.media,revision:r.revision,updated_at:r.updated_at});
@@ -78,6 +83,8 @@ export default {async fetch(request,env){
    url.hostname='ww-wiki.fluorescentmice.fun';
    return Response.redirect(url.toString(),301);
  }
+ if(url.pathname==='/api/quiz/generate')return json({error:'此静态公开站未部署出题服务，请在本地研究服务中生成；已有专题和学习记录仍可使用。'},503);
+ if(url.pathname==='/api/quiz/bootstrap'&&(request.method==='GET'||request.method==='HEAD'))return json(QUIZ_BOOTSTRAP);
  if(request.method!=='GET' && request.method!=='HEAD') return json({error:'只读站点'},405);
  if(url.pathname==='/api/library/bootstrap')return json({data:{schema:'ww-library-v1',...LIBRARY_ASSETS,records:RECORDS},state:LIBRARY_STATE});
  if(url.pathname==='/api/library/state')return json(LIBRARY_STATE);

@@ -1,3 +1,5 @@
+import {createQuizService,adminAllowed} from './lib/quiz-service.mjs';
+import {QuizError} from './public/quiz-topics.js';
 import {LibraryError} from './lib/library-schema.mjs';
 import {loadLibraryAssets} from './lib/library-assets.mjs';
 // W&W Wiki 本地服务器。仅监听 127.0.0.1:4318，Node 内置模块，无框架、无外部依赖。
@@ -158,7 +160,21 @@ async function serveStatic(req, res, pathname) {
   }
 }
 
-async function handleApi(req, res, pathname, url, store, mediaDir) {
+async function handleApi(req, res, pathname, url, store, mediaDir, quiz) {
+  if(pathname.startsWith('/api/quiz/')){
+    if(pathname==='/api/quiz/bootstrap'&&req.method==='GET'){sendJson(res,200,await quiz.bootstrap());return;}
+    const admin=pathname.startsWith('/api/quiz/admin/');
+    if(admin&&!adminAllowed(req.headers.authorization,quiz.adminToken())){sendError(res,403,'需要服务端管理员令牌，普通用户不能发布固定题库');return;}
+    if(admin&&pathname==='/api/quiz/admin/drafts'&&req.method==='GET'){sendJson(res,200,await quiz.adminList());return;}
+    if(req.method!=='POST'){sendError(res,405,'方法不允许');return;}
+    if(!guardLocalWrite(req,res))return;
+    const input=await readJson(req,BODY_LIMIT_JSON);
+    if(pathname==='/api/quiz/generate'){sendJson(res,201,await quiz.generate({selectedTags:input.selectedTags}));return;}
+    if(pathname==='/api/quiz/admin/generate'){sendJson(res,201,await quiz.generate({fixedId:input.fixedId,revise:input.revise===true}));return;}
+    if(pathname==='/api/quiz/admin/publish'){sendJson(res,201,await quiz.publish(input));return;}
+    if(pathname==='/api/quiz/admin/check-model'){await quiz.models();sendJson(res,200,{ok:true});return;}
+    sendError(res,404,'未知的出题接口');return;
+  }
   if(pathname==='/api/library/bootstrap'&&req.method==='GET'){
     const assets=await loadLibraryAssets(PUBLIC_DIR),state=store.libraryState(),managedPaths=new Set((state.autosaves||[]).flatMap(item=>(item.files||[]).map(file=>file.path)));sendJson(res,200,{data:{schema:'ww-library-v1',...assets,records:store.exportDump().records.map(r=>({...r,note:r.notes||'',media:(r.media||[]).filter(m=>!managedPaths.has(m.path))}))},state});return;
   }
@@ -299,7 +315,8 @@ async function handleApi(req, res, pathname, url, store, mediaDir) {
   sendError(res, 404, '未知的 API 路径');
 }
 
-export function buildServer(store, { mediaDir = MEDIA_DIR } = {}) {
+export function buildServer(store, { mediaDir = MEDIA_DIR, quizDataFile = mediaDir===MEDIA_DIR?path.join(HERE,'data','quiz-banks.json'):path.join(path.dirname(mediaDir),'quiz-banks.json'), quizEnv = process.env, quizFetch = fetch } = {}) {
+  const quiz=createQuizService({store,publicDir:PUBLIC_DIR,dataFile:quizDataFile,env:quizEnv,fetchImpl:quizFetch});
   return http.createServer(async (req, res) => {
     try {
       // Apply the loopback Host check to reads too, so DNS rebinding cannot read
@@ -311,7 +328,7 @@ export function buildServer(store, { mediaDir = MEDIA_DIR } = {}) {
       const url = new URL(req.url, `http://${req.headers.host || '127.0.0.1'}`);
       const pathname = url.pathname;
       if (pathname.startsWith('/api/')) {
-        await handleApi(req, res, pathname, url, store, mediaDir);
+        await handleApi(req, res, pathname, url, store, mediaDir, quiz);
       } else if(pathname.startsWith('/media/')&&mediaDir!==MEDIA_DIR&&(req.method==='GET'||req.method==='HEAD')){
         if(!/^\/media\/[A-Za-z0-9._-]+$/.test(pathname)){sendError(res,403,'路径无效');return;}try{const bytes=await readFile(path.join(mediaDir,path.basename(pathname)));res.writeHead(200,{'Content-Type':CONTENT_TYPES[path.extname(pathname)]||'application/octet-stream','X-Content-Type-Options':'nosniff','Content-Security-Policy':"default-src 'none'; style-src 'unsafe-inline'"});res.end(req.method==='HEAD'?undefined:bytes);}catch{sendError(res,404,'文件不存在');}
       } else if (req.method === 'GET' || req.method === 'HEAD') {
@@ -320,7 +337,8 @@ export function buildServer(store, { mediaDir = MEDIA_DIR } = {}) {
         sendError(res, 405, '方法不允许');
       }
     } catch (err) {
-      if (err instanceof ValidationError || err instanceof LibraryError) {
+      if (err instanceof QuizError) {sendJson(res,err.status,{error:err.message,code:err.code});
+      } else if (err instanceof ValidationError || err instanceof LibraryError) {
         sendError(res, 422, err.message);
       } else if (err && err.message === '请求体超过大小上限') {
         sendError(res, 413, err.message);
@@ -346,7 +364,7 @@ if (isMain) {
   }
   const store = createStore({ dataFile: DATA_FILE, seedFile: SEED_FILE });
   store.load();
-  const server = buildServer(store);
+  const server = buildServer(store,{quizDataFile:path.join(HERE,'data','quiz-banks.json')});
   server.listen(port, host, () => {
     console.log(`W&W Wiki 本地档案已启动：http://${host}:${port}/ （仅本机访问，记录 ${store.count()} 条）`);
   });

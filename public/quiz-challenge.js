@@ -11,7 +11,7 @@ function node(tag,attrs={},children=[]){
  }
  e.append(...children.filter(v=>v!==null&&v!==undefined));return e;
 }
-export function createQuizChallenge({container,questionBank=createDefaultQuestionBank(),onOpenRecord,onProgress,onComplete}={}){
+export function createQuizChallenge({container,questionBank=createDefaultQuestionBank(),onOpenRecord,onProgress,onComplete,hosted=false,onStart,onAnswer,onFinish,onExit,autoStart=false,availableRecordIds=null}={}){
  if(!(container instanceof HTMLElement))throw new Error('需要有效的组件容器');
  let bank=normalizeQuestionBank(questionBank),machine=createChallengeState(bank),destroyed=false,selected=null,editor=null,transitionTimer=null,toastTimer=null,frame=0,completedNotified=false;
  const uid=`wwq-${++instanceNumber}`,events=new AbortController(),timers=new Set(),urls=new Set();
@@ -27,16 +27,17 @@ export function createQuizChallenge({container,questionBank=createDefaultQuestio
  const heading=(text,tag='h2')=>node(tag,{class:'wwq-heading',tabindex:'-1','data-focus':'',text});
  const actions=children=>node('div',{class:'wwq-actions'},children);
  function currentStage(){return bank.stages.find(s=>s.id===machine.getState().attempt?.stageId);}
- function start(id){cancel(transitionTimer);machine.start(id);selected=null;render();notify();transitionTimer=later(()=>{machine.begin();render();},2000);}
- function home(){cancel(transitionTimer);machine.home();selected=null;render();notify();}
+ function start(id){try{onStart?.(id);}catch(error){toast(error.message);return;}cancel(transitionTimer);machine.start(id);selected=null;render();notify();transitionTimer=later(()=>{machine.begin();render();},2000);}
+ function home(){if(hosted&&onExit){onExit();return;}cancel(transitionTimer);machine.home();selected=null;render();notify();}
  function advance(){
   const q=machine.getQuestion(),s=machine.getState();
   if(q.type==='knowledge'&&s.attempt.answers.length===s.attempt.index)machine.submit(null);
+  if(s.attempt.index+1===machine.getQuestions().length){try{onFinish?.(machine.getState());}catch(error){toast(error.message);return;}}
   machine.next();selected=null;render();notify();
   if(machine.getState().allCompleted&&!completedNotified){completedNotified=true;onComplete?.(machine.getState());}
  }
  function submit(){
-  if(selected===null)return;machine.submit(selected);render();notify();
+  if(selected===null)return;try{onAnswer?.(machine.getQuestion(),selected);}catch(error){toast(error.message);return;}machine.submit(selected);render();notify();
  }
  function stagePath(s){
   return node('ol',{class:'wwq-path','aria-label':'关卡进度'},bank.stages.map((stage,i)=>node('li',{'data-complete':String(!!s.completed[stage.id]),'data-current':String(s.attempt?.stageId===stage.id || (!s.attempt && stage.id===s.unlocked.find(id=>!s.completed[id])))},[
@@ -48,7 +49,7 @@ export function createQuizChallenge({container,questionBank=createDefaultQuestio
  function render(){
   if(destroyed)return;
   const s=machine.getState(),stage=currentStage();
-  const top=node('div',{class:'wwq-top'},[node('span',{class:'wwq-wordmark',text:'W&W / 知识漫游'}),button('题库工坊',openEditor,{kind:'wwq-quiet','aria-haspopup':'dialog'})]);
+  const top=node('div',{class:'wwq-top'},[node('span',{class:'wwq-wordmark',text:'W&W / 知识漫游'}),...(hosted?[]:[button('题库工坊',openEditor,{kind:'wwq-quiet','aria-haspopup':'dialog'})])]);
   const body=node('div',{class:`wwq-screen wwq-${s.view}`,'data-outcome':s.attempt?.finished?(s.attempt.passed?'passed':'failed'):'pending'});content.replaceChildren(top,body);
   if(s.view==='home'){
    const upcoming=bank.stages.find(st=>s.unlocked.includes(st.id)&&!s.completed[st.id])||bank.stages[0];
@@ -87,13 +88,13 @@ export function createQuizChallenge({container,questionBank=createDefaultQuestio
      node('h4',{text:knowledge?'多看一眼，收获一点新知识':result.correct?'✓ 回答正确，线索连起来了！':'再记住一个小线索'}),
      ...(!knowledge&&!result.correct?[node('p',{text:`正确答案：${q.options.find(o=>o.id===q.answer).text}`})]:[]),node('p',{text:q.explanation})
     ]);
-    if(q.source.recordIds.length&&onOpenRecord)feedback.append(actions(q.source.recordIds.map(rid=>button('查看相关资料',()=>onOpenRecord(rid),{'aria-label':`查看相关资料 ${rid}`,kind:'wwq-quiet'}))));
+    if(q.source.recordIds.length&&onOpenRecord)feedback.append(actions(q.source.recordIds.filter(rid=>!availableRecordIds||availableRecordIds.has(rid)).map(rid=>button('查看相关资料',()=>onOpenRecord(rid),{'aria-label':`查看相关资料 ${rid}`,kind:'wwq-quiet'}))));
     if(q.source.references.length)feedback.append(node('div',{class:'wwq-sources'},q.source.references.map(r=>node('a',{href:r.url,target:'_blank',rel:'noopener noreferrer',text:`来源：${r.title} ↗`}))));
     card.append(feedback);
    }
    card.append(actions([button(answered||knowledge?(s.attempt.index+1===machine.getQuestions().length?'查看本关结果 →':'下一题 →'):'确认答案',answered||knowledge?advance:submit,{kind:'wwq-primary',disabled:!answered&&!knowledge&&selected===null,'data-action':'answer'}),node('span',{class:'wwq-note',text:knowledge?'Enter / Space 继续':q.type==='boolean'?'T / F 选择 · Enter 确认':'1–4 或 A–D 选择 · Enter 确认'})]));body.append(card);
   }else{
-   const complete=s.view==='complete',passed=s.attempt.passed;
+   const complete=s.view==='complete'&&!hosted,passed=s.attempt.passed;
    body.append(node('div',{class:'wwq-result-panel'},[eyebrow(complete?'THE JOURNEY CONTINUES':passed?'一段旅程，已经点亮':'慢慢来，再走一遍'),node('div',{class:'wwq-result-mark','aria-hidden':'true',text:complete?'✺':passed?'✳':'↻'}),
     heading(complete?'所有关卡，已点亮':passed?`${stage.title} · 挑战成功`:`${stage.title} · 还差一点`),
     node('p',{text:complete?'把今天收集的知识，带到下一次探索里。':`本关要求 ${percent(stage.passRate)}，本次正确率 ${percent(s.summary.accuracy)}。`}),
@@ -230,7 +231,7 @@ export function createQuizChallenge({container,questionBank=createDefaultQuestio
  function resume(){cancelAnimationFrame(frame);frame=0;if(!motion.matches&&!document.hidden&&!destroyed&&ctx)frame=requestAnimationFrame(draw);else ctx?.clearRect(0,0,width,height);}
  const resize=new ResizeObserver(size);resize.observe(root);
  motion.addEventListener('change',resume,{signal:events.signal});document.addEventListener('visibilitychange',resume,{signal:events.signal});
- render();size();resume();
+ render();size();resume();if(autoStart)start(bank.stages[0].id);
  return {getState:()=>machine.getState(),getQuestionBank:()=>structuredClone(bank),setQuestionBank,reset,
   destroy(){if(destroyed)return;destroyed=true;events.abort();timers.forEach(clearTimeout);timers.clear();cancelAnimationFrame(frame);resize.disconnect();
    if(editor){editor.close();editor.remove();editor=null;}urls.forEach(URL.revokeObjectURL);urls.clear();root.remove();}

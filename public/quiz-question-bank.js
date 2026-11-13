@@ -7,7 +7,7 @@ const id = (v,n) => {text(v,n,100);if(!/^[\w-]+$/.test(v))fail(`${n} 只能包�
 const order = (v,n) => {if(!Number.isSafeInteger(v)||v<0)fail(`${n} 必须为非负整数`);return v;};
 const timestamp = v => v===null||(typeof v==='string'&&/^\d{4}-\d\d-\d\dT/.test(v)&&Number.isFinite(Date.parse(v)));
 export function isPlayableQuestion(q) {
-  return q.review?.status==='approved'&&q.generation?.verified===true&&(q.generation.provider==='manual'||q.review.humanReviewed===true);
+  return ['approved','validated'].includes(q.review?.status)&&q.generation?.verified===true&&(q.review.status==='validated'||q.generation.provider==='manual'||q.review.humanReviewed===true);
 }
 export function normalizeQuestionBank(input) {
   if(!object(input)||input.schemaVersion!==1)fail('schemaVersion 必须为 1');
@@ -50,7 +50,7 @@ export function normalizeQuestionBank(input) {
     const g=q.generation,r=q.review;
     if(!object(g)||typeof g.verified!=='boolean'||!timestamp(g.generatedAt)||!(g.model===null||typeof g.model==='string'))fail(`${qid} 生成元数据不完整`);
     const provider=text(g.provider,'生成提供方',100);
-    if(!object(r)||!['draft','approved','rejected'].includes(r.status)||typeof r.humanReviewed!=='boolean'||typeof r.reviewer!=='string'||!timestamp(r.reviewedAt))fail(`${qid} 审核元数据不完整`);
+    if(!object(r)||!['draft','approved','rejected','validated'].includes(r.status)||typeof r.humanReviewed!=='boolean'||typeof r.reviewer!=='string'||!timestamp(r.reviewedAt))fail(`${qid} 审核元数据不完整`);
     if(r.status==='approved'&&(!g.verified||!r.reviewer.trim()||!r.reviewedAt))fail(`${qid} 已审定题须有核查、审核人及时间`);
     if(provider!=='manual'&&r.status==='approved'&&(!r.humanReviewed||!g.model?.trim()||!g.generatedAt))fail(`${qid} AI 题须记录模型、生成时间并经过人工审核后才能批准`);
     return {id:qid,stageId:q.stageId,order:n,type:q.type,question:text(q.question,'题干'),options,answer,explanation:text(q.explanation,'解析'),hint:typeof q.hint==='string'?q.hint.slice(0,10000):'',

@@ -173,3 +173,22 @@
 @media(prefers-reduced-motion:reduce){
  .ww-quiz-challenge *,.ww-quiz-challenge *::before,.ww-quiz-challenge *::after {animation:none!important;transition:none!important;scroll-behavior:auto!important;}
 }
+
+/* Archive-backed learning views reuse the existing card and question visual system. */
+.ww-quiz-challenge .wwq-stage-grid {margin-top:24px;}
+.ww-quiz-challenge .wwq-learning-notice {padding:0 26px 18px;color:var(--ww-quiz-coral-ink);font-size:13px;white-space:pre-wrap;}
+.ww-quiz-challenge .wwq-learning-notice:empty {display:none;}
+.ww-quiz-challenge .wwq-session>.ww-quiz-challenge {margin:0;border:0;box-shadow:none;background:transparent;}
+.ww-quiz-challenge .wwq-session .wwq-content {padding-inline:0;}
+.ww-quiz-challenge .wwq-review-list {padding-left:22px;font-size:14px;line-height:1.9;}
+.ww-quiz-challenge .wwq-review-list li {margin:16px 0;}
+.ww-quiz-challenge .wwq-history {margin:24px 0;}
+.ww-quiz-challenge .wwq-history summary {min-height:44px;cursor:pointer;}
+.ww-quiz-challenge .wwq-tag-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;margin-top:24px;}
+.ww-quiz-challenge .wwq-tag-group {min-width:0;border:1px solid var(--ww-quiz-line);border-radius:12px;padding:16px;background:var(--ww-quiz-cream);}
+.ww-quiz-challenge .wwq-tag-group legend {font:500 14px/1.5 inherit;color:var(--ww-quiz-green);}
+.ww-quiz-challenge .wwq-tag-list {display:flex;gap:8px;flex-wrap:wrap;max-height:260px;overflow:auto;}
+.ww-quiz-challenge .wwq-tag-list label {display:flex;align-items:center;gap:6px;min-height:44px;font-size:12px;margin:0;padding:3px 6px;cursor:pointer;}
+.ww-quiz-challenge .wwq-tag-list select {width:100%;min-height:44px;background:var(--ww-quiz-cream);border:1px solid var(--ww-quiz-sage);color:var(--ww-quiz-ink);font:14px inherit;}
+.ww-quiz-challenge .wwq-feedback details {margin:12px 0;}
+.ww-quiz-challenge .wwq-feedback summary {cursor:pointer;min-height:44px;}
