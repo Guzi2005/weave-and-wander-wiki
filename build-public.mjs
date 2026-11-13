@@ -1,3 +1,4 @@
+import {loadLibraryAssets} from './lib/library-assets.mjs';
 import { readFile, writeFile, mkdir, copyFile, readdir, rm, cp } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -20,7 +21,7 @@ for (const name of ['app.js', 'archive-layout.js', 'bead-physics.js', 'index.htm
 let html = await readFile(path.join(output, 'index.html'), 'utf8');
 html = html.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta name="ww-public" content="true">');
 await writeFile(path.join(output, 'index.html'), html);
-for (const folder of ['vendor', 'assets/guide', 'assets/bench', 'assets/node-styles', 'assets/motifs']) {
+for (const folder of ['library', 'vendor', 'assets/guide', 'assets/bench', 'assets/node-styles', 'assets/motifs']) {
   const from = path.join(source, folder);
   const to = path.join(output, folder);
   await mkdir(to, { recursive: true });
@@ -64,7 +65,9 @@ const publicQuestions = db.questions.filter(q => q.status === 'approved' &&
     correct_index:q.correct_index,explanation:q.explanation,evidence_note:q.evidence_note,
     game_versions:q.game_versions,status:q.status,needs_review:false}));
 
-const worker = `const RECORDS=${JSON.stringify(publicRecords)};\nconst QUESTIONS=${JSON.stringify(publicQuestions)};\n` + `
+const libraryAssets=await loadLibraryAssets(source);
+const publishedLibrary={...(db.library||{revision:0,topics:null,trees:null,records:{}}),autosaves:[],records:Object.fromEntries(Object.entries(db.library?.records||{}).filter(([id])=>publicRecords.some(r=>r.id===id)).map(([id,row])=>[id,{...row,note:'',source:{author:row.source?.author||'',url:row.source?.url||''}}]))};
+const worker = `const RECORDS=${JSON.stringify(publicRecords)};\nconst QUESTIONS=${JSON.stringify(publicQuestions)};\nconst LIBRARY_ASSETS=${JSON.stringify(libraryAssets)};\nconst LIBRARY_STATE=${JSON.stringify(publishedLibrary)};\n` + `
 const summary=r=>({id:r.id,title:r.title,record_type:r.record_type,category:r.category,
  status:r.status,parent_id:r.parent_id,collection_id:r.collection_id,culture:r.culture,
  media:r.media,revision:r.revision,updated_at:r.updated_at});
@@ -76,6 +79,8 @@ export default {async fetch(request,env){
    return Response.redirect(url.toString(),301);
  }
  if(request.method!=='GET' && request.method!=='HEAD') return json({error:'只读站点'},405);
+ if(url.pathname==='/api/library/bootstrap')return json({data:{schema:'ww-library-v1',...LIBRARY_ASSETS,records:RECORDS},state:LIBRARY_STATE});
+ if(url.pathname==='/api/library/state')return json(LIBRARY_STATE);
  if(url.pathname==='/api/records'){
    const q=(url.searchParams.get('q')||'').toLowerCase();
    const category=url.searchParams.get('category');
@@ -110,5 +115,5 @@ export default {async fetch(request,env){
 }};
 `;
 await writeFile(path.join(output, '_worker.js'), worker);
-await writeFile(path.join(output, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Content-Security-Policy: default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; connect-src 'self' blob:\n`);
+await writeFile(path.join(output, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Content-Security-Policy: default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; connect-src 'self' blob:; media-src 'self' blob:\n`);
 console.log(`Public build: ${publicRecords.length} records, ${publicQuestions.length} approved questions, ${modelNames.size} models; curated source images included.`);
