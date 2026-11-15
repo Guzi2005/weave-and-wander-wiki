@@ -1958,7 +1958,31 @@ body {
 .brand-logo { display:block;width:46px;height:46px;object-fit:cover;border:0; }
 .brand { align-items:center; }
 .site-header { background:transparent;border-top:3px solid #39b8a6;border-bottom:1px solid var(--line); }
-.test-banner{background:#fff4d6;color:#694b16;border-bottom:1px solid #d5ba78;padding:9px 16px;text-align:center;font:12px/1.6 var(--sans)}
+.test-banner {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 9;
+  pointer-events: none;
+  background: #fff4d6;
+  color: #694b16;
+  border-bottom: 1px solid #d5ba78;
+  padding: calc(9px + env(safe-area-inset-top)) 16px 9px;
+  text-align: center;
+  font: 12px/1.6 var(--sans);
+}
+.test-banner:not([hidden]) {
+  animation: entry-banner 5.4s cubic-bezier(.22,.61,.36,1) both;
+}
+@keyframes entry-banner {
+  0% { transform: translateY(-100%); clip-path: inset(0 calc(50% - 24px)); color: transparent; }
+  7% { transform: translateY(0); clip-path: inset(0 calc(50% - 24px)); color: transparent; }
+  18%, 91% { transform: translateY(0); clip-path: inset(0); opacity: 1; }
+  100% { transform: translateY(-100%); clip-path: inset(0); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .test-banner:not([hidden]) { animation: entry-banner-still 5.4s steps(1, end) both; }
+  @keyframes entry-banner-still { from { opacity: 1; } to { opacity: 0; } }
+}
 .site-nav a:nth-child(2) { --nav-color:#3936a5; }
 .site-nav a:nth-child(3) { --nav-color:#247d72; }
 .site-nav a:nth-child(4) { --nav-color:#ad4655; }
