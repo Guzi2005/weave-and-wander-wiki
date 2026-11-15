@@ -1,0 +1,3262 @@
+[
+  {
+    "id": "WW-BIB-HQS-2021",
+    "title": "中国经典纹样图鉴",
+    "record_type": "object",
+    "category": "书目",
+    "status": "待整理",
+    "parent_id": null,
+    "collection_id": "bibliography",
+    "culture": null,
+    "place": null,
+    "date_text": "2021",
+    "observations": [
+      "本书收录的纹样在本站以独立条目整理，图例附在相应纹样条目内。"
+    ],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/book-hqs-2021-cover.jpg",
+        "role": "source",
+        "label": "《中国经典纹样图鉴》封面"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-001",
+    "title": "八达晕纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-001-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-001-02.jpg",
+        "role": "source",
+        "label": "织锦上的金地牡丹团花八达晕纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-001-03.jpg",
+        "role": "source",
+        "label": "织锦上的蓝地莲花团花八达晕纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-002",
+    "title": "八吉祥纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-002-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-002-02.jpg",
+        "role": "source",
+        "label": "清代铜鎏金嵌玻璃彩绘盒上的八吉祥纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-002-03.jpg",
+        "role": "source",
+        "label": "瓷器上的八吉祥纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-003",
+    "title": "八角星纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-003-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-003-02.jpg",
+        "role": "source",
+        "label": "瑶族织锦上的八角星纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-003-03.jpg",
+        "role": "source",
+        "label": "壮族织锦上的八角星纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-004",
+    "title": "宝相花纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-004-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-004-02.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-004-03.jpg",
+        "role": "source",
+        "label": "唐代藻井上的综合型宝相花纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-004-04.jpg",
+        "role": "source",
+        "label": "唐代综合型宝相花纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-004-05.jpg",
+        "role": "source",
+        "label": "清代菊花形宝相花纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-005",
+    "title": "蝙蝠纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-005-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-005-02.jpg",
+        "role": "source",
+        "label": "清代瓷器上的宝相花蝙蝠纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-005-03.jpg",
+        "role": "source",
+        "label": "清代瓷盘上的蝙蝠纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-006",
+    "title": "博古纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-006-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-006-02.jpg",
+        "role": "source",
+        "label": "清代屏风上的蓝地博古纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-006-03.jpg",
+        "role": "source",
+        "label": "清代服饰上的暗蓝地方棋博古纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-007",
+    "title": "缠枝纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-007-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-007-02.jpg",
+        "role": "source",
+        "label": "明清瓷器上的菊花缠枝纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-007-03.jpg",
+        "role": "source",
+        "label": "清代地毯上的缠枝纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-008",
+    "title": "蝉纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-008-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-008-02.jpg",
+        "role": "source",
+        "label": "商代青铜大方壶上的蝉纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-009",
+    "title": "螭纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-009-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-009-02.jpg",
+        "role": "source",
+        "label": "战国铜镜上的蟠螭纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-010",
+    "title": "灯笼纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-010-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-010-02.jpg",
+        "role": "source",
+        "label": "绿八团灯笼纹吉服袍"
+      },
+      {
+        "path": "/assets/patterns/pattern-010-03.jpg",
+        "role": "source",
+        "label": "清红地灯笼纹锦"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-011",
+    "title": "方棋纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-011-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-011-02.jpg",
+        "role": "source",
+        "label": "三种方棋纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-011-03.jpg",
+        "role": "source",
+        "label": "方棋纹地花纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-012",
+    "title": "方胜纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-012-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-012-02.jpg",
+        "role": "source",
+        "label": "窗格上的方胜纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-012-03.jpg",
+        "role": "source",
+        "label": "织锦上的凤鸟方胜纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-013",
+    "title": "凤鸟纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-013-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-013-02.jpg",
+        "role": "source",
+        "label": "唐代盒箱上的凤鸟纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-013-03.jpg",
+        "role": "source",
+        "label": "清代景泰蓝上的凤鸟纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-013-04.jpg",
+        "role": "source",
+        "label": "清代织物上的凤鸟纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-014",
+    "title": "福字纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-014-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-014-02.jpg",
+        "role": "source",
+        "label": "清代金彩嵌螺钿盒上的福字纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-015",
+    "title": "工字纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-015-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-015-02.jpg",
+        "role": "source",
+        "label": "建筑彩绘上的工字纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-016",
+    "title": "龟背纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-016-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-016-02.jpg",
+        "role": "source",
+        "label": "四种龟背纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-016-03.jpg",
+        "role": "source",
+        "label": "元代盔甲锦上的青地织金吉祥龟背纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-017",
+    "title": "江崖海水纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-017-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-017-02.jpg",
+        "role": "source",
+        "label": "明代青花香炉上的江崖海水纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-017-03.jpg",
+        "role": "source",
+        "label": "清代织物上的江崖海水纹（一）"
+      },
+      {
+        "path": "/assets/patterns/pattern-017-04.jpg",
+        "role": "source",
+        "label": "清代织物上的江崖海水纹（二）"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-018",
+    "title": "和合二仙纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-018-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-018-02.jpg",
+        "role": "source",
+        "label": "清代织物上的和合二仙纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-019",
+    "title": "鹤纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-019-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-019-02.jpg",
+        "role": "source",
+        "label": "团鹤纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-019-03.jpg",
+        "role": "source",
+        "label": "明代青花梅瓶上的翔鹤纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-020",
+    "title": "葫芦纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-020-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-020-02.jpg",
+        "role": "source",
+        "label": "明代织物上的葫芦纹（一）"
+      },
+      {
+        "path": "/assets/patterns/pattern-020-03.jpg",
+        "role": "source",
+        "label": "明代织物上的葫芦纹（二）"
+      },
+      {
+        "path": "/assets/patterns/pattern-020-04.jpg",
+        "role": "source",
+        "label": "明代织物上的葫芦纹（二）"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-021",
+    "title": "蝴蝶纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-021-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-021-02.jpg",
+        "role": "source",
+        "label": "贵州苗族蜡染中的蝴蝶纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-021-03.jpg",
+        "role": "source",
+        "label": "清代瓷瓶上的五彩蝴蝶纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-021-04.jpg",
+        "role": "source",
+        "label": "清代珐琅彩上的蝴蝶纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-022",
+    "title": "虎纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-022-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-022-02.jpg",
+        "role": "source",
+        "label": "武强年画中的虎纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-022-03.jpg",
+        "role": "source",
+        "label": "明代妆花纱上的红地虎镇五毒纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-023",
+    "title": "花鸟纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-023-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-023-02.jpg",
+        "role": "source",
+        "label": "清代珐琅彩上的花鸟纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-023-03.jpg",
+        "role": "source",
+        "label": "清代挂毯上的花鸟纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-024",
+    "title": "环纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-024-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-024-02.jpg",
+        "role": "source",
+        "label": "经典叠环纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-024-03.jpg",
+        "role": "source",
+        "label": "经典密环纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-024-04.jpg",
+        "role": "source",
+        "label": "经典锁环纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-025",
+    "title": "回纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-025-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-025-02.jpg",
+        "role": "source",
+        "label": "秦代陶制方地砖上的回纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-025-03.jpg",
+        "role": "source",
+        "label": "清代瓷瓶上的回纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-026",
+    "title": "火纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-026-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-026-02.jpg",
+        "role": "source",
+        "label": "杂宝火纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-026-03.jpg",
+        "role": "source",
+        "label": "经典蓝色火纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-026-04.jpg",
+        "role": "source",
+        "label": "经典红色火纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-027",
+    "title": "鸡纹样",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-027-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-027-02.jpg",
+        "role": "source",
+        "label": "瓷器上的公鸡纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-027-03.jpg",
+        "role": "source",
+        "label": "清代刺绣荷包上的鸡纹样（一）"
+      },
+      {
+        "path": "/assets/patterns/pattern-027-04.jpg",
+        "role": "source",
+        "label": "清代刺绣荷包上的鸡纹样（二）"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-028",
+    "title": "蕉叶纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-028-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-028-02.jpg",
+        "role": "source",
+        "label": "明清时期瓷器上的蕉叶纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-028-03.jpg",
+        "role": "source",
+        "label": "明代珐琅彩上的蕉叶纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-028-04.jpg",
+        "role": "source",
+        "label": "清代珐琅彩上的蕉叶兽面纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-029",
+    "title": "菊花纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-029-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-029-02.jpg",
+        "role": "source",
+        "label": "明清青花瓷器上的菊花纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-029-03.jpg",
+        "role": "source",
+        "label": "云锦上的菊花纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-030",
+    "title": "孔雀纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-030-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-030-02.jpg",
+        "role": "source",
+        "label": "明代青花梅瓶上的孔雀纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-030-03.jpg",
+        "role": "source",
+        "label": "近代瓷器上的孔雀纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-031",
+    "title": "莲花纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-031-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-031-02.jpg",
+        "role": "source",
+        "label": "明清瓷器上的莲花纹（一）"
+      },
+      {
+        "path": "/assets/patterns/pattern-031-03.jpg",
+        "role": "source",
+        "label": "明清瓷器上的莲花纹（二）"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-032",
+    "title": "联珠纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-032-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-032-02.jpg",
+        "role": "source",
+        "label": "唐代织锦上的联珠四将狩猎纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-032-03.jpg",
+        "role": "source",
+        "label": "唐代织锦上的联珠对狮纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-033",
+    "title": "鳞纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-033-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-033-02.jpg",
+        "role": "source",
+        "label": "织物上的福寿鳞纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-033-03.jpg",
+        "role": "source",
+        "label": "青铜器上的重麟纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-033-04.jpg",
+        "role": "source",
+        "label": "经典鱼鳞旗脚纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-034",
+    "title": "龙纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-034-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-034-02.jpg",
+        "role": "source",
+        "label": "元代瓷罐上的牡丹云龙纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-034-03.jpg",
+        "role": "source",
+        "label": "清代珐琅彩上的龙纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-034-04.jpg",
+        "role": "source",
+        "label": "清代织物上的龙纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-035",
+    "title": "鹿纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-035-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-035-02.jpg",
+        "role": "source",
+        "label": "唐代织锦上的联珠团窠鹿纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-035-03.jpg",
+        "role": "source",
+        "label": "汉代双鹿纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-035-04.jpg",
+        "role": "source",
+        "label": "清代粉彩瓷樽上的鹿纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-036",
+    "title": "落花流水纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-036-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-036-02.jpg",
+        "role": "source",
+        "label": "织物上的落花流水纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-036-03.jpg",
+        "role": "source",
+        "label": "经典落花流水纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-037",
+    "title": "马纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-037-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-037-02.jpg",
+        "role": "source",
+        "label": "汉代画像石上的马纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-037-03.jpg",
+        "role": "source",
+        "label": "明清瓷器上的马纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-038",
+    "title": "梅花纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-038-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-038-02.jpg",
+        "role": "source",
+        "label": "红地折枝梅花纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-038-03.jpg",
+        "role": "source",
+        "label": "冰裂梅花纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-038-04.jpg",
+        "role": "source",
+        "label": "清代地毯上的黄地斜方格梅花纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-039",
+    "title": "摩羯纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-039-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-039-02.jpg",
+        "role": "source",
+        "label": "元代织锦上的摩羯纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-039-03.jpg",
+        "role": "source",
+        "label": "唐代银鎏金盆上的摩羯纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-040",
+    "title": "牡丹纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-040-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-040-02.jpg",
+        "role": "source",
+        "label": "明清时期瓷器上的牡丹纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-040-03.jpg",
+        "role": "source",
+        "label": "清代瓷器上的牡丹纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-041",
+    "title": "盘长纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-041-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-041-02.jpg",
+        "role": "source",
+        "label": "清代瓷器上的盘长纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-041-03.jpg",
+        "role": "source",
+        "label": "织锦上的鸾章盘长纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-042",
+    "title": "盘绦纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-042-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-042-02.jpg",
+        "role": "source",
+        "label": "盘绦花卉纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-042-03.jpg",
+        "role": "source",
+        "label": "明代宋式锦上的盘绦四季花卉纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-043",
+    "title": "蟠虺纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-043-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-043-02.jpg",
+        "role": "source",
+        "label": "青铜器上的蟠虺纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-044",
+    "title": "葡萄纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-044-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-044-02.jpg",
+        "role": "source",
+        "label": "清代瓷器上的葡萄纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-044-03.jpg",
+        "role": "source",
+        "label": "唐代敦煌壁画上的葡萄纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-045",
+    "title": "麒麟纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-045-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-045-02.jpg",
+        "role": "source",
+        "label": "官补刺绣上的麒麟纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-045-03.jpg",
+        "role": "source",
+        "label": "苗族刺绣上的麒麟纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-045-04.jpg",
+        "role": "source",
+        "label": "清代珐琅彩上的麒麟纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-046",
+    "title": "钱纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-046-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-046-02.jpg",
+        "role": "source",
+        "label": "连钱璎珞纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-046-03.jpg",
+        "role": "source",
+        "label": "牡丹连钱纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-047",
+    "title": "球路纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-047-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-047-02.jpg",
+        "role": "source",
+        "label": "红地四灵球路纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-047-03.jpg",
+        "role": "source",
+        "label": "明清书画包首的凤穿牡丹球路纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-048",
+    "title": "忍冬纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-048-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-048-02.jpg",
+        "role": "source",
+        "label": "北周时期敦煌石窟上的忍冬纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-048-03.jpg",
+        "role": "source",
+        "label": "清代瓷器上的忍冬纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-049",
+    "title": "如意纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-049-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-049-02.jpg",
+        "role": "source",
+        "label": "蓝地梅花织锦上的如意纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-049-03.jpg",
+        "role": "source",
+        "label": "清代粉彩瓷瓶上的如意纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-050",
+    "title": "乳钉纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-050-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-050-02.jpg",
+        "role": "source",
+        "label": "商代青铜方鼎上的兽面乳钉纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-050-03.jpg",
+        "role": "source",
+        "label": "新莽博局镜上的乳钉纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-051",
+    "title": "仕女纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-051-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-051-02.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-051-03.jpg",
+        "role": "source",
+        "label": "清代粉彩瓷盘上的仕女纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-052",
+    "title": "寿字纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-052-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-052-02.jpg",
+        "role": "source",
+        "label": "红地织金长圆寿字纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-052-03.jpg",
+        "role": "source",
+        "label": "瓷器上的长寿纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-053",
+    "title": "水纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-053-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-053-02.jpg",
+        "role": "source",
+        "label": "经典水纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-054",
+    "title": "松纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-054-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-054-02.jpg",
+        "role": "source",
+        "label": "清代铜墨水匣上的松鹤长年纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-054-03.jpg",
+        "role": "source",
+        "label": "清代青花瓷器上的松梅纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-055",
+    "title": "锁子纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-055-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-055-02.jpg",
+        "role": "source",
+        "label": "锁子纹（一）"
+      },
+      {
+        "path": "/assets/patterns/pattern-055-03.jpg",
+        "role": "source",
+        "label": "锁子纹（二）"
+      },
+      {
+        "path": "/assets/patterns/pattern-055-04.jpg",
+        "role": "source",
+        "label": "锁子纹（三）"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-056",
+    "title": "谷纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-056-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-056-02.jpg",
+        "role": "source",
+        "label": "玉璧经典谷纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-056-03.jpg",
+        "role": "source",
+        "label": "战国多环玉璧上的谷纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-056-04.jpg",
+        "role": "source",
+        "label": "战国双龙璜上的谷纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-056-05.jpg",
+        "role": "source",
+        "label": "战国双龙玉璧上的谷纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-056-06.jpg",
+        "role": "source",
+        "label": "战国至汉代龙凤玉璧上的谷纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-056-07.jpg",
+        "role": "source",
+        "label": "战国至汉代龙凤玉璧上的谷纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-057",
+    "title": "蒲纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-057-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-057-02.jpg",
+        "role": "source",
+        "label": "玉璧经典蒲纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-057-03.jpg",
+        "role": "source",
+        "label": "秦代飞龙玉璧上的蒲纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-057-04.jpg",
+        "role": "source",
+        "label": "西汉出廓双螭龙璜上的蒲纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-057-05.jpg",
+        "role": "source",
+        "label": "明代玉璧上的盘凤蒲纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-057-06.jpg",
+        "role": "source",
+        "label": "明代玉璧上的盘凤蒲纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-057-07.jpg",
+        "role": "source",
+        "label": "清代景泰蓝玉璧装饰上的蒲纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-058",
+    "title": "狮纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-058-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-058-02.jpg",
+        "role": "source",
+        "label": "明清风筝上的狮纹组合"
+      },
+      {
+        "path": "/assets/patterns/pattern-058-03.jpg",
+        "role": "source",
+        "label": "唐代鎏金银盘上的狮纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-058-04.jpg",
+        "role": "source",
+        "label": "清代青花釉里红将军罐上的锦地狮球纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-058-05.jpg",
+        "role": "source",
+        "label": "清代织锦上的狮子滚绣球纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-059",
+    "title": "太阳纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-059-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-059-02.jpg",
+        "role": "source",
+        "label": "铜鼓上的太阳纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-060",
+    "title": "桃纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-060-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-060-02.jpg",
+        "role": "source",
+        "label": "寿桃纹（一）"
+      },
+      {
+        "path": "/assets/patterns/pattern-060-03.jpg",
+        "role": "source",
+        "label": "寿桃纹（二）"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-061",
+    "title": "天华锦纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-061-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-061-02.jpg",
+        "role": "source",
+        "label": "经典方形填花天华锦纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-061-03.jpg",
+        "role": "source",
+        "label": "经典八角形填花天华锦纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-062",
+    "title": "兔纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-062-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-062-02.jpg",
+        "role": "source",
+        "label": "唐代织锦上的奔兔纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-062-03.jpg",
+        "role": "source",
+        "label": "明代妆花纱上的兔衔花纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-063",
+    "title": "团窠纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-063-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-063-02.jpg",
+        "role": "source",
+        "label": "清代刺绣上的蓝地团窠人物纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-063-03.jpg",
+        "role": "source",
+        "label": "唐代织锦上的朵花对雁团窠纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-064",
+    "title": "蛙纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-064-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-064-02.jpg",
+        "role": "source",
+        "label": "马家窑彩陶上的蛙纹（一）"
+      },
+      {
+        "path": "/assets/patterns/pattern-064-03.jpg",
+        "role": "source",
+        "label": "马家窑彩陶上的蛙纹（二）"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-065",
+    "title": "万字纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-065-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-065-02.jpg",
+        "role": "source",
+        "label": "织锦上的万字纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-065-03.jpg",
+        "role": "source",
+        "label": "清代地毯上的乳白地蓝团万字纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-066",
+    "title": "席纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-066-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-066-02.jpg",
+        "role": "source",
+        "label": "经典席纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-067",
+    "title": "喜字纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-067-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-067-02.jpg",
+        "role": "source",
+        "label": "清代地毯上的喜字纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-067-03.jpg",
+        "role": "source",
+        "label": "清代珐琅彩上的喜字纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-068",
+    "title": "象纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-068-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-068-02.jpg",
+        "role": "source",
+        "label": "清代织锦上的红地太平景象纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-068-03.jpg",
+        "role": "source",
+        "label": "织锦上的万象纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-069",
+    "title": "涡纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-069-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-069-02.jpg",
+        "role": "source",
+        "label": "苗族蜡染中的涡纹（一）"
+      },
+      {
+        "path": "/assets/patterns/pattern-069-03.jpg",
+        "role": "source",
+        "label": "苗族蜡染中的涡纹（二）"
+      },
+      {
+        "path": "/assets/patterns/pattern-069-04.jpg",
+        "role": "source",
+        "label": "秦代青铜器上的涡纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-070",
+    "title": "雁纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-070-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-070-02.jpg",
+        "role": "source",
+        "label": "明代织物上的雁衔芦纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-070-03.jpg",
+        "role": "source",
+        "label": "唐代敦煌石窟平棋上的团花雁纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-071",
+    "title": "羊纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-071-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-071-02.jpg",
+        "role": "source",
+        "label": "明代太子织锦上的绵羊纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-071-03.jpg",
+        "role": "source",
+        "label": "宋代锦袍上的双头鸟对羊纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-072",
+    "title": "银铤纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-072-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-072-02.jpg",
+        "role": "source",
+        "label": "经典银铤纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-073",
+    "title": "婴戏纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-073-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-073-02.jpg",
+        "role": "source",
+        "label": "清代织锦上的婴戏纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-073-03.jpg",
+        "role": "source",
+        "label": "清代瓷器上的婴戏纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-074",
+    "title": "璎珞纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-074-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-074-02.jpg",
+        "role": "source",
+        "label": "明代青花瓷器上的璎珞纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-074-03.jpg",
+        "role": "source",
+        "label": "明代五彩描金梅瓶上的璎珞纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-075",
+    "title": "鱼纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-075-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-075-02.jpg",
+        "role": "source",
+        "label": "元代青花瓷罐上的鱼莲纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-075-03.jpg",
+        "role": "source",
+        "label": "刺绣上的鱼纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-076",
+    "title": "鸳鸯纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-076-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-076-02.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-076-03.jpg",
+        "role": "source",
+        "label": "元代青花瓷盘上的荷花鸳鸯纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-076-04.jpg",
+        "role": "source",
+        "label": "近现代瓷器上的月季鸳鸯纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-077",
+    "title": "云雷纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-077-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-077-02.jpg",
+        "role": "source",
+        "label": "商代青铜器上的云雷纹（一）"
+      },
+      {
+        "path": "/assets/patterns/pattern-077-03.jpg",
+        "role": "source",
+        "label": "商代青铜器上的云雷纹（二）"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-078",
+    "title": "竹纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-078-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-078-02.jpg",
+        "role": "source",
+        "label": "清代青花瓷器上的竹纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-078-03.jpg",
+        "role": "source",
+        "label": "清代瓷器上的黄地青竹纹"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-079",
+    "title": "兽面纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-079-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-079-02.jpg",
+        "role": "source",
+        "label": "商代青铜鼎上的兽面纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-079-03.jpg",
+        "role": "source",
+        "label": "商代妇好偶方彝上的兽面纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-079-04.jpg",
+        "role": "source",
+        "label": "清代珐琅彩上的兽面纹（一）"
+      },
+      {
+        "path": "/assets/patterns/pattern-079-05.jpg",
+        "role": "source",
+        "label": "清代珐琅彩上的兽面纹（二）"
+      }
+    ],
+    "revision": 1
+  },
+  {
+    "id": "WW-PAT-080",
+    "title": "云纹",
+    "record_type": "object",
+    "category": "纹样",
+    "status": "待考证",
+    "parent_id": null,
+    "collection_id": "pattern_book_hqs_2021",
+    "culture": null,
+    "place": null,
+    "date_text": null,
+    "observations": [],
+    "source": {
+      "author": "黄清穗",
+      "title": "中国经典纹样图鉴",
+      "year": "2021",
+      "record_id": "WW-BIB-HQS-2021",
+      "url": null,
+      "license": null
+    },
+    "media": [
+      {
+        "path": "/assets/patterns/pattern-080-01.jpg",
+        "role": "source",
+        "label": "纹样概览"
+      },
+      {
+        "path": "/assets/patterns/pattern-080-02.jpg",
+        "role": "source",
+        "label": "各时期织物上的云纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-080-03.jpg",
+        "role": "source",
+        "label": "清代织物上的龙纹和如意云纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-080-04.jpg",
+        "role": "source",
+        "label": "战国错金银青铜镜上的卷云纹"
+      },
+      {
+        "path": "/assets/patterns/pattern-080-05.jpg",
+        "role": "source",
+        "label": "西汉织锦上的云气纹"
+      }
+    ],
+    "revision": 1
+  }
+]

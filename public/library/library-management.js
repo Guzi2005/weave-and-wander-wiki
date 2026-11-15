@@ -2,6 +2,8 @@ export const INITIAL_TOPICS=[
   {id:'culture-mosuo',name:'摩梭人 · 服饰与手作',regions:['530000','510000'],ethnicities:['ethnic-27','ethnic-02'],collections:['mosuo_photo_001','mosuo_video_002'],note:'云南摩梭人关联纳西族；四川左所摩梭人关联蒙古族。'},
   {id:'topic-ukrainian',name:'乌克兰服饰',regions:[],ethnicities:[],collections:['ukrainian_photo_001'],note:''},
   {id:'topic-game-basics',name:'游戏基础资产',regions:[],ethnicities:[],collections:['ww_game_basics'],note:''},
+  {id:'topic-patterns',name:'纹样 · 中国经典纹样图鉴',regions:[],ethnicities:[],collections:['pattern_book_hqs_2021'],note:'按纹样名称建立条目；图例留在对应条目内。资料来源：黄清穗《中国经典纹样图鉴》（2021）。'},
+  {id:'topic-bibliography',name:'书目',regions:[],ethnicities:[],collections:['bibliography'],note:'书目也是独立条目。纹样条目通过资料来源关联书目。'},
   {id:'topic-unassigned',name:'待整理资料',regions:[],ethnicities:[],collections:[],note:''}
 ];
 export function recordsForTopic(data,topics,topicId,overrides={}){

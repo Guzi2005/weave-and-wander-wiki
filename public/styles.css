@@ -1958,6 +1958,7 @@ body {
 .brand-logo { display:block;width:46px;height:46px;object-fit:cover;border:0; }
 .brand { align-items:center; }
 .site-header { background:transparent;border-top:3px solid #39b8a6;border-bottom:1px solid var(--line); }
+.test-banner{background:#fff4d6;color:#694b16;border-bottom:1px solid #d5ba78;padding:9px 16px;text-align:center;font:12px/1.6 var(--sans)}
 .site-nav a:nth-child(2) { --nav-color:#3936a5; }
 .site-nav a:nth-child(3) { --nav-color:#247d72; }
 .site-nav a:nth-child(4) { --nav-color:#ad4655; }

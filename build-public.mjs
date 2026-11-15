@@ -6,9 +6,12 @@ import { fileURLToPath } from 'node:url';
 const root = path.dirname(fileURLToPath(import.meta.url));
 const source = path.join(root, 'public');
 const output = path.join(root, 'dist-public');
-const db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'utf8'));
+let db;
+try { db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'utf8')); }
+catch (error) { if (error.code !== 'ENOENT') throw error; db = JSON.parse(await readFile(path.join(root, 'seed', 'records.json'), 'utf8')); }
 const catalog = JSON.parse(await readFile(path.join(source, 'assets', 'catalog.json'), 'utf8'));
 const PART_SIZE = 20 * 1024 * 1024;
+const PUBLIC_VERSION = 'patterns-20261116-2';
 
 try {
   await rm(output, { recursive: true, force: true });
@@ -20,13 +23,21 @@ for (const name of ['app.js', 'archive-layout.js', 'bead-physics.js', 'index.htm
 }
 let html = await readFile(path.join(output, 'index.html'), 'utf8');
 html = html.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta name="ww-public" content="true">');
+html = html.replace('/styles.css', `/styles.css?v=${PUBLIC_VERSION}`)
+  .replace('/library/library.css', `/library/library.css?v=${PUBLIC_VERSION}`)
+  .replace('/app.js', `/app.js?v=${PUBLIC_VERSION}`);
 await writeFile(path.join(output, 'index.html'), html);
-for (const folder of ['library', 'vendor', 'assets/guide', 'assets/bench', 'assets/node-styles', 'assets/motifs']) {
+for (const folder of ['library', 'vendor', 'assets/guide', 'assets/bench', 'assets/node-styles', 'assets/motifs', 'assets/patterns']) {
   const from = path.join(source, folder);
   const to = path.join(output, folder);
   await mkdir(to, { recursive: true });
   await cp(from, to, { recursive: true, force: true });
 }
+// A new module path invalidates browsers' cached library dependency graph.
+const versionedLibrary = `library-${PUBLIC_VERSION}`;
+await cp(path.join(output, 'library'), path.join(output, versionedLibrary), {recursive:true,force:true});
+const publicApp=await readFile(path.join(output,'app.js'),'utf8');
+await writeFile(path.join(output,'app.js'),publicApp.replaceAll("'/library/",`'/${versionedLibrary}/`));
 const safeAsset = /^(?:[a-z0-9_-]+-cover\.png|[a-z0-9_-]+-uv\.svg|ww-logo\.jpg|source\.png|ukrainian-source\.jpg)$/i;
 for (const name of await readdir(path.join(source, 'assets'))) {
   if (safeAsset.test(name)) await copyFile(path.join(source, 'assets', name), path.join(output, 'assets', name));
@@ -47,16 +58,23 @@ for (const name of ['bench', ...modelNames]) {
   }
 }
 
-const PUBLIC_SOURCE_MEDIA = new Set(['/assets/source.png', '/assets/ukrainian-source.jpg']);
-const publicRecords = db.records.map(r => ({
+const libraryAssets=await loadLibraryAssets(source);
+const sourceRecords=[...db.records,...libraryAssets.patternRecords.filter(pattern=>!db.records.some(record=>record.id===pattern.id))];
+const publicMediaPath=/^\/(?:assets\/(?:patterns\/)?|media\/)[A-Za-z0-9._-]+$/;
+for(const mediaPath of new Set(sourceRecords.flatMap(record=>(record.media||[]).map(media=>media.path).filter(p=>publicMediaPath.test(p))))){
+  const relative=mediaPath.slice(1),from=path.join(source,relative),to=path.join(output,relative);
+  await mkdir(path.dirname(to),{recursive:true});
+  await copyFile(from,to);
+}
+const publicRecords = sourceRecords.map(r => ({
   id:r.id, title:r.title, record_type:r.record_type, category:r.category,
   status:r.status, parent_id:r.parent_id, collection_id:r.collection_id,
   culture:r.culture, place:r.place, date_text:r.date_text,
   observations:(r.observations || []).filter(x => !/\/(?:assets|media)\//.test(x)),
-  source:{author:r.source?.author || null,captured_at:r.source?.captured_at || null,
+  source:{author:r.source?.author || null,title:r.source?.title || null,year:r.source?.year || null,record_id:r.source?.record_id || null,captured_at:r.source?.captured_at || null,
     place:r.source?.place || null,url:r.source?.url || null,license:r.source?.license || null},
-  media:(r.media || []).filter(m => m.role === 'source' && PUBLIC_SOURCE_MEDIA.has(m.path))
-    .map(m => ({path:m.path, role:'source', label:m.label, focus:m.focus || {x:50,y:50}})),
+  media:(r.media || []).filter(m => publicMediaPath.test(m.path))
+    .map(m => ({path:m.path, role:m.role, label:m.label, focus:m.focus || {x:50,y:50}})),
   revision:r.revision, created_at:r.created_at, updated_at:r.updated_at,
 }));
 const publicQuestions = db.questions.filter(q => q.status === 'approved' &&
@@ -65,7 +83,6 @@ const publicQuestions = db.questions.filter(q => q.status === 'approved' &&
     correct_index:q.correct_index,explanation:q.explanation,evidence_note:q.evidence_note,
     game_versions:q.game_versions,status:q.status,needs_review:false}));
 
-const libraryAssets=await loadLibraryAssets(source);
 const publishedLibrary={...(db.library||{revision:0,topics:null,trees:null,records:{}}),autosaves:[],records:Object.fromEntries(Object.entries(db.library?.records||{}).filter(([id])=>publicRecords.some(r=>r.id===id)).map(([id,row])=>[id,{...row,note:'',source:{author:row.source?.author||'',url:row.source?.url||''}}]))};
 const worker = `const RECORDS=${JSON.stringify(publicRecords)};\nconst QUESTIONS=${JSON.stringify(publicQuestions)};\nconst LIBRARY_ASSETS=${JSON.stringify(libraryAssets)};\nconst LIBRARY_STATE=${JSON.stringify(publishedLibrary)};\n` + `
 const summary=r=>({id:r.id,title:r.title,record_type:r.record_type,category:r.category,
