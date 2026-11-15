@@ -25,7 +25,18 @@ export function createAssetPreview(data){
   const stopViewers=()=>{serial++;viewer?.cleanup();viewer=null;fullscreenViewer?.cleanup();fullscreenViewer=null;globalThis.document?.documentElement.classList.remove('has-media-lightbox');};
   const cleanup=()=>{stopViewers();events?.abort();events=null;};
   function card(item){return `<a class="ap-card ap-kind-${item.kind}" href="${assetHref(item.id)}"><div class="ap-card-image">${image(item.cover,item.title)}<span class="ap-format">${labels[item.kind]}</span></div><div class="ap-card-caption"><span>${escape(item.title)}</span><span aria-hidden="true">↗</span></div></a>`;}
-  function bookshelf(books){return `<div class="ap-bookshelf" aria-label="图鉴画册书架"><div class="ap-bookshelf-row">${books.map(item=>`<a class="ap-book" href="${assetHref(item.id)}" aria-label="查看书目：${escape(item.title)}"><span class="ap-book-cover">${item.cover?image(item.cover,item.title):'<span class="ap-book-placeholder">图鉴画册</span>'}</span><span class="ap-book-title">${escape(item.title)}</span></a>`).join('')}</div></div>`;}
+  function bookshelf(books){
+    const book=item=>{
+      const seed=[...item.id].reduce((value,char)=>(value*31+char.charCodeAt(0))>>>0,0);
+      const arrangement=seed%3,spines='<span></span>'.repeat(arrangement===1?3:2);
+      return `<div class="ap-shelf-group"><a class="ap-book" href="${assetHref(item.id)}" aria-label="查看书目：${escape(item.title)}" title="${escape(item.title)}"><span class="ap-book-cover">${item.cover?image(item.cover,item.title):`<span class="ap-book-placeholder">${escape(item.title)}</span>`}</span></a><div class="ap-decorative-spines ap-spines-${arrangement}" aria-hidden="true">${spines}</div></div>`;
+    };
+    const rows=[];
+    for(let offset=0;offset<books.length;offset+=3){
+      rows.push(`<div class="ap-bookshelf-row">${books.slice(offset,offset+3).map(book).join('')}</div>`);
+    }
+    return `<div class="ap-bookshelf" aria-label="图鉴画册书架">${rows.join('')}</div>`;
+  }
   function ensemble(item){
     const children=items.filter(row=>row.kind==='models'&&row.record.parent_id===item.id&&row.record.record_type==='component');
     return `<section class="ap-ensemble"><header><a href="${assetHref(item.id)}">${escape(item.title)} ↗</a><span>${children.length} 个部件</span></header><div class="ap-ensemble-body"><a class="ap-ensemble-whole" href="${assetHref(item.id)}">${image(item.cover,item.title)}<span>套装整体 ↗</span></a><div class="ap-ensemble-parts">${children.map(card).join('')}</div></div></section>`;
