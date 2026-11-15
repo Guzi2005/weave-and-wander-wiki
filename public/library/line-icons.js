@@ -1,5 +1,7 @@
 // Small, single-stroke UI icons. Labels remain in the surrounding controls.
 const paths={
+  'chevron-left':'<path d="m15 5-7 7 7 7"/>',
+  'chevron-right':'<path d="m9 5 7 7-7 7"/>',
   all:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
   models:'<path d="m12 2 9 5-9 5-9-5 9-5Zm-9 5v10l9 5 9-5V7M12 12v10"/>',
   images:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m4 17 5-5 4 4 3-3 4 4"/>',

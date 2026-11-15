@@ -1,7 +1,34 @@
+import {lineIcon} from './line-icons.js';
+
 export function mountPageHistory(container){
   const saved=history.state?.wwWikiHistory;let index=saved?.index??0,max=saved?.max??index,lastURL=location.href,travelling=false;
-  const bar=document.createElement('nav');bar.className='rm-page-history';bar.setAttribute('aria-label','浏览历史');bar.innerHTML='<button type="button" data-history-back aria-label="返回上一页" title="返回上一页">← <span>后退</span></button><button type="button" data-history-forward aria-label="前进到下一页" title="前进到下一页">→ <span>前进</span></button>';
-  container.before(bar);const back=bar.querySelector('[data-history-back]'),forward=bar.querySelector('[data-history-forward]');
+  const bar = document.createElement('nav');
+  bar.className = 'rm-page-history';
+  bar.setAttribute('aria-label', '浏览历史');
+  bar.innerHTML = `
+    <button type="button" data-history-back aria-label="返回上一页" title="返回上一页">${lineIcon('chevron-left')}</button>
+    <button type="button" data-history-forward aria-label="前进到下一页" title="前进到下一页">${lineIcon('chevron-right')}</button>`;
+  const back = bar.querySelector('[data-history-back]');
+  const forward = bar.querySelector('[data-history-forward]');
+
+  function place() {
+    const breadcrumb = container.querySelector('.rm-breadcrumb');
+    if (!breadcrumb) {
+      if (bar.nextElementSibling !== container) container.before(bar);
+      return;
+    }
+    let row = breadcrumb.parentElement;
+    if (!row.classList.contains('rm-history-row')) {
+      row = document.createElement('div');
+      row.className = 'rm-history-row';
+      breadcrumb.before(row);
+      row.append(breadcrumb);
+    }
+    if (bar.parentElement !== row) row.append(bar);
+  }
+
+  place();
+  new MutationObserver(place).observe(container, {childList: true, subtree: true});
   const paint=()=>{back.disabled=index<=0;forward.disabled=index>=max;};
   const stamp=()=>history.replaceState({...history.state,wwWikiHistory:{index,max}},'',location.href);
   stamp();paint();back.onclick=()=>history.back();forward.onclick=()=>history.forward();
