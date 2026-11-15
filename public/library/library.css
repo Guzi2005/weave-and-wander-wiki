@@ -121,6 +121,10 @@
 @media(prefers-reduced-motion:reduce){.ap-book-cover{transition:none}}
 
 .ap-detail-media{margin:0}
+.ap-detail-heading.has-pattern-diagram{display:grid;grid-template-columns:minmax(0,1fr) min(46%,272px);align-items:center;gap:12px}
+.has-pattern-diagram .ap-downloads{grid-column:1/-1;justify-content:flex-end}
+.has-pattern-diagram .ap-downloads:empty{display:none}
+.ap-pattern-diagram{display:block;width:100%;height:clamp(54px,10vw,86px);object-fit:contain;object-position:right center;filter:brightness(1.05);mix-blend-mode:multiply}
 .ap-detail-media.has-thumbnails{--thumb-width:76px;--thumb-gap:12px;--gallery-height:470px}
 .has-thumbnails .ap-image-gallery{display:grid;grid-template-columns:var(--thumb-width) minmax(0,1fr);gap:var(--thumb-gap)}
 .has-thumbnails .ap-stage{height:var(--gallery-height);box-sizing:border-box}

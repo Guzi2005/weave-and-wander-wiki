@@ -140,10 +140,17 @@ export function createAssetPreview(data){
     }).join('')}</div>` : '';
     const parent=item.record?.parent_id&&byId.get(item.record.parent_id);
     const detailLabel = item.record?.category === '纹样' ? '纹样' : labels[item.kind];
+    const diagram = item.record?.category === '纹样'
+      ? media(item).find(entry => entry.label === '纹样概览' && /^\/assets\/patterns\/pattern-\d+-01\./.test(entry.path))
+      : null;
     const isModel=mode==='model'&&item.asset?.modelAvailable;
     const stageMedia=isModel?`${image(item.cover,item.title,'loading="eager"')}<span class="ap-model-loading" role="status">正在加载三维预览…</span>`:`<div class="ap-main-image">${image(selectedFile(item),caption || item.title,'loading="eager"')}</div>`;
     return `<nav class="rm-breadcrumb"><a href="#/assets">资料库</a>${parent?`<span>/</span><a href="${assetHref(parent.id)}">${escape(parent.title)}</a>`:''}<span>/</span><span>${detailLabel}</span></nav>
-      <header class="ap-detail-heading"><div><div class="rm-eyebrow">${detailLabel}</div><h1>${escape(item.title)}</h1></div><div class="ap-downloads">${item.entry?.recipe?`<a href="${escape(item.entry.recipe)}" download>下载配方 ↓</a>`:''}${item.asset?.modelAvailable?`<a href="/assets/models/${escape(item.asset.model)}.glb" download>下载模型 ↓</a>`:''}</div></header>
+      <header class="ap-detail-heading${diagram ? ' has-pattern-diagram' : ''}">
+        <div><div class="rm-eyebrow">${detailLabel}</div><h1>${escape(item.title)}</h1></div>
+        ${diagram ? `<img class="ap-pattern-diagram" src="${escape(diagram.path)}" alt="${escape(item.title)}示意图" decoding="async">` : ''}
+        <div class="ap-downloads">${item.entry?.recipe?`<a href="${escape(item.entry.recipe)}" download>下载配方 ↓</a>`:''}${item.asset?.modelAvailable?`<a href="/assets/models/${escape(item.asset.model)}.glb" download>下载模型 ↓</a>`:''}</div>
+      </header>
       ${patternText(item.record)}
       <figure class="ap-detail-media${hasThumbnails?' has-thumbnails':''}"${item.record?.pattern_text?.length?' data-toc-title="图例"':''}>
         <div class="ap-image-gallery">${thumbnails}<div class="ap-stage${mode==='drawing'?' is-drawing':''}" aria-label="资料主展示">${stageMedia}${expandIcon(isModel?'model':'image')}</div></div>
