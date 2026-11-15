@@ -83,6 +83,7 @@ export async function mountRegionMap(host, {geoUrl = new URL('./china.geo.json',
   function select(id) {
     const previous=current;
     $('.rm-shell').classList.toggle('is-contribution-page',id==='contribute');
+    $('.rm-shell').classList.toggle('is-pattern-page',['culture:topic-patterns','culture:topic-bibliography'].includes(id)||id.startsWith('asset:WW-PAT-')||id.startsWith('asset:WW-BIB-'));
     current=id;
     $('.rm-shell').classList.toggle('is-asset-page',id==='assets'||id.startsWith('asset:')||id.startsWith('culture:')||id==='contribute');
     hideTip();

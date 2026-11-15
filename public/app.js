@@ -19,7 +19,7 @@ let activeViewer = null;
 let routeToken = 0;
 let flashMsg = null;
 
-const CATEGORIES = ['服装', '饰品', '布艺', '玩具', '工具', '其他', '待分类'];
+const CATEGORIES = ['服装', '饰品', '布艺', '玩具', '工具', '其他', '纹样', '书目', '待分类'];
 const STATUSES = ['待整理', '待考证', '考证中', '已整理'];
 const RECORD_TYPES = [
   ['object', '独立单件 object'],

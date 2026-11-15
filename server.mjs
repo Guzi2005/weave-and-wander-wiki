@@ -160,7 +160,7 @@ async function serveStatic(req, res, pathname) {
 
 async function handleApi(req, res, pathname, url, store, mediaDir) {
   if(pathname==='/api/library/bootstrap'&&req.method==='GET'){
-    const assets=await loadLibraryAssets(PUBLIC_DIR),state=store.libraryState(),managedPaths=new Set((state.autosaves||[]).flatMap(item=>(item.files||[]).map(file=>file.path)));sendJson(res,200,{data:{schema:'ww-library-v1',...assets,records:store.exportDump().records.map(r=>({...r,note:r.notes||'',media:(r.media||[]).filter(m=>!managedPaths.has(m.path))}))},state});return;
+    const assets=await loadLibraryAssets(PUBLIC_DIR),state=store.libraryState(),managedPaths=new Set((state.autosaves||[]).flatMap(item=>(item.files||[]).map(file=>file.path)));const records=store.exportDump().records.map(r=>({...r,note:r.notes||'',media:(r.media||[]).filter(m=>!managedPaths.has(m.path))}));sendJson(res,200,{data:{schema:'ww-library-v1',...assets,records:[...records,...assets.patternRecords.filter(pattern=>!records.some(record=>record.id===pattern.id))]},state});return;
   }
   if(pathname==='/api/library/state'){
     if(req.method==='GET'){sendJson(res,200,store.libraryState());return;}
