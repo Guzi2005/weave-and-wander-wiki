@@ -46,7 +46,20 @@ export function createLibraryReading(store,knowledge){
     }
     if(id.startsWith('asset:')){
       const recordId=id.slice(6).replace(/^images-|^drawing-/,'');const record=store.data.records.find(r=>r.id===recordId);if(!record)return;
-      root.querySelector('.ap-detail-heading')?.insertAdjacentHTML('afterend',`<div class="mp-asset-links">${store.snapshot.topics.filter(t=>store.records(t.id).some(r=>r.id===recordId)).map(t=>link(t.id,t.name)).join('')}${store.labels(record).map(label=>`<span>${esc(label)}</span>`).join('')}</div>${record.note?`<p class="lr-record-note">${esc(record.note)}</p>`:''}`);return;
+      const topics=store.snapshot.topics.filter(topic=>store.records(topic.id).some(row=>row.id===recordId));
+      const badges=new Map();
+      for(const topic of topics){
+        const name=topic.name.trim();
+        if(name&&!badges.has(name))badges.set(name,link(topic.id,name));
+      }
+      for(const label of store.labels(record)){
+        const name=label.trim();
+        if(name&&!badges.has(name))badges.set(name,`<span>${esc(name)}</span>`);
+      }
+      const links=badges.size?`<div class="mp-asset-links">${[...badges.values()].join('')}</div>`:'';
+      const note=record.note?`<p class="lr-record-note">${esc(record.note)}</p>`:'';
+      root.querySelector('.ap-detail-heading')?.insertAdjacentHTML('afterend',links+note);
+      return;
     }
     const topics=store.topicsFor(id);if(!topics.length)return;
     const previews=topics.map(t=>{const rows=store.records(t.id).slice(0,3);return `<section class="mp-topic-preview rm-knowledge-section" data-toc-title="${esc(t.name)}"><div class="mp-preview-heading"><div><h2>文化专题</h2><h3>${esc(t.name)}</h3></div><a href="${topicRoute(t.id)}">展开专题 ↗</a></div>${t.note?`<p>${esc(t.note)}</p>`:''}${rows.length?`<div class="mp-preview-cards">${rows.map(r=>`<div class="mp-preview-item"><div>${image(r)}</div><span>${esc(r.title)}</span></div>`).join('')}</div>`:'<p>等待添加资料。</p>'}</section>`;}).join('');

@@ -11,7 +11,7 @@ try { db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'u
 catch (error) { if (error.code !== 'ENOENT') throw error; db = JSON.parse(await readFile(path.join(root, 'seed', 'records.json'), 'utf8')); }
 const catalog = JSON.parse(await readFile(path.join(source, 'assets', 'catalog.json'), 'utf8'));
 const PART_SIZE = 20 * 1024 * 1024;
-const PUBLIC_VERSION = 'flat-previews-20261116';
+const PUBLIC_VERSION = 'flat-archive-20261116';
 
 try {
   await rm(output, { recursive: true, force: true });
@@ -47,7 +47,13 @@ const safeAsset = /^(?:[a-z0-9_-]+-cover\.png|[a-z0-9_-]+-uv\.svg|ww-logo\.jpg|s
 for (const name of await readdir(path.join(source, 'assets'))) {
   if (safeAsset.test(name)) await copyFile(path.join(source, 'assets', name), path.join(output, 'assets', name));
 }
-await copyFile(path.join(source, 'assets', 'catalog.json'), path.join(output, 'assets', 'catalog.json'));
+function versionModelCovers(assets) {
+  for (const asset of Object.values(assets)) {
+    if (asset.cover) asset.cover += `?v=${PUBLIC_VERSION}`;
+  }
+}
+versionModelCovers(catalog.assets);
+await writeFile(path.join(output, 'assets', 'catalog.json'), JSON.stringify(catalog));
 
 const modelNames = new Set(Object.values(catalog.assets).map(a => a.model).filter(Boolean));
 for (const name of ['bench', ...modelNames]) {
@@ -64,6 +70,7 @@ for (const name of ['bench', ...modelNames]) {
 }
 
 const libraryAssets=await loadLibraryAssets(source);
+versionModelCovers(libraryAssets.assets);
 const sourceRecords=[...db.records,...libraryAssets.patternRecords.filter(pattern=>!db.records.some(record=>record.id===pattern.id))];
 const publicMediaPath=/^\/(?:assets\/(?:patterns\/)?|media\/)[A-Za-z0-9._-]+$/;
 for(const mediaPath of new Set(sourceRecords.flatMap(record=>(record.media||[]).map(media=>media.path).filter(p=>publicMediaPath.test(p))))){

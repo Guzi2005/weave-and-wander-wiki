@@ -2068,8 +2068,8 @@ body {
 .archive-tools a,.relation-list a,.meta a { color:var(--indigo);text-underline-offset:3px; }
 
 /* Model posters are rendered on the same paper as the page. */
-.ensemble-whole-thumb,.card-thumb .model-cover,.component-thumb .model-cover,
-.detail-poster,.model-column .model-viewer,.workshop-stage .model-viewer {
+.card-thumb .model-cover,.component-thumb .model-cover,
+.model-column .model-viewer,.workshop-stage .model-viewer {
   background:transparent!important;
   box-shadow:none!important;
 }

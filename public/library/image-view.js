@@ -7,8 +7,12 @@ export function mountImageView(stage, image, controls) {
   let drag = null;
 
   function draw() {
-    const limitX = Math.max(0, (image.offsetWidth * zoom - stage.clientWidth) / 2);
-    const limitY = Math.max(0, (image.offsetHeight * zoom - stage.clientHeight) / 2);
+    const fit = Math.min(
+      stage.clientWidth / (image.naturalWidth || 1),
+      stage.clientHeight / (image.naturalHeight || 1),
+    );
+    const limitX = Math.max(0, (image.naturalWidth * fit * zoom - stage.clientWidth) / 2);
+    const limitY = Math.max(0, (image.naturalHeight * fit * zoom - stage.clientHeight) / 2);
     x = Math.min(limitX, Math.max(-limitX, x));
     y = Math.min(limitY, Math.max(-limitY, y));
     image.style.transform = `translate(${x}px, ${y}px) scale(${zoom})`;

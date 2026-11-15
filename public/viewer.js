@@ -164,7 +164,10 @@ export function mountViewer(container, options={}) {
   async function load(url){
     const serial=++request;state.modelReady=false;container.dataset.modelReady='false';container.dataset.animationTime='0.000';sync();
     try{
-      const gltf=await new GLTFLoader().register(nodeVisibility).loadAsync(url);
+      const modelUrl=new URL(url,location.href);
+      const version=new URL(import.meta.url).searchParams.get('v');
+      if(version&&modelUrl.origin===location.origin)modelUrl.searchParams.set('v',version);
+      const gltf=await new GLTFLoader().register(nodeVisibility).loadAsync(modelUrl.href);
       if(disposed||serial!==request){release(gltf.scene);return;}
       if(model){clearStyle();beadPhysics?.dispose();beadPhysics=null;mixer?.stopAllAction();mixer?.uncacheRoot(model);pivot.remove(model);release(model);}
       model=gltf.scene;

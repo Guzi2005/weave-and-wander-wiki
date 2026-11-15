@@ -2,7 +2,7 @@ import {lineIcon} from './line-icons.js';
 import {mountImageView} from './image-view.js';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const assetHref=id=>`#/asset/${encodeURIComponent(id)}`;
-const labels={all:'全部',models:'模型',images:'影像',drawings:'UV 图纸',motifs:'纹样与配方',nodes:'节点样式',files:'资料文件',books:'图鉴画册'};
+const labels={all:'全部',models:'模型',images:'影像',drawings:'UV 图纸',motifs:'纹样',recipes:'配方',nodes:'节点样式',files:'资料文件',books:'图鉴画册'};
 const patternAliases = {'古钱纹':'钱纹', '八宝纹':'八吉祥纹', '饕餮纹':'兽面纹'};
 const image=(src,alt,extra='')=>!src?'<span class="lr-file-cover">资料文件</span>':`<img src="${escape(src)}" alt="${escape(alt)}" loading="lazy" decoding="async" ${extra}>`;
 const expandIcon=kind=>`<button class="ap-expand" type="button" data-expand-media="${kind}" aria-label="${kind==='model'?'全屏查看三维模型':'全屏查看图片'}" title="放大"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg></button>`;
@@ -14,10 +14,10 @@ export function createAssetItems(data){
     if(record.category==='书目')items.push({id:record.id,kind:'books',title:record.title,cover:record.media?.[0]?.path||null,record});
     if(record.category!=='书目'&&!asset&&!record.media?.length&&record._files?.length)items.push({id:record.id,kind:'files',title:record.title,cover:null,record});
     if(asset)items.push({id:record.id,kind:'models',title:record.title,cover:record._previewCover||asset.cover,record,asset});
-    if(record.category!=='书目'&&(record.record_type==='ensemble'||record.collection_id==='mosuo_video_002'||(!asset&&record.media?.length)))items.push({id:'images-'+record.id,kind:'images',title:record.record_type==='ensemble'?record.title+' · 参考影像':record.title,cover:record.media.find(m=>m.role==='source')?.path,record,asset});
+    if(record.category!=='书目'&&(record.record_type==='ensemble'||record.collection_id==='mosuo_video_002'||(!asset&&record.media?.length)))items.push({id:'images-'+record.id,kind:record.category==='纹样'?'motifs':'images',title:record.record_type==='ensemble'?record.title+' · 参考影像':record.title,cover:record.media.find(m=>m.role==='source')?.path,record,asset});
     if(asset?.drawing)items.push({id:'drawing-'+record.id,kind:'drawings',title:record.title+' · UV',cover:asset.drawing,record,asset});
   }
-  for(const entry of data.motifs)items.push({id:'motif-'+entry.id,kind:'motifs',title:entry.label,cover:entry.image,entry,record:data.records.find(r=>r.id===entry.record_id)});
+  for(const entry of data.motifs)items.push({id:'motif-'+entry.id,kind:'recipes',title:entry.label,cover:entry.image,entry,record:data.records.find(r=>r.id===entry.record_id)});
   for(const entry of data.nodes)items.push({id:'node-'+entry.id,kind:'nodes',title:entry.label.replace(/^\d+\s*/,''),cover:entry.image,entry});
   return items;
 }
@@ -52,13 +52,13 @@ export function createAssetPreview(data){
     return `<section class="ap-ensemble"><header><a href="${assetHref(item.id)}">${escape(item.title)} ↗</a><span>${children.length} 个部件</span></header><div class="ap-ensemble-body"><a class="ap-ensemble-whole" href="${assetHref(item.id)}">${image(item.cover,item.title)}<span>套装整体 ↗</span></a><div class="ap-ensemble-parts">${children.map(card).join('')}</div></div></section>`;
   }
   function gallery(){
-    const gridClass = kind => kind === 'images' ? 'lr-masonry' : 'ap-card-grid';
+    const gridClass = kind => ['images','motifs'].includes(kind) ? 'lr-masonry' : 'ap-card-grid';
     const group=(title,rows,kind,limit,showAll=true)=>`<section class="ap-section"><header><h2>${title}</h2>${showAll?`<button data-asset-filter="${kind}">查看全部 →</button>`:''}</header><div class="${gridClass(kind)}">${rows.slice(0,limit).map(card).join('')}</div></section>`;
     const models=items.filter(item=>item.kind==='models'),ensembles=models.filter(item=>item.record.record_type==='ensemble');
     const books=items.filter(item=>item.kind==='books'),files=items.filter(item=>item.kind==='files');
     const bookSection=books.length?`<section class="ap-section ap-book-section"><header><h2>${filter==='all'?'资料文件':'图鉴画册'}</h2>${filter==='all'?'<button data-asset-filter="files">查看全部 →</button>':''}</header>${filter==='all'?'<h3>图鉴画册</h3>':''}${bookshelf(books)}</section>`:'';
     const fileSection=files.length?group(books.length?'其他资料文件':'资料文件',files,'files',filter==='all'?6:files.length,filter==='all'):'';
-    const body=filter==='all'?`<div class="ap-ensembles">${ensembles.map(ensemble).join('')}</div>${group('服装与配件',models.filter(item=>item.record.record_type!=='ensemble'&&item.record.collection_id==='ww_game_basics'),'models',6)}${group('参考影像',items.filter(item=>item.kind==='images'),'images',3)}${bookSection}${fileSection}${group('UV 图纸',items.filter(item=>item.kind==='drawings'),'drawings',3)}${group('纹样与配方',items.filter(item=>item.kind==='motifs'),'motifs',2)}${group('节点样式',items.filter(item=>item.kind==='nodes'),'nodes',3)}`:filter==='files'?`${bookSection}${fileSection}`:`<div class="${gridClass(filter)} ap-filter-results">${items.filter(item=>item.kind===filter).map(card).join('')}</div>`;
+    const body=filter==='all'?`<div class="ap-ensembles">${ensembles.map(ensemble).join('')}</div>${group('服装与配件',models.filter(item=>item.record.record_type!=='ensemble'&&item.record.collection_id==='ww_game_basics'),'models',6)}${group('参考影像',items.filter(item=>item.kind==='images'),'images',3)}${bookSection}${fileSection}${group('UV 图纸',items.filter(item=>item.kind==='drawings'),'drawings',3)}${group('纹样',items.filter(item=>item.kind==='motifs'),'motifs',6)}${group('配方',items.filter(item=>item.kind==='recipes'),'recipes',2)}${group('节点样式',items.filter(item=>item.kind==='nodes'),'nodes',3)}`:filter==='files'?`${bookSection}${fileSection}`:`<div class="${gridClass(filter)} ap-filter-results">${items.filter(item=>item.kind===filter).map(card).join('')}</div>`;
     return `<div class="rm-eyebrow">Asset archive</div><h1>服饰资料库</h1><p class="ap-intro">浏览套装、部件、参考影像与创作素材。</p><div class="ap-filters" role="group" aria-label="资料形式">${Object.entries(labels).filter(([key])=>key!=='books').map(([key,label])=>`<button data-asset-filter="${key}" aria-pressed="${key===filter}">${lineIcon(key)}<span>${label}</span></button>`).join('')}</div>${body}`;
   }
   const media=item=>item.record?.media||[];
@@ -74,7 +74,7 @@ export function createAssetPreview(data){
     if(item.asset?.cover)choices.push(['model','模型图']);
     if(media(item).length)choices.push(['images',item.kind==='books'?'封面':'参考影像']);
     if(item.asset?.drawing)choices.push(['drawing','UV 图纸']);
-    if(item.kind==='motifs'||item.kind==='nodes')choices.push(['image',item.kind==='motifs'?'纹样效果':'节点效果']);
+    if(item.kind==='recipes'||item.kind==='nodes')choices.push(['image',item.kind==='recipes'?'配方效果':'节点效果']);
     return choices;
   }
   function selectedFile(item){return mode==='images'?media(item)[mediaIndex]?.path:mode==='drawing'?item.asset.drawing:item.cover;}
@@ -97,7 +97,12 @@ export function createAssetPreview(data){
     if (source?.contents_url && /^https?:\/\//i.test(source.contents_url)) {
       links.push(`<a href="${escape(source.contents_url)}" target="_blank" rel="noreferrer">页码依据 · 公开目录 ↗</a>`);
     }
-    if(source?.record_id)links.push(`<a href="${assetHref(source.record_id)}">查看书目条目 ↗</a>`);
+    if(source?.record_id){
+      const book=byId.get(source.record_id);
+      const title=book?.title||source.title||'查看书目条目';
+      const cover=book?.kind==='books'&&book.cover?image(book.cover,''):'';
+      links.push(`<a class="ap-source-book" href="${assetHref(source.record_id)}">${cover}<span>${escape(title)}</span></a>`);
+    }
     if(item.entry?.recipe)links.push(`<a href="${escape(item.entry.recipe)}" download>Godot 配方 .tres</a>`);
     if(item.asset?.modelAvailable)links.push(`<a href="/assets/models/${escape(item.asset.model)}.glb" download>模型文件 .glb</a>`);
     if(item.asset?.drawing)links.push(`<a href="${escape(item.asset.drawing)}" target="_blank" rel="noreferrer">UV 图纸</a>`);
@@ -138,7 +143,7 @@ export function createAssetPreview(data){
     return `<section class="ap-detail-section ap-pattern-text"><h2>纹样说明</h2><p class="ap-pattern-citation">原书正文 · <a href="${assetHref(bookId)}">${citation}</a></p>${sections}</section>`;
   }
   function detail(item){
-    if(item.kind==='files')return `<nav class="rm-breadcrumb"><a href="#/assets">资料库</a><span>/</span><span>资料文件</span></nav><header class="ap-detail-heading"><h1>${escape(item.title)}</h1></header><div class="ap-file-list">${item.record._files.map(file=>`<section>${file.type?.startsWith('video/')?`<video controls playsinline preload="metadata" src="${escape(file.path)}"></video>`:''}<h2>${escape(file.name)}</h2><p>${escape(file.type||'资料文件')} · ${(file.size/1048576).toFixed(2)} MB</p><a href="${escape(file.path)}" download="${escape(file.name)}">下载文件 ↓</a></section>`).join('')}</div>${sourceFooter(item)}`;
+    if(item.kind==='files')return `<nav class="rm-breadcrumb"><a href="#/assets">资料库</a><span>/</span><span>资料文件</span></nav><header class="ap-detail-heading"><h1>${escape(item.title)}</h1></header><div class="ap-file-list" data-toc-title="资料文件">${item.record._files.map(file=>`<section>${file.type?.startsWith('video/')?`<video controls playsinline preload="metadata" src="${escape(file.path)}"></video>`:''}<h2>${escape(file.name)}</h2><p>${escape(file.type||'资料文件')} · ${(file.size/1048576).toFixed(2)} MB</p><a href="${escape(file.path)}" download="${escape(file.name)}">下载文件 ↓</a></section>`).join('')}</div>${sourceFooter(item)}`;
 
     const images = mode === 'images' ? media(item) : [];
     const caption = mediaCaption(item, images[mediaIndex]);
@@ -162,7 +167,7 @@ export function createAssetPreview(data){
         <div class="ap-downloads">${item.entry?.recipe?`<a href="${escape(item.entry.recipe)}" download>下载配方 ↓</a>`:''}${item.asset?.modelAvailable?`<a href="/assets/models/${escape(item.asset.model)}.glb" download>下载模型 ↓</a>`:''}</div>
       </header>
       ${patternText(item.record)}
-      <figure class="ap-detail-media${hasThumbnails?' has-thumbnails':''}"${item.record?.pattern_text?.length?' data-toc-title="图例"':''}>
+      <figure class="ap-detail-media${hasThumbnails?' has-thumbnails':''}"${item.record?.pattern_text?.length?' data-toc-title="图例"':' data-toc-title="资料预览"'}>
         <div class="ap-image-gallery">${thumbnails}<div class="ap-stage${mode==='drawing'?' is-drawing':''}" aria-label="资料主展示">${stageMedia}${expandIcon(isModel?'model':'image')}</div></div>
         ${images.length ? `<figcaption class="ap-caption" data-image-caption${caption ? '' : ' hidden'}>${escape(caption)}</figcaption>` : ''}
       </figure>
@@ -178,15 +183,15 @@ export function createAssetPreview(data){
     if(id==='assets'){current=null;return gallery();}
     if(!id.startsWith('asset:')){current=null;return null;}
     current=byId.get(id.slice(6))||byId.get('images-'+id.slice(6));if(!current)return '<h1>资料入口</h1><a href="#/assets">浏览资料库 →</a>';
-    mediaIndex=0;mode=current.kind==='images'||current.kind==='books'?'images':current.kind==='drawings'?'drawing':current.asset?'model':'image';
+    mediaIndex=0;mode=['images','books','motifs'].includes(current.kind)?'images':current.kind==='drawings'?'drawing':current.asset?'model':'image';
     return detail(current);
   }
-  function mount(root){
+  function mount(root,{onContentChanged}={}){
     if(!current&&!root.querySelector('.ap-filters'))return;
     events=new AbortController();
     const addExpand=(stage,kind)=>stage.insertAdjacentHTML('beforeend',expandIcon(kind));
     const bindDialog=()=>{const dialog=root.querySelector('.ap-lightbox');if(!dialog)return;dialog.addEventListener('close',()=>{stopImageView?.();stopImageView=null;serial++;fullscreenViewer?.cleanup();fullscreenViewer=null;document.documentElement.classList.remove('has-media-lightbox');if(mode==='model'&&current?.asset?.modelAvailable)startViewer(true);},{signal:events.signal});};
-    const update=()=>{stopViewers();root.innerHTML=current?detail(current):gallery();bindDialog();startViewer();};
+    const update=()=>{stopViewers();root.innerHTML=current?detail(current):gallery();onContentChanged?.();bindDialog();startViewer();};
     const startViewer=async focusExpand=>{if(mode!=='model'||!current?.asset?.modelAvailable)return;const token=++serial,stage=root.querySelector('.ap-stage');if(!stage)return;try{const {mountViewer}=await import('/viewer.js');if(token!==serial||!stage.isConnected)return;viewer=mountViewer(stage,{root,allowStatic:true,modelUrl:'/assets/models/'+current.asset.model+'.glb',onError:()=>{if(token!==serial||!stage.isConnected)return;viewer?.cleanup();viewer=null;stage.innerHTML=`${image(current.cover,current.title)}<button type="button" data-start-viewer>重试三维预览</button>${expandIcon('model')}`;root.querySelector('.ap-viewer-controls').hidden=true;}});addExpand(stage,'model');root.querySelector('.ap-viewer-controls').hidden=false;root.querySelector('[data-view-mode="model"] span').textContent='三维模型';if(focusExpand)stage.querySelector('.ap-expand')?.focus();}catch{if(token===serial&&stage.isConnected)stage.innerHTML=`${image(current.cover,current.title)}<button type="button" data-start-viewer>重试三维预览</button>${expandIcon('model')}`;}};
     const openImage = dialog => {
       const file = selectedFile(current);

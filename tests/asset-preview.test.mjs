@@ -9,7 +9,7 @@ const items=createAssetItems(data);
 
 test('资料展示引用项目档案，覆盖现有资料形式和套装部件',()=>{
   assert.deepEqual(data.records.map(row=>row.id),seed.records.map(row=>row.id));
-  assert.deepEqual(new Set(items.map(row=>row.kind)),new Set(['models','images','drawings','motifs','nodes']));
+  assert.deepEqual(new Set(items.map(row=>row.kind)),new Set(['models','images','drawings','recipes','nodes']));
   assert.equal(new Set(items.map(row=>row.id)).size,items.length);
   assert.equal(items.filter(row=>row.kind==='models'&&row.record.record_type==='ensemble').length,2);
   assert.equal(items.filter(row=>row.kind==='models'&&row.record.parent_id==='WW-MOS-001'&&row.record.record_type==='component').length,3);
