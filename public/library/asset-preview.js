@@ -56,6 +56,13 @@ export function createAssetPreview(data){
     return `<div class="rm-eyebrow">Asset archive</div><h1>服饰资料库</h1><p class="ap-intro">浏览套装、部件、参考影像与创作素材。</p><div class="ap-filters" role="group" aria-label="资料形式">${Object.entries(labels).filter(([key])=>key!=='books').map(([key,label])=>`<button data-asset-filter="${key}" aria-pressed="${key===filter}">${lineIcon(key)}<span>${label}</span></button>`).join('')}</div>${body}`;
   }
   const media=item=>item.record?.media||[];
+  function mediaCaption(item, entry) {
+    const label = entry?.label?.trim() ?? '';
+    const title = item.record?.title || item.title;
+    if (label === title || label === `《${title}》封面`) return '';
+    if (/^(?:纹样概览|(?:参考|概念|资料|原始)?(?:影像|照片|截图|图片|图例|图)|封面)\s*\d*$/u.test(label)) return '';
+    return label;
+  }
   function modes(item){
     const choices=[];
     if(item.asset?.cover)choices.push(['model','模型图']);
@@ -123,15 +130,26 @@ export function createAssetPreview(data){
   function detail(item){
     if(item.kind==='files')return `<nav class="rm-breadcrumb"><a href="#/assets">资料库</a><span>/</span><span>资料文件</span></nav><header class="ap-detail-heading"><h1>${escape(item.title)}</h1></header><div class="ap-file-list">${item.record._files.map(file=>`<section>${file.type?.startsWith('video/')?`<video controls playsinline preload="metadata" src="${escape(file.path)}"></video>`:''}<h2>${escape(file.name)}</h2><p>${escape(file.type||'资料文件')} · ${(file.size/1048576).toFixed(2)} MB</p><a href="${escape(file.path)}" download="${escape(file.name)}">下载文件 ↓</a></section>`).join('')}</div>${sourceFooter(item)}`;
 
-    const currentMedia=media(item)[mediaIndex],parent=item.record?.parent_id&&byId.get(item.record.parent_id);
+    const images = mode === 'images' ? media(item) : [];
+    const caption = mediaCaption(item, images[mediaIndex]);
+    const hasThumbnails = images.length > 1;
+    const thumbnails = hasThumbnails ? `<div class="ap-thumbnails" role="group" aria-label="切换图片">${images.map((entry, index) => {
+      const description = mediaCaption(item, entry);
+      const name = `查看第 ${index + 1} 张图片${description ? ' · ' + description : ''}`;
+      return `<button type="button" data-media-index="${index}" aria-label="${escape(name)}" aria-pressed="${index === mediaIndex}">${image(entry.path, '')}</button>`;
+    }).join('')}</div>` : '';
+    const parent=item.record?.parent_id&&byId.get(item.record.parent_id);
     const detailLabel = item.record?.category === '纹样' ? '纹样' : labels[item.kind];
     const isModel=mode==='model'&&item.asset?.modelAvailable;
-    const stageMedia=isModel?`${image(item.cover,item.title,'loading="eager"')}<span class="ap-model-loading" role="status">正在加载三维预览…</span>`:`<div class="ap-main-image">${image(selectedFile(item),item.title,'loading="eager"')}</div>`;
+    const stageMedia=isModel?`${image(item.cover,item.title,'loading="eager"')}<span class="ap-model-loading" role="status">正在加载三维预览…</span>`:`<div class="ap-main-image">${image(selectedFile(item),caption || item.title,'loading="eager"')}</div>`;
     return `<nav class="rm-breadcrumb"><a href="#/assets">资料库</a>${parent?`<span>/</span><a href="${assetHref(parent.id)}">${escape(parent.title)}</a>`:''}<span>/</span><span>${detailLabel}</span></nav>
       <header class="ap-detail-heading"><div><div class="rm-eyebrow">${detailLabel}</div><h1>${escape(item.title)}</h1></div><div class="ap-downloads">${item.entry?.recipe?`<a href="${escape(item.entry.recipe)}" download>下载配方 ↓</a>`:''}${item.asset?.modelAvailable?`<a href="/assets/models/${escape(item.asset.model)}.glb" download>下载模型 ↓</a>`:''}</div></header>
       ${patternText(item.record)}
-      <figure class="ap-detail-media"${item.record?.pattern_text?.length?' data-toc-title="图例"':''}><div class="ap-stage${mode==='drawing'?' is-drawing':''}" aria-label="资料主展示">${stageMedia}${expandIcon(isModel?'model':'image')}</div><div class="ap-viewer-controls" hidden><label>动作<select id="motion-mode"><option value="idle">待机</option><option value="walk">行走</option><option value="spin">转圈</option></select></label><button id="pause-motion">暂停动作</button><button id="reset-view">复位视角</button><span id="motion-status" role="status"></span></div><div class="ap-media-modes" role="group" aria-label="展示形式">${modes(item).map(([key,label])=>`<button data-view-mode="${key}" aria-pressed="${mode===key}">${lineIcon(key==='model'?'models':key==='drawing'?'drawings':key==='image'?item.kind:key)}<span>${label}</span></button>`).join('')}</div>${mode==='images'?`<div class="ap-thumbnails">${media(item).map((m,index)=>{const time=m.label.match(/\d+:\d+/)?.[0];const label=item.kind==='books'?'封面':time|| (m.role==='source'?'参考图':'概念图')+' '+(index+1);return `<button data-media-index="${index}" aria-pressed="${index===mediaIndex}">${image(m.path,(item.kind==='books'?'封面':'参考影像')+' '+(index+1))}<span>${label}</span></button>`;}).join('')}</div><figcaption class="ap-caption">${escape(currentMedia?.label||'参考影像')}</figcaption>`:''}
+      <figure class="ap-detail-media${hasThumbnails?' has-thumbnails':''}"${item.record?.pattern_text?.length?' data-toc-title="图例"':''}>
+        <div class="ap-image-gallery">${thumbnails}<div class="ap-stage${mode==='drawing'?' is-drawing':''}" aria-label="资料主展示">${stageMedia}${expandIcon(isModel?'model':'image')}</div></div>
+        ${images.length ? `<figcaption class="ap-caption" data-image-caption${caption ? '' : ' hidden'}>${escape(caption)}</figcaption>` : ''}
       </figure>
+      <div class="ap-viewer-controls" hidden><label>动作<select id="motion-mode"><option value="idle">待机</option><option value="walk">行走</option><option value="spin">转圈</option></select></label><button id="pause-motion">暂停动作</button><button id="reset-view">复位视角</button><span id="motion-status" role="status"></span></div><div class="ap-media-modes" role="group" aria-label="展示形式">${modes(item).map(([key,label])=>`<button data-view-mode="${key}" aria-pressed="${mode===key}">${lineIcon(key==='model'?'models':key==='drawing'?'drawings':key==='image'?item.kind:key)}<span>${label}</span></button>`).join('')}</div>
       ${parameters(item)}${related(item)}${sourceFooter(item)}
       <dialog class="ap-lightbox" aria-label="媒体全屏查看"><div class="ap-lightbox-shell"><button class="ap-lightbox-close" type="button" data-close-lightbox aria-label="关闭全屏查看"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button><div class="ap-lightbox-stage" data-lightbox-stage></div>
           <div class="ap-image-controls" role="group" aria-label="图片缩放"><button type="button" data-image-zoom="out" aria-label="缩小图片">−</button><button type="button" data-image-zoom="reset">适应窗口</button><button type="button" data-image-zoom="in" aria-label="放大图片">+</button><span>滚轮缩放 · 拖拽移动</span></div>
@@ -159,8 +177,7 @@ export function createAssetPreview(data){
       const stage = dialog.querySelector('[data-lightbox-stage]');
       const img = document.createElement('img');
       img.src = file;
-      img.alt = media(current)[mediaIndex]?.label && mode === 'images'
-        ? media(current)[mediaIndex].label : current.title;
+      img.alt = (mode === 'images' && mediaCaption(current, media(current)[mediaIndex])) || current.title;
       img.draggable = false;
       stage.replaceChildren(img);
       dialog.querySelector('[data-lightbox-controls]').hidden = true;
@@ -176,7 +193,22 @@ export function createAssetPreview(data){
       const button=event.target.closest('button');if(!button)return;
       if(button.dataset.assetFilter){current=null;filter=button.dataset.assetFilter;update();window.scrollTo({top:0,behavior:'instant'});return;}
       if(button.dataset.viewMode){mode=button.dataset.viewMode;update();return;}
-      if(button.dataset.mediaIndex!==undefined){mediaIndex=Number(button.dataset.mediaIndex);update();return;}
+      if (button.dataset.mediaIndex !== undefined) {
+        const nextIndex = Number(button.dataset.mediaIndex);
+        const entry = media(current)[nextIndex];
+        const mainImage = root.querySelector('.ap-main-image img');
+        if (!entry?.path || !mainImage || nextIndex === mediaIndex) return;
+        mediaIndex = nextIndex;
+        const caption = mediaCaption(current, entry);
+        root.querySelector('.ap-thumbnails [aria-pressed="true"]')?.setAttribute('aria-pressed', 'false');
+        button.setAttribute('aria-pressed', 'true');
+        mainImage.src = entry.path;
+        mainImage.alt = caption || current.title;
+        const captionNode = root.querySelector('[data-image-caption]');
+        captionNode.textContent = caption;
+        captionNode.hidden = !caption;
+        return;
+      }
       if(button.dataset.expandMedia){const dialog=root.querySelector('.ap-lightbox');if(button.dataset.expandMedia==='model')await openModel(dialog);else openImage(dialog);return;}
       if(button.hasAttribute('data-close-lightbox')){button.closest('dialog')?.close();return;}
       if(button.hasAttribute('data-start-viewer'))startViewer();
