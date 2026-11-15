@@ -27,7 +27,12 @@ export function createAssetPreview(data){
   let stopImageView = null;
   const stopViewers=()=>{serial++;viewer?.cleanup();viewer=null;fullscreenViewer?.cleanup();fullscreenViewer=null;stopImageView?.();stopImageView=null;globalThis.document?.documentElement.classList.remove('has-media-lightbox');};
   const cleanup=()=>{stopViewers();events?.abort();events=null;};
-  function card(item){return `<a class="ap-card ap-kind-${item.kind}" href="${assetHref(item.id)}"><div class="ap-card-image">${image(item.cover,item.title)}<span class="ap-format">${labels[item.kind]}</span></div><div class="ap-card-caption"><span>${escape(item.title)}</span><span aria-hidden="true">↗</span></div></a>`;}
+  function card(item){
+    const cover = item.record?.media?.find(entry => entry.path === item.cover);
+    const size = Number.isSafeInteger(cover?.width) && Number.isSafeInteger(cover?.height)
+      ? `width="${cover.width}" height="${cover.height}"` : '';
+    return `<a class="ap-card ap-kind-${item.kind}" href="${assetHref(item.id)}"><div class="ap-card-image">${image(item.cover,item.title,size)}<span class="ap-format">${labels[item.kind]}</span></div><div class="ap-card-caption"><span>${escape(item.title)}</span><span aria-hidden="true">↗</span></div></a>`;
+  }
   function bookshelf(books){
     const spines=(variant,fill=false)=>`<div class="ap-decorative-spines ap-spines-${variant}${fill?' ap-spines-fill':''}" aria-hidden="true">${'<span></span>'.repeat(fill?3:variant===2?1:2)}</div>`;
     const book=item=>`<a class="ap-book" href="${assetHref(item.id)}" aria-label="查看书目：${escape(item.title)}" title="${escape(item.title)}"><span class="ap-book-cover">${item.cover?image(item.cover,item.title):`<span class="ap-book-placeholder">${escape(item.title)}</span>`}</span></a>`;
@@ -47,12 +52,13 @@ export function createAssetPreview(data){
     return `<section class="ap-ensemble"><header><a href="${assetHref(item.id)}">${escape(item.title)} ↗</a><span>${children.length} 个部件</span></header><div class="ap-ensemble-body"><a class="ap-ensemble-whole" href="${assetHref(item.id)}">${image(item.cover,item.title)}<span>套装整体 ↗</span></a><div class="ap-ensemble-parts">${children.map(card).join('')}</div></div></section>`;
   }
   function gallery(){
-    const group=(title,rows,kind,limit,showAll=true)=>`<section class="ap-section"><header><h2>${title}</h2>${showAll?`<button data-asset-filter="${kind}">查看全部 →</button>`:''}</header><div class="ap-card-grid">${rows.slice(0,limit).map(card).join('')}</div></section>`;
+    const gridClass = kind => kind === 'images' ? 'lr-masonry' : 'ap-card-grid';
+    const group=(title,rows,kind,limit,showAll=true)=>`<section class="ap-section"><header><h2>${title}</h2>${showAll?`<button data-asset-filter="${kind}">查看全部 →</button>`:''}</header><div class="${gridClass(kind)}">${rows.slice(0,limit).map(card).join('')}</div></section>`;
     const models=items.filter(item=>item.kind==='models'),ensembles=models.filter(item=>item.record.record_type==='ensemble');
     const books=items.filter(item=>item.kind==='books'),files=items.filter(item=>item.kind==='files');
     const bookSection=books.length?`<section class="ap-section ap-book-section"><header><h2>${filter==='all'?'资料文件':'图鉴画册'}</h2>${filter==='all'?'<button data-asset-filter="files">查看全部 →</button>':''}</header>${filter==='all'?'<h3>图鉴画册</h3>':''}${bookshelf(books)}</section>`:'';
     const fileSection=files.length?group(books.length?'其他资料文件':'资料文件',files,'files',filter==='all'?6:files.length,filter==='all'):'';
-    const body=filter==='all'?`<div class="ap-ensembles">${ensembles.map(ensemble).join('')}</div>${group('服装与配件',models.filter(item=>item.record.record_type!=='ensemble'&&item.record.collection_id==='ww_game_basics'),'models',6)}${group('参考影像',items.filter(item=>item.kind==='images'),'images',3)}${bookSection}${fileSection}${group('UV 图纸',items.filter(item=>item.kind==='drawings'),'drawings',3)}${group('纹样与配方',items.filter(item=>item.kind==='motifs'),'motifs',2)}${group('节点样式',items.filter(item=>item.kind==='nodes'),'nodes',3)}`:filter==='files'?`${bookSection}${fileSection}`:`<div class="ap-card-grid ap-filter-results">${items.filter(item=>item.kind===filter).map(card).join('')}</div>`;
+    const body=filter==='all'?`<div class="ap-ensembles">${ensembles.map(ensemble).join('')}</div>${group('服装与配件',models.filter(item=>item.record.record_type!=='ensemble'&&item.record.collection_id==='ww_game_basics'),'models',6)}${group('参考影像',items.filter(item=>item.kind==='images'),'images',3)}${bookSection}${fileSection}${group('UV 图纸',items.filter(item=>item.kind==='drawings'),'drawings',3)}${group('纹样与配方',items.filter(item=>item.kind==='motifs'),'motifs',2)}${group('节点样式',items.filter(item=>item.kind==='nodes'),'nodes',3)}`:filter==='files'?`${bookSection}${fileSection}`:`<div class="${gridClass(filter)} ap-filter-results">${items.filter(item=>item.kind===filter).map(card).join('')}</div>`;
     return `<div class="rm-eyebrow">Asset archive</div><h1>服饰资料库</h1><p class="ap-intro">浏览套装、部件、参考影像与创作素材。</p><div class="ap-filters" role="group" aria-label="资料形式">${Object.entries(labels).filter(([key])=>key!=='books').map(([key,label])=>`<button data-asset-filter="${key}" aria-pressed="${key===filter}">${lineIcon(key)}<span>${label}</span></button>`).join('')}</div>${body}`;
   }
   const media=item=>item.record?.media||[];

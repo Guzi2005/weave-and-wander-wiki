@@ -11,7 +11,7 @@ try { db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'u
 catch (error) { if (error.code !== 'ENOENT') throw error; db = JSON.parse(await readFile(path.join(root, 'seed', 'records.json'), 'utf8')); }
 const catalog = JSON.parse(await readFile(path.join(source, 'assets', 'catalog.json'), 'utf8'));
 const PART_SIZE = 20 * 1024 * 1024;
-const PUBLIC_VERSION = 'pattern-heading-20261116';
+const PUBLIC_VERSION = 'wiki-masonry-20261116';
 
 try {
   await rm(output, { recursive: true, force: true });
@@ -75,7 +75,7 @@ const publicRecords = sourceRecords.map(r => ({
   source:{author:r.source?.author || null,title:r.source?.title || null,year:r.source?.year || null,record_id:r.source?.record_id || null,captured_at:r.source?.captured_at || null,
     place:r.source?.place || null,url:r.source?.url || null,license:r.source?.license || null},
   media:(r.media || []).filter(m => publicMediaPath.test(m.path))
-    .map(m => ({path:m.path, role:m.role, label:m.label, focus:m.focus || {x:50,y:50}})),
+    .map(m => ({path:m.path, role:m.role, label:m.label, width:m.width, height:m.height, focus:m.focus || {x:50,y:50}})),
   revision:r.revision, created_at:r.created_at, updated_at:r.updated_at,
 }));
 const publicQuestions = db.questions.filter(q => q.status === 'approved' &&
