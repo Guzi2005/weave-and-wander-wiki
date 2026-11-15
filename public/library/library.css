@@ -78,3 +78,13 @@
 .contribute-home{max-width:1120px;margin:32px auto 64px}.contribute-home-heading{margin-bottom:32px}.contribute-home-heading .page-title{font:500 34px/1.5 var(--serif);margin:9px 0 12px}.contribute-home-heading>p{font:13px/1.9 var(--sans);color:var(--ink-soft)}.contribute-entry-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.contribute-entry{display:flex;flex-direction:column;gap:16px;min-width:0;border:1px solid var(--line);padding:28px 24px;text-decoration:none;background:#ffffff24;transition:background .15s,border-color .15s}.contribute-entry:hover,.contribute-entry:focus-visible{background:#dcece544;border-color:var(--sage)}.contribute-entry h2{font:500 23px/1.5 var(--serif);color:var(--ink);margin:0}.contribute-entry p{font:12px/1.9 var(--sans);color:var(--ink-soft);margin:0 0 12px;flex:1}.contribute-entry-action{font:12px var(--sans);color:var(--sage)}@media(max-width:720px){.contribute-home{margin:22px auto 40px}.contribute-entry-grid{grid-template-columns:1fr;gap:14px}.contribute-entry{padding:22px}.contribute-home-heading .page-title{font-size:29px}}
 
 #region-module>.rm-shell.is-pattern-page{grid-template-columns:minmax(0,1fr)}.is-pattern-page>.rm-sidebar,.is-pattern-page>.rm-mobile-navigation{display:none!important}.is-pattern-page>.rm-article{max-width:1160px;width:100%;margin:auto}.is-pattern-page .ap-caption{font-size:12px;line-height:1.7;margin:12px 0 18px;color:var(--ink-soft)}
+.ui-line-icon{display:inline-block;width:16px;height:16px;flex:none;vertical-align:middle}
+.ap-filters button,.ap-media-modes button,.rm-tab{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.ap-filters button .ui-line-icon{color:var(--tab-icon,var(--indigo))}
+.ap-filters [data-asset-filter="models"],.ap-filters [data-asset-filter="motifs"]{--tab-icon:#247d72}
+.ap-filters [data-asset-filter="images"],.ap-filters [data-asset-filter="nodes"]{--tab-icon:#ad4655}
+.ap-filters [data-asset-filter="drawings"],.ap-filters [data-asset-filter="files"]{--tab-icon:#796320}
+.ap-media-modes button .ui-line-icon,.rm-tab .ui-line-icon{color:var(--indigo)}
+.ap-media-modes button[aria-pressed=true] .ui-line-icon,.rm-tab[aria-selected=true] .ui-line-icon{color:var(--sage)}
+.rm-world-symbol .ui-line-icon{width:52px;height:52px}
+.cm-library-row>button>span .ui-line-icon{width:13px;height:13px}
