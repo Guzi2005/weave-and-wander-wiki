@@ -1960,18 +1960,21 @@ body {
 .site-header { background:transparent;border-top:3px solid #39b8a6;border-bottom:1px solid var(--line); }
 .test-banner {
   position: fixed;
-  inset: 0 0 auto;
-  z-index: 9;
+  inset: max(12px, env(safe-area-inset-top)) 16px auto;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  margin-inline: auto;
+  z-index: 20;
   pointer-events: none;
   background: #fff4d6;
   color: #694b16;
-  border-bottom: 1px solid #d5ba78;
-  padding: calc(9px + env(safe-area-inset-top)) 16px 9px;
+  border: 1px solid #d5ba78;
+  padding: 9px 16px;
   text-align: center;
   font: 12px/1.6 var(--sans);
 }
 .test-banner:not([hidden]) {
-  animation: entry-banner 5.4s cubic-bezier(.22,.61,.36,1) both;
+  animation: entry-banner 2s cubic-bezier(.22,.61,.36,1) both;
 }
 @keyframes entry-banner {
   0% { transform: translateY(-100%); clip-path: inset(0 calc(50% - 24px)); color: transparent; }
@@ -1980,7 +1983,7 @@ body {
   100% { transform: translateY(-100%); clip-path: inset(0); opacity: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .test-banner:not([hidden]) { animation: entry-banner-still 5.4s steps(1, end) both; }
+  .test-banner:not([hidden]) { animation: entry-banner-still 2s steps(1, end) both; }
   @keyframes entry-banner-still { from { opacity: 1; } to { opacity: 0; } }
 }
 .site-nav a:nth-child(2) { --nav-color:#3936a5; }

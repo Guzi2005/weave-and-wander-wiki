@@ -11,7 +11,7 @@ try { db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'u
 catch (error) { if (error.code !== 'ENOENT') throw error; db = JSON.parse(await readFile(path.join(root, 'seed', 'records.json'), 'utf8')); }
 const catalog = JSON.parse(await readFile(path.join(source, 'assets', 'catalog.json'), 'utf8'));
 const PART_SIZE = 20 * 1024 * 1024;
-const PUBLIC_VERSION = 'pattern-source-pages-20261116';
+const PUBLIC_VERSION = 'flat-previews-20261116';
 
 try {
   await rm(output, { recursive: true, force: true });
@@ -36,6 +36,11 @@ for (const folder of ['library', 'vendor', 'assets/guide', 'assets/bench', 'asse
 // A new module path invalidates browsers' cached library dependency graph.
 const versionedLibrary = `library-${PUBLIC_VERSION}`;
 await cp(path.join(output, 'library'), path.join(output, versionedLibrary), {recursive:true,force:true});
+for (const entry of ['app.js', 'library/asset-preview.js', `${versionedLibrary}/asset-preview.js`]) {
+  const target = path.join(output, entry);
+  const source = await readFile(target, 'utf8');
+  await writeFile(target, source.replaceAll("'/viewer.js'", `'/viewer.js?v=${PUBLIC_VERSION}'`));
+}
 const publicApp=await readFile(path.join(output,'app.js'),'utf8');
 await writeFile(path.join(output,'app.js'),publicApp.replaceAll("'/library/",`'/${versionedLibrary}/`));
 const safeAsset = /^(?:[a-z0-9_-]+-cover\.png|[a-z0-9_-]+-uv\.svg|ww-logo\.jpg|source\.png|ukrainian-source\.jpg)$/i;
