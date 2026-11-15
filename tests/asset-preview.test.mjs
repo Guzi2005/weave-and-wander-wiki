@@ -38,6 +38,29 @@ test('书目归入资料文件的图鉴画册书架，不进入影像',()=>{
   assert.match(preview.render('asset:'+book.id),/中国经典纹样图鉴/);
 });
 
+test('纹样正文链接指向现有条目，保留较长名称和原文', () => {
+  const records = read('public/library/patterns.json');
+  const preview = createAssetPreview({...data, records});
+  const example = records.find(record => record.title === '八达晕纹');
+  const html = preview.render('asset:' + example.id);
+  for (const name of ['龟背纹', '回纹', '锁子纹']) {
+    const target = records.find(record => record.title === name);
+    assert.ok(html.includes(`<a class="wiki-link" href="${assetHref(target.id)}">${name}</a>`));
+    assert.match(preview.render('asset:' + target.id), new RegExp(`<h1>${name}</h1>`));
+  }
+  const coin = records.find(record => record.title === '钱纹');
+  assert.ok(html.includes(`<a class="wiki-link" href="${assetHref(coin.id)}">古钱纹</a>`));
+  assert.ok(!html.includes(`<a class="wiki-link" href="${assetHref(example.id)}">`));
+
+  const cloud = records.find(record => record.title === '云纹');
+  const cloudThunder = records.find(record => record.title === '云雷纹');
+  const sample = {...example, pattern_text:[{heading:'结构', paragraphs:['<云雷纹>和云纹']}]};
+  const overlap = createAssetPreview({...data, records:[sample, cloud, cloudThunder]});
+  assert.ok(overlap.render('asset:' + sample.id).includes(
+    `&lt;<a class="wiki-link" href="${assetHref(cloudThunder.id)}">云雷纹</a>&gt;和<a class="wiki-link" href="${assetHref(cloud.id)}">云纹</a>`
+  ));
+});
+
 test('三维可用状态匹配文件魔数，兼容LFS指针和真实GLB',()=>{
   let available=0;
   for(const row of Object.values(data.assets)){

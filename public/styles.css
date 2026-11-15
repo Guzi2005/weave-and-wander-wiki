@@ -1928,7 +1928,7 @@ body {
 .guide-row { display:grid;grid-template-columns:160px minmax(0,1fr);gap:30px;align-items:start;margin:0 0 38px; }
 .guide-illustration { display:block;width:160px;height:125px;object-fit:contain; }
 .guide-text { grid-column:2;min-width:0; }
-.guide-text h2 { margin:0 0 10px;font:500 18px var(--serif); }
+.guide-text h2,.rm-article .ap-pattern-section h3 { margin:0 0 10px;font:500 18px var(--serif); }
 .guide-text p { margin:0 0 12px;font-size:13px;line-height:1.9; }
 @media(max-width:640px) {
   .guide-row { grid-template-columns:84px minmax(0,1fr);gap:16px;margin-bottom:24px; }
@@ -1998,11 +1998,11 @@ body {
 .guide-text h2 a:hover { text-decoration:underline; }
 .guide-chapters { max-width:1050px; }
 .guide-row { scroll-margin-top:24px;grid-template-columns:160px minmax(0,1fr); }
-.guide-row:nth-child(4n+1) { --chapter:#3936a5;--tint:#eeedf9; }
-.guide-row:nth-child(4n+2) { --chapter:#247d72;--tint:#e5f2ec; }
-.guide-row:nth-child(4n+3) { --chapter:#ad4655;--tint:#f9ece9; }
+.guide-row:nth-child(4n+1),.ap-pattern-section:nth-of-type(3n+1) { --chapter:#3936a5;--tint:#eeedf9; }
+.guide-row:nth-child(4n+2),.ap-pattern-section:nth-of-type(3n+2) { --chapter:#247d72;--tint:#e5f2ec; }
+.guide-row:nth-child(4n+3),.ap-pattern-section:nth-of-type(3n) { --chapter:#ad4655;--tint:#f9ece9; }
 .guide-row:nth-child(4n) { --chapter:#796320;--tint:#f7f3d8; }
-.guide-text h2 { color:var(--chapter); }
+.guide-text h2,.rm-article .ap-pattern-section h3 { color:var(--chapter); }
 .rule-table-scroll { width:100%;overflow-x:auto;margin:16px 0 22px; }
 .rule-table { width:100%;border-collapse:collapse;font-size:13px;line-height:1.65; }
 .rule-table caption { text-align:left;font-size:12px;font-weight:500;color:var(--chapter);padding-bottom:8px; }
@@ -2020,6 +2020,7 @@ body {
   .guide-row { grid-template-columns:84px minmax(0,1fr);gap:12px; }
   .guide-text { display:contents; }
   .guide-text h2 { grid-column:2;align-self:center;margin:0; }
+  .rm-article .ap-pattern-section h3 { font-size:16px; }
   .guide-text p,.guide-text .rule-table-scroll { grid-column:1 / -1;margin:0 0 12px; }
   .rule-table th,.rule-table td { padding:8px;font-size:12px; }
 }

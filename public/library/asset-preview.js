@@ -3,6 +3,7 @@ import {mountImageView} from './image-view.js';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const assetHref=id=>`#/asset/${encodeURIComponent(id)}`;
 const labels={all:'全部',models:'模型',images:'影像',drawings:'UV 图纸',motifs:'纹样与配方',nodes:'节点样式',files:'资料文件',books:'图鉴画册'};
+const patternAliases = {'古钱纹':'钱纹', '八宝纹':'八吉祥纹', '饕餮纹':'兽面纹'};
 const image=(src,alt,extra='')=>!src?'<span class="lr-file-cover">资料文件</span>':`<img src="${escape(src)}" alt="${escape(alt)}" loading="lazy" decoding="async" ${extra}>`;
 const expandIcon=kind=>`<button class="ap-expand" type="button" data-expand-media="${kind}" aria-label="${kind==='model'?'全屏查看三维模型':'全屏查看图片'}" title="放大"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg></button>`;
 export async function loadAssetData(){const response=await fetch('/api/library/bootstrap');if(!response.ok)throw new Error('资产资料加载失败');return (await response.json()).data;}
@@ -88,10 +89,34 @@ export function createAssetPreview(data){
   }
   function patternText(record) {
     if (!record?.pattern_text?.length) return '';
+    const targets = new Map();
+    for (const item of items) {
+      if (item.record?.category === '纹样' && item.record.title &&
+          (item.id === item.record.id || item.id === `images-${item.record.id}`)) {
+        targets.set(item.record.title, item.record.id);
+      }
+    }
+    for (const [alias, title] of Object.entries(patternAliases)) {
+      if (!targets.has(alias) && targets.has(title)) targets.set(alias, targets.get(title));
+    }
+    const names = [...targets.keys()].sort((a, b) => b.length - a.length);
+    const matcher = names.length ? new RegExp(names.map(name => name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'), 'gu') : null;
+    function linkMentions(text) {
+      if (!matcher) return escape(text);
+      let html = '';
+      let start = 0;
+      for (const {0: name, index} of text.matchAll(matcher)) {
+        const id = targets.get(name);
+        html += escape(text.slice(start, index));
+        html += id === record.id ? escape(name) : `<a class="wiki-link" href="${assetHref(id)}">${escape(name)}</a>`;
+        start = index + name.length;
+      }
+      return html + escape(text.slice(start));
+    }
     const {author, title, year, record_id: bookId} = record.source;
     const citation = `${escape(author)}《${escape(title)}》（${escape(year)}），〈${escape(record.title)}〉`;
     const sections = record.pattern_text.map(({heading, paragraphs}) =>
-      `<section><h3>${escape(heading)}</h3>${paragraphs.map(text => `<p>${escape(text)}</p>`).join('')}</section>`
+      `<section class="ap-pattern-section"><h3>${escape(heading)}</h3>${paragraphs.map(text => `<p>${linkMentions(text)}</p>`).join('')}</section>`
     ).join('');
     return `<section class="ap-detail-section ap-pattern-text"><h2>纹样说明</h2><p class="ap-pattern-citation">原书正文 · <a href="${assetHref(bookId)}">${citation}</a></p>${sections}</section>`;
   }

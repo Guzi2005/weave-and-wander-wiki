@@ -115,8 +115,7 @@
 
 .ap-detail-media{margin:0}
 .ap-pattern-text{margin:0 0 28px}
-.ap-pattern-text>section{max-width:72ch;margin-top:18px}
-.ap-pattern-text h3{margin:0 0 4px;font:600 14px/1.6 var(--serif)}
+.ap-pattern-section{max-width:72ch;margin-top:22px}
 .ap-pattern-text p{margin:0 0 8px;font:14px/1.9 var(--sans)}
 .ap-pattern-text .ap-pattern-citation{font-size:12px;color:var(--ink-soft)}
 .ap-image-controls{display:none}
