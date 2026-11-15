@@ -94,6 +94,9 @@ export function createAssetPreview(data){
   function sourceFooter(item){
     const source=item.record?.source;
     const links=[];if(source?.url&&/^https?:\/\//i.test(source.url))links.push(`<a href="${escape(source.url)}" target="_blank" rel="noreferrer">${escape(source.title||source.author||'原始来源')}</a>`);
+    if (source?.contents_url && /^https?:\/\//i.test(source.contents_url)) {
+      links.push(`<a href="${escape(source.contents_url)}" target="_blank" rel="noreferrer">页码依据 · 公开目录 ↗</a>`);
+    }
     if(source?.record_id)links.push(`<a href="${assetHref(source.record_id)}">查看书目条目 ↗</a>`);
     if(item.entry?.recipe)links.push(`<a href="${escape(item.entry.recipe)}" download>Godot 配方 .tres</a>`);
     if(item.asset?.modelAvailable)links.push(`<a href="/assets/models/${escape(item.asset.model)}.glb" download>模型文件 .glb</a>`);
@@ -126,8 +129,9 @@ export function createAssetPreview(data){
       }
       return html + escape(text.slice(start));
     }
-    const {author, title, year, record_id: bookId} = record.source;
-    const citation = `${escape(author)}《${escape(title)}》（${escape(year)}），〈${escape(record.title)}〉`;
+    const {author, title, year, record_id: bookId, pages} = record.source;
+    const pageRange = pages?.length === 2 ? `，第 ${escape(pages[0])}–${escape(pages[1])} 页（目录页码）` : '';
+    const citation = `${escape(author)}《${escape(title)}》（${escape(year)}），〈${escape(record.title)}〉${pageRange}`;
     const sections = record.pattern_text.map(({heading, paragraphs}) =>
       `<section class="ap-pattern-section"><h3>${escape(heading)}</h3>${paragraphs.map(text => `<p>${linkMentions(text)}</p>`).join('')}</section>`
     ).join('');
