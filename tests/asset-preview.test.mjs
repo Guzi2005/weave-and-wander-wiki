@@ -50,3 +50,19 @@ test('三维可用状态匹配文件魔数，兼容LFS指针和真实GLB',()=>{
   assert.ok(available>0);
   assert.equal(data.assets['WW-BASIC-006'].modelAvailable,true);
 });
+
+test('资产详情使用右下角放大图标和统一全屏层，不再输出旧式完整图片链接',()=>{
+  const preview=createAssetPreview(data);
+  const model=preview.render('asset:WW-BASIC-000');
+  assert.match(model,/class="ap-expand"/);
+  assert.match(model,/data-expand-media="model"/);
+  assert.match(model,/class="ap-lightbox"/);
+  assert.match(model,/data-lightbox-stage/);
+  assert.match(model,/转动与动作会驱动物理效果/);
+  assert.doesNotMatch(model,/打开完整图片/);
+
+  const still=preview.render('asset:images-WW-MOS-001');
+  assert.match(still,/data-expand-media="image"/);
+  assert.doesNotMatch(still,/ap-main-image"[^>]*button/);
+  assert.doesNotMatch(still,/打开完整图片/);
+});
