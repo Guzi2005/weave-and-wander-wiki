@@ -11,6 +11,7 @@ try { db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'u
 catch (error) { if (error.code !== 'ENOENT') throw error; db = JSON.parse(await readFile(path.join(root, 'seed', 'records.json'), 'utf8')); }
 const catalog = JSON.parse(await readFile(path.join(source, 'assets', 'catalog.json'), 'utf8'));
 const PART_SIZE = 20 * 1024 * 1024;
+const PUBLIC_VERSION = 'patterns-20261116';
 
 try {
   await rm(output, { recursive: true, force: true });
@@ -22,6 +23,9 @@ for (const name of ['app.js', 'archive-layout.js', 'bead-physics.js', 'index.htm
 }
 let html = await readFile(path.join(output, 'index.html'), 'utf8');
 html = html.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta name="ww-public" content="true">');
+html = html.replace('/styles.css', `/styles.css?v=${PUBLIC_VERSION}`)
+  .replace('/library/library.css', `/library/library.css?v=${PUBLIC_VERSION}`)
+  .replace('/app.js', `/app.js?v=${PUBLIC_VERSION}`);
 await writeFile(path.join(output, 'index.html'), html);
 for (const folder of ['library', 'vendor', 'assets/guide', 'assets/bench', 'assets/node-styles', 'assets/motifs', 'assets/patterns']) {
   const from = path.join(source, folder);
@@ -29,6 +33,11 @@ for (const folder of ['library', 'vendor', 'assets/guide', 'assets/bench', 'asse
   await mkdir(to, { recursive: true });
   await cp(from, to, { recursive: true, force: true });
 }
+// A new module path invalidates browsers' cached library dependency graph.
+const versionedLibrary = `library-${PUBLIC_VERSION}`;
+await cp(path.join(output, 'library'), path.join(output, versionedLibrary), {recursive:true,force:true});
+const publicApp=await readFile(path.join(output,'app.js'),'utf8');
+await writeFile(path.join(output,'app.js'),publicApp.replaceAll("'/library/",`'/${versionedLibrary}/`));
 const safeAsset = /^(?:[a-z0-9_-]+-cover\.png|[a-z0-9_-]+-uv\.svg|ww-logo\.jpg|source\.png|ukrainian-source\.jpg)$/i;
 for (const name of await readdir(path.join(source, 'assets'))) {
   if (safeAsset.test(name)) await copyFile(path.join(source, 'assets', name), path.join(output, 'assets', name));
