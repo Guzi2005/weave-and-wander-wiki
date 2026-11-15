@@ -26,14 +26,16 @@ export function createAssetPreview(data){
   const cleanup=()=>{stopViewers();events?.abort();events=null;};
   function card(item){return `<a class="ap-card ap-kind-${item.kind}" href="${assetHref(item.id)}"><div class="ap-card-image">${image(item.cover,item.title)}<span class="ap-format">${labels[item.kind]}</span></div><div class="ap-card-caption"><span>${escape(item.title)}</span><span aria-hidden="true">↗</span></div></a>`;}
   function bookshelf(books){
-    const book=item=>{
-      const seed=[...item.id].reduce((value,char)=>(value*31+char.charCodeAt(0))>>>0,0);
-      const arrangement=seed%3,spines='<span></span>'.repeat(arrangement===1?3:2);
-      return `<div class="ap-shelf-group"><a class="ap-book" href="${assetHref(item.id)}" aria-label="查看书目：${escape(item.title)}" title="${escape(item.title)}"><span class="ap-book-cover">${item.cover?image(item.cover,item.title):`<span class="ap-book-placeholder">${escape(item.title)}</span>`}</span></a><div class="ap-decorative-spines ap-spines-${arrangement}" aria-hidden="true">${spines}</div></div>`;
-    };
+    const spines=(variant,fill=false)=>`<div class="ap-decorative-spines ap-spines-${variant}${fill?' ap-spines-fill':''}" aria-hidden="true">${'<span></span>'.repeat(fill?3:variant===2?1:2)}</div>`;
+    const book=item=>`<a class="ap-book" href="${assetHref(item.id)}" aria-label="查看书目：${escape(item.title)}" title="${escape(item.title)}"><span class="ap-book-cover">${item.cover?image(item.cover,item.title):`<span class="ap-book-placeholder">${escape(item.title)}</span>`}</span></a>`;
     const rows=[];
     for(let offset=0;offset<books.length;offset+=3){
-      rows.push(`<div class="ap-bookshelf-row">${books.slice(offset,offset+3).map(book).join('')}</div>`);
+      const rowIndex=offset/3,slots=[];
+      for(let slot=0;slot<3;slot++){
+        if(slot)slots.push(spines((rowIndex+slot-1)%3));
+        slots.push(books[offset+slot]?book(books[offset+slot]):spines((rowIndex+slot)%3,true));
+      }
+      rows.push(`<div class="ap-bookshelf-row">${slots.join('')}</div>`);
     }
     return `<div class="ap-bookshelf" aria-label="图鉴画册书架">${rows.join('')}</div>`;
   }
