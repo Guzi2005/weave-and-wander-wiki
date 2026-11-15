@@ -10,6 +10,25 @@ import { renderMotifs } from '/motifs.js';
 import { buildArchiveEntries, pickThumbMedia } from '/archive-layout.js';
 
 const view = document.getElementById('view');
+
+function showEntryBanner() {
+  const banner = document.querySelector('.test-banner');
+  if (!banner) return;
+
+  const storageKey = 'ww.entry-banner.seen';
+  try {
+    if (sessionStorage.getItem(storageKey)) return;
+    sessionStorage.setItem(storageKey, '1');
+  } catch {
+    // The banner still works when the browser blocks storage.
+  }
+
+  banner.addEventListener('animationend', () => { banner.hidden = true; }, {once: true});
+  banner.hidden = false;
+}
+
+showEntryBanner();
+
 const PUBLIC_SITE = document.querySelector('meta[name="ww-public"]')?.content === 'true';
 if (PUBLIC_SITE) document.documentElement.classList.add('public-site');
 const projectLibrary=createProjectLibrary(view,{readOnly:PUBLIC_SITE});
