@@ -11,7 +11,7 @@ try { db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'u
 catch (error) { if (error.code !== 'ENOENT') throw error; db = JSON.parse(await readFile(path.join(root, 'seed', 'records.json'), 'utf8')); }
 const catalog = JSON.parse(await readFile(path.join(source, 'assets', 'catalog.json'), 'utf8'));
 const PART_SIZE = 20 * 1024 * 1024;
-const PUBLIC_VERSION = 'thumbnail-rail-20261116';
+const PUBLIC_VERSION = 'breadcrumb-history-20261116';
 
 try {
   await rm(output, { recursive: true, force: true });

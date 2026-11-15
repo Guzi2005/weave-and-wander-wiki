@@ -11,7 +11,7 @@ export function createArticleToc(){
     if(entries.length<3)return;
     const toc=document.createElement('aside');toc.className='rm-article-toc';toc.setAttribute('aria-label','本页目录');toc.innerHTML=`<details open><summary><span>本页目录</span><small>收起</small></summary><nav aria-label="文章章节">${entries.map((e,i)=>`<button type="button" data-section="${i}">${i?`<small>${String(i).padStart(2,'0')}</small>`:'<small>○</small>'}<span>${esc(e.label)}</span></button>`).join('')}</nav></details>`;
     const media=matchMedia('(min-width:1200px)'),abort=new AbortController();let raf=0;const opts={signal:abort.signal},details=toc.querySelector('details');
-    const place=()=>{shell.classList.toggle('has-article-toc',media.matches);if(media.matches){shell.append(toc);details.open=true;}else{const anchor=article.querySelector('.rm-breadcrumb');if(anchor)anchor.after(toc);else h1.before(toc);details.open=false;}};
+    const place=()=>{shell.classList.toggle('has-article-toc',media.matches);if(media.matches){shell.append(toc);details.open=true;}else{const anchor=article.querySelector('.rm-history-row, .rm-breadcrumb');if(anchor)anchor.after(toc);else h1.before(toc);details.open=false;}};
     const buttons=[...toc.querySelectorAll('[data-section]')];
     const update=()=>{raf=0;let active=0;const atBottom=window.scrollY+innerHeight>=document.documentElement.scrollHeight-2;const threshold=atBottom?innerHeight*.6:160;for(let i=1;i<entries.length;i++)if(entries[i].element.getBoundingClientRect().top<=threshold)active=i;for(let i=0;i<buttons.length;i++){if(i===active)buttons[i].setAttribute('aria-current','location');else buttons[i].removeAttribute('aria-current');}};
     const schedule=()=>{if(!raf)raf=requestAnimationFrame(update);};
