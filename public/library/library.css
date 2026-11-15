@@ -121,6 +121,20 @@
 @media(prefers-reduced-motion:reduce){.ap-book-cover{transition:none}}
 
 .ap-detail-media{margin:0}
+.lr-masonry,.mp-results.lr-masonry{display:block;columns:185px 3;column-gap:16px}
+.lr-masonry>:is(.ap-card,.mp-card){display:inline-block;width:100%;vertical-align:top;break-inside:avoid;margin:0 0 20px}
+.lr-masonry .ap-card-image,.lr-masonry .mp-card>div:first-child{height:auto;aspect-ratio:auto}
+.lr-masonry .ap-card-image img,.lr-masonry .mp-card img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+.lr-masonry .ap-card-image img{padding:0}
+.lr-masonry .mp-card>div:first-child{padding:4px}
+.mp-card-byline{display:flex;align-items:baseline;gap:6px;margin-top:7px;min-width:0;white-space:nowrap}
+.mp-card-byline h3{min-width:0;overflow:hidden;text-overflow:ellipsis;margin:0}
+.mp-card-byline .mp-card-tags{flex-wrap:nowrap;min-width:0;overflow:hidden}
+.mp-card-byline .mp-card-tags span{overflow:hidden;text-overflow:ellipsis}
+@media(max-width:720px){
+  .lr-masonry,.mp-results.lr-masonry{columns:2;column-gap:12px}
+  .lr-masonry>:is(.ap-card,.mp-card){margin-bottom:16px}
+}
 .ap-detail-heading.has-pattern-diagram{display:grid;grid-template-columns:minmax(0,1fr) min(46%,272px);align-items:center;gap:12px}
 .has-pattern-diagram .ap-downloads{grid-column:1/-1;justify-content:flex-end}
 .has-pattern-diagram .ap-downloads:empty{display:none}

@@ -53,7 +53,9 @@
       {
         "path": "/assets/patterns/pattern-001-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1188,
+        "height": 377
       },
       {
         "path": "/assets/patterns/pattern-001-02.jpg",
@@ -112,7 +114,9 @@
       {
         "path": "/assets/patterns/pattern-002-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1208,
+        "height": 480
       },
       {
         "path": "/assets/patterns/pattern-002-02.jpg",
@@ -171,7 +175,9 @@
       {
         "path": "/assets/patterns/pattern-003-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1220,
+        "height": 377
       },
       {
         "path": "/assets/patterns/pattern-003-02.jpg",
@@ -230,7 +236,9 @@
       {
         "path": "/assets/patterns/pattern-004-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 852,
+        "height": 405
       },
       {
         "path": "/assets/patterns/pattern-004-02.jpg",
@@ -299,7 +307,9 @@
       {
         "path": "/assets/patterns/pattern-005-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 722,
+        "height": 400
       },
       {
         "path": "/assets/patterns/pattern-005-02.jpg",
@@ -358,7 +368,9 @@
       {
         "path": "/assets/patterns/pattern-006-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 992,
+        "height": 467
       },
       {
         "path": "/assets/patterns/pattern-006-02.jpg",
@@ -417,7 +429,9 @@
       {
         "path": "/assets/patterns/pattern-007-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 800,
+        "height": 462
       },
       {
         "path": "/assets/patterns/pattern-007-02.jpg",
@@ -476,7 +490,9 @@
       {
         "path": "/assets/patterns/pattern-008-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 353,
+        "height": 628
       },
       {
         "path": "/assets/patterns/pattern-008-02.jpg",
@@ -530,7 +546,9 @@
       {
         "path": "/assets/patterns/pattern-009-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 904,
+        "height": 509
       },
       {
         "path": "/assets/patterns/pattern-009-02.jpg",
@@ -584,7 +602,9 @@
       {
         "path": "/assets/patterns/pattern-010-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1280,
+        "height": 1266
       },
       {
         "path": "/assets/patterns/pattern-010-02.jpg",
@@ -643,7 +663,9 @@
       {
         "path": "/assets/patterns/pattern-011-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 436,
+        "height": 415
       },
       {
         "path": "/assets/patterns/pattern-011-02.jpg",
@@ -702,7 +724,9 @@
       {
         "path": "/assets/patterns/pattern-012-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 883,
+        "height": 259
       },
       {
         "path": "/assets/patterns/pattern-012-02.jpg",
@@ -762,7 +786,9 @@
       {
         "path": "/assets/patterns/pattern-013-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 564,
+        "height": 1317
       },
       {
         "path": "/assets/patterns/pattern-013-02.jpg",
@@ -826,7 +852,9 @@
       {
         "path": "/assets/patterns/pattern-014-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1110,
+        "height": 313
       },
       {
         "path": "/assets/patterns/pattern-014-02.jpg",
@@ -880,7 +908,9 @@
       {
         "path": "/assets/patterns/pattern-015-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 496,
+        "height": 606
       },
       {
         "path": "/assets/patterns/pattern-015-02.jpg",
@@ -934,7 +964,9 @@
       {
         "path": "/assets/patterns/pattern-016-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 831,
+        "height": 310
       },
       {
         "path": "/assets/patterns/pattern-016-02.jpg",
@@ -993,7 +1025,9 @@
       {
         "path": "/assets/patterns/pattern-017-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1041,
+        "height": 251
       },
       {
         "path": "/assets/patterns/pattern-017-02.jpg",
@@ -1057,7 +1091,9 @@
       {
         "path": "/assets/patterns/pattern-018-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 510,
+        "height": 713
       },
       {
         "path": "/assets/patterns/pattern-018-02.jpg",
@@ -1111,7 +1147,9 @@
       {
         "path": "/assets/patterns/pattern-019-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 772,
+        "height": 562
       },
       {
         "path": "/assets/patterns/pattern-019-02.jpg",
@@ -1170,7 +1208,9 @@
       {
         "path": "/assets/patterns/pattern-020-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 368,
+        "height": 499
       },
       {
         "path": "/assets/patterns/pattern-020-02.jpg",
@@ -1234,7 +1274,9 @@
       {
         "path": "/assets/patterns/pattern-021-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 568,
+        "height": 427
       },
       {
         "path": "/assets/patterns/pattern-021-02.jpg",
@@ -1298,7 +1340,9 @@
       {
         "path": "/assets/patterns/pattern-022-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 675,
+        "height": 624
       },
       {
         "path": "/assets/patterns/pattern-022-02.jpg",
@@ -1357,7 +1401,9 @@
       {
         "path": "/assets/patterns/pattern-023-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 613,
+        "height": 355
       },
       {
         "path": "/assets/patterns/pattern-023-02.jpg",
@@ -1416,7 +1462,9 @@
       {
         "path": "/assets/patterns/pattern-024-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1110,
+        "height": 217
       },
       {
         "path": "/assets/patterns/pattern-024-02.jpg",
@@ -1480,7 +1528,9 @@
       {
         "path": "/assets/patterns/pattern-025-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1113,
+        "height": 244
       },
       {
         "path": "/assets/patterns/pattern-025-02.jpg",
@@ -1539,7 +1589,9 @@
       {
         "path": "/assets/patterns/pattern-026-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 437,
+        "height": 406
       },
       {
         "path": "/assets/patterns/pattern-026-02.jpg",
@@ -1603,7 +1655,9 @@
       {
         "path": "/assets/patterns/pattern-027-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 548,
+        "height": 541
       },
       {
         "path": "/assets/patterns/pattern-027-02.jpg",
@@ -1667,7 +1721,9 @@
       {
         "path": "/assets/patterns/pattern-028-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 555,
+        "height": 472
       },
       {
         "path": "/assets/patterns/pattern-028-02.jpg",
@@ -1731,7 +1787,9 @@
       {
         "path": "/assets/patterns/pattern-029-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 475,
+        "height": 475
       },
       {
         "path": "/assets/patterns/pattern-029-02.jpg",
@@ -1790,7 +1848,9 @@
       {
         "path": "/assets/patterns/pattern-030-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 603,
+        "height": 627
       },
       {
         "path": "/assets/patterns/pattern-030-02.jpg",
@@ -1849,7 +1909,9 @@
       {
         "path": "/assets/patterns/pattern-031-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1031,
+        "height": 393
       },
       {
         "path": "/assets/patterns/pattern-031-02.jpg",
@@ -1908,7 +1970,9 @@
       {
         "path": "/assets/patterns/pattern-032-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 817,
+        "height": 413
       },
       {
         "path": "/assets/patterns/pattern-032-02.jpg",
@@ -1967,7 +2031,9 @@
       {
         "path": "/assets/patterns/pattern-033-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 772,
+        "height": 620
       },
       {
         "path": "/assets/patterns/pattern-033-02.jpg",
@@ -2031,7 +2097,9 @@
       {
         "path": "/assets/patterns/pattern-034-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 472,
+        "height": 1086
       },
       {
         "path": "/assets/patterns/pattern-034-02.jpg",
@@ -2095,7 +2163,9 @@
       {
         "path": "/assets/patterns/pattern-035-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 675,
+        "height": 493
       },
       {
         "path": "/assets/patterns/pattern-035-02.jpg",
@@ -2159,7 +2229,9 @@
       {
         "path": "/assets/patterns/pattern-036-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 869,
+        "height": 419
       },
       {
         "path": "/assets/patterns/pattern-036-02.jpg",
@@ -2218,7 +2290,9 @@
       {
         "path": "/assets/patterns/pattern-037-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 663,
+        "height": 584
       },
       {
         "path": "/assets/patterns/pattern-037-02.jpg",
@@ -2277,7 +2351,9 @@
       {
         "path": "/assets/patterns/pattern-038-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1012,
+        "height": 337
       },
       {
         "path": "/assets/patterns/pattern-038-02.jpg",
@@ -2341,7 +2417,9 @@
       {
         "path": "/assets/patterns/pattern-039-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 517,
+        "height": 483
       },
       {
         "path": "/assets/patterns/pattern-039-02.jpg",
@@ -2400,7 +2478,9 @@
       {
         "path": "/assets/patterns/pattern-040-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 907,
+        "height": 423
       },
       {
         "path": "/assets/patterns/pattern-040-02.jpg",
@@ -2459,7 +2539,9 @@
       {
         "path": "/assets/patterns/pattern-041-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 783,
+        "height": 472
       },
       {
         "path": "/assets/patterns/pattern-041-02.jpg",
@@ -2518,7 +2600,9 @@
       {
         "path": "/assets/patterns/pattern-042-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1094,
+        "height": 374
       },
       {
         "path": "/assets/patterns/pattern-042-02.jpg",
@@ -2577,7 +2661,9 @@
       {
         "path": "/assets/patterns/pattern-043-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 566,
+        "height": 404
       },
       {
         "path": "/assets/patterns/pattern-043-02.jpg",
@@ -2631,7 +2717,9 @@
       {
         "path": "/assets/patterns/pattern-044-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 551,
+        "height": 611
       },
       {
         "path": "/assets/patterns/pattern-044-02.jpg",
@@ -2690,7 +2778,9 @@
       {
         "path": "/assets/patterns/pattern-045-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 749,
+        "height": 479
       },
       {
         "path": "/assets/patterns/pattern-045-02.jpg",
@@ -2754,7 +2844,9 @@
       {
         "path": "/assets/patterns/pattern-046-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1083,
+        "height": 236
       },
       {
         "path": "/assets/patterns/pattern-046-02.jpg",
@@ -2813,7 +2905,9 @@
       {
         "path": "/assets/patterns/pattern-047-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 614,
+        "height": 356
       },
       {
         "path": "/assets/patterns/pattern-047-02.jpg",
@@ -2873,7 +2967,9 @@
       {
         "path": "/assets/patterns/pattern-048-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 937,
+        "height": 352
       },
       {
         "path": "/assets/patterns/pattern-048-02.jpg",
@@ -2932,7 +3028,9 @@
       {
         "path": "/assets/patterns/pattern-049-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 858,
+        "height": 337
       },
       {
         "path": "/assets/patterns/pattern-049-02.jpg",
@@ -2991,7 +3089,9 @@
       {
         "path": "/assets/patterns/pattern-050-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 723,
+        "height": 221
       },
       {
         "path": "/assets/patterns/pattern-050-02.jpg",
@@ -3050,7 +3150,9 @@
       {
         "path": "/assets/patterns/pattern-051-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 749,
+        "height": 573
       },
       {
         "path": "/assets/patterns/pattern-051-02.jpg",
@@ -3109,7 +3211,9 @@
       {
         "path": "/assets/patterns/pattern-052-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 758,
+        "height": 534
       },
       {
         "path": "/assets/patterns/pattern-052-02.jpg",
@@ -3168,7 +3272,9 @@
       {
         "path": "/assets/patterns/pattern-053-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 845,
+        "height": 323
       },
       {
         "path": "/assets/patterns/pattern-053-02.jpg",
@@ -3222,7 +3328,9 @@
       {
         "path": "/assets/patterns/pattern-054-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 588,
+        "height": 455
       },
       {
         "path": "/assets/patterns/pattern-054-02.jpg",
@@ -3281,7 +3389,9 @@
       {
         "path": "/assets/patterns/pattern-055-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 670,
+        "height": 381
       },
       {
         "path": "/assets/patterns/pattern-055-02.jpg",
@@ -3345,7 +3455,9 @@
       {
         "path": "/assets/patterns/pattern-056-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 806,
+        "height": 374
       },
       {
         "path": "/assets/patterns/pattern-056-02.jpg",
@@ -3424,7 +3536,9 @@
       {
         "path": "/assets/patterns/pattern-057-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1280,
+        "height": 1037
       },
       {
         "path": "/assets/patterns/pattern-057-02.jpg",
@@ -3503,7 +3617,9 @@
       {
         "path": "/assets/patterns/pattern-058-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 588,
+        "height": 561
       },
       {
         "path": "/assets/patterns/pattern-058-02.jpg",
@@ -3572,7 +3688,9 @@
       {
         "path": "/assets/patterns/pattern-059-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 509,
+        "height": 379
       },
       {
         "path": "/assets/patterns/pattern-059-02.jpg",
@@ -3626,7 +3744,9 @@
       {
         "path": "/assets/patterns/pattern-060-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 592,
+        "height": 441
       },
       {
         "path": "/assets/patterns/pattern-060-02.jpg",
@@ -3685,7 +3805,9 @@
       {
         "path": "/assets/patterns/pattern-061-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1075,
+        "height": 322
       },
       {
         "path": "/assets/patterns/pattern-061-02.jpg",
@@ -3744,7 +3866,9 @@
       {
         "path": "/assets/patterns/pattern-062-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1280,
+        "height": 1148
       },
       {
         "path": "/assets/patterns/pattern-062-02.jpg",
@@ -3803,7 +3927,9 @@
       {
         "path": "/assets/patterns/pattern-063-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 566,
+        "height": 514
       },
       {
         "path": "/assets/patterns/pattern-063-02.jpg",
@@ -3862,7 +3988,9 @@
       {
         "path": "/assets/patterns/pattern-064-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1091,
+        "height": 249
       },
       {
         "path": "/assets/patterns/pattern-064-02.jpg",
@@ -3921,7 +4049,9 @@
       {
         "path": "/assets/patterns/pattern-065-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 457,
+        "height": 462
       },
       {
         "path": "/assets/patterns/pattern-065-02.jpg",
@@ -3980,7 +4110,9 @@
       {
         "path": "/assets/patterns/pattern-066-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1184,
+        "height": 1210
       },
       {
         "path": "/assets/patterns/pattern-066-02.jpg",
@@ -4034,7 +4166,9 @@
       {
         "path": "/assets/patterns/pattern-067-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 836,
+        "height": 394
       },
       {
         "path": "/assets/patterns/pattern-067-02.jpg",
@@ -4093,7 +4227,9 @@
       {
         "path": "/assets/patterns/pattern-068-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 670,
+        "height": 420
       },
       {
         "path": "/assets/patterns/pattern-068-02.jpg",
@@ -4152,7 +4288,9 @@
       {
         "path": "/assets/patterns/pattern-069-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 436,
+        "height": 925
       },
       {
         "path": "/assets/patterns/pattern-069-02.jpg",
@@ -4216,7 +4354,9 @@
       {
         "path": "/assets/patterns/pattern-070-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 696,
+        "height": 374
       },
       {
         "path": "/assets/patterns/pattern-070-02.jpg",
@@ -4275,7 +4415,9 @@
       {
         "path": "/assets/patterns/pattern-071-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1112,
+        "height": 368
       },
       {
         "path": "/assets/patterns/pattern-071-02.jpg",
@@ -4334,7 +4476,9 @@
       {
         "path": "/assets/patterns/pattern-072-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 769,
+        "height": 582
       },
       {
         "path": "/assets/patterns/pattern-072-02.jpg",
@@ -4388,7 +4532,9 @@
       {
         "path": "/assets/patterns/pattern-073-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1148,
+        "height": 342
       },
       {
         "path": "/assets/patterns/pattern-073-02.jpg",
@@ -4447,7 +4593,9 @@
       {
         "path": "/assets/patterns/pattern-074-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1117,
+        "height": 322
       },
       {
         "path": "/assets/patterns/pattern-074-02.jpg",
@@ -4506,7 +4654,9 @@
       {
         "path": "/assets/patterns/pattern-075-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 1015,
+        "height": 362
       },
       {
         "path": "/assets/patterns/pattern-075-02.jpg",
@@ -4565,7 +4715,9 @@
       {
         "path": "/assets/patterns/pattern-076-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 854,
+        "height": 455
       },
       {
         "path": "/assets/patterns/pattern-076-02.jpg",
@@ -4629,7 +4781,9 @@
       {
         "path": "/assets/patterns/pattern-077-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 685,
+        "height": 417
       },
       {
         "path": "/assets/patterns/pattern-077-02.jpg",
@@ -4688,7 +4842,9 @@
       {
         "path": "/assets/patterns/pattern-078-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 539,
+        "height": 779
       },
       {
         "path": "/assets/patterns/pattern-078-02.jpg",
@@ -4747,7 +4903,9 @@
       {
         "path": "/assets/patterns/pattern-079-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 885,
+        "height": 417
       },
       {
         "path": "/assets/patterns/pattern-079-02.jpg",
@@ -4816,7 +4974,9 @@
       {
         "path": "/assets/patterns/pattern-080-01.jpg",
         "role": "source",
-        "label": "纹样概览"
+        "label": "纹样概览",
+        "width": 515,
+        "height": 1523
       },
       {
         "path": "/assets/patterns/pattern-080-02.jpg",
