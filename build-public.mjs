@@ -11,7 +11,7 @@ try { db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'u
 catch (error) { if (error.code !== 'ENOENT') throw error; db = JSON.parse(await readFile(path.join(root, 'seed', 'records.json'), 'utf8')); }
 const catalog = JSON.parse(await readFile(path.join(source, 'assets', 'catalog.json'), 'utf8'));
 const PART_SIZE = 20 * 1024 * 1024;
-const PUBLIC_VERSION = 'entry-banner-20261116';
+const PUBLIC_VERSION = 'pattern-text-20261116';
 
 try {
   await rm(output, { recursive: true, force: true });
@@ -71,6 +71,7 @@ const publicRecords = sourceRecords.map(r => ({
   status:r.status, parent_id:r.parent_id, collection_id:r.collection_id,
   culture:r.culture, place:r.place, date_text:r.date_text,
   observations:(r.observations || []).filter(x => !/\/(?:assets|media)\//.test(x)),
+  pattern_text:r.pattern_text,
   source:{author:r.source?.author || null,title:r.source?.title || null,year:r.source?.year || null,record_id:r.source?.record_id || null,captured_at:r.source?.captured_at || null,
     place:r.source?.place || null,url:r.source?.url || null,license:r.source?.license || null},
   media:(r.media || []).filter(m => publicMediaPath.test(m.path))

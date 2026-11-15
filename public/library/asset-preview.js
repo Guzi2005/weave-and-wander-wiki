@@ -1,4 +1,5 @@
 import {lineIcon} from './line-icons.js';
+import {mountImageView} from './image-view.js';
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const assetHref=id=>`#/asset/${encodeURIComponent(id)}`;
 const labels={all:'全部',models:'模型',images:'影像',drawings:'UV 图纸',motifs:'纹样与配方',nodes:'节点样式',files:'资料文件',books:'图鉴画册'};
@@ -22,7 +23,8 @@ export function createAssetItems(data){
 export function createAssetPreview(data){
   let items=createAssetItems(data),byId=new Map(items.map(item=>[item.id,item]));
   let filter='all',current=null,mode='',mediaIndex=0,viewer=null,fullscreenViewer=null,serial=0,events=null;
-  const stopViewers=()=>{serial++;viewer?.cleanup();viewer=null;fullscreenViewer?.cleanup();fullscreenViewer=null;globalThis.document?.documentElement.classList.remove('has-media-lightbox');};
+  let stopImageView = null;
+  const stopViewers=()=>{serial++;viewer?.cleanup();viewer=null;fullscreenViewer?.cleanup();fullscreenViewer=null;stopImageView?.();stopImageView=null;globalThis.document?.documentElement.classList.remove('has-media-lightbox');};
   const cleanup=()=>{stopViewers();events?.abort();events=null;};
   function card(item){return `<a class="ap-card ap-kind-${item.kind}" href="${assetHref(item.id)}"><div class="ap-card-image">${image(item.cover,item.title)}<span class="ap-format">${labels[item.kind]}</span></div><div class="ap-card-caption"><span>${escape(item.title)}</span><span aria-hidden="true">↗</span></div></a>`;}
   function bookshelf(books){
@@ -84,13 +86,31 @@ export function createAssetPreview(data){
     if(item.asset?.drawing)links.push(`<a href="${escape(item.asset.drawing)}" target="_blank" rel="noreferrer">UV 图纸</a>`);
     return `<footer class="rm-reference-footer"><details class="rm-sources"><summary>文件与来源</summary><p>${item.record?`档案编号：${escape(item.record.id)}`:'项目发型节点样式库'}</p>${links.map(link=>`<p>${link}</p>`).join('')}${source?.title?`<p>资料来源：${escape(source.author||'')}《${escape(source.title)}》${source.year?`（${escape(source.year)}）`:''}</p>`:source?.author?`<p>${escape(source.author)}</p>`:''}</details></footer>`;
   }
+  function patternText(record) {
+    if (!record?.pattern_text?.length) return '';
+    const {author, title, year, record_id: bookId} = record.source;
+    const citation = `${escape(author)}《${escape(title)}》（${escape(year)}），〈${escape(record.title)}〉`;
+    const sections = record.pattern_text.map(({heading, paragraphs}) =>
+      `<section><h3>${escape(heading)}</h3>${paragraphs.map(text => `<p>${escape(text)}</p>`).join('')}</section>`
+    ).join('');
+    return `<section class="ap-detail-section ap-pattern-text"><h2>纹样说明</h2><p class="ap-pattern-citation">原书正文 · <a href="${assetHref(bookId)}">${citation}</a></p>${sections}</section>`;
+  }
   function detail(item){
     if(item.kind==='files')return `<nav class="rm-breadcrumb"><a href="#/assets">资料库</a><span>/</span><span>资料文件</span></nav><header class="ap-detail-heading"><h1>${escape(item.title)}</h1></header><div class="ap-file-list">${item.record._files.map(file=>`<section>${file.type?.startsWith('video/')?`<video controls playsinline preload="metadata" src="${escape(file.path)}"></video>`:''}<h2>${escape(file.name)}</h2><p>${escape(file.type||'资料文件')} · ${(file.size/1048576).toFixed(2)} MB</p><a href="${escape(file.path)}" download="${escape(file.name)}">下载文件 ↓</a></section>`).join('')}</div>${sourceFooter(item)}`;
 
     const currentMedia=media(item)[mediaIndex],parent=item.record?.parent_id&&byId.get(item.record.parent_id);
+    const detailLabel = item.record?.category === '纹样' ? '纹样' : labels[item.kind];
     const isModel=mode==='model'&&item.asset?.modelAvailable;
     const stageMedia=isModel?`${image(item.cover,item.title,'loading="eager"')}<span class="ap-model-loading" role="status">正在加载三维预览…</span>`:`<div class="ap-main-image">${image(selectedFile(item),item.title,'loading="eager"')}</div>`;
-    return `<nav class="rm-breadcrumb"><a href="#/assets">资料库</a>${parent?`<span>/</span><a href="${assetHref(parent.id)}">${escape(parent.title)}</a>`:''}<span>/</span><span>${labels[item.kind]}</span></nav><header class="ap-detail-heading"><div><div class="rm-eyebrow">${labels[item.kind]}</div><h1>${escape(item.title)}</h1></div><div class="ap-downloads">${item.entry?.recipe?`<a href="${escape(item.entry.recipe)}" download>下载配方 ↓</a>`:''}${item.asset?.modelAvailable?`<a href="/assets/models/${escape(item.asset.model)}.glb" download>下载模型 ↓</a>`:''}</div></header><div class="ap-stage${mode==='drawing'?' is-drawing':''}" aria-label="资料主展示">${stageMedia}${expandIcon(isModel?'model':'image')}</div><div class="ap-viewer-controls" hidden><label>动作<select id="motion-mode"><option value="idle">待机</option><option value="walk">行走</option><option value="spin">转圈</option></select></label><button id="pause-motion">暂停动作</button><button id="reset-view">复位视角</button><span id="motion-status" role="status"></span></div><div class="ap-media-modes" role="group" aria-label="展示形式">${modes(item).map(([key,label])=>`<button data-view-mode="${key}" aria-pressed="${mode===key}">${lineIcon(key==='model'?'models':key==='drawing'?'drawings':key==='image'?item.kind:key)}<span>${label}</span></button>`).join('')}</div>${mode==='images'?`<div class="ap-thumbnails">${media(item).map((m,index)=>{const time=m.label.match(/\d+:\d+/)?.[0];const label=item.kind==='books'?'封面':time|| (m.role==='source'?'参考图':'概念图')+' '+(index+1);return `<button data-media-index="${index}" aria-pressed="${index===mediaIndex}">${image(m.path,(item.kind==='books'?'封面':'参考影像')+' '+(index+1))}<span>${label}</span></button>`;}).join('')}</div><p class="ap-caption">${escape(currentMedia?.label||'参考影像')}</p>`:''}${parameters(item)}${related(item)}${sourceFooter(item)}<dialog class="ap-lightbox" aria-label="媒体全屏查看"><div class="ap-lightbox-shell"><button class="ap-lightbox-close" type="button" data-close-lightbox aria-label="关闭全屏查看"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button><div class="ap-lightbox-stage" data-lightbox-stage></div><div class="ap-lightbox-controls" data-lightbox-controls hidden><label>动作<select id="motion-mode"><option value="idle">待机</option><option value="walk">行走</option><option value="spin">转圈</option></select></label><button id="pause-motion">暂停动作</button><button id="reset-view">复位视角</button><span id="motion-status" role="status"></span><p>拖动旋转 · 滚轮或双指缩放 · 转动与动作会驱动物理效果</p></div></div></dialog>`;
+    return `<nav class="rm-breadcrumb"><a href="#/assets">资料库</a>${parent?`<span>/</span><a href="${assetHref(parent.id)}">${escape(parent.title)}</a>`:''}<span>/</span><span>${detailLabel}</span></nav>
+      <header class="ap-detail-heading"><div><div class="rm-eyebrow">${detailLabel}</div><h1>${escape(item.title)}</h1></div><div class="ap-downloads">${item.entry?.recipe?`<a href="${escape(item.entry.recipe)}" download>下载配方 ↓</a>`:''}${item.asset?.modelAvailable?`<a href="/assets/models/${escape(item.asset.model)}.glb" download>下载模型 ↓</a>`:''}</div></header>
+      ${patternText(item.record)}
+      <figure class="ap-detail-media"${item.record?.pattern_text?.length?' data-toc-title="图例"':''}><div class="ap-stage${mode==='drawing'?' is-drawing':''}" aria-label="资料主展示">${stageMedia}${expandIcon(isModel?'model':'image')}</div><div class="ap-viewer-controls" hidden><label>动作<select id="motion-mode"><option value="idle">待机</option><option value="walk">行走</option><option value="spin">转圈</option></select></label><button id="pause-motion">暂停动作</button><button id="reset-view">复位视角</button><span id="motion-status" role="status"></span></div><div class="ap-media-modes" role="group" aria-label="展示形式">${modes(item).map(([key,label])=>`<button data-view-mode="${key}" aria-pressed="${mode===key}">${lineIcon(key==='model'?'models':key==='drawing'?'drawings':key==='image'?item.kind:key)}<span>${label}</span></button>`).join('')}</div>${mode==='images'?`<div class="ap-thumbnails">${media(item).map((m,index)=>{const time=m.label.match(/\d+:\d+/)?.[0];const label=item.kind==='books'?'封面':time|| (m.role==='source'?'参考图':'概念图')+' '+(index+1);return `<button data-media-index="${index}" aria-pressed="${index===mediaIndex}">${image(m.path,(item.kind==='books'?'封面':'参考影像')+' '+(index+1))}<span>${label}</span></button>`;}).join('')}</div><figcaption class="ap-caption">${escape(currentMedia?.label||'参考影像')}</figcaption>`:''}
+      </figure>
+      ${parameters(item)}${related(item)}${sourceFooter(item)}
+      <dialog class="ap-lightbox" aria-label="媒体全屏查看"><div class="ap-lightbox-shell"><button class="ap-lightbox-close" type="button" data-close-lightbox aria-label="关闭全屏查看"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button><div class="ap-lightbox-stage" data-lightbox-stage></div>
+          <div class="ap-image-controls" role="group" aria-label="图片缩放"><button type="button" data-image-zoom="out" aria-label="缩小图片">−</button><button type="button" data-image-zoom="reset">适应窗口</button><button type="button" data-image-zoom="in" aria-label="放大图片">+</button><span>滚轮缩放 · 拖拽移动</span></div>
+          <div class="ap-lightbox-controls" data-lightbox-controls hidden><label>动作<select id="motion-mode"><option value="idle">待机</option><option value="walk">行走</option><option value="spin">转圈</option></select></label><button id="pause-motion">暂停动作</button><button id="reset-view">复位视角</button><span id="motion-status" role="status"></span><p>拖动旋转 · 滚轮或双指缩放 · 转动与动作会驱动物理效果</p></div></div></dialog>`;
   }
   function render(id){
     items=createAssetItems(data);byId=new Map(items.map(item=>[item.id,item]));
@@ -105,11 +125,28 @@ export function createAssetPreview(data){
     if(!current&&!root.querySelector('.ap-filters'))return;
     events=new AbortController();
     const addExpand=(stage,kind)=>stage.insertAdjacentHTML('beforeend',expandIcon(kind));
-    const bindDialog=()=>{const dialog=root.querySelector('.ap-lightbox');if(!dialog)return;dialog.addEventListener('close',()=>{serial++;fullscreenViewer?.cleanup();fullscreenViewer=null;document.documentElement.classList.remove('has-media-lightbox');if(mode==='model'&&current?.asset?.modelAvailable)startViewer(true);},{signal:events.signal});};
+    const bindDialog=()=>{const dialog=root.querySelector('.ap-lightbox');if(!dialog)return;dialog.addEventListener('close',()=>{stopImageView?.();stopImageView=null;serial++;fullscreenViewer?.cleanup();fullscreenViewer=null;document.documentElement.classList.remove('has-media-lightbox');if(mode==='model'&&current?.asset?.modelAvailable)startViewer(true);},{signal:events.signal});};
     const update=()=>{stopViewers();root.innerHTML=current?detail(current):gallery();bindDialog();startViewer();};
     const startViewer=async focusExpand=>{if(mode!=='model'||!current?.asset?.modelAvailable)return;const token=++serial,stage=root.querySelector('.ap-stage');if(!stage)return;try{const {mountViewer}=await import('/viewer.js');if(token!==serial||!stage.isConnected)return;viewer=mountViewer(stage,{root,allowStatic:true,modelUrl:'/assets/models/'+current.asset.model+'.glb',onError:()=>{if(token!==serial||!stage.isConnected)return;viewer?.cleanup();viewer=null;stage.innerHTML=`${image(current.cover,current.title)}<button type="button" data-start-viewer>重试三维预览</button>${expandIcon('model')}`;root.querySelector('.ap-viewer-controls').hidden=true;}});addExpand(stage,'model');root.querySelector('.ap-viewer-controls').hidden=false;root.querySelector('[data-view-mode="model"] span').textContent='三维模型';if(focusExpand)stage.querySelector('.ap-expand')?.focus();}catch{if(token===serial&&stage.isConnected)stage.innerHTML=`${image(current.cover,current.title)}<button type="button" data-start-viewer>重试三维预览</button>${expandIcon('model')}`;}};
-    const openImage=dialog=>{const stage=dialog.querySelector('[data-lightbox-stage]'),controls=dialog.querySelector('[data-lightbox-controls]'),img=document.createElement('img');img.src=selectedFile(current);img.alt=current.title;stage.replaceChildren(img);controls.hidden=true;dialog.dataset.mode='image';dialog.showModal();document.documentElement.classList.add('has-media-lightbox');};
-    const openModel=async dialog=>{serial++;viewer?.cleanup();viewer=null;const token=serial,stage=dialog.querySelector('[data-lightbox-stage]'),controls=dialog.querySelector('[data-lightbox-controls]');stage.innerHTML='<span class="ap-model-loading" role="status">正在加载三维预览…</span>';controls.hidden=false;dialog.dataset.mode='model';dialog.showModal();document.documentElement.classList.add('has-media-lightbox');await new Promise(requestAnimationFrame);try{const {mountViewer}=await import('/viewer.js');if(token!==serial||!dialog.open)return;fullscreenViewer=mountViewer(stage,{root:dialog,allowStatic:true,modelUrl:'/assets/models/'+current.asset.model+'.glb',onError:()=>{if(token!==serial||!stage.isConnected)return;fullscreenViewer?.cleanup();fullscreenViewer=null;stage.innerHTML=`${image(current.cover,current.title)}<p class="ap-lightbox-error">三维模型加载失败</p>`;}});}catch{if(token===serial&&stage.isConnected)stage.innerHTML=`${image(current.cover,current.title)}<p class="ap-lightbox-error">三维模型加载失败</p>`;}};
+    const openImage = dialog => {
+      const file = selectedFile(current);
+      if (!file) return;
+      const stage = dialog.querySelector('[data-lightbox-stage]');
+      const img = document.createElement('img');
+      img.src = file;
+      img.alt = media(current)[mediaIndex]?.label && mode === 'images'
+        ? media(current)[mediaIndex].label : current.title;
+      img.draggable = false;
+      stage.replaceChildren(img);
+      dialog.querySelector('[data-lightbox-controls]').hidden = true;
+      dialog.dataset.mode = 'image';
+      stage.tabIndex = 0;
+      stage.setAttribute('aria-label', '图片视图，放大后可拖拽或使用方向键移动');
+      dialog.showModal();
+      document.documentElement.classList.add('has-media-lightbox');
+      stopImageView = mountImageView(stage, img, dialog.querySelector('.ap-image-controls'));
+    };
+    const openModel=async dialog=>{serial++;viewer?.cleanup();viewer=null;const token=serial,stage=dialog.querySelector('[data-lightbox-stage]'),controls=dialog.querySelector('[data-lightbox-controls]');stage.innerHTML='<span class="ap-model-loading" role="status">正在加载三维预览…</span>';controls.hidden=false;dialog.dataset.mode='model';stage.removeAttribute('tabindex');stage.removeAttribute('aria-label');dialog.showModal();document.documentElement.classList.add('has-media-lightbox');await new Promise(requestAnimationFrame);try{const {mountViewer}=await import('/viewer.js');if(token!==serial||!dialog.open)return;fullscreenViewer=mountViewer(stage,{root:dialog,allowStatic:true,modelUrl:'/assets/models/'+current.asset.model+'.glb',onError:()=>{if(token!==serial||!stage.isConnected)return;fullscreenViewer?.cleanup();fullscreenViewer=null;stage.innerHTML=`${image(current.cover,current.title)}<p class="ap-lightbox-error">三维模型加载失败</p>`;}});}catch{if(token===serial&&stage.isConnected)stage.innerHTML=`${image(current.cover,current.title)}<p class="ap-lightbox-error">三维模型加载失败</p>`;}};
     root.addEventListener('click',async event=>{
       const button=event.target.closest('button');if(!button)return;
       if(button.dataset.assetFilter){current=null;filter=button.dataset.assetFilter;update();window.scrollTo({top:0,behavior:'instant'});return;}
