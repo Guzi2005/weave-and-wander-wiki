@@ -2242,3 +2242,19 @@ body {
 .practice-stage .btn:disabled {background:#d7dfd7;color:#4c5d52;}
 .practice-feedback {margin-top:14px;padding:12px 16px;border-radius:16px;background:#e1f1e5;}
 .practice-feedback.retry {background:#f8e6cf;}
+
+/* Keep the reference legible behind the model overlay. */
+.cover-switch:has(> .model-cover) > img:not(.model-cover) {
+  transition:scale .3s ease, opacity .3s ease, filter .3s ease, transform .55s cubic-bezier(.2,.7,.25,1);
+}
+@media (hover:hover) {
+  .cover-switch:hover:has(> .model-cover) > img:not(.model-cover) {
+    scale:1.025;
+    opacity:.72;
+    filter:saturate(.55);
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .cover-switch:has(> .model-cover) > img:not(.model-cover) { transition:none; }
+  .cover-switch:hover:has(> .model-cover) > img:not(.model-cover) { scale:none; }
+}

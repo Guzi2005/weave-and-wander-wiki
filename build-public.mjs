@@ -11,7 +11,7 @@ try { db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'u
 catch (error) { if (error.code !== 'ENOENT') throw error; db = JSON.parse(await readFile(path.join(root, 'seed', 'records.json'), 'utf8')); }
 const catalog = JSON.parse(await readFile(path.join(source, 'assets', 'catalog.json'), 'utf8'));
 const PART_SIZE = 20 * 1024 * 1024;
-const PUBLIC_VERSION = 'flat-archive-20261116';
+const PUBLIC_VERSION = 'cloth-preview-20261116';
 
 try {
   await rm(output, { recursive: true, force: true });
@@ -42,7 +42,10 @@ for (const entry of ['app.js', 'library/asset-preview.js', `${versionedLibrary}/
   await writeFile(target, source.replaceAll("'/viewer.js'", `'/viewer.js?v=${PUBLIC_VERSION}'`));
 }
 const publicApp=await readFile(path.join(output,'app.js'),'utf8');
-await writeFile(path.join(output,'app.js'),publicApp.replaceAll("'/library/",`'/${versionedLibrary}/`));
+await writeFile(path.join(output,'app.js'),publicApp.replaceAll("'/library/",`'/${versionedLibrary}/`)
+  .replace("'/motifs.js'",`'/motifs.js?v=${PUBLIC_VERSION}'`));
+const publicMotifs=await readFile(path.join(output,'motifs.js'),'utf8');
+await writeFile(path.join(output,'motifs.js'),publicMotifs.replace("'./motif-preview.js'",`'./motif-preview.js?v=${PUBLIC_VERSION}'`));
 const safeAsset = /^(?:[a-z0-9_-]+-cover\.png|[a-z0-9_-]+-uv\.svg|ww-logo\.jpg|source\.png|ukrainian-source\.jpg)$/i;
 for (const name of await readdir(path.join(source, 'assets'))) {
   if (safeAsset.test(name)) await copyFile(path.join(source, 'assets', name), path.join(output, 'assets', name));
@@ -71,6 +74,17 @@ for (const name of ['bench', ...modelNames]) {
 
 const libraryAssets=await loadLibraryAssets(source);
 versionModelCovers(libraryAssets.assets);
+// Version filenames rather than query strings: the node gallery validates
+// image paths strictly. Both the gallery manifest and bootstrap use the alias.
+const nodeManifestPath=path.join(output,'assets/node-styles/manifest.json');
+const nodeManifest=JSON.parse(await readFile(nodeManifestPath,'utf8'));
+for (const entry of libraryAssets.nodes) {
+  const original=entry.image;
+  entry.image=original.replace(/\.png$/,`-${PUBLIC_VERSION}.png`);
+  await copyFile(path.join(source,original.slice(1)),path.join(output,entry.image.slice(1)));
+  nodeManifest.entries.find(node=>node.id===entry.id).image=entry.image;
+}
+await writeFile(nodeManifestPath,JSON.stringify(nodeManifest));
 const sourceRecords=[...db.records,...libraryAssets.patternRecords.filter(pattern=>!db.records.some(record=>record.id===pattern.id))];
 const publicMediaPath=/^\/(?:assets\/(?:patterns\/)?|media\/)[A-Za-z0-9._-]+$/;
 for(const mediaPath of new Set(sourceRecords.flatMap(record=>(record.media||[]).map(media=>media.path).filter(p=>publicMediaPath.test(p))))){
