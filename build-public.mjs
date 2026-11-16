@@ -11,7 +11,7 @@ try { db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'u
 catch (error) { if (error.code !== 'ENOENT') throw error; db = JSON.parse(await readFile(path.join(root, 'seed', 'records.json'), 'utf8')); }
 const catalog = JSON.parse(await readFile(path.join(source, 'assets', 'catalog.json'), 'utf8'));
 const PART_SIZE = 20 * 1024 * 1024;
-const PUBLIC_VERSION = 'cloth-preview-20261116';
+const PUBLIC_VERSION = 'cloth-preview-20261116-r2';
 
 try {
   await rm(output, { recursive: true, force: true });
@@ -59,14 +59,18 @@ versionModelCovers(catalog.assets);
 await writeFile(path.join(output, 'assets', 'catalog.json'), JSON.stringify(catalog));
 
 const modelNames = new Set(Object.values(catalog.assets).map(a => a.model).filter(Boolean));
+const splitModels = {};
 for (const name of ['bench', ...modelNames]) {
   const file = path.join(source, 'assets', 'models', `${name}.glb`);
   const target = path.join(output, 'assets', 'models', `${name}.glb`);
   try {
     const bytes = await readFile(file);
     if (bytes.length <= PART_SIZE) await writeFile(target, bytes);
-    else for (let i = 0; i * PART_SIZE < bytes.length; i++)
-      await writeFile(`${target}.part${i}`, bytes.subarray(i * PART_SIZE, (i + 1) * PART_SIZE));
+    else {
+      splitModels[`/assets/models/${name}.glb`] = Math.ceil(bytes.length / PART_SIZE);
+      for (let i = 0; i * PART_SIZE < bytes.length; i++)
+        await writeFile(`${target}.part${i}`, bytes.subarray(i * PART_SIZE, (i + 1) * PART_SIZE));
+    }
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
   }
@@ -112,7 +116,7 @@ const publicQuestions = db.questions.filter(q => q.status === 'approved' &&
     game_versions:q.game_versions,status:q.status,needs_review:false}));
 
 const publishedLibrary={...(db.library||{revision:0,topics:null,trees:null,records:{}}),autosaves:[],records:Object.fromEntries(Object.entries(db.library?.records||{}).filter(([id])=>publicRecords.some(r=>r.id===id)).map(([id,row])=>[id,{...row,note:'',source:{author:row.source?.author||'',url:row.source?.url||''}}]))};
-const worker = `const RECORDS=${JSON.stringify(publicRecords)};\nconst QUESTIONS=${JSON.stringify(publicQuestions)};\nconst LIBRARY_ASSETS=${JSON.stringify(libraryAssets)};\nconst LIBRARY_STATE=${JSON.stringify(publishedLibrary)};\n` + `
+const worker = `const RECORDS=${JSON.stringify(publicRecords)};\nconst QUESTIONS=${JSON.stringify(publicQuestions)};\nconst LIBRARY_ASSETS=${JSON.stringify(libraryAssets)};\nconst LIBRARY_STATE=${JSON.stringify(publishedLibrary)};\nconst SPLIT_MODELS=${JSON.stringify(splitModels)};\n` + `
 const summary=r=>({id:r.id,title:r.title,record_type:r.record_type,category:r.category,
  status:r.status,parent_id:r.parent_id,collection_id:r.collection_id,culture:r.culture,
  media:r.media,revision:r.revision,updated_at:r.updated_at});
@@ -144,17 +148,18 @@ export default {async fetch(request,env){
    return json({questions:rows,count:rows.length});
  }
  if(url.pathname.startsWith('/api/'))return json({error:'未知的 API 路径'},404);
- if(/^\\/assets\\/models\\/[A-Za-z0-9_-]+\\.glb$/.test(url.pathname)){
-   const first=await env.ASSETS.fetch(new URL(url.pathname+'.part0',url));
-   if(first.ok){let index=0,reader=null;
+ if(SPLIT_MODELS[url.pathname]){
+   let index=0,reader=null;
      const stream=new ReadableStream({async pull(controller){
-       while(true){if(!reader){const part=await env.ASSETS.fetch(new URL(url.pathname+'.part'+index++,url));
-         if(!part.ok){controller.close();return;}reader=part.body.getReader();}
+       while(true){if(!reader){
+         if(index>=SPLIT_MODELS[url.pathname]){controller.close();return;}
+         const part=await env.ASSETS.fetch(new URL(url.pathname+'.part'+index++,url));
+         if(!part.ok || part.headers.get('Content-Type')?.includes('text/html')){controller.error(new Error('Model part unavailable'));return;}
+         reader=part.body.getReader();}
          const {value,done}=await reader.read();if(done){reader=null;continue;}
          controller.enqueue(value);return;}
      }});
      return new Response(request.method==='HEAD'?null:stream,{headers:{'Content-Type':'model/gltf-binary','Cache-Control':'public, max-age=86400','X-Content-Type-Options':'nosniff'}});
-   }
  }
  return env.ASSETS.fetch(request);
 }};
