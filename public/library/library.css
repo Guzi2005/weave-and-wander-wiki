@@ -189,7 +189,7 @@
   .ap-card-image, .ap-ensemble-whole, .ap-stage, .ap-thumbnails button,
   .mp-card > div:first-child, .mp-preview-item > div, .mp-preview-cards a > div,
   .mp-preview-image, .card-thumb, .component-thumb, .ensemble-whole-thumb,
-  .media-main, .ns-thumb, .detail-poster, .source-to-model
+  .media-main, .ns-thumb, .motif-preview, .detail-poster, .source-to-model
 ) {
   --image-hover-fill:#edf3ed66;
   background-color:transparent;
@@ -212,8 +212,8 @@
     .ap-card-image, .ap-ensemble-whole, .ap-stage, .ap-thumbnails button,
     .mp-card > div:first-child, .mp-preview-item > div, .mp-preview-cards a > div,
     .mp-preview-image, .card-thumb, .component-thumb, .ensemble-whole-thumb,
-    .media-main, .ns-thumb, .detail-poster, .source-to-model
-  ):hover:has(img),
+    .media-main, .ns-thumb, .motif-preview, .detail-poster, .source-to-model
+  ):hover:has(img, canvas),
   #view img:hover:not(:is(
     .ap-card-image img, .ap-ensemble-whole img, .ap-stage img, .ap-thumbnails img,
     .mp-card img, .mp-preview-cards img, .mp-preview-image img, .card-thumb img,
@@ -227,6 +227,8 @@
   }
 }
 
+/* Book line diagrams retain their original files; white paper blends into the page. */
+#view img[src^="/assets/patterns/pattern-"][src$="-01.jpg"]:not(.ap-lightbox img) { mix-blend-mode:multiply; }
 
 /* Keep the current navigation row while exposing the complete directory path. */
 .rm-history-row>.rm-breadcrumb{display:none}

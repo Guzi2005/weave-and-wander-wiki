@@ -26,7 +26,6 @@ function stripePreview(ctx, size, p) {
 }
 
 function tasselPreview(ctx, size, p) {
-  ctx.fillStyle = '#f1eee7'; ctx.fillRect(0, 0, size, size);
   const random = rng(p.seed), center = size / 2, top = size * 0.1;
   const length = size * (0.32 + (p.length - 0.02) / 0.28 * 0.38);
   const spread = size * (0.07 + (p.spread - 0.01) / 0.11 * 0.18);
@@ -56,6 +55,7 @@ export function drawMotifPreview(canvas, id, source) {
   if (canvas.width !== size || canvas.height !== size) { canvas.width = size; canvas.height = size; }
   const ctx = canvas.getContext('2d');
   if (!ctx) throw new Error('当前浏览器不支持二维画布');
+  ctx.clearRect(0, 0, size, size);
   if (id === 'stripe-overskirt') stripePreview(ctx, size, p);
   else if (id === 'tassel-sash') tasselPreview(ctx, size, p);
   else throw new Error(`未知 motif：${id}`);

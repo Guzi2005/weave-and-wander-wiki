@@ -11,7 +11,7 @@ try { db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'u
 catch (error) { if (error.code !== 'ENOENT') throw error; db = JSON.parse(await readFile(path.join(root, 'seed', 'records.json'), 'utf8')); }
 const catalog = JSON.parse(await readFile(path.join(source, 'assets', 'catalog.json'), 'utf8'));
 const PART_SIZE = 20 * 1024 * 1024;
-const PUBLIC_VERSION = 'directory-media-20261116';
+const PUBLIC_VERSION = 'directory-media-20261116-r2';
 
 try {
   await rm(output, { recursive: true, force: true });
@@ -42,7 +42,10 @@ for (const entry of ['app.js', 'library/asset-preview.js', `${versionedLibrary}/
   await writeFile(target, source.replaceAll("'/viewer.js'", `'/viewer.js?v=${PUBLIC_VERSION}'`));
 }
 const publicApp=await readFile(path.join(output,'app.js'),'utf8');
-await writeFile(path.join(output,'app.js'),publicApp.replaceAll("'/library/",`'/${versionedLibrary}/`));
+await writeFile(path.join(output,'app.js'),publicApp.replaceAll("'/library/",`'/${versionedLibrary}/`)
+  .replace("'/motifs.js'",`'/motifs.js?v=${PUBLIC_VERSION}'`));
+const publicMotifs=await readFile(path.join(output,'motifs.js'),'utf8');
+await writeFile(path.join(output,'motifs.js'),publicMotifs.replace("'./motif-preview.js'",`'./motif-preview.js?v=${PUBLIC_VERSION}'`));
 const safeAsset = /^(?:[a-z0-9_-]+-cover\.png|[a-z0-9_-]+-uv\.svg|ww-logo\.jpg|source\.png|ukrainian-source\.jpg)$/i;
 for (const name of await readdir(path.join(source, 'assets'))) {
   if (safeAsset.test(name)) await copyFile(path.join(source, 'assets', name), path.join(output, 'assets', name));
@@ -56,14 +59,18 @@ versionModelCovers(catalog.assets);
 await writeFile(path.join(output, 'assets', 'catalog.json'), JSON.stringify(catalog));
 
 const modelNames = new Set(Object.values(catalog.assets).map(a => a.model).filter(Boolean));
+const splitModels = {};
 for (const name of ['bench', ...modelNames]) {
   const file = path.join(source, 'assets', 'models', `${name}.glb`);
   const target = path.join(output, 'assets', 'models', `${name}.glb`);
   try {
     const bytes = await readFile(file);
     if (bytes.length <= PART_SIZE) await writeFile(target, bytes);
-    else for (let i = 0; i * PART_SIZE < bytes.length; i++)
-      await writeFile(`${target}.part${i}`, bytes.subarray(i * PART_SIZE, (i + 1) * PART_SIZE));
+    else {
+      splitModels[`/assets/models/${name}.glb`] = Math.ceil(bytes.length / PART_SIZE);
+      for (let i = 0; i * PART_SIZE < bytes.length; i++)
+        await writeFile(`${target}.part${i}`, bytes.subarray(i * PART_SIZE, (i + 1) * PART_SIZE));
+    }
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
   }
@@ -71,6 +78,17 @@ for (const name of ['bench', ...modelNames]) {
 
 const libraryAssets=await loadLibraryAssets(source);
 versionModelCovers(libraryAssets.assets);
+// Version filenames rather than query strings: the node gallery validates
+// image paths strictly. Both the gallery manifest and bootstrap use the alias.
+const nodeManifestPath=path.join(output,'assets/node-styles/manifest.json');
+const nodeManifest=JSON.parse(await readFile(nodeManifestPath,'utf8'));
+for (const entry of libraryAssets.nodes) {
+  const original=entry.image;
+  entry.image=original.replace(/\.png$/,`-${PUBLIC_VERSION}.png`);
+  await copyFile(path.join(source,original.slice(1)),path.join(output,entry.image.slice(1)));
+  nodeManifest.entries.find(node=>node.id===entry.id).image=entry.image;
+}
+await writeFile(nodeManifestPath,JSON.stringify(nodeManifest));
 const sourceRecords=[...db.records,...libraryAssets.patternRecords.filter(pattern=>!db.records.some(record=>record.id===pattern.id))];
 const publicMediaPath=/^\/(?:assets\/(?:patterns\/)?|media\/)[A-Za-z0-9._-]+$/;
 for(const mediaPath of new Set(sourceRecords.flatMap(record=>(record.media||[]).map(media=>media.path).filter(p=>publicMediaPath.test(p))))){
@@ -98,7 +116,7 @@ const publicQuestions = db.questions.filter(q => q.status === 'approved' &&
     game_versions:q.game_versions,status:q.status,needs_review:false}));
 
 const publishedLibrary={...(db.library||{revision:0,topics:null,trees:null,records:{}}),autosaves:[],records:Object.fromEntries(Object.entries(db.library?.records||{}).filter(([id])=>publicRecords.some(r=>r.id===id)).map(([id,row])=>[id,{...row,note:'',source:{author:row.source?.author||'',url:row.source?.url||''}}]))};
-const worker = `const RECORDS=${JSON.stringify(publicRecords)};\nconst QUESTIONS=${JSON.stringify(publicQuestions)};\nconst LIBRARY_ASSETS=${JSON.stringify(libraryAssets)};\nconst LIBRARY_STATE=${JSON.stringify(publishedLibrary)};\n` + `
+const worker = `const RECORDS=${JSON.stringify(publicRecords)};\nconst QUESTIONS=${JSON.stringify(publicQuestions)};\nconst LIBRARY_ASSETS=${JSON.stringify(libraryAssets)};\nconst LIBRARY_STATE=${JSON.stringify(publishedLibrary)};\nconst SPLIT_MODELS=${JSON.stringify(splitModels)};\n` + `
 const summary=r=>({id:r.id,title:r.title,record_type:r.record_type,category:r.category,
  status:r.status,parent_id:r.parent_id,collection_id:r.collection_id,culture:r.culture,
  media:r.media,revision:r.revision,updated_at:r.updated_at});
@@ -130,17 +148,18 @@ export default {async fetch(request,env){
    return json({questions:rows,count:rows.length});
  }
  if(url.pathname.startsWith('/api/'))return json({error:'未知的 API 路径'},404);
- if(/^\\/assets\\/models\\/[A-Za-z0-9_-]+\\.glb$/.test(url.pathname)){
-   const first=await env.ASSETS.fetch(new URL(url.pathname+'.part0',url));
-   if(first.ok){let index=0,reader=null;
+ if(SPLIT_MODELS[url.pathname]){
+   let index=0,reader=null;
      const stream=new ReadableStream({async pull(controller){
-       while(true){if(!reader){const part=await env.ASSETS.fetch(new URL(url.pathname+'.part'+index++,url));
-         if(!part.ok){controller.close();return;}reader=part.body.getReader();}
+       while(true){if(!reader){
+         if(index>=SPLIT_MODELS[url.pathname]){controller.close();return;}
+         const part=await env.ASSETS.fetch(new URL(url.pathname+'.part'+index++,url));
+         if(!part.ok || part.headers.get('Content-Type')?.includes('text/html')){controller.error(new Error('Model part unavailable'));return;}
+         reader=part.body.getReader();}
          const {value,done}=await reader.read();if(done){reader=null;continue;}
          controller.enqueue(value);return;}
      }});
      return new Response(request.method==='HEAD'?null:stream,{headers:{'Content-Type':'model/gltf-binary','Cache-Control':'public, max-age=86400','X-Content-Type-Options':'nosniff'}});
-   }
  }
  return env.ASSETS.fetch(request);
 }};
