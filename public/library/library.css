@@ -229,3 +229,27 @@
 
 /* Book line diagrams retain their original files; white paper blends into the page. */
 #view img[src^="/assets/patterns/pattern-"][src$="-01.jpg"]:not(.ap-lightbox img) { mix-blend-mode:multiply; }
+
+/* Keep the current navigation row while exposing the complete directory path. */
+.rm-history-row>.rm-breadcrumb{display:none}
+.rm-history-row>.rm-page-history{flex:1;min-width:0}
+.rm-page-history{align-items:center;justify-content:flex-start;flex-wrap:wrap}
+.rm-location-path{display:flex;align-items:center;flex-wrap:wrap;gap:5px 0;flex:1;min-width:0;list-style:none;margin:0;padding:6px 10px;border:1px solid var(--line);background:var(--paper);font:11px/1.7 var(--sans)}
+.rm-location-path li{display:flex;align-items:center;min-width:0;overflow-wrap:anywhere}
+.rm-location-path li+li:before{content:'›';color:var(--ink-soft);padding:0 9px}
+.rm-location-path a{text-decoration:none;color:var(--sage)}
+.rm-location-path a:hover{text-decoration:underline}
+.rm-location-path [aria-current=page]{color:var(--ink)}
+.rm-location-path button{display:inline;width:auto;height:auto;padding:0;border:0;font:inherit;text-align:left}
+.cm-media-thumbs{display:block;margin-top:12px}
+.cm-media-thumb{display:block;width:100%;margin:0 0 16px;padding:0;border:0;box-sizing:border-box}
+.cm-media-thumb>button,.cm-media-thumb>button[aria-pressed=true]{height:auto;min-height:0;padding:0;border:0;background:transparent;cursor:grab}
+.cm-media-thumb img{height:auto;width:100%;object-fit:contain}
+.cm-media-thumb>button>span{display:block;padding:20px 4px}
+.cm-media-thumb.is-media-dragging{opacity:.4}
+.cm-media-thumb.is-drop-before{box-shadow:0 -3px var(--sage)}
+.cm-media-thumb.is-drop-after{box-shadow:0 3px var(--sage)}
+/* Preserve the upstream thumbnail rail and full-screen viewer, without square crops. */
+.ap-thumbnails button{aspect-ratio:auto;border:0;background:transparent}
+.ap-thumbnails img{height:auto;object-fit:contain}
+@media(max-width:720px){.rm-location-path{flex-basis:100%}}

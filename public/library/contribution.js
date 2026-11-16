@@ -1,6 +1,6 @@
 import {connectForest} from './curved-forest.js';
 import {lineIcon} from './line-icons.js';
-import {baseMedia,fileMediaId,orderMedia,moveMedia} from './record-media.js';
+import {baseMedia,fileMediaId,orderMedia} from './record-media.js';
 import {createLibraryReading} from './library-reading.js';
 import {seedUploadTrees,descendants,expandSelection,nodeUsage,removeEmptyNode} from './contribution-trees.js';
 import {INITIAL_TOPICS,recordsForTopic,entryNodes} from './library-management.js';
@@ -34,7 +34,19 @@ export function createContribution(data,knowledge,{tags,readDrafts,saveDraft,inf
     root.querySelectorAll('[data-topic-branch]').forEach(el=>el.addEventListener('toggle',()=>{el.open?expanded.add(el.dataset.topicBranch):expanded.delete(el.dataset.topicBranch);},{signal:controller.signal}));
   }
   function panelHeader(title){return `<div class="cm-panel-heading"><h2>${esc(title)}</h2><span>${esc(topic()?.name||'新建专题')}${state.nodeId?' / '+esc(nodes.find(n=>n.id===state.nodeId)?.label||''):''}${state.recordId?' / '+esc(data.records.find(r=>r.id===state.recordId)?.title||''):''}</span><small class="cm-autosave-hint">编辑后自动保存</small></div>`;}
+  function paintBreadcrumb(){
+    const breadcrumb=root.querySelector('.rm-breadcrumb');
+    if(breadcrumb){
+      const trail=[];if(topic())trail.push(`<button type="button" data-action="topic-preview" data-topic="${esc(state.topicId)}">${esc(topic().name)}</button>`);
+      const ancestors=[],seen=new Set();let record=data.records.find(r=>r.id===state.recordId);
+      while(record&&!seen.has(record.id)){seen.add(record.id);ancestors.unshift(record);record=data.records.find(r=>r.id===record.parent_id);}
+      trail.push(...ancestors.map(r=>`<button type="button" data-action="record" data-topic="${esc(state.topicId)}" data-id="${esc(r.id)}">${esc(r.title)}</button>`));
+      if(state.nodeId)trail.push(`<span>${esc(nodes.find(n=>n.id===state.nodeId)?.label||'')}</span>`);
+      breadcrumb.innerHTML='<a href="#/assets">资料库</a><span>/</span><a href="#/contribute">参与共创</a><span>/</span><a href="#/contribute/library">资料库管理</a>'+trail.map(part=>'<span>/</span>'+part).join('');
+    }
+  }
   function paintEditor(values=null){
+    paintBreadcrumb();
     disconnectCurves();
     urls.forEach(url=>URL.revokeObjectURL(url));urls=[];
     const panel=uploadDialog?.querySelector('.cm-dialog-content')||$('.cm-editor');
@@ -80,9 +92,8 @@ export function createContribution(data,knowledge,{tags,readDrafts,saveDraft,inf
     if(active?.type==='image')media=`<img src="${esc(active.path)}" alt="${esc(active.label)}">`;
     else if(active?.type==='video')media=`<video src="${esc(active.path)}" controls preload="metadata" playsinline></video>`;
     else if(active)media=`<div class="cm-file-placeholder"><span>${esc(active.label)}</span></div>`;
-    const index=items.indexOf(active);
-    target.innerHTML=`<div class="mp-preview-image">${media}</div>${items.length>1?`<div class="cm-media-navigation"><button type="button" data-action="media-prev" ${index===0?'disabled':''} aria-label="上一张">←</button><span>${index+1} / ${items.length}</span><button type="button" data-action="media-next" ${index===items.length-1?'disabled':''} aria-label="下一张">→</button></div><div class="cm-media-thumbs" aria-label="图片顺序">${items.map((item,i)=>`<div class="cm-media-thumb" draggable="true" data-media-drag="${esc(item.id)}"><button type="button" data-action="media-select" data-id="${esc(item.id)}" aria-pressed="${item.id===activeMediaId}" aria-label="查看${esc(item.label)}">${item.type==='image'?`<img src="${esc(item.path)}" alt="">`:`<span>${item.type==='video'?'视频':'文件'}</span>`}<small>${i+1}</small></button><div><button type="button" data-action="media-up" data-id="${esc(item.id)}" ${i===0?'disabled':''} aria-label="前移${esc(item.label)}">↑</button><button type="button" data-action="media-down" data-id="${esc(item.id)}" ${i===items.length-1?'disabled':''} aria-label="后移${esc(item.label)}">↓</button></div></div>`).join('')}</div><p class="cm-media-help">拖动缩略图或用箭头调整顺序</p>`:''}<h3>${esc(fields.title||'资料名称')}</h3><p>${esc(topic()?.name)}</p><div class="mp-card-tags">${nodes.filter(n=>selected.has(n.id)&&!n.recordId&&n.id!=='tree-entries').map(n=>`<span>${esc(n.label)}</span>`).join('')}</div>`;
-    target.querySelector('img,video')?.addEventListener('error',()=>{const box=target.querySelector('.mp-preview-image');box.textContent=active?.label||'预览暂不可用';},{once:true});
+    target.innerHTML=`${items.length<=1||active?.type!=='image'?`<div class="mp-preview-image">${media}</div>`:''}${items.length>1?`<div class="cm-media-thumbs" aria-label="图片顺序">${items.map((item,i)=>`<div class="cm-media-thumb" draggable="true" data-media-drag="${esc(item.id)}"><button type="button" data-action="media-select" data-id="${esc(item.id)}" aria-pressed="${item.id===activeMediaId}" aria-label="查看${esc(item.label)}">${item.type==='image'?`<img src="${esc(item.path)}" alt="${esc(item.label)}" draggable="false">`:`<span>${item.type==='video'?'视频':'文件'}</span>`}<small>${i+1}</small></button></div>`).join('')}</div><p class="cm-media-help">拖动图片调整顺序</p>`:''}<h3>${esc(fields.title||'资料名称')}</h3><p>${esc(topic()?.name)}</p><div class="mp-card-tags">${nodes.filter(n=>selected.has(n.id)&&!n.recordId&&n.id!=='tree-entries').map(n=>`<span>${esc(n.label)}</span>`).join('')}</div>`;
+    target.querySelector('.mp-preview-image img,.mp-preview-image video')?.addEventListener('error',()=>{const box=target.querySelector('.mp-preview-image');box.textContent=active?.label||'预览暂不可用';},{once:true});
   }
   function checked(name){return [...root.querySelectorAll(`[name="${name}"]:checked`)].map(input=>input.value);}
   function scheduleSave(){clearTimeout(timer);status('正在保存…');timer=setTimeout(flushSave,400);}
@@ -136,7 +147,7 @@ export function createContribution(data,knowledge,{tags,readDrafts,saveDraft,inf
     state={mode:'upload',topicId:state.topicId,nodeId:id,recordId:null};selected=new Set([id]);files=[];mediaOrder=[];activeMediaId=null;
     uploadDialog=document.createElement('dialog');uploadDialog.className='cm-upload-dialog';uploadDialog.innerHTML='<button type="button" class="cm-dialog-close" aria-label="关闭添加资料">×</button><div class="cm-dialog-content"></div>';
     root.append(uploadDialog);paintEditor();uploadDialog.showModal();
-    const close=()=>{flushSave();clearTimeout(timer);uploadDialog?.remove();uploadDialog=null;state=returnState.state;selected=returnState.selected;files=returnState.files;mediaOrder=returnState.mediaOrder;activeMediaId=returnState.activeMediaId;returnState=null;renderLibrary();paintTrees(false);};
+    const close=()=>{flushSave();clearTimeout(timer);uploadDialog?.remove();uploadDialog=null;state=returnState.state;selected=returnState.selected;files=returnState.files;mediaOrder=returnState.mediaOrder;activeMediaId=returnState.activeMediaId;returnState=null;renderLibrary();paintTrees(false);paintBreadcrumb();};
     uploadDialog.querySelector('.cm-dialog-close').onclick=close;uploadDialog.addEventListener('cancel',e=>{e.preventDefault();close();},{signal:controller.signal});
   }
   function mount(article){
@@ -152,8 +163,21 @@ export function createContribution(data,knowledge,{tags,readDrafts,saveDraft,inf
     root.addEventListener('input',event=>{if(event.target.matches('[data-library-search]'))renderLibrary();if(event.target.matches('[data-choice-search]')){const name=event.target.dataset.choiceSearch,query=event.target.value.trim();root.querySelectorAll(`[name="${name}"]`).forEach(input=>input.closest('label').hidden=!input.nextElementSibling.textContent.includes(query));}preview();if(event.target.closest('.cm-topic-form,.cm-upload-form')&&!event.target.matches('[data-choice-search],input[type=file]'))scheduleSave();},opts);
     root.addEventListener('change',event=>{const input=event.target;if(input.name==='files'){accept(input.files);input.value='';}if(['regions','ethnicities'].includes(input.name)){const details=input.closest('details');details.querySelector('summary span').textContent=[...details.querySelectorAll('input:checked')].map(el=>el.nextElementSibling.textContent).join('、')||'选择';scheduleSave();}},opts);
     function accept(incoming){const valid=[...incoming].filter(f=>/\.(png|jpe?g|webp|gif|svg|glb|tres|json|pdf|mp4|webm|mov)$/i.test(f.name)&&f.size<=52428800);files=[...files,...valid].filter((f,i,all)=>all.findIndex(x=>x.name===f.name&&x.size===f.size&&x.lastModified===f.lastModified)===i);if(valid.length<incoming.length)status('已添加支持的文件，单个文件上限50 MB。');updateFiles();scheduleSave();}
-    root.addEventListener('dragstart',event=>{const item=event.target.closest('[data-media-drag]');if(item)event.dataTransfer.setData('text/x-ww-media',item.dataset.mediaDrag);},opts);
-    root.addEventListener('dragover',event=>{if(event.target.closest('.mp-file-drop,[data-media-drag]'))event.preventDefault();},opts);root.addEventListener('drop',event=>{const item=event.target.closest('[data-media-drag]'),source=event.dataTransfer.getData('text/x-ww-media');if(item&&source){event.preventDefault();const ids=currentMedia().map(m=>m.id),from=ids.indexOf(source),to=ids.indexOf(item.dataset.mediaDrag);if(from>=0&&to>=0){ids.splice(from,1);ids.splice(to,0,source);mediaOrder=ids;preview();scheduleSave();}return;}if(event.target.closest('.mp-file-drop')){event.preventDefault();accept(event.dataTransfer.files);}},opts);
+    const clearDrop=()=>root.querySelectorAll('.is-drop-before,.is-drop-after,.is-media-dragging').forEach(el=>el.classList.remove('is-drop-before','is-drop-after','is-media-dragging'));
+    root.addEventListener('dragstart',event=>{const item=event.target.closest('[data-media-drag]');if(item){event.dataTransfer.setData('text/x-ww-media',item.dataset.mediaDrag);event.dataTransfer.effectAllowed='move';item.classList.add('is-media-dragging');}},opts);
+    root.addEventListener('dragend',clearDrop,opts);
+    root.addEventListener('dragleave',event=>{const item=event.target.closest('[data-media-drag]');if(item&&!item.contains(event.relatedTarget))item.classList.remove('is-drop-before','is-drop-after');},opts);
+    root.addEventListener('dragover',event=>{
+      const item=event.target.closest('[data-media-drag]');
+      if(item&&Array.from(event.dataTransfer.types).includes('text/x-ww-media')){event.preventDefault();event.dataTransfer.dropEffect='move';root.querySelectorAll('.is-drop-before,.is-drop-after').forEach(el=>el.classList.remove('is-drop-before','is-drop-after'));const rect=item.getBoundingClientRect();item.classList.add(event.clientY<rect.top+rect.height/2?'is-drop-before':'is-drop-after');}
+      else if(event.target.closest('.mp-file-drop'))event.preventDefault();
+    },opts);
+    root.addEventListener('drop',event=>{
+      const item=event.target.closest('[data-media-drag]'),source=event.dataTransfer.getData('text/x-ww-media');
+      if(item&&source){event.preventDefault();const ids=currentMedia().map(m=>m.id),from=ids.indexOf(source),target=item.dataset.mediaDrag,rect=item.getBoundingClientRect(),after=event.clientY>=rect.top+rect.height/2;
+        if(from>=0&&ids.includes(target)&&source!==target){ids.splice(from,1);ids.splice(ids.indexOf(target)+(after?1:0),0,source);mediaOrder=ids;preview();scheduleSave();}clearDrop();return;}
+      clearDrop();if(event.target.closest('.mp-file-drop')){event.preventDefault();accept(event.dataTransfer.files);}
+    },opts);
     root.addEventListener('submit',event=>{if(event.target.matches('.cm-topic-form,.cm-upload-form')){event.preventDefault();flushSave();}},opts);
     window.addEventListener('pagehide',flushSave,opts);
     if(store?.onSave){const off=store.onSave(({ok,error})=>{if(ok&&(timer||fileWrites))return;status(ok?'已保存到项目':('项目保存失败：'+error.message));});controller.signal.addEventListener('abort',off,{once:true});}
@@ -165,8 +189,6 @@ export function createContribution(data,knowledge,{tags,readDrafts,saveDraft,inf
       if(action==='new-topic')navigate({mode:'topic'});
       if(['topic','tags','record'].includes(action))navigate({mode:action,topicId:b.dataset.topic,nodeId:action==='node'?id:b.dataset.nodeId||null,recordId:action==='record'?id:b.dataset.record||null});
       if(action==='media-select'){activeMediaId=id;preview();}
-      if(action==='media-prev'||action==='media-next'){const items=currentMedia(),index=items.findIndex(item=>item.id===activeMediaId);activeMediaId=items[index+(action==='media-prev'?-1:1)]?.id||activeMediaId;preview();}
-      if(action==='media-up'||action==='media-down'){mediaOrder=moveMedia(currentMedia(),id,action==='media-up'?-1:1);preview();scheduleSave();}
       if(action==='node'){inspectedNodeId=id;paintTrees(false);showNodeRecords(id);}
       if(action==='node-menu'){const rect=b.getBoundingClientRect();openNodeMenu(id,rect.right,rect.bottom);}
       if(action==='upload'){const node=nodes.find(n=>n.id===b.dataset.nodeId);if(node?.parentId&&!visibleNodes().some(n=>n.parentId===node.id))openUpload(node.id);}

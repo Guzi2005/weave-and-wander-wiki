@@ -11,24 +11,52 @@ export function mountPageHistory(container){
   const back = bar.querySelector('[data-history-back]');
   const forward = bar.querySelector('[data-history-forward]');
 
-  function place() {
-    const breadcrumb = container.querySelector('.rm-breadcrumb');
-    if (!breadcrumb) {
-      if (bar.nextElementSibling !== container) container.before(bar);
-      return;
+  const path=document.createElement('ol');
+  path.className='rm-location-path';
+  path.setAttribute('aria-label','当前位置');
+  bar.append(path);
+  function paintPath(breadcrumb){
+    const crumbs=[{label:'首页',href:'#/'}];
+    if(breadcrumb)for(const node of breadcrumb.children){
+      const label=node.textContent.trim();
+      if(label&&label!=='/'&&label!=='首页')crumbs.push({label,href:node.getAttribute('href'),source:node.tagName==='BUTTON'?node:null});
     }
-    let row = breadcrumb.parentElement;
-    if (!row.classList.contains('rm-history-row')) {
-      row = document.createElement('div');
-      row.className = 'rm-history-row';
-      breadcrumb.before(row);
-      row.append(breadcrumb);
-    }
-    if (bar.parentElement !== row) row.append(bar);
+    const title=container.querySelector('h1')?.textContent.trim();
+    if(!breadcrumb){
+      const names={'#/assets':'资料库','#/archive':'资料库','#/contribute':'参与共创','#/contribute/library':'资料库管理','#/regions':'地域与民族'};
+      const label=title||names[location.hash.split('?')[0]];
+      if(label&&label!=='首页')crumbs.push({label});
+    }else if(title&&!container.querySelector('.cm-workspace')&&crumbs.at(-1).label!==title)crumbs.push({label:title});
+    path.replaceChildren(...crumbs.map((crumb,index)=>{
+      const item=document.createElement('li'),last=index===crumbs.length-1;
+      const node=document.createElement(!last&&crumb.source?'button':!last&&crumb.href?'a':'span');
+      node.textContent=crumb.label;
+      if(node.tagName==='A')node.href=crumb.href;
+      if(node.tagName==='BUTTON'){node.type='button';node.onclick=()=>crumb.source.click();}
+      if(last)node.setAttribute('aria-current','page');
+      item.append(node);return item;
+    }));
   }
-
+  function place(){
+    const breadcrumb=container.querySelector('.rm-breadcrumb');
+    if(!breadcrumb){
+      if(bar.nextElementSibling!==container)container.before(bar);
+    }else{
+      let row=breadcrumb.parentElement;
+      if(!row.classList.contains('rm-history-row')){
+        row=document.createElement('div');row.className='rm-history-row';
+        breadcrumb.before(row);row.append(breadcrumb);
+      }
+      if(bar.parentElement!==row)row.append(bar);
+    }
+    paintPath(breadcrumb);
+  }
   place();
-  new MutationObserver(place).observe(container, {childList: true, subtree: true});
+  new MutationObserver(records=>{
+    if(records.every(record=>bar.contains(record.target)))return;
+    place();
+  }).observe(container,{childList:true,subtree:true,characterData:true});
+  window.addEventListener('hashchange',place);
   const paint=()=>{back.disabled=index<=0;forward.disabled=index>=max;};
   const stamp=()=>history.replaceState({...history.state,wwWikiHistory:{index,max}},'',location.href);
   stamp();paint();back.onclick=()=>history.back();forward.onclick=()=>history.forward();
