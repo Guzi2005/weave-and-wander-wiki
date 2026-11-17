@@ -1,4 +1,4 @@
-export const OBJECT_TYPES={'服装':['上衣','裙装','鞋履'],'饰品':['头饰','珠饰','腰饰'],'布艺':['鞋垫','面料','流苏'],'工具':['制作工具','测量工具','生活工具'],'玩具':['玩偶','游戏用具'],'其他':[]};
+export const OBJECT_TYPES={'服装':['上衣','裙装','鞋履'],'饰品':['头饰','珠饰','腰饰'],'布艺':['鞋垫','面料','流苏'],'工具':['制作工具','测量工具','生活工具'],'玩具':['玩偶','游戏用具'],'其他':[],'纹样':[],'书目':[]};
 export const LIBRARY_TAGS=[
   {id:'culture-mosuo',dimension:'culture',label:'摩梭人'},
   ...Object.keys(OBJECT_TYPES).map((label,index)=>({id:`object-kind-${index+1}`,dimension:'object-kind',label})),

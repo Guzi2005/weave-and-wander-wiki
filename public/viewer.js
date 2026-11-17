@@ -1,7 +1,6 @@
 import * as T from './vendor/three/build/three.module.js';
 import { GLTFLoader } from './vendor/three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from './vendor/three/addons/controls/OrbitControls.js';
-import { RoomEnvironment } from './vendor/three/addons/environments/RoomEnvironment.js';
 import { createBeadPhysics } from './bead-physics.js';
 
 // Godot exports visibility for alternate eye meshes; Three does not yet ship
@@ -30,35 +29,17 @@ export function mountViewer(container, options={}) {
   let disposed=false, frame=0, elapsed=0, model, mixer, currentAction, request=0;
   let beadPhysics=null;
   const scene=new T.Scene();
-  const perspective=new T.PerspectiveCamera(33,1,.01,100);
-  const orthographic=new T.OrthographicCamera(-1,1,1,-1,.01,100);
-  let camera=perspective, flat=false;
+  const camera=new T.OrthographicCamera(-1,1,1,-1,.01,100);
+  let aspect=1;
   const originalMaterials=new Map(), flatMaterials=new Map();
   const renderer=new T.WebGLRenderer({antialias:true,alpha:true});
   renderer.setClearColor(0x000000,0);
   renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.outputColorSpace=T.SRGBColorSpace;
   renderer.toneMapping=T.NoToneMapping;renderer.toneMappingExposure=1;
-  const pmrem=new T.PMREMGenerator(renderer);
-  const room=new RoomEnvironment();
-  const envRT=pmrem.fromScene(room,.04);
-  scene.environment=envRT.texture;
-  scene.environmentIntensity=.35;
-  release(room);
   renderer.domElement.setAttribute('aria-label','可拖动旋转、滚轮缩放的游戏资产三维预览');
   container.replaceChildren(renderer.domElement);
-  const styleControls=document.createElement('div');
-  styleControls.className='preview-style';
-  styleControls.setAttribute('role','group');
-  styleControls.setAttribute('aria-label','渲染风格');
-  const styleButtons=['原版透视','扁平正交'].map((label,index)=>{
-    const button=document.createElement('button');
-    button.type='button';button.textContent=label;
-    button.setAttribute('aria-pressed',String(index===0));
-    styleControls.append(button);
-    return button;
-  });
-  container.append(styleControls);
-  const orbit=new OrbitControls(camera,renderer.domElement);orbit.enableDamping=true;orbit.minDistance=.4;orbit.maxDistance=12;
+  container.dataset.renderStyle='flat';
+  const orbit=new OrbitControls(camera,renderer.domElement);orbit.enableDamping=true;orbit.minDistance=.4;orbit.maxDistance=12;orbit.minZoom=.35;orbit.maxZoom=8;
   const pivot=new T.Group();scene.add(pivot);
   // OrbitControls owns elevation, pan and pinch. Horizontal dragging turns
   // the physical frame, so a stationary camera still sees cloth lag behind.
@@ -104,50 +85,30 @@ export function mountViewer(container, options={}) {
     geometry.setIndex(new T.BufferAttribute(new Uint32Array(bytes,count*12,info.indexCount),1));
     benchRoot.add(new T.Mesh(geometry,new T.MeshBasicMaterial({vertexColors:true,side:T.DoubleSide})));
   }).catch(()=>{container.dataset.benchError='true';benchRequest=null;});}
-  scene.add(new T.HemisphereLight(0xfff8ec,0x7a756d,0.35));
-  const light=new T.DirectionalLight(0xfff6e7,0.65);light.position.set(-3,5,4);scene.add(light);
   const floor=new T.Mesh(new T.CircleGeometry(1.3,64),new T.MeshBasicMaterial({color:0xdad2c1}));
   floor.rotation.x=-Math.PI/2;floor.position.y=-.015;floor.visible=false;scene.add(floor);
   const grid=new T.GridHelper(3.2,16,0xbeb6a3,0xd8d1c2);grid.position.y=-.01;grid.visible=false;scene.add(grid);
   const actions={},outputs=options.outputs||{};
   function on(target,event,fn){if(target){target.addEventListener(event,fn);listeners.push([target,event,fn]);}}
-  function applyStyle(){
-    if(model)model.traverse(node=>{
+  function applyFlatMaterials(){
+    const convert=source=>{
+      if(source.isMeshBasicMaterial)return source;
+      if(!flatMaterials.has(source)){
+        flatMaterials.set(source,new T.MeshBasicMaterial({
+          color:source.color,map:source.map,alphaMap:source.alphaMap,
+          vertexColors:source.vertexColors,transparent:source.transparent,
+          opacity:source.opacity,alphaTest:source.alphaTest,
+          side:source.side,depthWrite:source.depthWrite,
+        }));
+      }
+      return flatMaterials.get(source);
+    };
+    model.traverse(node=>{
       if(!node.isMesh)return;
-      if(!originalMaterials.has(node))originalMaterials.set(node,node.material);
-      const original=originalMaterials.get(node);
-      const convert=source=>{
-        if(!flatMaterials.has(source)){
-          flatMaterials.set(source,new T.MeshBasicMaterial({
-            color:source.color??0xffffff,map:source.map,vertexColors:source.vertexColors,
-            transparent:source.transparent,opacity:source.opacity,alphaTest:source.alphaTest,
-            side:source.side,depthWrite:source.depthWrite
-          }));
-        }
-        return flatMaterials.get(source);
-      };
-      node.material=flat?(Array.isArray(original)?original.map(convert):convert(original)):original;
+      originalMaterials.set(node,node.material);
+      node.material=Array.isArray(node.material)?node.material.map(convert):convert(node.material);
     });
-    container.dataset.renderStyle=flat?'flat':'original';
   }
-  function orthoBounds(height,aspect){
-    orthographic.left=-height*aspect/2;orthographic.right=height*aspect/2;
-    orthographic.top=height/2;orthographic.bottom=-height/2;
-    orthographic.updateProjectionMatrix();
-  }
-  function setFlat(enabled){
-    if(flat===enabled)return;
-    orbit.update();
-    const distance=camera.position.distanceTo(orbit.target);
-    const height=flat?(orthographic.top-orthographic.bottom)/orthographic.zoom:2*distance*Math.tan(T.MathUtils.degToRad(33/2));
-    const previous=camera;flat=enabled;camera=flat?orthographic:perspective;
-    camera.position.copy(previous.position);camera.quaternion.copy(previous.quaternion);
-    if(flat){orthographic.zoom=1;orthoBounds(height,perspective.aspect);}
-    else camera.position.copy(orbit.target).add(previous.position.clone().sub(orbit.target).normalize().multiplyScalar(height/(2*Math.tan(T.MathUtils.degToRad(33/2)))));
-    orbit.object=camera;orbit.update();applyStyle();
-    styleButtons.forEach((button,i)=>button.setAttribute('aria-pressed',String(flat===(i===1))));
-  }
-  styleButtons.forEach((button,i)=>on(button,'click',()=>setFlat(i===1)));
   function clearStyle(){
     for(const [mesh,material] of originalMaterials)mesh.material=material;
     originalMaterials.clear();
@@ -188,17 +149,30 @@ export function mountViewer(container, options={}) {
     container.dataset.motion=state.mode;container.dataset.paused=String(state.paused);
   }
   let modelSize=new T.Vector3(1,2.8,1);
-  function fitHome(){const fov=T.MathUtils.degToRad(33/2),height=Math.max(modelSize.y,.5),width=Math.max(modelSize.x,modelSize.z,.5);homeCamera=homeTarget.clone().add(new T.Vector3(0,.15,1.15*Math.max(height/(2*Math.tan(fov)),width/(2*Math.tan(fov)*perspective.aspect))));orthoBounds(2*homeCamera.distanceTo(homeTarget)*Math.tan(fov),perspective.aspect);}
+  function fitHome(){
+    const height=1.15*Math.max(modelSize.y,.5,modelSize.x/aspect,modelSize.z/aspect);
+    camera.left=-height*aspect/2;
+    camera.right=height*aspect/2;
+    camera.top=height/2;
+    camera.bottom=-height/2;
+    camera.updateProjectionMatrix();
+    homeCamera=homeTarget.clone().add(new T.Vector3(0,.15,Math.max(3,height)));
+  }
   let homeTarget=new T.Vector3(0,1.4,0),homeCamera=new T.Vector3(0,1.7,6);
   function setAngle(degrees){pivot.rotation.y=degrees*Math.PI/180;container.dataset.angle=pivot.rotation.y.toFixed(4);beadPhysics?.reset();}
-  function resetView(){setAngle(0);resetCloth();elapsed=0;orthographic.zoom=1;orthographic.updateProjectionMatrix();camera.position.copy(homeCamera);orbit.target.copy(homeTarget);orbit.update();}
+  function resetView(){setAngle(0);resetCloth();elapsed=0;camera.zoom=1;camera.updateProjectionMatrix();camera.position.copy(homeCamera);orbit.target.copy(homeTarget);orbit.update();}
   async function load(url){
     const serial=++request;state.modelReady=false;container.dataset.modelReady='false';container.dataset.animationTime='0.000';sync();
     try{
-      const gltf=await new GLTFLoader().register(nodeVisibility).loadAsync(url);
+      const modelUrl=new URL(url,location.href);
+      const version=new URL(import.meta.url).searchParams.get('v');
+      if(version&&modelUrl.origin===location.origin)modelUrl.searchParams.set('v',version);
+      const gltf=await new GLTFLoader().register(nodeVisibility).loadAsync(modelUrl.href);
       if(disposed||serial!==request){release(gltf.scene);return;}
       if(model){clearStyle();beadPhysics?.dispose();beadPhysics=null;mixer?.stopAllAction();mixer?.uncacheRoot(model);pivot.remove(model);release(model);}
-      model=gltf.scene;pivot.add(model);mixer=new T.AnimationMixer(model);currentAction=null;
+      model=gltf.scene;
+      applyFlatMaterials();
+      pivot.add(model);mixer=new T.AnimationMixer(model);currentAction=null;
       hems=['HemL','HemR','HemFront','HemBack'].map(name=>model.getObjectByName(name))
         .filter(Boolean).map(bone=>({bone,rest:bone.position.clone(),delta:new T.Vector3()}));
       beadPhysics=createBeadPhysics(model,scene);
@@ -220,7 +194,7 @@ export function mountViewer(container, options={}) {
       const bounds=new T.Box3().setFromObject(model),size=bounds.getSize(new T.Vector3());
       modelSize.copy(size);homeTarget=bounds.getCenter(new T.Vector3());fitHome();
       state.modelReady=true;container.dataset.modelReady='true';container.dataset.modelUrl=url;container.dataset.clips=gltf.animations.map(c=>c.name).join(',');
-      resetView();sync();applyStyle();
+      resetView();sync();
     }catch(e){if(disposed||serial!==request)return;container.dataset.modelReady='false';if(c('motion-status'))c('motion-status').textContent='模型加载失败：'+e.message;options.onError?.(e);}
   }
   on(c('motion-mode'),'change',e=>{state.mode=e.target.value;beadPhysics?.reset();sync();});
@@ -237,7 +211,7 @@ export function mountViewer(container, options={}) {
   // The viewer itself also has data-angle. Only buttons are angle presets;
   // otherwise clicks that bubble from the canvas unexpectedly rotate the model.
   root.querySelectorAll('button[data-angle]').forEach(b=>on(b,'click',()=>setAngle(Number(b.dataset.angle))));
-  const resize=new ResizeObserver(()=>{const w=container.clientWidth,h=container.clientHeight;renderer.setSize(w,h,false);perspective.aspect=w/Math.max(h,1);perspective.updateProjectionMatrix();fitHome();camera.position.copy(homeCamera);orbit.target.copy(homeTarget);orbit.update();});resize.observe(container);
+  const resize=new ResizeObserver(()=>{const w=container.clientWidth,h=container.clientHeight;renderer.setSize(w,h,false);aspect=Math.max(w,1)/Math.max(h,1);fitHome();camera.position.copy(homeCamera);orbit.target.copy(homeTarget);orbit.update();});resize.observe(container);
   function advanceMotion(delta){
     if(!state.modelReady)return;
     elapsed+=delta;mixer.update(delta);
@@ -259,6 +233,6 @@ export function mountViewer(container, options={}) {
     container.dataset.drawCalls=String(renderer.info.render.calls);
   }
   frame=requestAnimationFrame(animate);load(options.modelUrl||'/assets/models/mosuo_ensemble.glb');
-  return{state,load,cleanup(){if(disposed)return;disposed=true;request++;cancelAnimationFrame(frame);resize.disconnect();listeners.forEach(([t,e,f])=>t.removeEventListener(e,f));beadPhysics?.dispose();mixer?.stopAllAction();if(mixer&&model)mixer.uncacheRoot(model);orbit.dispose();clearStyle();release(scene);scene.environment=null;envRT.dispose();pmrem.dispose();renderer.dispose();container.replaceChildren();}};
+  return{state,load,cleanup(){if(disposed)return;disposed=true;request++;cancelAnimationFrame(frame);resize.disconnect();listeners.forEach(([t,e,f])=>t.removeEventListener(e,f));beadPhysics?.dispose();mixer?.stopAllAction();if(mixer&&model)mixer.uncacheRoot(model);orbit.dispose();clearStyle();release(scene);renderer.dispose();container.replaceChildren();}};
 }
 export function cleanup(handle){handle?.cleanup();}

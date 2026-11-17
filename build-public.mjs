@@ -7,9 +7,12 @@ import { fileURLToPath } from 'node:url';
 const root = path.dirname(fileURLToPath(import.meta.url));
 const source = path.join(root, 'public');
 const output = path.join(root, 'dist-public');
-const db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'utf8'));
+let db;
+try { db = JSON.parse(await readFile(path.join(root, 'data', 'records.json'), 'utf8')); }
+catch (error) { if (error.code !== 'ENOENT') throw error; db = JSON.parse(await readFile(path.join(root, 'seed', 'records.json'), 'utf8')); }
 const catalog = JSON.parse(await readFile(path.join(source, 'assets', 'catalog.json'), 'utf8'));
 const PART_SIZE = 20 * 1024 * 1024;
+const PUBLIC_VERSION = 'cloth-preview-20261116-r2';
 
 try {
   await rm(output, { recursive: true, force: true });
@@ -21,43 +24,90 @@ for (const name of ['app.js', 'archive-layout.js', 'bead-physics.js', 'index.htm
 }
 let html = await readFile(path.join(output, 'index.html'), 'utf8');
 html = html.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta name="ww-public" content="true">');
+html = html.replace('/styles.css', `/styles.css?v=${PUBLIC_VERSION}`)
+  .replace('/library/library.css', `/library/library.css?v=${PUBLIC_VERSION}`)
+  .replace('/app.js', `/app.js?v=${PUBLIC_VERSION}`);
 await writeFile(path.join(output, 'index.html'), html);
-for (const folder of ['library', 'vendor', 'assets/guide', 'assets/bench', 'assets/node-styles', 'assets/motifs']) {
+for (const folder of ['library', 'vendor', 'assets/guide', 'assets/bench', 'assets/node-styles', 'assets/motifs', 'assets/patterns']) {
   const from = path.join(source, folder);
   const to = path.join(output, folder);
   await mkdir(to, { recursive: true });
   await cp(from, to, { recursive: true, force: true });
 }
+// A new module path invalidates browsers' cached library dependency graph.
+const versionedLibrary = `library-${PUBLIC_VERSION}`;
+await cp(path.join(output, 'library'), path.join(output, versionedLibrary), {recursive:true,force:true});
+for (const entry of ['app.js', 'library/asset-preview.js', `${versionedLibrary}/asset-preview.js`]) {
+  const target = path.join(output, entry);
+  const source = await readFile(target, 'utf8');
+  await writeFile(target, source.replaceAll("'/viewer.js'", `'/viewer.js?v=${PUBLIC_VERSION}'`));
+}
+const publicApp=await readFile(path.join(output,'app.js'),'utf8');
+await writeFile(path.join(output,'app.js'),publicApp.replaceAll("'/library/",`'/${versionedLibrary}/`)
+  .replace("'/motifs.js'",`'/motifs.js?v=${PUBLIC_VERSION}'`));
+const publicMotifs=await readFile(path.join(output,'motifs.js'),'utf8');
+await writeFile(path.join(output,'motifs.js'),publicMotifs.replace("'./motif-preview.js'",`'./motif-preview.js?v=${PUBLIC_VERSION}'`));
 const safeAsset = /^(?:[a-z0-9_-]+-cover\.png|[a-z0-9_-]+-uv\.svg|ww-logo\.jpg|source\.png|ukrainian-source\.jpg)$/i;
 for (const name of await readdir(path.join(source, 'assets'))) {
   if (safeAsset.test(name)) await copyFile(path.join(source, 'assets', name), path.join(output, 'assets', name));
 }
-await copyFile(path.join(source, 'assets', 'catalog.json'), path.join(output, 'assets', 'catalog.json'));
+function versionModelCovers(assets) {
+  for (const asset of Object.values(assets)) {
+    if (asset.cover) asset.cover += `?v=${PUBLIC_VERSION}`;
+  }
+}
+versionModelCovers(catalog.assets);
+await writeFile(path.join(output, 'assets', 'catalog.json'), JSON.stringify(catalog));
 
 const modelNames = new Set(Object.values(catalog.assets).map(a => a.model).filter(Boolean));
+const splitModels = {};
 for (const name of ['bench', ...modelNames]) {
   const file = path.join(source, 'assets', 'models', `${name}.glb`);
   const target = path.join(output, 'assets', 'models', `${name}.glb`);
   try {
     const bytes = await readFile(file);
     if (bytes.length <= PART_SIZE) await writeFile(target, bytes);
-    else for (let i = 0; i * PART_SIZE < bytes.length; i++)
-      await writeFile(`${target}.part${i}`, bytes.subarray(i * PART_SIZE, (i + 1) * PART_SIZE));
+    else {
+      splitModels[`/assets/models/${name}.glb`] = Math.ceil(bytes.length / PART_SIZE);
+      for (let i = 0; i * PART_SIZE < bytes.length; i++)
+        await writeFile(`${target}.part${i}`, bytes.subarray(i * PART_SIZE, (i + 1) * PART_SIZE));
+    }
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
   }
 }
 
-const PUBLIC_SOURCE_MEDIA = new Set(['/assets/source.png', '/assets/ukrainian-source.jpg']);
-const publicRecords = db.records.map(r => ({
+const libraryAssets=await loadLibraryAssets(source);
+versionModelCovers(libraryAssets.assets);
+// Version filenames rather than query strings: the node gallery validates
+// image paths strictly. Both the gallery manifest and bootstrap use the alias.
+const nodeManifestPath=path.join(output,'assets/node-styles/manifest.json');
+const nodeManifest=JSON.parse(await readFile(nodeManifestPath,'utf8'));
+for (const entry of libraryAssets.nodes) {
+  const original=entry.image;
+  entry.image=original.replace(/\.png$/,`-${PUBLIC_VERSION}.png`);
+  await copyFile(path.join(source,original.slice(1)),path.join(output,entry.image.slice(1)));
+  nodeManifest.entries.find(node=>node.id===entry.id).image=entry.image;
+}
+await writeFile(nodeManifestPath,JSON.stringify(nodeManifest));
+const sourceRecords=[...db.records,...libraryAssets.patternRecords.filter(pattern=>!db.records.some(record=>record.id===pattern.id))];
+const publicMediaPath=/^\/(?:assets\/(?:patterns\/)?|media\/)[A-Za-z0-9._-]+$/;
+for(const mediaPath of new Set(sourceRecords.flatMap(record=>(record.media||[]).map(media=>media.path).filter(p=>publicMediaPath.test(p))))){
+  const relative=mediaPath.slice(1),from=path.join(source,relative),to=path.join(output,relative);
+  await mkdir(path.dirname(to),{recursive:true});
+  await copyFile(from,to);
+}
+const publicRecords = sourceRecords.map(r => ({
   id:r.id, title:r.title, record_type:r.record_type, category:r.category,
   status:r.status, parent_id:r.parent_id, collection_id:r.collection_id,
   culture:r.culture, place:r.place, date_text:r.date_text,
   observations:(r.observations || []).filter(x => !/\/(?:assets|media)\//.test(x)),
-  source:{author:r.source?.author || null,captured_at:r.source?.captured_at || null,
+  pattern_text:r.pattern_text,
+  source:{author:r.source?.author || null,title:r.source?.title || null,year:r.source?.year || null,record_id:r.source?.record_id || null,captured_at:r.source?.captured_at || null,
+    pages:r.source?.pages,contents_url:r.source?.contents_url,
     place:r.source?.place || null,url:r.source?.url || null,license:r.source?.license || null},
-  media:(r.media || []).filter(m => m.role === 'source' && PUBLIC_SOURCE_MEDIA.has(m.path))
-    .map(m => ({path:m.path, role:'source', label:m.label, focus:m.focus || {x:50,y:50}})),
+  media:(r.media || []).filter(m => publicMediaPath.test(m.path))
+    .map(m => ({path:m.path, role:m.role, label:m.label, width:m.width, height:m.height, focus:m.focus || {x:50,y:50}})),
   revision:r.revision, created_at:r.created_at, updated_at:r.updated_at,
 }));
 const publicQuestions = db.questions.filter(q => q.status === 'approved' &&
@@ -69,10 +119,9 @@ const publicQuestions = db.questions.filter(q => q.status === 'approved' &&
 const quizBootstrap=await createQuizService({store:{libraryState:()=>db.library||{},exportDump:()=>({records:publicRecords})},publicDir:source,dataFile:path.join(root,'data','quiz-banks.json'),env:{}}).bootstrap();
 quizBootstrap.ai={...quizBootstrap.ai,configured:false,adminConfigured:false};
 quizBootstrap.fixed=quizBootstrap.fixed.map(row=>({...row,topic:row.topic?{...row.topic,sourceSnapshots:[]}:null}));
-const libraryAssets=await loadLibraryAssets(source);
 const publishedLibrary={...(db.library||{revision:0,topics:null,trees:null,records:{}}),autosaves:[],records:Object.fromEntries(Object.entries(db.library?.records||{}).filter(([id])=>publicRecords.some(r=>r.id===id)).map(([id,row])=>[id,{...row,note:'',source:{author:row.source?.author||'',url:row.source?.url||''}}]))};
 const quizPrefix='const QUIZ_BOOTSTRAP='+JSON.stringify(quizBootstrap)+';\n';
-const worker = quizPrefix + `const RECORDS=${JSON.stringify(publicRecords)};\nconst QUESTIONS=${JSON.stringify(publicQuestions)};\nconst LIBRARY_ASSETS=${JSON.stringify(libraryAssets)};\nconst LIBRARY_STATE=${JSON.stringify(publishedLibrary)};\n` + `
+const worker = quizPrefix + `const RECORDS=${JSON.stringify(publicRecords)};\nconst QUESTIONS=${JSON.stringify(publicQuestions)};\nconst LIBRARY_ASSETS=${JSON.stringify(libraryAssets)};\nconst LIBRARY_STATE=${JSON.stringify(publishedLibrary)};\nconst SPLIT_MODELS=${JSON.stringify(splitModels)};\n` + `
 const summary=r=>({id:r.id,title:r.title,record_type:r.record_type,category:r.category,
  status:r.status,parent_id:r.parent_id,collection_id:r.collection_id,culture:r.culture,
  media:r.media,revision:r.revision,updated_at:r.updated_at});
@@ -106,17 +155,18 @@ export default {async fetch(request,env){
    return json({questions:rows,count:rows.length});
  }
  if(url.pathname.startsWith('/api/'))return json({error:'未知的 API 路径'},404);
- if(/^\\/assets\\/models\\/[A-Za-z0-9_-]+\\.glb$/.test(url.pathname)){
-   const first=await env.ASSETS.fetch(new URL(url.pathname+'.part0',url));
-   if(first.ok){let index=0,reader=null;
+ if(SPLIT_MODELS[url.pathname]){
+   let index=0,reader=null;
      const stream=new ReadableStream({async pull(controller){
-       while(true){if(!reader){const part=await env.ASSETS.fetch(new URL(url.pathname+'.part'+index++,url));
-         if(!part.ok){controller.close();return;}reader=part.body.getReader();}
+       while(true){if(!reader){
+         if(index>=SPLIT_MODELS[url.pathname]){controller.close();return;}
+         const part=await env.ASSETS.fetch(new URL(url.pathname+'.part'+index++,url));
+         if(!part.ok || part.headers.get('Content-Type')?.includes('text/html')){controller.error(new Error('Model part unavailable'));return;}
+         reader=part.body.getReader();}
          const {value,done}=await reader.read();if(done){reader=null;continue;}
          controller.enqueue(value);return;}
      }});
      return new Response(request.method==='HEAD'?null:stream,{headers:{'Content-Type':'model/gltf-binary','Cache-Control':'public, max-age=86400','X-Content-Type-Options':'nosniff'}});
-   }
  }
  return env.ASSETS.fetch(request);
 }};

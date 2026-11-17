@@ -36,7 +36,14 @@ export function createProjectLibrary(view,{readOnly=false}={}){
    instance=await(initPromise??=initialize());if(token!==latest||!attached)return;
    if(!host){host=document.createElement('div');host.id='region-module';}
    if(host.parentNode!==view)view.replaceChildren(host);
-   if(!instance.map){instance.map=await mountRegionMap(host,{knowledge:instance.knowledge,renderExtraArticle:id=>{const content=instance.libraryView.render(id),asset=instance.assets.render(id);return content??asset;},onArticleRendered:(id,root)=>{instance.assets.mount(root);instance.libraryView.mount(id,root);instance.toc.mount(id,root);},getContextRegions:id=>instance.libraryView.regions(id),onNavigate:id=>location.hash=tagHref(id)});
+   if(!instance.map){instance.map=await mountRegionMap(host,{knowledge:instance.knowledge,renderExtraArticle:id=>{const content=instance.libraryView.render(id),asset=instance.assets.render(id);return content??asset;},onArticleRendered:(id,root)=>{
+     const mountArticleDetails=()=>{
+       instance.libraryView.mount(id,root);
+       instance.toc.mount(id,root);
+     };
+     instance.assets.mount(root,{onContentChanged:mountArticleDetails});
+     mountArticleDetails();
+   },getContextRegions:id=>instance.libraryView.regions(id),onNavigate:id=>location.hash=tagHref(id)});
     instance.store.subscribe(({origin})=>{if(!attached||!host.isConnected)return;if(idFor(location.hash)==='contribute')return;const y=scrollY;instance.map.select(idFor(location.hash));scrollTo({top:y,behavior:'instant'});});
     window.addEventListener('ww-project-refresh',()=>{instance.store.changedExternal?.();});
    }

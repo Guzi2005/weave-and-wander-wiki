@@ -239,5 +239,19 @@
     "dimension": "group",
     "parentId": null,
     "recordIds": []
+  },
+  {
+    "id": "object-kind-7",
+    "dimension": "object-kind",
+    "label": "纹样",
+    "parentId": null,
+    "recordIds": []
+  },
+  {
+    "id": "object-kind-8",
+    "dimension": "object-kind",
+    "label": "书目",
+    "parentId": null,
+    "recordIds": []
   }
 ]

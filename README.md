@@ -2,6 +2,8 @@
 
 以图像为入口，连接来源档案、数字化模型、参数工坊与游戏题库。
 
+本地独立工程与 Git 根目录为 `D:/workspace/W&W Wiki`；游戏工程位于同级 `D:/workspace/weave-and-wander`。
+
 公开只读站点：<https://ww-wiki.fluorescentmice.fun/>；源码仓库：<https://github.com/Guzi2005/weave-and-wander-wiki>。本地研究模式保留编辑、导入与审核功能，公开构建仅发布经过筛选的档案字段与媒体。
 
 ## 启动与检查
@@ -26,10 +28,10 @@ macOS 可在 Finder 中双击 `启动 Wiki.command`，脚本会启动本地服�
 
 ## 本地参数工坊
 
-Godot 原生参数场景为项目根的 `scenes/wiki_asset_preview.tscn`。从项目根运行：
+Godot 原生参数场景属于游戏工程 `D:/workspace/weave-and-wander/scenes/wiki_asset_preview.tscn`。可从任意目录运行：
 
 ```powershell
-& 'D:\Godot\Godot_v4.7.1-stable_win64\Godot_v4.7.1-stable_win64_console.exe' --path . --rendering-method mobile scenes/wiki_asset_preview.tscn
+& 'D:\Godot\Godot_v4.7.1-stable_win64\Godot_v4.7.1-stable_win64_console.exe' --path 'D:\workspace\weave-and-wander' --rendering-method mobile res://scenes/wiki_asset_preview.tscn
 ```
 
 原生研究台可调米珠颜色、珠径、串数、紧密度、材质及重复单元（含 3 小珍珠 + 1 大珍珠），辫冠颜色、宽度、厚度与交叉节距，头花颜色、半径、层数、瓣数、杯深、挂点高度及倾角。点击“应用并重筑”更新模型，会话中的调节不直接改写资源。
