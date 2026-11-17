@@ -7,6 +7,9 @@ test('quiz HTTP boot, two real library topics, auth and failures preserve archiv
   const store=createStore({dataFile:path.join(dir,'records.json'),seedFile:path.resolve('seed/records.json')});store.load();const before=JSON.stringify(store.exportDump());await writeFile(path.join(dir,'quiz-banks.json'),JSON.stringify({schemaVersion:1,published:[],drafts:[]}));
   server=buildServer(store,{mediaDir:path.join(dir,'media'),quizEnv:{QUIZ_ADMIN_TOKEN:'test-admin'},quizFetch:async()=>{calls++;throw new Error('must not call');}});
   await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;
+  for(const file of ['/','/app.js','/quiz-topics.js','/quiz-learning.js','/quiz-challenge.css','/quiz-fixed-banks.json']){
+   const response=await fetch(base+file);assert.equal(response.status,200);assert.equal(response.headers.get('cache-control'),'no-store');
+  }
   const b=await(await fetch(base+'/api/quiz/bootstrap')).json();assert.deepEqual(b.fixed.map(t=>t.title),['乌克兰服饰','摩梭人']);assert.ok(b.tags.some(t=>t.id==='topic-ukrainian'));assert.equal(b.ai.configured,false);
   assert.equal((await fetch(base+'/api/quiz/admin/drafts')).status,403);
   const request=(p,body,headers={})=>fetch(base+p,{method:'POST',headers:{'Content-Type':'application/json',...headers},body:JSON.stringify(body)});

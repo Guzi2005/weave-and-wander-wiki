@@ -38,3 +38,14 @@ test('prototype-like IDs cannot unlock stages or corrupt best-score tables',()=>
  const s=createChallengeState(b);assert.deepEqual(s.getState().unlocked,['__proto__']);assert.equal(s.getState().completedCount,0);
  s.start('__proto__');finish(s);assert.equal(s.getState().completedCount,1);assert.equal(s.getState().totalScore,40);
 });
+test('skip records unanswered questions and accuracy counts only answered ones',()=>{
+ const b=bank(),s=createChallengeState(b);s.start(b.stages[0].id);s.begin();
+ s.skip();s.skip();
+ assert.equal(s.getState().attempt.index,2);
+ const qs=s.getQuestions();s.submit(qs[2].answer);
+ assert.equal(s.getState().summary.correct,1);assert.equal(s.getState().summary.answered,1);
+ s.next();s.skip();s.skip(); // 第4、5题跳过后交卷
+ const st=s.getState();
+ assert.equal(st.view,'result');assert.equal(st.attempt.answers.length,5);
+ assert.equal(st.summary.answered,1);assert.equal(st.summary.accuracy,100);
+});

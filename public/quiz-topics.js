@@ -14,14 +14,14 @@ export function validateTopic(topic){
  const id=str(topic.id,'专题ID',120);if(!/^[A-Za-z0-9][A-Za-z0-9_-]*$/.test(id))fail('专题ID无效');
  if(!Number.isSafeInteger(topic.version)||topic.version<1)fail('专题版本无效');
  if(typeof topic.passRate!=='number'||!Number.isFinite(topic.passRate)||topic.passRate<0||topic.passRate>100)fail('通关比例无效');
- if(!Array.isArray(topic.questions)||topic.questions.length!==5)fail('每个专题必须恰好有五道普通题');
+ if(!Array.isArray(topic.questions)||topic.questions.length<1||topic.questions.length>10)fail('每个专题需要 1–10 道普通题');
  if(!Array.isArray(topic.selectedTags)||topic.selectedTags.some(t=>typeof t!=='string'||t.length>120)||topic.selectedTags.length>50)fail('标签格式无效');
  const seen=new Set(),prompts=new Set();
  const questions=topic.questions.map(q=>{
   if(!plain(q))fail('题目格式无效');const qid=str(q.id,'题目ID',120),prompt=str(q.question,'题干',2000);
   if(!/^[A-Za-z0-9][A-Za-z0-9_-]*$/.test(qid)||seen.has(qid)||prompts.has(prompt.replace(/[\s，。？！,.?!]/g,'')))fail('题目ID或题干重复');seen.add(qid);prompts.add(prompt.replace(/[\s，。？！,.?!]/g,''));
   if(!['single','boolean'].includes(q.type))fail('仅支持普通单选题和判断题');
-  if(!Array.isArray(q.options)||q.options.length!==(q.type==='single'?4:2))fail('普通题选项数量无效');
+  if(!Array.isArray(q.options)||(q.type==='boolean'?q.options.length!==2:q.options.length<2||q.options.length>4))fail('普通题选项数量无效（单选 2–4 项，判断 2 项）');
   const keys=new Set(),texts=new Set();const options=q.options.map(o=>{
    if(!plain(o))fail('选项无效');const key=str(o.id,'选项ID',1),text=str(o.text,'选项',1000);
    if(!(q.type==='single'?'ABCD':'TF').includes(key)||keys.has(key)||texts.has(text))fail('选项ID或文本重复无效');keys.add(key);texts.add(text);return{id:key,text};
@@ -33,7 +33,7 @@ export function validateTopic(topic){
   if(evidence.some(e=>!q.sourceRecordIds.includes(e.recordId)))fail('证据与来源不一致');
   return{id:qid,type:q.type,question:prompt,options,answer:q.answer,explanation:str(q.explanation,'解析',4000),hint:typeof q.hint==='string'?q.hint.slice(0,1000):'',sourceRecordIds:[...new Set(q.sourceRecordIds)],evidence,knowledgePoint:str(q.knowledgePoint,'知识点',1000)};
  });
- const points=questions.map(q=>q.knowledgePoint.replace(/[\s，。？！,.?!]/g,''));if(new Set(points).size!==5)fail('不得重复考查相同知识点');
+ const points=questions.map(q=>q.knowledgePoint.replace(/[\s，。？！,.?!]/g,''));if(new Set(points).size!==questions.length)fail('不得重复考查相同知识点');
  const time=str(topic.createdAt,'生成时间',80);if(!Number.isFinite(Date.parse(time)))fail('生成时间无效');
  if(!plain(topic.generation)||typeof topic.generation.provider!=='string'||typeof topic.generation.model!=='string'||!topic.generation.model)fail('生成元数据无效');
  const review=topic.review;if(!plain(review)||!['draft','published','validated'].includes(review.status)||typeof review.humanReviewed!=='boolean')fail('审核状态无效');

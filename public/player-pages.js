@@ -6,8 +6,8 @@ export async function renderPractice({view,el,setNavCurrent,isStale,token}) {
   setNavCurrent('practice');
   const {createQuizLearning}=await import('./quiz-learning.js');
   if(isStale(token))return null;
-  const container=el('div');
-  view.replaceChildren(el('h1',{class:'page-title',text:'答题练习'}),container);
+  const container=el('div',{class:'quiz-practice'});
+  view.replaceChildren(container);
   return createQuizLearning({container,onOpenRecord(recordId){
     location.hash=`/record/${encodeURIComponent(recordId)}`;
   }});

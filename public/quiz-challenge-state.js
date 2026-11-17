@@ -7,7 +7,7 @@ export function createChallengeState(input){
  const unlocked=id=>{const i=stageIndex(id);return i>=0&&(i===0||!!completed[bank.stages[i-1].id]);};
  const pool=id=>bank.questions.filter(q=>q.stageId===id&&isPlayableQuestion(q));
  const summary=()=>{
-  const normal=attempt?.answers.filter(a=>a.type!=='knowledge')||[],correct=normal.filter(a=>a.correct).length;
+  const normal=attempt?.answers.filter(a=>a.type!=='knowledge'&&!a.skipped)||[],correct=normal.filter(a=>a.correct).length;
   return {correct,wrong:normal.length-correct,answered:normal.length,total:attempt?pool(attempt.stageId).filter(q=>q.type!=='knowledge').length:0,
    accuracy:normal.length?correct/normal.length*100:0,score:correct*10};
  };
@@ -25,6 +25,16 @@ export function createChallengeState(input){
  }
  function next(){
   if(view!=='question'||attempt.answers.length!==attempt.index+1)throw new Error('请先完成本题');
+  return advance();
+ }
+ // 跳过当前题（未作答），用于「从题库卡片直接进入第 N 题」：跳过的题不计入正确率分母。
+ function skip(){
+  if(view!=='question'||!attempt||attempt.finished)throw new Error('当前无法跳过');
+  if(attempt.answers.length>attempt.index)throw new Error('本题已经提交');
+  const q=getQuestion();attempt.answers.push({questionId:q.id,type:q.type,answer:null,correct:false,skipped:true});
+  return advance();
+ }
+ function advance(){
   if(attempt.index+1<pool(attempt.stageId).length){attempt.index++;return snapshot();}
   attempt.finished=true;const result=summary(),stage=bank.stages.find(s=>s.id===attempt.stageId);
   attempt.passed=result.accuracy>=stage.passRate;
@@ -34,6 +44,6 @@ export function createChallengeState(input){
  }
  function home(){attempt=null;view='home';return snapshot();}
  function reset(){Object.keys(completed).forEach(k=>delete completed[k]);Object.keys(best).forEach(k=>delete best[k]);return home();}
- return {getState:snapshot,getQuestion,getQuestions:()=>clone(attempt?pool(attempt.stageId):[]),start,begin,submit,next,home,reset,
+ return {getState:snapshot,getQuestion,getQuestions:()=>clone(attempt?pool(attempt.stageId):[]),start,begin,submit,next,skip,home,reset,
   retry:()=>{if(!attempt)throw new Error('没有可重试的关卡');return start(attempt.stageId);}};
 }

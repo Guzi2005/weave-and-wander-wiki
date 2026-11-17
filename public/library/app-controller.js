@@ -16,6 +16,20 @@ export function createProjectLibrary(view,{readOnly=false}={}){
   return {persistence,store,assets,libraryView,toc,knowledge};
  }
  function idFor(hash){const path=hash.split('?')[0];if(path==='#/contribute/library')return'contribute';if(['#/archive','#/assets'].includes(path))return'assets';if(path.startsWith('#/culture/'))return'culture:'+decodeURIComponent(path.slice(10));const match=/^#\/(?:asset|record)\/([^/]+)$/.exec(path);return match?'asset:'+decodeURIComponent(match[1]):readTagRoute(path);}
+ // 答题页点「查看相关资料」时会写入这个键；资料详情页读到就给出「返回答题」入口，回到原来那一题继续作答。
+ const QUIZ_RETURN_KEY='wwq-return-v1';
+ function quizReturnPending(){
+  try{const raw=sessionStorage.getItem(QUIZ_RETURN_KEY);if(!raw)return false;const saved=JSON.parse(raw);
+   return !!(saved&&typeof saved.topicKey==='string'&&Date.now()-(saved.at||0)<30*60*1000);}
+  catch{return false;}
+ }
+ function syncReturnLink(id){
+  host?.querySelectorAll('.quiz-return-link').forEach(node=>node.remove());
+  if(!host||!id.startsWith('asset:')||!quizReturnPending())return;
+  const link=document.createElement('a');
+  link.className='btn quiz-return-link';link.href='#/practice';link.textContent='继续作答';
+  host.prepend(link);
+ }
  async function render(hash){
   const token=++latest;attached=true;if(!instance)view.innerHTML='<p class="rm-note" role="status">正在加载资料库…</p>';
   try{
@@ -29,6 +43,7 @@ export function createProjectLibrary(view,{readOnly=false}={}){
    if(token!==latest||!attached)return;
    const id=idFor(hash),y=scrollY,sameTopic=id.startsWith('culture:')&&id===lastId;
    instance.map.select(id);lastId=id;
+   syncReturnLink(id);
    document.title=(host.querySelector('h1')?.textContent||'资料库')+' · W&W Wiki';
    document.querySelectorAll('.site-nav [data-nav]').forEach(link=>{if(link.dataset.nav===(id==='contribute'?'contribute':'archive'))link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');});
    scrollTo({top:sameTopic?y:0,behavior:'instant'});
