@@ -1,0 +1,7 @@
+export const createdAt='2026-11-13T00:00:00.000Z';
+export const quotes=Array.from({length:5},(_,i)=>'测试档案第'+(i+1)+'个独立知识点明确记载：材料'+(i+1)+'用于该样本的制作，适用范围仅限这一件测试服饰，不推广到整个民族。');
+export const sourceRecord={id:'WW-TEST-001',title:'测试服饰档案',record_type:'object',category:'服装',revision:1,culture:{text:'乌克兰'},collection_id:'ukrainian_photo_001',observations:quotes,notes:quotes.join('。'),source:{},media:[]};
+export function topic({id='ukrainian-costume',type='fixed',version=1,passRate=80}={}){
+ return{schemaVersion:1,id,type,version,title:type==='fixed'?'乌克兰服饰':'个人测试专题',description:'仅用于自动化测试的隔离题库',passRate,selectedTags:['topic-ukrainian'],createdAt,generation:{provider:'siliconflow',model:'test-model',generatedAt:createdAt,verified:true},review:type==='fixed'?{status:'published',humanReviewed:true,reviewer:'测试审核人',reviewedAt:createdAt}:{status:'validated',humanReviewed:false,reviewer:'',reviewedAt:null},sourceSnapshots:[],questions:quotes.map((quote,i)=>({id:'q'+(i+1),type:'single',question:'按《测试服饰档案》，第'+(i+1)+'个知识点使用哪种材料？',options:[{id:'A',text:'材料'+(i+1)},{id:'B',text:'干扰选项甲'},{id:'C',text:'干扰选项乙'},{id:'D',text:'干扰选项丙'}],answer:'A',explanation:'本题仅依据测试档案：'+quote,hint:'',sourceRecordIds:[sourceRecord.id],evidence:[{recordId:sourceRecord.id,quote}],knowledgePoint:'测试知识点'+(i+1)}))};
+}
+export function memoryStorage(){const m=new Map();return{getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,v)};}

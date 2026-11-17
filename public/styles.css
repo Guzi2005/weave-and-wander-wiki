@@ -2243,7 +2243,50 @@ body {
 .practice-feedback {margin-top:14px;padding:12px 16px;border-radius:16px;background:#e1f1e5;}
 .practice-feedback.retry {background:#f8e6cf;}
 
-/* Keep the reference legible behind the model overlay. */
+/* 仅在答题视图激活（body.wwq-playing）且为横向小屏时生效，收起页脚并压薄页眉。 */
+@media (min-width: 560px) and (max-width: 1000px) and (max-height: 560px) and (orientation: landscape) {
+  body.wwq-playing .site-footer { display: none; }
+  /* 横屏答题：页眉（logo+导航）整体暂时收起，退出答题后恢复。 */
+  body.wwq-playing .site-header { display: none; }
+  body.wwq-playing .rm-page-history { display: none; }
+}
+
+/* 竖屏答题（手机竖屏与桌面窄窗口一致）：收起页脚与浏览历史条，去掉绿色顶线并压薄页眉，尽量一屏放下。 */
+/* 仅在答题视图激活（body.wwq-playing）且宽度不足两栏断点、方向为竖向时生效。 */
+@media (max-width: 899px) and (orientation: portrait) {
+  body.wwq-playing .site-footer { display: none; }
+  body.wwq-playing .rm-page-history { display: none; }
+  body.wwq-playing .site-header { border-top-width: 0; }
+  body.wwq-playing .header-row { padding-top: 4px; }
+  body.wwq-playing .brand { padding-bottom: 6px; }
+  body.wwq-playing .brand-name { font-size: 16px; }
+  body.wwq-playing .brand-sub { display: none; }
+  body.wwq-playing .site-nav a,
+  body.wwq-playing .site-nav a[aria-current="page"] { padding: 6px 10px 7px; font-size: 11.5px; }
+}
+
+/* ---------- 答题练习首页：移除页脚与上方横线，配合 spacing 让内容一屏放下 ---------- */
+body.wwq-home .site-footer { display: none; }
+
+/* ---------- 答题练习模块激活期间（含答题、生成题目、我的题库）：收起页脚与浏览历史条， ---------- */
+/* 避免页脚与绿色分隔线遮挡底部滑出面板，并为生成题目腾出纵向空间。任何视口尺寸都生效。 */
+body.wwq-active .site-footer { display: none; }
+body.wwq-active .rm-page-history { display: none; }
+
+/* 资料详情页：从答题页「查看相关资料」跳来时，顶部的一键返回答题按钮 */
+/* 实色主按钮（与答题模块主色一致）：绕开后段 .btn 的半透明覆盖，保证醒目可读。 */
+.quiz-return-link {
+  display:inline-flex;align-items:center;gap:8px;
+  margin:26px 8px 16px 0;
+  border:0;border-radius:16px;background:#286e60;color:#fff;
+  padding:10px 22px;font-size:13px;font-weight:600;letter-spacing:.02em;
+  box-shadow:0 4px 12px #233d3526;
+}
+.quiz-return-link:hover,
+.quiz-return-link:focus-visible {
+  background:#1f5a4f;color:#fff;border-color:transparent;
+}
+
 .cover-switch:has(> .model-cover) > img:not(.model-cover) {
   transition:scale .3s ease, opacity .3s ease, filter .3s ease, transform .55s cubic-bezier(.2,.7,.25,1);
 }

@@ -34,6 +34,7 @@ if (PUBLIC_SITE) document.documentElement.classList.add('public-site');
 const projectLibrary=createProjectLibrary(view,{readOnly:PUBLIC_SITE});
 mountPageHistory(view);
 let activeViewer = null;
+let activePractice = null;
 // 路由令牌：异步渲染完成前若已切换路由，丢弃过期结果，避免旧视图覆盖新视图。
 let routeToken = 0;
 let flashMsg = null;
@@ -131,6 +132,8 @@ function questionStateTags(q) {
 }
 
 function setNavCurrent(name) {
+  const titles = {home:'首页',guide:'游戏指南',practice:'答题练习',contribute:'参与共创',questions:'题库',intake:'收录资料',workshop:'资产预览',archive:'资料库'};
+  document.title = (titles[name] || 'W&W Wiki') + ' · 针脚与远方';
   document.querySelectorAll('[data-nav]').forEach((a) => {
     if (a.dataset.nav === name) a.setAttribute('aria-current', 'page');
     else a.removeAttribute('aria-current');
@@ -996,6 +999,8 @@ async function renderWorkshop(params, token) {
 // ---------- 路由 ----------
 function route() {
   const token = ++routeToken;
+  activePractice?.destroy();
+  activePractice = null;
   if (activeViewer) {
     cleanupViewer(activeViewer);
     activeViewer = null;
@@ -1013,7 +1018,9 @@ function route() {
     } else if(pathPart === '/archive'){
       await renderArchive(token,params);
     } else if(pathPart === '/practice'){
-      await renderPractice({view,el,api,setNavCurrent,isStale,token});
+      const instance = await renderPractice({view,el,api,setNavCurrent,isStale,token});
+      if (isStale(token)) instance?.destroy();
+      else activePractice = instance;
     } else if(pathPart === '/guide'){
       renderGuide({view,el,setNavCurrent,params});
     } else if(pathPart === '/contribute/library' && PUBLIC_SITE){

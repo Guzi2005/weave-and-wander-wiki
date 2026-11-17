@@ -1,0 +1,311 @@
+/* 答题练习：一屏内完成阅读与作答。所有选择器都限定在 .ww-quiz-challenge 之内。 */
+.ww-quiz-challenge {
+ --wwq-ink:#2f3b33;--wwq-soft:#5f6c61;--wwq-line:#d9ded3;--wwq-green:#405c48;--wwq-tint:#eff3ea;
+ --wwq-surface:#ffffff;--wwq-ok:#3f6a4c;--wwq-ok-bg:#e8f2ea;--wwq-bad:#93434c;--wwq-bad-bg:#f8e5e3;--wwq-h:auto;
+ position:relative;isolation:isolate;margin:6px 0 18px;color:var(--wwq-ink);
+ font:15px/1.7 'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;
+}
+.ww-quiz-challenge * {box-sizing:border-box;}
+.ww-quiz-challenge [hidden] {display:none!important;}
+.ww-quiz-challenge :is(h2,h3,h4,p,dl,dd,dt,ol,ul) {margin:0;overflow-wrap:anywhere;}
+.ww-quiz-challenge ol {padding-left:1.15em;}
+.ww-quiz-challenge :is(button,input,select,textarea,a,summary):focus-visible {outline:3px solid var(--wwq-green);outline-offset:2px;}
+.ww-quiz-challenge .wwq-content {position:relative;padding:0;}
+
+/* 按钮：只有主要操作用实心，其余保持描边，避免页面出现过多色块。 */
+.ww-quiz-challenge .wwq-button {display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:44px;padding:10px 20px;border:1px solid var(--wwq-green);border-radius:10px;background:transparent;color:var(--wwq-ink);font:inherit;font-size:13px;font-weight:500;line-height:1.5;cursor:pointer;text-decoration:none;white-space:normal;overflow-wrap:anywhere;transition:background .16s ease,border-color .16s ease,color .16s ease;}
+.ww-quiz-challenge .wwq-button:hover:not(:disabled) {background:var(--wwq-tint);}
+.ww-quiz-challenge .wwq-button:disabled {opacity:.45;cursor:not-allowed;}
+.ww-quiz-challenge .wwq-primary {background:var(--wwq-green);border-color:var(--wwq-green);color:#fdfcf7;}
+.ww-quiz-challenge .wwq-primary:hover:not(:disabled) {background:#33503c;}
+.ww-quiz-challenge .wwq-quiet {border-color:transparent;padding-inline:8px;}
+.ww-quiz-challenge .wwq-danger {border-color:#d2a7a8;color:#963d43;}
+
+/* 文字：标题用宋体，正文保持无衬线，信息层级只靠字号与颜色。 */
+.ww-quiz-challenge .wwq-heading {font:500 clamp(22px,2.4vw,30px)/1.45 'Songti SC','STSong',serif;letter-spacing:.01em;outline:none;}
+.ww-quiz-challenge .wwq-subheading {font:500 15px/1.6 'Songti SC','STSong',serif;margin:26px 0 6px;}
+.ww-quiz-challenge .wwq-eyebrow {font-size:11px;letter-spacing:.14em;color:var(--wwq-soft);}
+.ww-quiz-challenge .wwq-note {font-size:12px;color:var(--wwq-soft);}
+.ww-quiz-challenge .wwq-actions {display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px;}
+
+/* 专题列表：不用卡片，只有细线与留白。 */
+.ww-quiz-challenge .wwq-topic-list {margin-top:10px;border-top:1px solid var(--wwq-line);}
+.ww-quiz-challenge .wwq-topic {display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 2px;border-bottom:1px solid var(--wwq-line);}
+.ww-quiz-challenge .wwq-topic h3 {font:500 19px/1.5 'Songti SC','STSong',serif;letter-spacing:.01em;}
+.ww-quiz-challenge .wwq-topic .wwq-button {flex:0 0 auto;min-width:78px;}
+
+/* 历史记录：默认收起，点按钮展开。 */
+.ww-quiz-challenge .wwq-history {margin-top:22px;border-top:1px solid var(--wwq-line);padding-top:14px;max-height:52vh;overflow:auto;}
+.ww-quiz-challenge .wwq-attempt {padding:12px 0;border-bottom:1px solid var(--wwq-line);font-size:12.5px;}
+.ww-quiz-challenge .wwq-attempt:last-child {border-bottom:0;}
+.ww-quiz-challenge .wwq-attempt-head {display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--wwq-soft);}
+.ww-quiz-challenge .wwq-attempt-answers {margin-top:8px;color:var(--wwq-soft);font-size:12px;line-height:1.8;}
+
+/* 答题视图占满一屏：外层高度由脚本按可视区写入 --wwq-h。 */
+.ww-quiz-challenge[data-view='play'] {display:flex;flex-direction:column;height:var(--wwq-h);overflow:hidden;margin:2px 0 8px;}
+.ww-quiz-challenge[data-view='play'][data-compact='true'] {height:auto;overflow:visible;}
+.ww-quiz-challenge[data-view='play']>.wwq-content {flex:1;min-height:0;display:flex;flex-direction:column;}
+.ww-quiz-challenge[data-view='play'] .wwq-session {flex:1;min-height:0;display:flex;}
+.ww-quiz-challenge[data-view='play'] .wwq-session>.ww-quiz-challenge {flex:1;min-height:0;display:flex;flex-direction:column;margin:0;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:hidden;}
+.ww-quiz-challenge[data-view='play'] .wwq-session .wwq-content {flex:1;min-height:0;display:flex;flex-direction:column;padding:0;}
+.ww-quiz-challenge[data-view='play'] .wwq-session .wwq-screen {flex:1;min-height:0;display:flex;flex-direction:column;}
+
+/* 1. 顶部进度条 2. 题干 3. 选项 4. 底部提交 */
+.ww-quiz-challenge .wwq-progress {display:block;flex:none;width:100%;height:5px;border:0;border-radius:99px;overflow:hidden;appearance:none;background:#e7e9e2;}
+.ww-quiz-challenge .wwq-progress::-webkit-progress-bar {background:#e7e9e2;border-radius:99px;}
+.ww-quiz-challenge .wwq-progress::-webkit-progress-value {background:var(--wwq-green);border-radius:99px;transition:width .2s ease;}
+.ww-quiz-challenge .wwq-progress::-moz-progress-bar {background:var(--wwq-green);border-radius:99px;}
+.ww-quiz-challenge .wwq-qbar {display:flex;flex:none;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 16px;}
+.ww-quiz-challenge .wwq-exit {min-height:32px;padding:0;font-size:12px;color:var(--wwq-soft);}
+.ww-quiz-challenge .wwq-counter {font-size:12px;color:var(--wwq-soft);font-variant-numeric:tabular-nums;}
+.ww-quiz-challenge .wwq-qbody {flex:1;min-height:0;display:flex;flex-direction:column;gap:20px;overflow:auto;overscroll-behavior:contain;padding-bottom:4px;}
+.ww-quiz-challenge .wwq-qmain {flex:none;display:flex;flex-direction:column;gap:12px;min-height:0;}
+.ww-quiz-challenge .wwq-qside {flex:1 0 auto;min-height:0;display:flex;flex-direction:column;gap:16px;}
+.ww-quiz-challenge .wwq-options {display:flex;flex-direction:column;gap:14px;}
+
+/* 选项：唯一的卡片元素，一行一个，点击区足够大。 */
+.ww-quiz-challenge .wwq-option {display:flex;align-items:center;justify-content:flex-start;gap:14px;width:100%;min-height:60px;padding:15px 18px;border:1px solid var(--wwq-line);border-radius:14px;background:var(--wwq-surface);color:var(--wwq-ink);font-size:15px;text-align:left;transition:border-color .16s ease,background .16s ease;}
+.ww-quiz-challenge .wwq-option:hover:not(:disabled):not(.is-selected) {border-color:#9fb0a0;background:#fbfdf9;}
+.ww-quiz-challenge .wwq-option:disabled {opacity:1;cursor:default;}
+.ww-quiz-challenge .wwq-option-key {flex:0 0 auto;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--wwq-tint);color:var(--wwq-green);font-size:12px;font-weight:600;}
+.ww-quiz-challenge .wwq-option-text {flex:1;min-width:0;}
+.ww-quiz-challenge .wwq-option.is-selected {border-color:var(--wwq-green);background:#f0f4ec;}
+.ww-quiz-challenge .wwq-option.is-selected .wwq-option-key {background:var(--wwq-green);color:#fdfcf7;}
+.ww-quiz-challenge .wwq-option.is-correct {border-color:var(--wwq-ok);background:var(--wwq-ok-bg);}
+.ww-quiz-challenge .wwq-option.is-correct .wwq-option-key {background:var(--wwq-ok);color:#fff;}
+.ww-quiz-challenge .wwq-option.is-wrong {border-color:var(--wwq-bad);background:var(--wwq-bad-bg);}
+.ww-quiz-challenge .wwq-option.is-wrong .wwq-option-key {background:var(--wwq-bad);color:#fff;}
+.ww-quiz-challenge .wwq-submit {flex:none;width:100%;min-height:50px;margin-top:auto;border-radius:12px;font-size:14px;}
+
+/* 反馈与来源：左侧细线，不再套一层底色。 */
+.ww-quiz-challenge .wwq-feedback {padding:2px 0 2px 14px;border-left:2px solid var(--wwq-ok);}
+.ww-quiz-challenge .wwq-feedback.is-wrong {border-color:var(--wwq-bad);}
+.ww-quiz-challenge .wwq-feedback.is-knowledge {border-color:#7a6b96;}
+.ww-quiz-challenge .wwq-feedback h4 {font-size:13px;font-weight:600;color:var(--wwq-ok);margin-bottom:6px;}
+.ww-quiz-challenge .wwq-feedback.is-wrong h4 {color:var(--wwq-bad);}
+.ww-quiz-challenge .wwq-feedback.is-knowledge h4 {color:#5b4a75;}
+.ww-quiz-challenge .wwq-feedback p {font-size:13px;line-height:1.85;}
+.ww-quiz-challenge .wwq-feedback .wwq-actions {margin-top:10px;}
+.ww-quiz-challenge .wwq-sources {display:flex;flex-direction:column;gap:6px;margin-top:8px;}
+.ww-quiz-challenge .wwq-sources a {font-size:11px;color:var(--wwq-green);text-underline-offset:3px;}
+.ww-quiz-challenge .wwq-hint {font-size:12px;color:var(--wwq-soft);}
+.ww-quiz-challenge .wwq-hint summary {cursor:pointer;min-height:32px;padding:4px 0;}
+.ww-quiz-challenge .wwq-hint p {margin-top:6px;padding:8px 12px;border-left:2px solid var(--wwq-line);}
+
+/* 结算：只保留成绩与后续操作。 */
+.ww-quiz-challenge .wwq-result-panel {flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:10px 0;overflow:auto;}
+.ww-quiz-challenge .wwq-result-mark {font-size:40px;line-height:1;color:var(--wwq-green);}
+.ww-quiz-challenge .wwq-screen[data-outcome='failed'] .wwq-result-mark {color:var(--wwq-bad);}
+.ww-quiz-challenge .wwq-result-panel .wwq-actions {justify-content:center;margin-top:0;}
+.ww-quiz-challenge .wwq-stats {display:flex;align-items:stretch;justify-content:center;margin:0;padding:0;}
+.ww-quiz-challenge .wwq-stats>div {padding:0 clamp(14px,3vw,28px);border-left:1px solid var(--wwq-line);text-align:center;}
+.ww-quiz-challenge .wwq-stats>div:first-child {border-left:0;}
+.ww-quiz-challenge .wwq-stats dt {font-size:11px;color:var(--wwq-soft);}
+.ww-quiz-challenge .wwq-stats dd {margin:2px 0 0;font-size:19px;font-weight:600;font-variant-numeric:tabular-nums;}
+.ww-quiz-challenge .wwq-completion-row {font-size:13px;}
+.ww-quiz-challenge .wwq-transition-panel {flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:20px 0;}
+.ww-quiz-challenge .wwq-transition-flower {font-size:48px;line-height:1;color:var(--wwq-green);}
+
+/* 独立模式（非宿主）的示例首页，保持可用即可。 */
+.ww-quiz-challenge .wwq-top {display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:16px;border-bottom:1px dashed var(--wwq-line);margin-bottom:20px;}
+.ww-quiz-challenge .wwq-wordmark {font-size:11px;letter-spacing:.12em;font-weight:600;}
+.ww-quiz-challenge .wwq-hero {display:flex;align-items:center;justify-content:space-between;gap:32px;padding:24px 0;}
+.ww-quiz-challenge .wwq-intro {max-width:60ch;margin-top:12px;color:var(--wwq-soft);font-size:14px;}
+.ww-quiz-challenge .wwq-emblem {display:none;}
+.ww-quiz-challenge .wwq-path {display:flex;list-style:none;gap:8px;padding:0;margin:16px 0;overflow-x:auto;}
+.ww-quiz-challenge .wwq-path>li {flex:1;min-width:88px;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;text-align:center;}
+.ww-quiz-challenge .wwq-dot {width:40px;padding:0;border-radius:50%;}
+.ww-quiz-challenge .wwq-stage-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:15px;}
+.ww-quiz-challenge .wwq-stage-card {display:flex;flex-direction:column;padding:18px;border:1px solid var(--wwq-line);border-radius:14px;}
+.ww-quiz-challenge .wwq-card-top {display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.ww-quiz-challenge .wwq-stage-number {font:italic 22px/1 Georgia,serif;color:var(--wwq-green);}
+.ww-quiz-challenge .wwq-badge {font-size:10px;padding:2px 8px;border:1px solid var(--wwq-line);border-radius:6px;color:var(--wwq-soft);}
+.ww-quiz-challenge .wwq-stage-card h3 {font:500 19px/1.4 'Songti SC',serif;margin:14px 0 6px;}
+.ww-quiz-challenge .wwq-stage-card p {font-size:12px;color:var(--wwq-soft);}
+.ww-quiz-challenge .wwq-card-button {margin-top:auto;justify-content:space-between;}
+
+/* 动态专题：标签选择。 */
+.ww-quiz-challenge .wwq-tag-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px;margin-top:18px;}
+.ww-quiz-challenge .wwq-tag-group {min-width:0;padding:14px;border:1px solid var(--wwq-line);border-radius:12px;}
+.ww-quiz-challenge .wwq-tag-group legend {font:500 13px/1.5 inherit;color:var(--wwq-green);}
+.ww-quiz-challenge .wwq-tag-list {display:flex;flex-wrap:wrap;gap:8px;max-height:240px;overflow:auto;}
+.ww-quiz-challenge .wwq-tag-list label {display:flex;align-items:center;gap:6px;min-height:40px;padding:2px 6px;font-size:12px;cursor:pointer;}
+.ww-quiz-challenge .wwq-tag-list select {width:100%;min-height:40px;padding:4px 8px;border:1px solid var(--wwq-line);border-radius:8px;background:var(--wwq-surface);color:var(--wwq-ink);font:inherit;}
+.ww-quiz-challenge .wwq-learning-notice {position:absolute;left:50%;bottom:8px;transform:translateX(-50%);z-index:6;width:max-content;max-width:min(92%,520px);margin:0;padding:8px 16px;border-radius:10px;background:#2f3b33;color:#fdfcf7;font-size:12.5px;line-height:1.6;white-space:pre-wrap;box-shadow:0 8px 24px #0002;}
+.ww-quiz-challenge .wwq-learning-notice:empty {display:none;}
+.ww-quiz-challenge .wwq-toast {position:absolute;left:50%;bottom:8px;transform:translateX(-50%);z-index:7;max-width:min(90%,500px);padding:10px 18px;border-radius:10px;background:#2f3b33;color:#fdfcf7;font-size:12.5px;box-shadow:0 8px 24px #0002;}
+
+/* 题库工坊（仅独立模式）保留，不影响答题视图。 */
+.ww-quiz-challenge .wwq-editor {width:min(1000px,calc(100vw - 32px));max-height:90dvh;padding:0;border:1px solid var(--wwq-line);border-radius:16px;background:#fbfaf6;color:var(--wwq-ink);font:14px/1.7 'PingFang SC','Microsoft YaHei',sans-serif;overflow:auto;box-shadow:0 20px 70px #233d3555;}
+.ww-quiz-challenge .wwq-editor::backdrop {background:#263b3266;}
+.ww-quiz-challenge .wwq-editor-head {display:flex;justify-content:space-between;gap:16px;padding:20px;border-bottom:1px solid var(--wwq-line);}
+.ww-quiz-challenge .wwq-editor-head h2 {font:500 24px 'Songti SC',serif;}
+.ww-quiz-challenge .wwq-editor-panel {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:24px;padding:20px;}
+.ww-quiz-challenge .wwq-editor-section {min-width:0;}
+.ww-quiz-challenge .wwq-editor-section h3 {font-size:15px;margin-bottom:12px;}
+.ww-quiz-challenge .wwq-field {display:flex;flex-direction:column;gap:5px;margin:10px 0;font-size:12px;color:var(--wwq-soft);}
+.ww-quiz-challenge .wwq-field :is(input:not([type='checkbox']),select,textarea) {display:block;width:100%;min-width:0;min-height:40px;padding:8px 10px;border:1px solid var(--wwq-line);border-radius:8px;background:var(--wwq-surface);color:var(--wwq-ink);font:inherit;font-size:13px;resize:vertical;}
+.ww-quiz-challenge .wwq-field input[type='checkbox'] {width:20px;height:20px;accent-color:var(--wwq-green);}
+.ww-quiz-challenge .wwq-editor-section .wwq-actions {gap:8px;margin:14px 0;}
+.ww-quiz-challenge .wwq-editor-section .wwq-button {font-size:12px;padding:7px 12px;}
+.ww-quiz-challenge .wwq-transfer {margin:0 20px;padding:14px 0;border-block:1px solid var(--wwq-line);}
+.ww-quiz-challenge .wwq-transfer summary {cursor:pointer;min-height:40px;}
+.ww-quiz-challenge .wwq-json {display:block;width:100%;min-width:0;min-height:40px;margin:8px 0;padding:8px 10px;border:1px solid var(--wwq-line);border-radius:8px;background:var(--wwq-surface);color:var(--wwq-ink);font:13px/1.6 monospace;resize:vertical;}
+.ww-quiz-challenge .wwq-editor input[type='file'] {display:block;max-width:100%;padding:8px 0;font-size:12px;}
+.ww-quiz-challenge .wwq-editor-error {padding:10px 20px;color:#963d43;font-size:13px;white-space:pre-wrap;}
+.ww-quiz-challenge .wwq-editor-footer {padding:0 20px 20px;}
+.ww-quiz-challenge .wwq-editor-footer>p {font-size:12px;color:var(--wwq-soft);}
+
+/* 底部滑出解析面板：作答后桌面与手机一致弹出，接管解析与下一步操作，题干下的内联解析随之隐藏。 */
+.ww-quiz-challenge[data-view='play'] .wwq-qmain>.wwq-feedback {display:none;}
+.ww-quiz-challenge[data-answered='true'] .wwq-qside>.wwq-submit {display:none;}
+.ww-quiz-challenge .wwq-sheet {position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:6;display:flex;flex-direction:column;gap:10px;max-width:720px;margin-inline:auto;max-height:64dvh;overflow:auto;overscroll-behavior:contain;padding:10px 22px 16px;background:var(--wwq-ok-bg);border-radius:20px;box-shadow:0 12px 36px #233d3533;animation:wwq-sheet-in .26s ease;}
+.ww-quiz-challenge .wwq-sheet::before {content:'';flex:0 0 auto;width:44px;height:4px;border-radius:999px;background:#2f3b3326;margin:0 auto 2px;}
+.ww-quiz-challenge .wwq-sheet[data-outcome='wrong'] {background:var(--wwq-bad-bg);}
+.ww-quiz-challenge .wwq-sheet[data-outcome='knowledge'] {background:#efeaf6;}
+.ww-quiz-challenge .wwq-sheet .wwq-feedback {border-left:0;padding:0;}
+.ww-quiz-challenge .wwq-sheet .wwq-feedback p {font-size:13.5px;}
+.ww-quiz-challenge .wwq-sheet .wwq-actions {margin-top:4px;flex-wrap:wrap;}
+.ww-quiz-challenge .wwq-sheet-title {display:flex;align-items:center;gap:10px;margin:2px 0 6px;font-size:15px;font-weight:600;color:var(--wwq-ok);overflow-wrap:anywhere;}
+.ww-quiz-challenge .wwq-sheet-mark {display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--wwq-ok);color:#fdfcf7;font-size:15px;font-weight:700;}
+.ww-quiz-challenge .wwq-sheet .wwq-feedback.is-wrong .wwq-sheet-title {color:var(--wwq-bad);}
+.ww-quiz-challenge .wwq-sheet .wwq-feedback.is-wrong .wwq-sheet-mark {background:var(--wwq-bad);}
+.ww-quiz-challenge .wwq-sheet .wwq-feedback.is-knowledge .wwq-sheet-title {color:#5b4a75;}
+.ww-quiz-challenge .wwq-sheet .wwq-feedback.is-knowledge .wwq-sheet-mark {background:#7a6b96;}
+.ww-quiz-challenge .wwq-sheet .wwq-submit {width:100%;margin-top:8px;min-height:50px;font-size:15px;}
+@keyframes wwq-sheet-in {from{transform:translateY(100%);}to{transform:translateY(0);}}
+
+/* 左右分区：桌面宽屏，以及手机横屏（宽度不足 900px 但方向为横向时同样分两栏）。 */
+@media(min-width:900px), (min-width:560px) and (max-width:1000px) and (max-height:560px) and (orientation:landscape){
+ .ww-quiz-challenge .wwq-qbody {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);align-items:stretch;column-gap:clamp(36px,6vw,104px);gap:0;overflow:hidden;}
+ .ww-quiz-challenge .wwq-qmain {overflow:auto;padding-right:6px;}
+ .ww-quiz-challenge .wwq-qside {overflow:hidden;flex:none;}
+ .ww-quiz-challenge .wwq-options {overflow:auto;padding:2px;margin:-2px;}
+}
+/* 手机横屏：纵向空间有限，压缩非内容性间距，保证两栏各能独立滚动。 */
+@media(min-width:560px) and (max-width:1000px) and (max-height:560px) and (orientation:landscape){
+ .ww-quiz-challenge .wwq-qbody {column-gap:clamp(20px,4vw,44px);}
+ .ww-quiz-challenge .wwq-heading {font-size:clamp(17px,2.1vw,21px);line-height:1.35;}
+ .ww-quiz-challenge .wwq-qbar {margin:4px 0 8px;}
+ .ww-quiz-challenge .wwq-options {gap:9px;}
+ .ww-quiz-challenge .wwq-option {min-height:44px;padding:8px 13px;gap:10px;font-size:13.5px;}
+ .ww-quiz-challenge .wwq-option-key {width:22px;height:22px;font-size:11px;}
+ .ww-quiz-challenge .wwq-submit {min-height:42px;font-size:13px;}
+ .ww-quiz-challenge .wwq-feedback h4 {margin-bottom:3px;font-size:12px;}
+ .ww-quiz-challenge .wwq-feedback p {font-size:12px;line-height:1.7;}
+ .ww-quiz-challenge .wwq-eyebrow {font-size:10px;}
+ .ww-quiz-challenge .wwq-hint summary {min-height:26px;}
+}
+/* 竖屏（手机竖屏与桌面窄窗口一致）：选项等触控目标放大、标题缩放。 */
+@media(max-width:899px) and (orientation:portrait){
+ .ww-quiz-challenge .wwq-topic {flex-wrap:wrap;gap:10px;}
+ .ww-quiz-challenge .wwq-heading {font-size:21px;}
+ .ww-quiz-challenge .wwq-option {padding:14px;min-height:56px;}
+ .ww-quiz-challenge .wwq-editor-panel {grid-template-columns:minmax(0,1fr);}
+ .ww-quiz-challenge .wwq-editor {width:calc(100vw - 12px);border-radius:12px;}
+}
+@media(prefers-reduced-motion:reduce){
+ .ww-quiz-challenge *, .ww-quiz-challenge *::before, .ww-quiz-challenge *::after {animation:none!important;transition:none!important;}
+}
+
+/* ---------- 首页（题库大厅）：标题、搜索、快捷功能、横向题库卡片 ---------- */
+.ww-quiz-challenge .wwq-hero {margin:12px 0 4px;}
+.ww-quiz-challenge .wwq-hero-title {margin:0;font:600 clamp(26px,4.6vw,36px)/1.25 'Songti SC','STSong',serif;letter-spacing:.02em;}
+.ww-quiz-challenge .wwq-search {position:relative;display:flex;align-items:center;gap:10px;margin:18px 0 20px;}
+.ww-quiz-challenge .wwq-search-input {flex:1;min-width:0;min-height:48px;border:1px solid var(--wwq-line);border-radius:999px;padding:0 20px;background:var(--wwq-surface);font:inherit;font-size:14px;color:var(--wwq-ink);box-shadow:0 6px 18px #233d3510;}
+.ww-quiz-challenge .wwq-search-btn {flex:0 0 auto;width:48px;height:48px;border:0;border-radius:50%;background:var(--wwq-green);display:grid;place-items:center;cursor:pointer;transition:transform .15s ease;}
+.ww-quiz-challenge .wwq-search-btn:hover {transform:scale(1.06);}
+.ww-quiz-challenge .wwq-search-btn svg {width:20px;height:20px;}
+.ww-quiz-challenge .wwq-suggest {position:absolute;top:calc(100% + 6px);left:0;right:52px;z-index:8;background:var(--wwq-surface);border:1px solid var(--wwq-line);border-radius:14px;box-shadow:0 10px 26px #233d3520;padding:6px;}
+.ww-quiz-challenge .wwq-suggest .wwq-note {padding:6px 10px;}
+.ww-quiz-challenge .wwq-suggest-item {display:block;width:100%;min-height:38px;border:0;background:transparent;border-radius:9px;padding:8px 12px;text-align:left;font-size:13.5px;color:var(--wwq-ink);cursor:pointer;}
+.ww-quiz-challenge .wwq-suggest-item:hover {background:var(--wwq-tint);}
+.ww-quiz-challenge .wwq-quick {display:flex;gap:12px;margin:0 0 6px;}
+.ww-quiz-challenge .wwq-quick-btn {flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:9px;border:0;background:transparent;padding:0;cursor:pointer;transition:transform .15s ease;}
+.ww-quiz-challenge .wwq-quick-btn:hover {transform:translateY(-2px);}
+.ww-quiz-challenge .wwq-quick-ico {width:64px;height:64px;border-radius:22px;background:var(--wwq-surface);display:grid;place-items:center;box-shadow:0 8px 20px #233d3516;}
+.ww-quiz-challenge .wwq-quick-ico svg {width:32px;height:32px;}
+.ww-quiz-challenge .wwq-quick-label {font-size:12.5px;font-weight:500;color:var(--wwq-ink);}
+.ww-quiz-challenge .wwq-dest-row {display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 18px;scrollbar-width:thin;}
+.ww-quiz-challenge .wwq-dest {position:relative;display:flex;flex-direction:column;flex:0 0 min(320px,78vw);scroll-snap-align:start;margin:0;border:0;border-radius:22px;overflow:hidden;cursor:pointer;padding:0;text-align:left;background:var(--wwq-tint);box-shadow:0 10px 24px #233d3516;transition:transform .16s ease;}
+.ww-quiz-challenge .wwq-dest:hover {transform:translateY(-3px);}
+.ww-quiz-challenge .wwq-dest-main>svg {display:block;width:100%;height:auto;flex:1;min-height:0;}
+.ww-quiz-challenge .wwq-dest .wwq-dest-img {display:block;width:100%;height:auto;flex:1;min-height:0;object-fit:cover;}
+.ww-quiz-challenge .wwq-dest.has-photo::before {content:'';position:absolute;inset:0;background:linear-gradient(180deg,#1e2b235e 0%,#1e2b2326 36%,#1e2b2300 56%);pointer-events:none;}
+.ww-quiz-challenge .wwq-dest-cap {position:absolute;left:16px;top:14px;right:16px;display:flex;flex-direction:column;gap:3px;color:#fff;text-shadow:0 2px 10px #22342b66;}
+.ww-quiz-challenge .wwq-dest-title {font-size:21px;font-weight:600;letter-spacing:.02em;}
+.ww-quiz-challenge .wwq-dest-sub {font-size:12px;opacity:.92;}
+
+/* ---------- 首页整屏：内容一列撑满视口，题库卡片吃掉底部全部剩余空白 ---------- */
+.ww-quiz-challenge[data-view='home'] .wwq-hero {margin:4px 0 0;}
+.ww-quiz-challenge[data-view='home'] .wwq-search {margin:12px 0 14px;}
+.ww-quiz-challenge[data-view='home'] .wwq-quick {margin:0;max-width:480px;}
+.ww-quiz-challenge[data-view='home'] .wwq-quick-ico {width:56px;height:56px;border-radius:19px;}
+.ww-quiz-challenge[data-view='home'] .wwq-quick-ico svg {width:28px;height:28px;}
+.ww-quiz-challenge[data-view='home'] .wwq-subheading {margin:14px 0 2px;}
+.ww-quiz-challenge[data-view='home'] .wwq-dest-row {flex:1;min-height:0;align-items:stretch;padding:6px 4px 6px;}
+.ww-quiz-challenge[data-view='home'] .wwq-content {display:flex;flex-direction:column;height:var(--wwq-h);min-height:0;}
+.ww-quiz-challenge[data-view='home'] .wwq-dest {align-self:stretch;}
+.ww-quiz-challenge[data-view='home'] .wwq-dest-main>svg {min-height:150px;}
+.ww-quiz-challenge[data-view='home'] .wwq-dest .wwq-dest-img {min-height:150px;}
+@media (max-height:760px){
+ .ww-quiz-challenge[data-view='home'] .wwq-search {margin:10px 0 12px;}
+ .ww-quiz-challenge[data-view='home'] .wwq-search-input {min-height:44px;}
+ .ww-quiz-challenge[data-view='home'] .wwq-search-btn {width:44px;height:44px;}
+ .ww-quiz-challenge[data-view='home'] .wwq-subheading {margin:10px 0 2px;}
+ .ww-quiz-challenge[data-view='home'] .wwq-dest-main>svg {min-height:120px;}
+ .ww-quiz-challenge[data-view='home'] .wwq-dest .wwq-dest-img {min-height:120px;}
+}
+.ww-quiz-challenge .wwq-dest:disabled {cursor:not-allowed;}
+.ww-quiz-challenge .wwq-dest.is-locked .wwq-dest-main>svg {filter:grayscale(.4) brightness(.92);}
+.ww-quiz-challenge .wwq-dest.is-locked .wwq-dest-img {filter:grayscale(.4) brightness(.92);}
+
+/* ---------- 生成题目：搜索 + 省份/民族两组多选，整体一屏放下，标签列表内部滚动 ---------- */
+.ww-quiz-challenge[data-view='more'] .wwq-content {display:flex;flex-direction:column;height:var(--wwq-h);min-height:0;}
+.ww-quiz-challenge[data-view='more'] .wwq-actions {margin-top:10px;}
+.ww-quiz-challenge .wwq-gen-input {flex:0 0 auto;width:100%;max-width:520px;margin-top:10px;}
+.ww-quiz-challenge[data-view='more'] .wwq-tag-grid {flex:1;min-height:0;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;margin-top:12px;overflow:hidden;}
+.ww-quiz-challenge[data-view='more'] .wwq-tag-group {display:flex;flex-direction:column;min-height:0;overflow:hidden;padding:10px 14px 12px;}
+.ww-quiz-challenge[data-view='more'] .wwq-tag-list {flex:1;min-height:0;max-height:none;overflow:auto;align-content:flex-start;}
+.ww-quiz-challenge .wwq-dest.is-locked .wwq-dest-cap {color:#f2f4ef;}
+
+/* ---------- 题库卡片「展开」预览：右上角开关 + 底部单题小方块，卡片整体尺寸不变 ---------- */
+.ww-quiz-challenge .wwq-dest {cursor:default;}
+.ww-quiz-challenge .wwq-dest-main {display:flex;flex-direction:column;flex:1 1 0;min-height:0;margin:0;border:0;padding:0;background:transparent;cursor:pointer;text-align:left;font:inherit;color:inherit;}
+.ww-quiz-challenge .wwq-dest-main:disabled {cursor:not-allowed;}
+.ww-quiz-challenge .wwq-dest-toggle {position:absolute;top:14px;right:12px;z-index:4;display:inline-flex;align-items:center;gap:4px;border:0;border-radius:999px;background:#fffffff0;color:#22342b;padding:6px 12px;font:600 12px/1.2 'PingFang SC','Noto Sans SC',sans-serif;cursor:pointer;box-shadow:0 4px 12px #1e2b2330;transition:transform .15s ease;}
+.ww-quiz-challenge .wwq-dest-toggle:hover {transform:scale(1.05);}
+.ww-quiz-challenge .wwq-dest-toggle svg {width:11px;height:11px;transition:transform .18s ease;}
+.ww-quiz-challenge .wwq-dest-toggle.is-open svg {transform:rotate(180deg);}
+.ww-quiz-challenge .wwq-dest-panel {flex:0 1 auto;min-height:0;max-height:52%;overflow-y:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-content:start;padding:10px;background:var(--wwq-surface);scrollbar-width:thin;}
+.ww-quiz-challenge .wwq-dest-panel[hidden] {display:none;}
+.ww-quiz-challenge .wwq-dest-q {aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;text-align:center;font-family:inherit;font-size:11px;line-height:1.45;color:var(--wwq-ink);background:var(--wwq-tint);border:0;border-radius:12px;padding:6px 8px;overflow:hidden;width:100%;min-width:0;cursor:pointer;word-break:break-word;transition:background .15s ease;}
+.ww-quiz-challenge .wwq-dest-q:hover {background:#e2eadf;}
+.ww-quiz-challenge[data-view='home'] .wwq-dest.is-expanded .wwq-dest-img {min-height:96px;}
+.ww-quiz-challenge[data-view='home'] .wwq-dest.is-expanded .wwq-dest-main>svg {min-height:96px;}
+
+/* ---------- 编辑题目：表单纵向布局，空间不足时表单内部滚动，不撑破一屏 ---------- */
+.ww-quiz-challenge[data-view='edit'] .wwq-content {display:flex;flex-direction:column;height:var(--wwq-h);min-height:0;}
+.ww-quiz-challenge .wwq-edit-form {flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding:2px 2px 14px;scrollbar-width:thin;}
+.ww-quiz-challenge .wwq-edit-field {display:flex;flex-direction:column;gap:4px;margin:0;}
+.ww-quiz-challenge .wwq-edit-label {font-size:12px;font-weight:500;color:var(--wwq-soft);}
+.ww-quiz-challenge .wwq-edit-input {width:100%;min-width:0;border:1px solid var(--wwq-line);border-radius:10px;background:var(--wwq-surface);color:var(--wwq-ink);font-size:13.5px;line-height:1.5;padding:9px 12px;resize:vertical;}
+.ww-quiz-challenge .wwq-edit-input:focus-visible {outline:2px solid var(--wwq-green);outline-offset:1px;}
+.ww-quiz-challenge .wwq-edit-dialog {border:0;border-radius:16px;padding:18px 20px;max-width:440px;box-shadow:0 18px 48px #233d3540;}
+.ww-quiz-challenge .wwq-edit-dialog-title {margin:0 0 6px;font-size:15px;font-weight:600;color:var(--wwq-ink);}
+.ww-quiz-challenge .wwq-edit-dialog .wwq-actions {flex-wrap:wrap;margin-top:10px;}
+.ww-quiz-challenge .wwq-edit-select {position:relative;display:flex;align-items:center;width:100%;min-width:0;border:1px solid var(--wwq-line);border-radius:10px;background:var(--wwq-surface);padding-right:4px;}
+.ww-quiz-challenge .wwq-edit-select:focus-within {outline:2px solid var(--wwq-green);outline-offset:1px;}
+.ww-quiz-challenge .wwq-edit-select-input {flex:1;min-width:0;border:0;background:none;color:var(--wwq-ink);font-size:13.5px;line-height:1.5;padding:9px 4px 9px 12px;}
+.ww-quiz-challenge .wwq-edit-select-input:focus-visible {outline:none;}
+.ww-quiz-challenge .wwq-edit-select-input::placeholder {color:var(--wwq-soft);}
+.ww-quiz-challenge .wwq-edit-caret {border:0;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:8px 6px;color:var(--wwq-soft);}
+.ww-quiz-challenge .wwq-caret-tri {display:block;width:10px;height:7px;background:currentColor;clip-path:polygon(0 0,100% 0,50% 100%);transition:transform .18s ease;}
+.ww-quiz-challenge .wwq-edit-select.is-open .wwq-caret-tri {transform:rotate(180deg);}
+.ww-quiz-challenge .wwq-edit-select.is-invalid {border-color:#b04a42;background:#fdf2f0;}
+.ww-quiz-challenge .wwq-edit-select-list {position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:9;max-height:200px;overflow:auto;background:var(--wwq-surface);border:1px solid var(--wwq-line);border-radius:12px;box-shadow:0 10px 28px #233d3526;padding:4px;display:flex;flex-direction:column;gap:2px;}
+.ww-quiz-challenge .wwq-edit-select-opt {border:0;background:none;text-align:left;padding:8px 10px;border-radius:8px;font:inherit;font-size:13px;color:var(--wwq-ink);cursor:pointer;}
+.ww-quiz-challenge .wwq-edit-select-opt:hover {background:#e9efe7;}
+.ww-quiz-challenge .wwq-edit-select-opt.is-active {background:#dfe9dc;font-weight:600;}
+.ww-quiz-challenge .wwq-edit-select-list .wwq-note {padding:6px 10px;margin:0;}
+.ww-quiz-challenge .wwq-edit-input.is-invalid {border-color:#b04a42;background:#fdf2f0;}

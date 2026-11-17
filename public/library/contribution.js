@@ -5,6 +5,16 @@ import {createLibraryReading} from './library-reading.js';
 import {seedUploadTrees,descendants,expandSelection,nodeUsage,removeEmptyNode} from './contribution-trees.js';
 import {INITIAL_TOPICS,recordsForTopic,entryNodes} from './library-management.js';
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// crypto.randomUUID 仅在安全上下文可用（http://局域网IP 访问时不存在），提供等价回退。
+const randomId=()=>{
+  try{if(globalThis.crypto?.randomUUID)return globalThis.crypto.randomUUID();}catch{}
+  const bytes=new Uint8Array(16);
+  if(globalThis.crypto?.getRandomValues)globalThis.crypto.getRandomValues(bytes);
+  else for(let i=0;i<16;i++)bytes[i]=Math.floor(Math.random()*256);
+  bytes[6]=bytes[6]&0x0f|0x40;bytes[8]=bytes[8]&0x3f|0x80;
+  const hex=[...bytes].map(b=>b.toString(16).padStart(2,'0')).join('');
+  return hex.slice(0,8)+'-'+hex.slice(8,12)+'-'+hex.slice(12,16)+'-'+hex.slice(16,20)+'-'+hex.slice(20);
+};
 const KEYS={trees:'ww-contribution-trees-v1',topics:'ww-contribution-topics-v1',records:'ww-contribution-record-edits-v1'};
 const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))||fallback;}catch{return fallback;}};
 export function createContribution(data,knowledge,{tags,readDrafts,saveDraft,inferFileKind,store}){
@@ -94,7 +104,7 @@ export function createContribution(data,knowledge,{tags,readDrafts,saveDraft,inf
     const url=form.elements.sourceUrl;if(url&&!url.validity.valid){status('来源网址填写完整后自动保存');return;}
     try{
       if(state.mode==='topic'){
-        const id=state.topicId||'topic-'+crypto.randomUUID(),old=topics.find(t=>t.id===id);
+        const id=state.topicId||'topic-'+randomId(),old=topics.find(t=>t.id===id);
         const next={...old,id,name:fields.title,note:fields.note,regions:checked('regions'),ethnicities:checked('ethnicities')};
         const updated=old?topics.map(t=>t.id===id?next:t):[...topics,next];
         persistence.setItem(KEYS.topics,JSON.stringify(updated));store?.changed();topics=updated;
@@ -104,7 +114,7 @@ export function createContribution(data,knowledge,{tags,readDrafts,saveDraft,inf
       }
       if(!['upload','record'].includes(state.mode))return;
       if(state.mode==='upload'&&!files.length){status('添加文件后自动保存');return;}
-      const id=state.mode==='record'?state.recordId:state.newRecordId||'local-'+crypto.randomUUID();state.newRecordId=id;
+      const id=state.mode==='record'?state.recordId:state.newRecordId||'local-'+randomId();state.newRecordId=id;
       const tagIds=expandSelection(nodes,[...selected]);
       const previous=data.records.find(r=>r.id===id);
       const edit={...overrides[id],mediaOrder:[...mediaOrder],title:fields.title,note:fields.note,topicId:state.topicId,tagIds,source:{...previous?.source,author:fields.author,url:fields.sourceUrl}};
@@ -172,7 +182,7 @@ export function createContribution(data,knowledge,{tags,readDrafts,saveDraft,inf
       if(action==='upload'){const node=nodes.find(n=>n.id===b.dataset.nodeId);if(node?.parentId&&!visibleNodes().some(n=>n.parentId===node.id))openUpload(node.id);}
       if(action==='select-tag'){if(!nodes.find(n=>n.id===id)?.parentId||visibleNodes().some(n=>n.parentId===id))return;selected.has(id)?selected.delete(id):selected.add(id);paintTrees(true);preview();scheduleSave();}
       if(action==='remove-file'){files.splice(Number(id),1);updateFiles();scheduleSave();}
-      if(action==='add-tree'){const input=$('[name=newTreeTitle]'),label=input.value.trim();if(!label)return;if(nodes.some(n=>!n.parentId&&n.label===label&&(!n.topicId||n.topicId===state.topicId))){status('已有同名树。');return;}nodes.push({id:'tree-'+crypto.randomUUID(),label,parentId:null,dimension:'custom',topicId:state.topicId,recordIds:[]});persistNodes();input.value='';paintTrees(false);}
+      if(action==='add-tree'){const input=$('[name=newTreeTitle]'),label=input.value.trim();if(!label)return;if(nodes.some(n=>!n.parentId&&n.label===label&&(!n.topicId||n.topicId===state.topicId))){status('已有同名树。');return;}nodes.push({id:'tree-'+randomId(),label,parentId:null,dimension:'custom',topicId:state.topicId,recordIds:[]});persistNodes();input.value='';paintTrees(false);}
       if(['add-node','rename-node'].includes(action)){
         const node=nodes.find(n=>n.id===id),renaming=action==='rename-node';
         const editor=document.createElement('form');editor.className='cm-inline-editor';
@@ -181,7 +191,7 @@ export function createContribution(data,knowledge,{tags,readDrafts,saveDraft,inf
         const rename=()=>{const label=input.value.trim();if(!label)return;if(nodes.some(n=>n.id!==id&&n.parentId===node.parentId&&n.label===label)){status('已有同名节点。');return;}const before=node.label;node.label=label;try{persistNodes();const title=editor.previousElementSibling.querySelector('.cm-node-name');if(title)title.textContent=label;status('已更新，正在保存到项目');}catch{node.label=before;status('节点名称保存未完成，请继续编辑重试。');}};
         if(renaming)input.addEventListener('input',rename,{signal:controller.signal});
         editor.querySelector('[data-close-inline]').onclick=()=>{if(renaming)rename();editor.remove();};
-        editor.addEventListener('submit',e=>{e.preventDefault();e.stopPropagation();if(renaming){rename();editor.remove();return;}const label=input.value.trim();if(!label)return;if(nodes.some(n=>n.parentId===id&&n.label===label)){status('已有同名节点。');return;}nodes.push({id:'tag-'+crypto.randomUUID(),parentId:id,label,dimension:'custom',topicId:node.topicId,recordIds:[]});persistNodes();paintTrees(false);},{signal:controller.signal});
+        editor.addEventListener('submit',e=>{e.preventDefault();e.stopPropagation();if(renaming){rename();editor.remove();return;}const label=input.value.trim();if(!label)return;if(nodes.some(n=>n.parentId===id&&n.label===label)){status('已有同名节点。');return;}nodes.push({id:'tag-'+randomId(),parentId:id,label,dimension:'custom',topicId:node.topicId,recordIds:[]});persistNodes();paintTrees(false);},{signal:controller.signal});
       }
       if(action==='delete-node'){const node=nodes.find(n=>n.id===id);if(!node?.parentId||visibleNodes().some(n=>n.parentId===id))return;drafts=await readDrafts();const usageDrafts=[...drafts,...Object.entries(overrides).map(([recordId,r])=>({id:'edit:'+recordId,recordId,status:'autosaved',assignments:{tagIds:r.tagIds||[]}}))];nodes=removeEmptyNode(nodes,id,usageDrafts);persistNodes();paintTrees(false);status('空节点已删除');}
     }catch(error){status(error.message==='节点已有资料关联'?'节点已有资料关联，已锁定。':'操作暂时未完成，请重试。');}},opts);

@@ -1,0 +1,426 @@
+{
+  "schemaVersion": 1,
+  "published": [
+    {
+      "schemaVersion": 1,
+      "id": "ukrainian-costume",
+      "title": "乌克兰服饰",
+      "description": "依据资料库档案生成的乌克兰服饰服饰文化专题。",
+      "type": "fixed",
+      "version": 2,
+      "passRate": 80,
+      "selectedTags": [
+        "topic-ukrainian"
+      ],
+      "createdAt": "2026-11-13T09:35:34.754Z",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single",
+          "question": "根据《乌克兰套装（参考照片适配）》，套装中包含哪种颜色的布腰带？",
+          "options": [
+            {
+              "id": "A",
+              "text": "黄色布腰带"
+            },
+            {
+              "id": "B",
+              "text": "红色布腰带"
+            },
+            {
+              "id": "C",
+              "text": "紫色布腰带"
+            },
+            {
+              "id": "D",
+              "text": "绿色布腰带"
+            }
+          ],
+          "answer": "A",
+          "explanation": "原文明确提到“黄色布腰带”。",
+          "hint": "",
+          "sourceRecordIds": [
+            "WW-UKR-001"
+          ],
+          "evidence": [
+            {
+              "recordId": "WW-UKR-001",
+              "quote": "用户说明｜套装包含长衬衫衬裙、黄色布腰带、紫色围裙和黄紫绿条纹罩裙"
+            }
+          ],
+          "knowledgePoint": "腰带颜色"
+        },
+        {
+          "id": "q2",
+          "type": "single",
+          "question": "根据《乌克兰套装（参考照片适配）》，颈部佩戴的珠串颜色是什么？",
+          "options": [
+            {
+              "id": "A",
+              "text": "黑白珠串"
+            },
+            {
+              "id": "B",
+              "text": "红白珠串"
+            },
+            {
+              "id": "C",
+              "text": "黄紫珠串"
+            },
+            {
+              "id": "D",
+              "text": "绿黑珠串"
+            }
+          ],
+          "answer": "A",
+          "explanation": "原文描述“颈部有多圈黑白珠串”。",
+          "hint": "",
+          "sourceRecordIds": [
+            "WW-UKR-001"
+          ],
+          "evidence": [
+            {
+              "recordId": "WW-UKR-001",
+              "quote": "画面观察｜颈部有多圈黑白珠串，胸前以红丝带系合"
+            }
+          ],
+          "knowledgePoint": "颈部装饰颜色"
+        },
+        {
+          "id": "q3",
+          "type": "single",
+          "question": "根据《白色长衬衫衬裙与红丝带》，衬裙的胸口中央开领由什么固定？",
+          "options": [
+            {
+              "id": "A",
+              "text": "红丝带打结固定"
+            },
+            {
+              "id": "B",
+              "text": "黄布带系合"
+            },
+            {
+              "id": "C",
+              "text": "紫丝带绑扎"
+            },
+            {
+              "id": "D",
+              "text": "绿绳缠绕"
+            }
+          ],
+          "answer": "A",
+          "explanation": "原文明确“由红丝带打结固定”。",
+          "hint": "",
+          "sourceRecordIds": [
+            "WW-UKR-001-C01"
+          ],
+          "evidence": [
+            {
+              "recordId": "WW-UKR-001-C01",
+              "quote": "用户说明｜衬裙是长至脚踝的长衬衫，胸口中央开领，由红丝带打结固定"
+            }
+          ],
+          "knowledgePoint": "衬裙开领固定方式"
+        },
+        {
+          "id": "q4",
+          "type": "single",
+          "question": "根据《黄紫绿条纹罩裙》，罩裙具有哪些颜色的条纹？",
+          "options": [
+            {
+              "id": "A",
+              "text": "黄、紫、绿条纹"
+            },
+            {
+              "id": "B",
+              "text": "红、白、黑条纹"
+            },
+            {
+              "id": "C",
+              "text": "蓝、黄、红条纹"
+            },
+            {
+              "id": "D",
+              "text": "紫、绿、橙条纹"
+            }
+          ],
+          "answer": "A",
+          "explanation": "原文直接说明“罩裙具有黄、紫、绿条纹”。",
+          "hint": "",
+          "sourceRecordIds": [
+            "WW-UKR-001-C02"
+          ],
+          "evidence": [
+            {
+              "recordId": "WW-UKR-001-C02",
+              "quote": "用户说明｜罩裙具有黄、紫、绿条纹"
+            }
+          ],
+          "knowledgePoint": "罩裙条纹颜色"
+        },
+        {
+          "id": "q5",
+          "type": "single",
+          "question": "根据《黄色缠绕腰带与黄紫毛线流苏》，流苏的颜色是什么？",
+          "options": [
+            {
+              "id": "A",
+              "text": "流苏有黄有紫"
+            },
+            {
+              "id": "B",
+              "text": "流苏有红有绿"
+            },
+            {
+              "id": "C",
+              "text": "流苏有黑有白"
+            },
+            {
+              "id": "D",
+              "text": "流苏有蓝有橙"
+            }
+          ],
+          "answer": "A",
+          "explanation": "原文明确“流苏有黄有紫”。",
+          "hint": "",
+          "sourceRecordIds": [
+            "WW-UKR-001-C04"
+          ],
+          "evidence": [
+            {
+              "recordId": "WW-UKR-001-C04",
+              "quote": "用户说明｜腰上有黄色布腰带，流苏有黄有紫"
+            }
+          ],
+          "knowledgePoint": "流苏颜色"
+        }
+      ],
+      "generation": {
+        "qualityVersion": 2,
+        "provider": "siliconflow",
+        "model": "deepseek-ai/DeepSeek-V4-Flash",
+        "generatedAt": "2026-11-13T09:35:34.754Z",
+        "verified": true
+      },
+      "review": {
+        "status": "published",
+        "method": "automatic",
+        "humanReviewed": false,
+        "reviewer": "程序校验",
+        "reviewedAt": "2026-11-13T09:35:34.754Z"
+      },
+      "sourceSnapshots": []
+    },
+    {
+      "schemaVersion": 1,
+      "id": "mosuo-culture",
+      "title": "摩梭人",
+      "description": "依据资料库档案生成的摩梭人服饰文化专题。",
+      "type": "fixed",
+      "version": 2,
+      "passRate": 75,
+      "selectedTags": [
+        "culture-mosuo"
+      ],
+      "createdAt": "2026-11-13T09:37:05.583Z",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single",
+          "question": "根据《摩梭人服饰套装》的档案记录，画面中央人物下身穿着什么？",
+          "options": [
+            {
+              "id": "A",
+              "text": "浅蓝长褶裙"
+            },
+            {
+              "id": "B",
+              "text": "红底花纹上衣"
+            },
+            {
+              "id": "C",
+              "text": "深色鞋履"
+            },
+            {
+              "id": "D",
+              "text": "头饰"
+            }
+          ],
+          "answer": "A",
+          "explanation": "原文为“画面中央人物穿着头饰、红底花纹上衣与浅蓝长褶裙”，其中“浅蓝长褶裙”为下身服饰。",
+          "hint": "",
+          "sourceRecordIds": [
+            "WW-MOS-001"
+          ],
+          "evidence": [
+            {
+              "recordId": "WW-MOS-001",
+              "quote": "画面中央人物穿着头饰、红底花纹上衣与浅蓝长褶裙，裙摆下方可见深色鞋履局部"
+            }
+          ],
+          "knowledgePoint": "服饰部件"
+        },
+        {
+          "id": "q2",
+          "type": "single",
+          "question": "根据《黑色基底彩饰头饰与紫色米珠串》的档案记录，头饰的主体颜色是什么？",
+          "options": [
+            {
+              "id": "A",
+              "text": "黑色基底主体"
+            },
+            {
+              "id": "B",
+              "text": "红色装饰带"
+            },
+            {
+              "id": "C",
+              "text": "黄色装饰带"
+            },
+            {
+              "id": "D",
+              "text": "紫色米珠串"
+            }
+          ],
+          "answer": "A",
+          "explanation": "原文为“黑色基底主体，环绕多色（可见红、黄、蓝等）装饰带”，因此主体颜色是黑色。",
+          "hint": "",
+          "sourceRecordIds": [
+            "WW-MOS-001-C01"
+          ],
+          "evidence": [
+            {
+              "recordId": "WW-MOS-001-C01",
+              "quote": "黑色基底主体，环绕多色（可见红、黄、蓝等）装饰带"
+            }
+          ],
+          "knowledgePoint": "头饰主体颜色"
+        },
+        {
+          "id": "q3",
+          "type": "single",
+          "question": "根据《黑色基底彩饰头饰与紫色米珠串》的档案记录，从头饰一侧持续垂落的是什么？",
+          "options": [
+            {
+              "id": "A",
+              "text": "大量紫色米珠串"
+            },
+            {
+              "id": "B",
+              "text": "红色装饰带"
+            },
+            {
+              "id": "C",
+              "text": "蓝色装饰带"
+            },
+            {
+              "id": "D",
+              "text": "黑色基底"
+            }
+          ],
+          "answer": "A",
+          "explanation": "原文为“大量紫色米珠串自头饰一侧持续垂落，延伸至裙面高度”，因此垂落的是紫色米珠串。",
+          "hint": "",
+          "sourceRecordIds": [
+            "WW-MOS-001-C01"
+          ],
+          "evidence": [
+            {
+              "recordId": "WW-MOS-001-C01",
+              "quote": "大量紫色米珠串自头饰一侧持续垂落，延伸至裙面高度"
+            }
+          ],
+          "knowledgePoint": "垂饰部件"
+        },
+        {
+          "id": "q4",
+          "type": "single",
+          "question": "根据《红底多彩花纹上衣》的档案记录，这件上衣的底色是什么？",
+          "options": [
+            {
+              "id": "A",
+              "text": "红底"
+            },
+            {
+              "id": "B",
+              "text": "浅蓝底"
+            },
+            {
+              "id": "C",
+              "text": "黑色底"
+            },
+            {
+              "id": "D",
+              "text": "灰色底"
+            }
+          ],
+          "answer": "A",
+          "explanation": "原文为“红底、多彩花纹，长袖，衣身较短”，因此底色是红底。",
+          "hint": "",
+          "sourceRecordIds": [
+            "WW-MOS-001-C02"
+          ],
+          "evidence": [
+            {
+              "recordId": "WW-MOS-001-C02",
+              "quote": "红底、多彩花纹，长袖，衣身较短"
+            }
+          ],
+          "knowledgePoint": "上衣底色"
+        },
+        {
+          "id": "q5",
+          "type": "single",
+          "question": "根据《浅蓝色长褶裙》的档案记录，裙身下部可见什么？",
+          "options": [
+            {
+              "id": "A",
+              "text": "一条紫红色横向细线"
+            },
+            {
+              "id": "B",
+              "text": "密集竖向褶裥"
+            },
+            {
+              "id": "C",
+              "text": "浅色花纹"
+            },
+            {
+              "id": "D",
+              "text": "银线装饰"
+            }
+          ],
+          "answer": "A",
+          "explanation": "原文为“下部可见一条紫红色横向细线”，因此可见的是紫红色横向细线。",
+          "hint": "",
+          "sourceRecordIds": [
+            "WW-MOS-001-C03"
+          ],
+          "evidence": [
+            {
+              "recordId": "WW-MOS-001-C03",
+              "quote": "下部可见一条紫红色横向细线"
+            }
+          ],
+          "knowledgePoint": "裙身装饰"
+        }
+      ],
+      "generation": {
+        "qualityVersion": 2,
+        "provider": "siliconflow",
+        "model": "deepseek-ai/DeepSeek-V4-Flash",
+        "generatedAt": "2026-11-13T09:37:05.583Z",
+        "verified": true
+      },
+      "review": {
+        "status": "published",
+        "method": "automatic",
+        "humanReviewed": false,
+        "reviewer": "程序校验",
+        "reviewedAt": "2026-11-13T09:37:05.583Z"
+      },
+      "sourceSnapshots": []
+    }
+  ],
+  "drafts": []
+}

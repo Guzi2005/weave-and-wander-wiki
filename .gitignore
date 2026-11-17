@@ -3,6 +3,7 @@ data/
 public/media/*
 !public/media/.gitkeep
 .env*
+!.env.example
 .wrangler/
 dist-public/
 .kimi-support-brief.txt
